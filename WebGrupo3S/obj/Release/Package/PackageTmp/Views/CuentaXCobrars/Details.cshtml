@@ -1,0 +1,122 @@
+﻿@model WebGrupo3S.Models.CuentaXCobrar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CuentaXCobrar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_Saldo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_Saldo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_fechaUltMov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_fechaUltMov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_MontoUltMov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_MontoUltMov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_estCuentaXCobrar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_estCuentaXCobrar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cc_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cc_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

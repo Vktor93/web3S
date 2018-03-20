@@ -1,0 +1,2017 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SSS_PERSONASModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="cl_empresa" />
+            <PropertyRef Name="cl_cliente" />
+          </Key>
+          <Property Name="cl_empresa" Type="smallint" Nullable="false" />
+          <Property Name="cl_cliente" Type="int" Nullable="false" />
+          <Property Name="cl_tipoCliente" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="cl_ClasificacionCliente" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="cl_tipoident" Type="char" MaxLength="10" />
+          <Property Name="cl_identifica" Type="nvarchar" MaxLength="50" />
+          <Property Name="cl_nit" Type="nvarchar" MaxLength="50" />
+          <Property Name="cl_nombre1" Type="nvarchar" MaxLength="50" />
+          <Property Name="cl_nombre2" Type="nvarchar" MaxLength="50" />
+          <Property Name="cl_nombre3" Type="nvarchar" MaxLength="50" />
+          <Property Name="cl_apellido1" Type="nvarchar" MaxLength="50" />
+          <Property Name="cl_apellido2" Type="nvarchar" MaxLength="50" />
+          <Property Name="cl_apecasada" Type="nvarchar" MaxLength="50" />
+          <Property Name="cl_nombrelargo" Type="nvarchar" MaxLength="250" />
+          <Property Name="cl_genero" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="cl_fechanac" Type="date" />
+          <Property Name="cl_ocupacion" Type="char" MaxLength="10" />
+          <Property Name="cl_estadocivil" Type="char" MaxLength="10" />
+          <Property Name="cl_RecibePublicidad" Type="int" />
+          <Property Name="cl_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="cl_fechamod" Type="datetime" />
+          <Property Name="cl_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cl_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="cl_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cl_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="cl_estado" Type="int" Nullable="false" />
+          <Property Name="cl_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="cn_empresa" />
+            <PropertyRef Name="cn_idContacto" />
+          </Key>
+          <Property Name="cn_empresa" Type="smallint" Nullable="false" />
+          <Property Name="cn_idContacto" Type="int" Nullable="false" />
+          <Property Name="cn_tipoAsociado" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="cn_asociado" Type="int" Nullable="false" />
+          <Property Name="cn_tipoContacto" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="cn_Contacto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cn_Contacto2" Type="nvarchar" MaxLength="50" />
+          <Property Name="cn_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="cn_fechamod" Type="datetime" />
+          <Property Name="cn_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cn_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="cn_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cn_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="cn_estado" Type="int" Nullable="false" />
+          <Property Name="cn_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="di_empresa" />
+            <PropertyRef Name="di_IdDireccion" />
+          </Key>
+          <Property Name="di_empresa" Type="smallint" Nullable="false" />
+          <Property Name="di_IdDireccion" Type="int" Nullable="false" />
+          <Property Name="di_TipoAsociado" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="di_asociado" Type="int" Nullable="false" />
+          <Property Name="di_TipoDireccion" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="di_Direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="di_Direccion2" Type="nvarchar" MaxLength="100" />
+          <Property Name="di_zona" Type="char" MaxLength="10" />
+          <Property Name="di_municipio" Type="char" MaxLength="10" />
+          <Property Name="di_departamento" Type="char" MaxLength="10" />
+          <Property Name="di_pais" Type="char" MaxLength="10" />
+          <Property Name="di_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="di_fechamod" Type="datetime" />
+          <Property Name="di_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="di_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="di_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="di_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="di_estado" Type="int" Nullable="false" />
+          <Property Name="di_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Foto">
+          <Key>
+            <PropertyRef Name="fo_empresa" />
+            <PropertyRef Name="fo_IdFoto" />
+          </Key>
+          <Property Name="fo_empresa" Type="smallint" Nullable="false" />
+          <Property Name="fo_IdFoto" Type="int" Nullable="false" />
+          <Property Name="fo_TipoAsociado" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="fo_asociado" Type="int" Nullable="false" />
+          <Property Name="fo_foto" Type="image" Nullable="false" />
+          <Property Name="fo_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="fo_fechamod" Type="datetime" />
+          <Property Name="fo_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fo_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="fo_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fo_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="fo_estado" Type="int" Nullable="false" />
+          <Property Name="fo_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Huella">
+          <Key>
+            <PropertyRef Name="hu_IdHuella" />
+          </Key>
+          <Property Name="hu_empresa" Type="smallint" Nullable="false" />
+          <Property Name="hu_IdHuella" Type="int" Nullable="false" />
+          <Property Name="hu_TipoAsociado" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="hu_asociado" Type="int" Nullable="false" />
+          <Property Name="hu_huella" Type="varbinary(max)" Nullable="false" />
+          <Property Name="hu_mano" Type="varchar" MaxLength="50" />
+          <Property Name="hu_dedo" Type="varchar" MaxLength="50" />
+          <Property Name="hu_huella_long" Type="int" />
+          <Property Name="hu_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="hu_fechamod" Type="datetime" />
+          <Property Name="hu_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="hu_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="hu_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="hu_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="hu_estado" Type="int" Nullable="false" />
+          <Property Name="hu_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NitFactura">
+          <Key>
+            <PropertyRef Name="nf_empresa" />
+            <PropertyRef Name="nf_Nit" />
+          </Key>
+          <Property Name="nf_empresa" Type="smallint" Nullable="false" />
+          <Property Name="nf_Nit" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nf_IdSucursal" Type="int" Nullable="false" />
+          <Property Name="nf_Nombre" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="nf_Direccion" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="nf_actCentral" Type="int" Nullable="false" />
+          <Property Name="nf_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="nf_fechamod" Type="datetime" />
+          <Property Name="nf_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nf_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="nf_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nf_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="nf_estado" Type="int" Nullable="false" />
+          <Property Name="nf_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="opcion">
+          <Key>
+            <PropertyRef Name="op_Empresa" />
+            <PropertyRef Name="op_CodigoOpcion" />
+          </Key>
+          <Property Name="op_Empresa" Type="smallint" Nullable="false" />
+          <Property Name="op_CodigoOpcion" Type="int" Nullable="false" />
+          <Property Name="op_NombreOpcion" Type="varchar" MaxLength="100" />
+          <Property Name="op_DescOpcion" Type="varchar" MaxLength="150" />
+          <Property Name="op_PadreOpcion" Type="int" />
+          <Property Name="op_Autenticar" Type="bit" Nullable="false" />
+          <Property Name="op_FechaIng" Type="datetime" Nullable="false" />
+          <Property Name="op_FechaMod" Type="datetime" />
+          <Property Name="op_UsuarioIng" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="op_UsuarioMod" Type="varchar" MaxLength="50" />
+          <Property Name="op_MaquinaIng" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="op_MaquinaMod" Type="varchar" MaxLength="50" />
+          <Property Name="op_Estado" Type="int" Nullable="false" />
+          <Property Name="op_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="perfil">
+          <Key>
+            <PropertyRef Name="pf_empresa" />
+            <PropertyRef Name="pf_codPerfil" />
+          </Key>
+          <Property Name="pf_empresa" Type="int" Nullable="false" />
+          <Property Name="pf_codPerfil" Type="int" Nullable="false" />
+          <Property Name="pf_nomPerfil" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pf_descPerfil" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="pf_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="pf_fechamod" Type="datetime" />
+          <Property Name="pf_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pf_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="pf_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pf_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="pf_estado" Type="int" Nullable="false" />
+          <Property Name="pf_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="perfilusuario">
+          <Key>
+            <PropertyRef Name="pu_empresa" />
+            <PropertyRef Name="pu_IdSucursal" />
+            <PropertyRef Name="pu_CodPerfilUsuario" />
+          </Key>
+          <Property Name="pu_empresa" Type="int" Nullable="false" />
+          <Property Name="pu_IdSucursal" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="pu_CodPerfilUsuario" Type="int" Nullable="false" />
+          <Property Name="pu_codPerfil" Type="int" Nullable="false" />
+          <Property Name="pu_codUsuario" Type="int" Nullable="false" />
+          <Property Name="pu_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="pu_fechamod" Type="datetime" />
+          <Property Name="pu_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pu_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="pu_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pu_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="pu_estado" Type="int" Nullable="false" />
+          <Property Name="pu_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="permiso">
+          <Key>
+            <PropertyRef Name="pe_empresa" />
+            <PropertyRef Name="pe_IdSucursal" />
+            <PropertyRef Name="pe_IdPermiso" />
+          </Key>
+          <Property Name="pe_empresa" Type="smallint" Nullable="false" />
+          <Property Name="pe_IdSucursal" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="pe_IdPermiso" Type="int" Nullable="false" />
+          <Property Name="pe_CodPerfil" Type="int" Nullable="false" />
+          <Property Name="pe_CodigoOpcion" Type="int" Nullable="false" />
+          <Property Name="pe_FechaIng" Type="datetime" Nullable="false" />
+          <Property Name="pe_FechaMod" Type="datetime" />
+          <Property Name="pe_UsuarioIng" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pe_UsuarioMod" Type="varchar" MaxLength="50" />
+          <Property Name="pe_MaquinaIng" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pe_MaquinaMod" Type="varchar" MaxLength="50" />
+          <Property Name="pe_estado" Type="int" Nullable="false" />
+          <Property Name="pe_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="pv_empresa" />
+            <PropertyRef Name="pv_proveedor" />
+          </Key>
+          <Property Name="pv_empresa" Type="smallint" Nullable="false" />
+          <Property Name="pv_proveedor" Type="int" Nullable="false" />
+          <Property Name="pv_tipoProveedor" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="pv_nombre1" Type="nvarchar" MaxLength="100" />
+          <Property Name="pv_nombre2" Type="nvarchar" MaxLength="100" />
+          <Property Name="pv_nit" Type="nvarchar" MaxLength="50" />
+          <Property Name="pv_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="pv_fechamod" Type="datetime" />
+          <Property Name="pv_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pv_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="pv_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pv_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="pv_estado" Type="int" Nullable="false" />
+          <Property Name="pv_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="us_empresa" />
+            <PropertyRef Name="us_IdSucursal" />
+            <PropertyRef Name="us_codUsuario" />
+          </Key>
+          <Property Name="us_empresa" Type="smallint" Nullable="false" />
+          <Property Name="us_IdSucursal" Type="int" Nullable="false" />
+          <Property Name="us_codUsuario" Type="int" Nullable="false" />
+          <Property Name="us_usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="us_nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="us_password" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="us_estUsuario" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="us_IdEmpleado" Type="int" />
+          <Property Name="us_resetPass" Type="int" Nullable="false" />
+          <Property Name="us_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="us_fechamod" Type="datetime" />
+          <Property Name="us_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="us_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="us_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="us_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="us_estado" Type="int" Nullable="false" />
+          <Property Name="us_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SSS_PERSONAS.dbo.vw_UltimosTelefonos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vw_UltimosTelefonos">
+          <Key>
+            <PropertyRef Name="Empresa" />
+            <PropertyRef Name="Asociado" />
+          </Key>
+          <Property Name="Empresa" Type="smallint" Nullable="false" />
+          <Property Name="Asociado" Type="int" Nullable="false" />
+          <Property Name="TelCelular" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelCasa" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelTrabajo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="fn_ValidaDPI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="dpi" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="fn_ValidaNit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="nit" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_ABC_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cl_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="cl_opcion" Type="char" Mode="In" />
+          <Parameter Name="cl_cliente" Type="int" Mode="InOut" />
+          <Parameter Name="cl_tipoCliente" Type="char" Mode="In" />
+          <Parameter Name="cl_ClasificacionCliente" Type="char" Mode="In" />
+          <Parameter Name="cl_tipoident" Type="char" Mode="In" />
+          <Parameter Name="cl_identifica" Type="nvarchar" Mode="In" />
+          <Parameter Name="cl_nit" Type="nvarchar" Mode="In" />
+          <Parameter Name="cl_nombre1" Type="nvarchar" Mode="In" />
+          <Parameter Name="cl_nombre2" Type="nvarchar" Mode="In" />
+          <Parameter Name="cl_nombre3" Type="nvarchar" Mode="In" />
+          <Parameter Name="cl_apellido1" Type="nvarchar" Mode="In" />
+          <Parameter Name="cl_apellido2" Type="nvarchar" Mode="In" />
+          <Parameter Name="cl_apecasada" Type="nvarchar" Mode="In" />
+          <Parameter Name="cl_genero" Type="char" Mode="In" />
+          <Parameter Name="cl_fechanac" Type="date" Mode="In" />
+          <Parameter Name="cl_ocupacion" Type="char" Mode="In" />
+          <Parameter Name="cl_estadocivil" Type="char" Mode="In" />
+          <Parameter Name="cl_RecibePublicidad" Type="int" Mode="In" />
+          <Parameter Name="cl_usuario" Type="nvarchar" Mode="In" />
+          <Parameter Name="cl_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_Contacto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cn_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="cn_opcion" Type="char" Mode="In" />
+          <Parameter Name="cn_IdContacto" Type="int" Mode="InOut" />
+          <Parameter Name="cn_tipoAsociado" Type="char" Mode="In" />
+          <Parameter Name="cn_asociado" Type="int" Mode="In" />
+          <Parameter Name="cn_tipoContacto" Type="char" Mode="In" />
+          <Parameter Name="cn_contacto" Type="nvarchar" Mode="In" />
+          <Parameter Name="cn_contacto2" Type="nvarchar" Mode="In" />
+          <Parameter Name="cn_usuario" Type="nvarchar" Mode="In" />
+          <Parameter Name="cn_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_Direccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="di_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="di_opcion" Type="char" Mode="In" />
+          <Parameter Name="di_IdDireccion" Type="int" Mode="InOut" />
+          <Parameter Name="di_tipoAsociado" Type="char" Mode="In" />
+          <Parameter Name="di_asociado" Type="int" Mode="In" />
+          <Parameter Name="di_TipoDireccion" Type="char" Mode="In" />
+          <Parameter Name="di_Direccion" Type="nvarchar" Mode="In" />
+          <Parameter Name="di_Direccion2" Type="nvarchar" Mode="In" />
+          <Parameter Name="di_zona" Type="char" Mode="In" />
+          <Parameter Name="di_municipio" Type="char" Mode="In" />
+          <Parameter Name="di_departamento" Type="char" Mode="In" />
+          <Parameter Name="di_pais" Type="char" Mode="In" />
+          <Parameter Name="di_usuario" Type="nvarchar" Mode="In" />
+          <Parameter Name="di_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_Foto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fo_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="fo_opcion" Type="char" Mode="In" />
+          <Parameter Name="fo_IdFoto" Type="int" Mode="InOut" />
+          <Parameter Name="fo_tipoAsociado" Type="char" Mode="In" />
+          <Parameter Name="fo_asociado" Type="int" Mode="In" />
+          <Parameter Name="fo_foto" Type="image" Mode="In" />
+          <Parameter Name="fo_usuario" Type="nvarchar" Mode="In" />
+          <Parameter Name="fo_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_Huella" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="hu_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="hu_opcion" Type="char" Mode="In" />
+          <Parameter Name="hu_IdHuella" Type="int" Mode="InOut" />
+          <Parameter Name="hu_tipoAsociado" Type="char" Mode="In" />
+          <Parameter Name="hu_asociado" Type="int" Mode="In" />
+          <Parameter Name="hu_huella" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="hu_mano" Type="varchar" Mode="In" />
+          <Parameter Name="hu_dedo" Type="varchar" Mode="In" />
+          <Parameter Name="hu_huella_long" Type="int" Mode="In" />
+          <Parameter Name="hu_usuario" Type="nvarchar" Mode="In" />
+          <Parameter Name="hu_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_NitFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nf_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="nf_opcion" Type="char" Mode="In" />
+          <Parameter Name="nf_nit" Type="nvarchar" Mode="InOut" />
+          <Parameter Name="nf_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="nf_Nombre" Type="nvarchar" Mode="In" />
+          <Parameter Name="nf_Direccion" Type="nvarchar" Mode="In" />
+          <Parameter Name="nf_actCentral" Type="int" Mode="In" />
+          <Parameter Name="nf_usuario" Type="nvarchar" Mode="In" />
+          <Parameter Name="nf_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_Opcion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="op_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="op_opcion" Type="char" Mode="In" />
+          <Parameter Name="op_codigoOpcion" Type="int" Mode="InOut" />
+          <Parameter Name="op_NombreOpcion" Type="varchar" Mode="In" />
+          <Parameter Name="op_DescOpcion" Type="varchar" Mode="In" />
+          <Parameter Name="op_PadreOpcion" Type="int" Mode="In" />
+          <Parameter Name="op_autenticar" Type="bit" Mode="In" />
+          <Parameter Name="op_Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="op_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_Perfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pf_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="pf_opcion" Type="char" Mode="In" />
+          <Parameter Name="pf_codPerfil" Type="int" Mode="InOut" />
+          <Parameter Name="pf_nomPerfil" Type="nvarchar" Mode="In" />
+          <Parameter Name="pf_DescPerfil" Type="nvarchar" Mode="In" />
+          <Parameter Name="pf_Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="pf_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_PerfilUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pu_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="pu_opcion" Type="char" Mode="In" />
+          <Parameter Name="pu_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="pu_codPerfilUsuario" Type="int" Mode="InOut" />
+          <Parameter Name="pu_codPerfil" Type="int" Mode="In" />
+          <Parameter Name="pu_codUsuario" Type="int" Mode="In" />
+          <Parameter Name="pu_Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="pu_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_Permiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pe_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="pe_opcion" Type="char" Mode="In" />
+          <Parameter Name="pe_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="pe_IdPermiso" Type="int" Mode="InOut" />
+          <Parameter Name="pe_CodPerfil" Type="int" Mode="In" />
+          <Parameter Name="pe_codigoOpcion" Type="int" Mode="In" />
+          <Parameter Name="pe_Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="pe_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pv_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="pv_opcion" Type="char" Mode="In" />
+          <Parameter Name="pv_proveedor" Type="int" Mode="InOut" />
+          <Parameter Name="pv_tipoProveedor" Type="char" Mode="In" />
+          <Parameter Name="pv_nombre1" Type="varchar" Mode="In" />
+          <Parameter Name="pv_nombre2" Type="varchar" Mode="In" />
+          <Parameter Name="pv_nit" Type="varchar" Mode="In" />
+          <Parameter Name="pv_Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="pv_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_Usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="us_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="us_opcion" Type="char" Mode="In" />
+          <Parameter Name="us_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="us_codUsuario" Type="int" Mode="InOut" />
+          <Parameter Name="us_usuario" Type="varchar" Mode="In" />
+          <Parameter Name="us_nombre" Type="varchar" Mode="In" />
+          <Parameter Name="us_password" Type="char" Mode="In" />
+          <Parameter Name="us_estUsuario" Type="char" Mode="In" />
+          <Parameter Name="us_IdEmpleado" Type="int" Mode="In" />
+          <Parameter Name="us_usuarioing" Type="nvarchar" Mode="In" />
+          <Parameter Name="us_resetPass" Type="int" Mode="In" />
+          <Parameter Name="us_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Asigna_PermisosPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ap_Empresa" Type="smallint" Mode="In" />
+          <Parameter Name="ap_idSucursal" Type="int" Mode="In" />
+          <Parameter Name="ap_CodPerfil" Type="int" Mode="In" />
+          <Parameter Name="ap_CodigoOpcion" Type="int" Mode="In" />
+          <Parameter Name="ap_Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="cl_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="cl_cliente" Type="int" Mode="In" />
+          <Parameter Name="cl_tipoCliente" Type="int" Mode="In" />
+          <Parameter Name="cl_tipoident" Type="int" Mode="In" />
+          <Parameter Name="cl_identifica" Type="varchar" Mode="In" />
+          <Parameter Name="cl_nit" Type="varchar" Mode="In" />
+          <Parameter Name="cl_nombre1" Type="varchar" Mode="In" />
+          <Parameter Name="cl_nombre2" Type="varchar" Mode="In" />
+          <Parameter Name="cl_nombre3" Type="varchar" Mode="In" />
+          <Parameter Name="cl_apellido1" Type="varchar" Mode="In" />
+          <Parameter Name="cl_apellido2" Type="varchar" Mode="In" />
+          <Parameter Name="cl_apecasada" Type="varchar" Mode="In" />
+          <Parameter Name="cl_fechanac" Type="date" Mode="In" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_Contacto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="cn_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="cn_idContacto" Type="int" Mode="In" />
+          <Parameter Name="cn_tipoasociado" Type="char" Mode="In" />
+          <Parameter Name="cn_asociado" Type="int" Mode="In" />
+          <Parameter Name="cn_tipoContacto" Type="char" Mode="In" />
+          <Parameter Name="cn_Contacto" Type="nvarchar" Mode="In" />
+          <Parameter Name="cn_Contacto2" Type="nvarchar" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_Direccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="di_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="di_idDireccion" Type="int" Mode="In" />
+          <Parameter Name="di_tipoasociado" Type="char" Mode="In" />
+          <Parameter Name="di_asociado" Type="int" Mode="In" />
+          <Parameter Name="di_tipoDireccion" Type="char" Mode="In" />
+          <Parameter Name="di_Direccion" Type="varchar" Mode="In" />
+          <Parameter Name="di_Direccion2" Type="varchar" Mode="In" />
+          <Parameter Name="di_zona" Type="varchar" Mode="In" />
+          <Parameter Name="di_municipio" Type="varchar" Mode="In" />
+          <Parameter Name="di_departamento" Type="varchar" Mode="In" />
+          <Parameter Name="di_pais" Type="varchar" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_Foto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="fo_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="fo_IdFoto" Type="int" Mode="In" />
+          <Parameter Name="fo_tipoAsociado" Type="char" Mode="In" />
+          <Parameter Name="fo_asociado" Type="int" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_Huella" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="hu_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="hu_IdHuella" Type="int" Mode="In" />
+          <Parameter Name="hu_tipoAsociado" Type="char" Mode="In" />
+          <Parameter Name="hu_asociado" Type="int" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_NitFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="nf_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="nf_nit" Type="varchar" Mode="In" />
+          <Parameter Name="nf_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="nf_Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="nf_Direccion" Type="varchar" Mode="In" />
+          <Parameter Name="nf_actCentral" Type="int" Mode="In" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_Opcion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="op_Empresa" Type="smallint" Mode="In" />
+          <Parameter Name="op_CodigoOpcion" Type="int" Mode="In" />
+          <Parameter Name="op_NombreOpcion" Type="varchar" Mode="In" />
+          <Parameter Name="op_DescOpcion" Type="varchar" Mode="In" />
+          <Parameter Name="op_PadreOpcion" Type="int" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_Perfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="pf_empresa" Type="int" Mode="In" />
+          <Parameter Name="pf_codPerfil" Type="int" Mode="In" />
+          <Parameter Name="pf_nomPerfil" Type="varchar" Mode="In" />
+          <Parameter Name="pf_descPerfil" Type="varchar" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_PerfilUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="pu_empresa" Type="int" Mode="In" />
+          <Parameter Name="pu_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="pu_codPerfil" Type="int" Mode="In" />
+          <Parameter Name="pu_codUsuario" Type="int" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_Permiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="pe_Empresa" Type="smallint" Mode="In" />
+          <Parameter Name="pe_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="pe_CodPerfil" Type="int" Mode="In" />
+          <Parameter Name="pe_CodigoOpcion" Type="int" Mode="In" />
+          <Parameter Name="pe_PadreOpcion" Type="int" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_PermisosUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="us_Empresa" Type="smallint" Mode="In" />
+          <Parameter Name="us_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="us_CodUsuario" Type="int" Mode="In" />
+          <Parameter Name="us_CodPerfil" Type="int" Mode="In" />
+          <Parameter Name="us_CodigoOpcion" Type="int" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="pv_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="pv_proveedor" Type="int" Mode="In" />
+          <Parameter Name="pv_tipoProveedor" Type="int" Mode="In" />
+          <Parameter Name="pv_nombre1" Type="varchar" Mode="In" />
+          <Parameter Name="pv_nombre2" Type="varchar" Mode="In" />
+          <Parameter Name="pv_nit" Type="varchar" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_Usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="us_empresa" Type="int" Mode="In" />
+          <Parameter Name="us_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="us_codUsuario" Type="int" Mode="In" />
+          <Parameter Name="us_usuario" Type="varchar" Mode="In" />
+          <Parameter Name="us_nombre" Type="varchar" Mode="In" />
+          <Parameter Name="us_estUsuario" Type="char" Mode="In" />
+          <Parameter Name="us_IdEmpleado" Type="int" Mode="In" />
+          <Parameter Name="error" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_CargaPermisos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cp_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="cp_codUsuario" Type="int" Mode="In" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="lg_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="lg_usuario" Type="varchar" Mode="In" />
+          <Parameter Name="lg_password" Type="varchar" Mode="In" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_RegistrosNuevos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cl_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ValidaCumpleanios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cl_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="cl_cliente" Type="int" Mode="In" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="SSS_PERSONASModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Foto" EntityType="Self.Foto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Huella" EntityType="Self.Huella" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NitFactura" EntityType="Self.NitFactura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="opcion" EntityType="Self.opcion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="perfil" EntityType="Self.perfil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="perfilusuario" EntityType="Self.perfilusuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="permiso" EntityType="Self.permiso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_UltimosTelefonos" EntityType="Self.vw_UltimosTelefonos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_UltimosTelefonos].[Empresa] AS [Empresa], 
+    [vw_UltimosTelefonos].[Asociado] AS [Asociado], 
+    [vw_UltimosTelefonos].[TelCelular] AS [TelCelular], 
+    [vw_UltimosTelefonos].[TelCasa] AS [TelCasa], 
+    [vw_UltimosTelefonos].[TelTrabajo] AS [TelTrabajo]
+    FROM [dbo].[vw_UltimosTelefonos] AS [vw_UltimosTelefonos]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SSS_PERSONASModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="cl_empresa" />
+            <PropertyRef Name="cl_cliente" />
+          </Key>
+          <Property Name="cl_empresa" Type="Int16" Nullable="false" />
+          <Property Name="cl_cliente" Type="Int32" Nullable="false" />
+          <Property Name="cl_tipoCliente" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="cl_ClasificacionCliente" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="cl_tipoident" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="cl_identifica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cl_nit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cl_nombre1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cl_nombre2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cl_nombre3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cl_apellido1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cl_apellido2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cl_apecasada" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cl_nombrelargo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="cl_genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="cl_fechanac" Type="DateTime" Precision="0" />
+          <Property Name="cl_ocupacion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="cl_estadocivil" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="cl_RecibePublicidad" Type="Int32" />
+          <Property Name="cl_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cl_fechamod" Type="DateTime" Precision="3" />
+          <Property Name="cl_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cl_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cl_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cl_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cl_estado" Type="Int32" Nullable="false" />
+          <Property Name="cl_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="cn_empresa" />
+            <PropertyRef Name="cn_idContacto" />
+          </Key>
+          <Property Name="cn_empresa" Type="Int16" Nullable="false" />
+          <Property Name="cn_idContacto" Type="Int32" Nullable="false" />
+          <Property Name="cn_tipoAsociado" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="cn_asociado" Type="Int32" Nullable="false" />
+          <Property Name="cn_tipoContacto" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="cn_Contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cn_Contacto2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cn_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cn_fechamod" Type="DateTime" Precision="3" />
+          <Property Name="cn_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cn_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cn_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cn_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cn_estado" Type="Int32" Nullable="false" />
+          <Property Name="cn_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="di_empresa" />
+            <PropertyRef Name="di_IdDireccion" />
+          </Key>
+          <Property Name="di_empresa" Type="Int16" Nullable="false" />
+          <Property Name="di_IdDireccion" Type="Int32" Nullable="false" />
+          <Property Name="di_TipoAsociado" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="di_asociado" Type="Int32" Nullable="false" />
+          <Property Name="di_TipoDireccion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="di_Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="di_Direccion2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="di_zona" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="di_municipio" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="di_departamento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="di_pais" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="di_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="di_fechamod" Type="DateTime" Precision="3" />
+          <Property Name="di_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="di_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="di_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="di_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="di_estado" Type="Int32" Nullable="false" />
+          <Property Name="di_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Foto">
+          <Key>
+            <PropertyRef Name="fo_empresa" />
+            <PropertyRef Name="fo_IdFoto" />
+          </Key>
+          <Property Name="fo_empresa" Type="Int16" Nullable="false" />
+          <Property Name="fo_IdFoto" Type="Int32" Nullable="false" />
+          <Property Name="fo_TipoAsociado" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="fo_asociado" Type="Int32" Nullable="false" />
+          <Property Name="fo_foto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="fo_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fo_fechamod" Type="DateTime" Precision="3" />
+          <Property Name="fo_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fo_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fo_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fo_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fo_estado" Type="Int32" Nullable="false" />
+          <Property Name="fo_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Huella">
+          <Key>
+            <PropertyRef Name="hu_IdHuella" />
+          </Key>
+          <Property Name="hu_empresa" Type="Int16" Nullable="false" />
+          <Property Name="hu_IdHuella" Type="Int32" Nullable="false" />
+          <Property Name="hu_TipoAsociado" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="hu_asociado" Type="Int32" Nullable="false" />
+          <Property Name="hu_huella" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="hu_mano" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hu_dedo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hu_huella_long" Type="Int32" />
+          <Property Name="hu_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="hu_fechamod" Type="DateTime" Precision="3" />
+          <Property Name="hu_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="hu_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hu_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="hu_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hu_estado" Type="Int32" Nullable="false" />
+          <Property Name="hu_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="NitFactura">
+          <Key>
+            <PropertyRef Name="nf_empresa" />
+            <PropertyRef Name="nf_Nit" />
+          </Key>
+          <Property Name="nf_empresa" Type="Int16" Nullable="false" />
+          <Property Name="nf_Nit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nf_IdSucursal" Type="Int32" Nullable="false" />
+          <Property Name="nf_Nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nf_Direccion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nf_actCentral" Type="Int32" Nullable="false" />
+          <Property Name="nf_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="nf_fechamod" Type="DateTime" Precision="3" />
+          <Property Name="nf_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nf_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nf_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nf_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nf_estado" Type="Int32" Nullable="false" />
+          <Property Name="nf_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="opcion">
+          <Key>
+            <PropertyRef Name="op_Empresa" />
+            <PropertyRef Name="op_CodigoOpcion" />
+          </Key>
+          <Property Name="op_Empresa" Type="Int16" Nullable="false" />
+          <Property Name="op_CodigoOpcion" Type="Int32" Nullable="false" />
+          <Property Name="op_NombreOpcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="op_DescOpcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="op_PadreOpcion" Type="Int32" />
+          <Property Name="op_Autenticar" Type="Boolean" Nullable="false" />
+          <Property Name="op_FechaIng" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="op_FechaMod" Type="DateTime" Precision="3" />
+          <Property Name="op_UsuarioIng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="op_UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="op_MaquinaIng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="op_MaquinaMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="op_Estado" Type="Int32" Nullable="false" />
+          <Property Name="op_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="perfil">
+          <Key>
+            <PropertyRef Name="pf_empresa" />
+            <PropertyRef Name="pf_codPerfil" />
+          </Key>
+          <Property Name="pf_empresa" Type="Int32" Nullable="false" />
+          <Property Name="pf_codPerfil" Type="Int32" Nullable="false" />
+          <Property Name="pf_nomPerfil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pf_descPerfil" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pf_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="pf_fechamod" Type="DateTime" Precision="3" />
+          <Property Name="pf_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pf_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pf_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pf_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pf_estado" Type="Int32" Nullable="false" />
+          <Property Name="pf_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="perfilusuario">
+          <Key>
+            <PropertyRef Name="pu_empresa" />
+            <PropertyRef Name="pu_IdSucursal" />
+            <PropertyRef Name="pu_CodPerfilUsuario" />
+          </Key>
+          <Property Name="pu_empresa" Type="Int32" Nullable="false" />
+          <Property Name="pu_IdSucursal" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="pu_CodPerfilUsuario" Type="Int32" Nullable="false" />
+          <Property Name="pu_codPerfil" Type="Int32" Nullable="false" />
+          <Property Name="pu_codUsuario" Type="Int32" Nullable="false" />
+          <Property Name="pu_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="pu_fechamod" Type="DateTime" Precision="3" />
+          <Property Name="pu_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pu_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pu_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pu_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pu_estado" Type="Int32" Nullable="false" />
+          <Property Name="pu_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="permiso">
+          <Key>
+            <PropertyRef Name="pe_empresa" />
+            <PropertyRef Name="pe_IdSucursal" />
+            <PropertyRef Name="pe_IdPermiso" />
+          </Key>
+          <Property Name="pe_empresa" Type="Int16" Nullable="false" />
+          <Property Name="pe_IdSucursal" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="pe_IdPermiso" Type="Int32" Nullable="false" />
+          <Property Name="pe_CodPerfil" Type="Int32" Nullable="false" />
+          <Property Name="pe_CodigoOpcion" Type="Int32" Nullable="false" />
+          <Property Name="pe_FechaIng" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="pe_FechaMod" Type="DateTime" Precision="3" />
+          <Property Name="pe_UsuarioIng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pe_UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pe_MaquinaIng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pe_MaquinaMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pe_estado" Type="Int32" Nullable="false" />
+          <Property Name="pe_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="pv_empresa" />
+            <PropertyRef Name="pv_proveedor" />
+          </Key>
+          <Property Name="pv_empresa" Type="Int16" Nullable="false" />
+          <Property Name="pv_proveedor" Type="Int32" Nullable="false" />
+          <Property Name="pv_tipoProveedor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="pv_nombre1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pv_nombre2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pv_nit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pv_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="pv_fechamod" Type="DateTime" Precision="3" />
+          <Property Name="pv_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pv_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pv_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pv_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pv_estado" Type="Int32" Nullable="false" />
+          <Property Name="pv_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="us_empresa" />
+            <PropertyRef Name="us_IdSucursal" />
+            <PropertyRef Name="us_codUsuario" />
+          </Key>
+          <Property Name="us_empresa" Type="Int16" Nullable="false" />
+          <Property Name="us_IdSucursal" Type="Int32" Nullable="false" />
+          <Property Name="us_codUsuario" Type="Int32" Nullable="false" />
+          <Property Name="us_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="us_nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="us_password" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="us_estUsuario" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="us_IdEmpleado" Type="Int32" />
+          <Property Name="us_resetPass" Type="Int32" Nullable="false" />
+          <Property Name="us_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="us_fechamod" Type="DateTime" Precision="3" />
+          <Property Name="us_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="us_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="us_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="us_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="us_estado" Type="Int32" Nullable="false" />
+          <Property Name="us_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="vw_UltimosTelefonos">
+          <Key>
+            <PropertyRef Name="Empresa" />
+            <PropertyRef Name="Asociado" />
+          </Key>
+          <Property Name="Empresa" Type="Int16" Nullable="false" />
+          <Property Name="Asociado" Type="Int32" Nullable="false" />
+          <Property Name="TelCelular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelTrabajo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="SSS_PERSONASEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="Contacto" EntityType="Self.Contacto" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" />
+          <EntitySet Name="Foto" EntityType="Self.Foto" />
+          <EntitySet Name="Huella" EntityType="Self.Huella" />
+          <EntitySet Name="NitFactura" EntityType="Self.NitFactura" />
+          <EntitySet Name="opcion" EntityType="Self.opcion" />
+          <EntitySet Name="perfil" EntityType="Self.perfil" />
+          <EntitySet Name="perfilusuario" EntityType="Self.perfilusuario" />
+          <EntitySet Name="permiso" EntityType="Self.permiso" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <EntitySet Name="vw_UltimosTelefonos" EntityType="Self.vw_UltimosTelefonos" />
+          <FunctionImport Name="sp_ABC_Cliente">
+            <Parameter Name="cl_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="cl_opcion" Mode="In" Type="String" />
+            <Parameter Name="cl_cliente" Mode="InOut" Type="Int32" />
+            <Parameter Name="cl_tipoCliente" Mode="In" Type="String" />
+            <Parameter Name="cl_ClasificacionCliente" Mode="In" Type="String" />
+            <Parameter Name="cl_tipoident" Mode="In" Type="String" />
+            <Parameter Name="cl_identifica" Mode="In" Type="String" />
+            <Parameter Name="cl_nit" Mode="In" Type="String" />
+            <Parameter Name="cl_nombre1" Mode="In" Type="String" />
+            <Parameter Name="cl_nombre2" Mode="In" Type="String" />
+            <Parameter Name="cl_nombre3" Mode="In" Type="String" />
+            <Parameter Name="cl_apellido1" Mode="In" Type="String" />
+            <Parameter Name="cl_apellido2" Mode="In" Type="String" />
+            <Parameter Name="cl_apecasada" Mode="In" Type="String" />
+            <Parameter Name="cl_genero" Mode="In" Type="String" />
+            <Parameter Name="cl_fechanac" Mode="In" Type="DateTime" />
+            <Parameter Name="cl_ocupacion" Mode="In" Type="String" />
+            <Parameter Name="cl_estadocivil" Mode="In" Type="String" />
+            <Parameter Name="cl_RecibePublicidad" Mode="In" Type="Int32" />
+            <Parameter Name="cl_usuario" Mode="In" Type="String" />
+            <Parameter Name="cl_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_Contacto">
+            <Parameter Name="cn_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="cn_opcion" Mode="In" Type="String" />
+            <Parameter Name="cn_IdContacto" Mode="InOut" Type="Int32" />
+            <Parameter Name="cn_tipoAsociado" Mode="In" Type="String" />
+            <Parameter Name="cn_asociado" Mode="In" Type="Int32" />
+            <Parameter Name="cn_tipoContacto" Mode="In" Type="String" />
+            <Parameter Name="cn_contacto" Mode="In" Type="String" />
+            <Parameter Name="cn_contacto2" Mode="In" Type="String" />
+            <Parameter Name="cn_usuario" Mode="In" Type="String" />
+            <Parameter Name="cn_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_Direccion">
+            <Parameter Name="di_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="di_opcion" Mode="In" Type="String" />
+            <Parameter Name="di_IdDireccion" Mode="InOut" Type="Int32" />
+            <Parameter Name="di_tipoAsociado" Mode="In" Type="String" />
+            <Parameter Name="di_asociado" Mode="In" Type="Int32" />
+            <Parameter Name="di_TipoDireccion" Mode="In" Type="String" />
+            <Parameter Name="di_Direccion" Mode="In" Type="String" />
+            <Parameter Name="di_Direccion2" Mode="In" Type="String" />
+            <Parameter Name="di_zona" Mode="In" Type="String" />
+            <Parameter Name="di_municipio" Mode="In" Type="String" />
+            <Parameter Name="di_departamento" Mode="In" Type="String" />
+            <Parameter Name="di_pais" Mode="In" Type="String" />
+            <Parameter Name="di_usuario" Mode="In" Type="String" />
+            <Parameter Name="di_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_Foto">
+            <Parameter Name="fo_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="fo_opcion" Mode="In" Type="String" />
+            <Parameter Name="fo_IdFoto" Mode="InOut" Type="Int32" />
+            <Parameter Name="fo_tipoAsociado" Mode="In" Type="String" />
+            <Parameter Name="fo_asociado" Mode="In" Type="Int32" />
+            <Parameter Name="fo_foto" Mode="In" Type="Binary" />
+            <Parameter Name="fo_usuario" Mode="In" Type="String" />
+            <Parameter Name="fo_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_Huella">
+            <Parameter Name="hu_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="hu_opcion" Mode="In" Type="String" />
+            <Parameter Name="hu_IdHuella" Mode="InOut" Type="Int32" />
+            <Parameter Name="hu_tipoAsociado" Mode="In" Type="String" />
+            <Parameter Name="hu_asociado" Mode="In" Type="Int32" />
+            <Parameter Name="hu_huella" Mode="In" Type="Binary" />
+            <Parameter Name="hu_mano" Mode="In" Type="String" />
+            <Parameter Name="hu_dedo" Mode="In" Type="String" />
+            <Parameter Name="hu_huella_long" Mode="In" Type="Int32" />
+            <Parameter Name="hu_usuario" Mode="In" Type="String" />
+            <Parameter Name="hu_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_NitFactura">
+            <Parameter Name="nf_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="nf_opcion" Mode="In" Type="String" />
+            <Parameter Name="nf_nit" Mode="InOut" Type="String" />
+            <Parameter Name="nf_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="nf_Nombre" Mode="In" Type="String" />
+            <Parameter Name="nf_Direccion" Mode="In" Type="String" />
+            <Parameter Name="nf_actCentral" Mode="In" Type="Int32" />
+            <Parameter Name="nf_usuario" Mode="In" Type="String" />
+            <Parameter Name="nf_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_Opcion">
+            <Parameter Name="op_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="op_opcion" Mode="In" Type="String" />
+            <Parameter Name="op_codigoOpcion" Mode="InOut" Type="Int32" />
+            <Parameter Name="op_NombreOpcion" Mode="In" Type="String" />
+            <Parameter Name="op_DescOpcion" Mode="In" Type="String" />
+            <Parameter Name="op_PadreOpcion" Mode="In" Type="Int32" />
+            <Parameter Name="op_autenticar" Mode="In" Type="Boolean" />
+            <Parameter Name="op_Usuario" Mode="In" Type="String" />
+            <Parameter Name="op_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_Perfil">
+            <Parameter Name="pf_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="pf_opcion" Mode="In" Type="String" />
+            <Parameter Name="pf_codPerfil" Mode="InOut" Type="Int32" />
+            <Parameter Name="pf_nomPerfil" Mode="In" Type="String" />
+            <Parameter Name="pf_DescPerfil" Mode="In" Type="String" />
+            <Parameter Name="pf_Usuario" Mode="In" Type="String" />
+            <Parameter Name="pf_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_PerfilUsuario">
+            <Parameter Name="pu_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="pu_opcion" Mode="In" Type="String" />
+            <Parameter Name="pu_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="pu_codPerfilUsuario" Mode="InOut" Type="Int32" />
+            <Parameter Name="pu_codPerfil" Mode="In" Type="Int32" />
+            <Parameter Name="pu_codUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="pu_Usuario" Mode="In" Type="String" />
+            <Parameter Name="pu_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_Permiso">
+            <Parameter Name="pe_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="pe_opcion" Mode="In" Type="String" />
+            <Parameter Name="pe_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="pe_IdPermiso" Mode="InOut" Type="Int32" />
+            <Parameter Name="pe_CodPerfil" Mode="In" Type="Int32" />
+            <Parameter Name="pe_codigoOpcion" Mode="In" Type="Int32" />
+            <Parameter Name="pe_Usuario" Mode="In" Type="String" />
+            <Parameter Name="pe_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_Proveedor">
+            <Parameter Name="pv_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="pv_opcion" Mode="In" Type="String" />
+            <Parameter Name="pv_proveedor" Mode="InOut" Type="Int32" />
+            <Parameter Name="pv_tipoProveedor" Mode="In" Type="String" />
+            <Parameter Name="pv_nombre1" Mode="In" Type="String" />
+            <Parameter Name="pv_nombre2" Mode="In" Type="String" />
+            <Parameter Name="pv_nit" Mode="In" Type="String" />
+            <Parameter Name="pv_Usuario" Mode="In" Type="String" />
+            <Parameter Name="pv_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_Usuario">
+            <Parameter Name="us_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="us_opcion" Mode="In" Type="String" />
+            <Parameter Name="us_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="us_codUsuario" Mode="InOut" Type="Int32" />
+            <Parameter Name="us_usuario" Mode="In" Type="String" />
+            <Parameter Name="us_nombre" Mode="In" Type="String" />
+            <Parameter Name="us_password" Mode="In" Type="String" />
+            <Parameter Name="us_estUsuario" Mode="In" Type="String" />
+            <Parameter Name="us_IdEmpleado" Mode="In" Type="Int32" />
+            <Parameter Name="us_usuarioing" Mode="In" Type="String" />
+            <Parameter Name="us_resetPass" Mode="In" Type="Int32" />
+            <Parameter Name="us_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Asigna_PermisosPerfil">
+            <Parameter Name="ap_Empresa" Mode="In" Type="Int16" />
+            <Parameter Name="ap_idSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="ap_CodPerfil" Mode="In" Type="Int32" />
+            <Parameter Name="ap_CodigoOpcion" Mode="In" Type="Int32" />
+            <Parameter Name="ap_Usuario" Mode="In" Type="String" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_Cliente" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_Cliente_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="cl_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="cl_cliente" Mode="In" Type="Int32" />
+            <Parameter Name="cl_tipoCliente" Mode="In" Type="Int32" />
+            <Parameter Name="cl_tipoident" Mode="In" Type="Int32" />
+            <Parameter Name="cl_identifica" Mode="In" Type="String" />
+            <Parameter Name="cl_nit" Mode="In" Type="String" />
+            <Parameter Name="cl_nombre1" Mode="In" Type="String" />
+            <Parameter Name="cl_nombre2" Mode="In" Type="String" />
+            <Parameter Name="cl_nombre3" Mode="In" Type="String" />
+            <Parameter Name="cl_apellido1" Mode="In" Type="String" />
+            <Parameter Name="cl_apellido2" Mode="In" Type="String" />
+            <Parameter Name="cl_apecasada" Mode="In" Type="String" />
+            <Parameter Name="cl_fechanac" Mode="In" Type="DateTime" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_Contacto" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_Contacto_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="cn_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="cn_idContacto" Mode="In" Type="Int32" />
+            <Parameter Name="cn_tipoasociado" Mode="In" Type="String" />
+            <Parameter Name="cn_asociado" Mode="In" Type="Int32" />
+            <Parameter Name="cn_tipoContacto" Mode="In" Type="String" />
+            <Parameter Name="cn_Contacto" Mode="In" Type="String" />
+            <Parameter Name="cn_Contacto2" Mode="In" Type="String" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_Direccion" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_Direccion_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="di_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="di_idDireccion" Mode="In" Type="Int32" />
+            <Parameter Name="di_tipoasociado" Mode="In" Type="String" />
+            <Parameter Name="di_asociado" Mode="In" Type="Int32" />
+            <Parameter Name="di_tipoDireccion" Mode="In" Type="String" />
+            <Parameter Name="di_Direccion" Mode="In" Type="String" />
+            <Parameter Name="di_Direccion2" Mode="In" Type="String" />
+            <Parameter Name="di_zona" Mode="In" Type="String" />
+            <Parameter Name="di_municipio" Mode="In" Type="String" />
+            <Parameter Name="di_departamento" Mode="In" Type="String" />
+            <Parameter Name="di_pais" Mode="In" Type="String" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_Foto" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_Foto_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="fo_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="fo_IdFoto" Mode="In" Type="Int32" />
+            <Parameter Name="fo_tipoAsociado" Mode="In" Type="String" />
+            <Parameter Name="fo_asociado" Mode="In" Type="Int32" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_Huella" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_Huella_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="hu_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="hu_IdHuella" Mode="In" Type="Int32" />
+            <Parameter Name="hu_tipoAsociado" Mode="In" Type="String" />
+            <Parameter Name="hu_asociado" Mode="In" Type="Int32" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_NitFactura" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_NitFactura_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="nf_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="nf_nit" Mode="In" Type="String" />
+            <Parameter Name="nf_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="nf_Nombre" Mode="In" Type="String" />
+            <Parameter Name="nf_Direccion" Mode="In" Type="String" />
+            <Parameter Name="nf_actCentral" Mode="In" Type="Int32" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_Opcion" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_Opcion_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="op_Empresa" Mode="In" Type="Int16" />
+            <Parameter Name="op_CodigoOpcion" Mode="In" Type="Int32" />
+            <Parameter Name="op_NombreOpcion" Mode="In" Type="String" />
+            <Parameter Name="op_DescOpcion" Mode="In" Type="String" />
+            <Parameter Name="op_PadreOpcion" Mode="In" Type="Int32" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_Perfil" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_Perfil_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="pf_empresa" Mode="In" Type="Int32" />
+            <Parameter Name="pf_codPerfil" Mode="In" Type="Int32" />
+            <Parameter Name="pf_nomPerfil" Mode="In" Type="String" />
+            <Parameter Name="pf_descPerfil" Mode="In" Type="String" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_PerfilUsuario" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_PerfilUsuario_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="pu_empresa" Mode="In" Type="Int32" />
+            <Parameter Name="pu_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="pu_codPerfil" Mode="In" Type="Int32" />
+            <Parameter Name="pu_codUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_Permiso" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_Permiso_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="pe_Empresa" Mode="In" Type="Int16" />
+            <Parameter Name="pe_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="pe_CodPerfil" Mode="In" Type="Int32" />
+            <Parameter Name="pe_CodigoOpcion" Mode="In" Type="Int32" />
+            <Parameter Name="pe_PadreOpcion" Mode="In" Type="Int32" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_PermisosUsuario" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_PermisosUsuario_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="us_Empresa" Mode="In" Type="Int16" />
+            <Parameter Name="us_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="us_CodUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="us_CodPerfil" Mode="In" Type="Int32" />
+            <Parameter Name="us_CodigoOpcion" Mode="In" Type="Int32" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_Proveedor" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_Proveedor_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="pv_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="pv_proveedor" Mode="In" Type="Int32" />
+            <Parameter Name="pv_tipoProveedor" Mode="In" Type="Int32" />
+            <Parameter Name="pv_nombre1" Mode="In" Type="String" />
+            <Parameter Name="pv_nombre2" Mode="In" Type="String" />
+            <Parameter Name="pv_nit" Mode="In" Type="String" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_Usuario" ReturnType="Collection(SSS_PERSONASModel.sp_Busqueda_Usuario_Result)">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="us_empresa" Mode="In" Type="Int32" />
+            <Parameter Name="us_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="us_codUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="us_usuario" Mode="In" Type="String" />
+            <Parameter Name="us_nombre" Mode="In" Type="String" />
+            <Parameter Name="us_estUsuario" Mode="In" Type="String" />
+            <Parameter Name="us_IdEmpleado" Mode="In" Type="Int32" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CargaPermisos" ReturnType="Collection(SSS_PERSONASModel.sp_CargaPermisos_Result)">
+            <Parameter Name="cp_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="cp_codUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Login" ReturnType="Collection(SSS_PERSONASModel.sp_Login_Result)">
+            <Parameter Name="lg_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="lg_usuario" Mode="In" Type="String" />
+            <Parameter Name="lg_password" Mode="In" Type="String" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RegistrosNuevos">
+            <Parameter Name="cl_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ValidaCumpleanios" ReturnType="Collection(SSS_PERSONASModel.sp_ValidaCumpleanios_Result)">
+            <Parameter Name="cl_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="cl_cliente" Mode="In" Type="Int32" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_Busqueda_Cliente_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="Cliente" Nullable="false" />
+          <Property Type="String" Name="TipoCliente" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="NombreTipoCliente" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ClasificacionCliente" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="NombreClasificacionCliente" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TipoIdentificacion" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="NombreTipoIdenficacion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Identificacion" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Nit" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Nombre1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Nombre2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Nombre3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Apellido1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Apellido2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ApeCasada" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NombreLargo" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Genero" Nullable="false" MaxLength="1" />
+          <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" />
+          <Property Type="String" Name="Ocupacion" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="NombreOcupacion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EstadoCivil" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="NombreEstadoCivil" Nullable="true" MaxLength="100" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_Contacto_Result">
+          <Property Type="Int32" Name="IdContacto" Nullable="false" />
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="String" Name="TipoAsociado" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="NombreTipoAsociado" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Asociado" Nullable="false" />
+          <Property Type="String" Name="TipoContacto" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="NombreTipoDireccion" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Contacto" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Contacto2" Nullable="true" MaxLength="50" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_Direccion_Result">
+          <Property Type="Int32" Name="IdDireccion" Nullable="false" />
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="String" Name="TipoAsociado" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="NombreTipoAsociado" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Asociado" Nullable="false" />
+          <Property Type="String" Name="TipoDireccion" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="NombreTipoDireccion" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Direccion" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Direccion2" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Zona" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Municipio" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="NombreMunicipio" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Departamento" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="NombreDepartamento" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Pais" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="NombrePais" Nullable="false" MaxLength="100" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_Foto_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="IdFoto" Nullable="false" />
+          <Property Type="String" Name="TipoAsociado" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="Asociado" Nullable="false" />
+          <Property Type="Binary" Name="Foto" Nullable="false" MaxLength="Max" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_Huella_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="IdHuella" Nullable="false" />
+          <Property Type="String" Name="TipoAsociado" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="Asociado" Nullable="false" />
+          <Property Type="Binary" Name="Huella" Nullable="false" />
+          <Property Type="Int32" Name="longitudHuella" Nullable="true" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_NitFactura_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="true" />
+          <Property Type="String" Name="Nit" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="CodigoSucursal" Nullable="true" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="Direccion" Nullable="false" MaxLength="6" />
+          <Property Type="Int32" Name="CORRELATIVO" Nullable="false" />
+          <Property Type="Int32" Name="ActualizaCentral" Nullable="false" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="Prioridad" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_Opcion_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="CodigoOpcion" Nullable="false" />
+          <Property Type="String" Name="NombreOpcion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DescripcionOpcion" Nullable="true" MaxLength="150" />
+          <Property Type="Int32" Name="PadreOpcion" Nullable="false" />
+          <Property Type="Boolean" Name="Autenticar" Nullable="false" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_Perfil_Result">
+          <Property Type="Int32" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="CodigoPerfil" Nullable="false" />
+          <Property Type="String" Name="NombrePerfil" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DescripcionPerfil" Nullable="false" MaxLength="150" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_PerfilUsuario_Result">
+          <Property Type="Int32" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="CodigoPerfil" Nullable="false" />
+          <Property Type="String" Name="NombrePerfil" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="CodigoUsuario" Nullable="false" />
+          <Property Type="String" Name="NombreUsuario" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="DescripcionPerfil" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="CodigoPerfilUsuario" Nullable="true" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_Permiso_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="CodigoPerfil" Nullable="false" />
+          <Property Type="String" Name="Perfil" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="CodigoOpcion" Nullable="false" />
+          <Property Type="String" Name="Opcion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DescOpcion" Nullable="true" MaxLength="150" />
+          <Property Type="Int32" Name="Padre" Nullable="false" />
+          <Property Type="Boolean" Name="Autenticar" Nullable="false" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_PermisosUsuario_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="CodUsuario" Nullable="false" />
+          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NombreUsuario" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="EstadoUsuario" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="CodigoPerfil" Nullable="false" />
+          <Property Type="String" Name="Perfil" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="CodigoOpcion" Nullable="false" />
+          <Property Type="Int32" Name="PadreOpcion" Nullable="true" />
+          <Property Type="String" Name="Opcion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DescOpcion" Nullable="true" MaxLength="150" />
+          <Property Type="Boolean" Name="Autenticar" Nullable="false" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_Proveedor_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="Proveedor" Nullable="false" />
+          <Property Type="String" Name="TipoProveedor" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="NombreTipoProveedor" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Nombre1" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Nombre2" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Nit" Nullable="true" MaxLength="50" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_Usuario_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="CodigoUsuario" Nullable="false" />
+          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NombreUsuario" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="EstadoUsuario" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="CodigoEmpleado" Nullable="true" />
+          <Property Type="String" Name="NombreLargoEmpleado" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="TipoEmpleado" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="TipoIdentificacion" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Identificacion" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IniciaPass" Nullable="false" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_CargaPermisos_Result">
+          <Property Type="Int32" Name="us_codusuario" Nullable="false" />
+          <Property Type="String" Name="us_usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="us_nombre" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="pf_codPerfil" Nullable="false" />
+          <Property Type="String" Name="pf_nomperfil" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="pf_descperfil" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="op_codigoopcion" Nullable="false" />
+          <Property Type="String" Name="op_nombreopcion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="op_descopcion" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="CodPadre" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Padre" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_Login_Result">
+          <Property Type="Int32" Name="codigo" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="resetpass" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_ValidaCumpleanios_Result">
+          <Property Type="String" Name="NombreLargo" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SSS_PERSONASModelStoreContainer" CdmEntityContainer="SSS_PERSONASEntities">
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="cl_empresa" ColumnName="cl_empresa" />
+                <ScalarProperty Name="cl_cliente" ColumnName="cl_cliente" />
+                <ScalarProperty Name="cl_tipoCliente" ColumnName="cl_tipoCliente" />
+                <ScalarProperty Name="cl_ClasificacionCliente" ColumnName="cl_ClasificacionCliente" />
+                <ScalarProperty Name="cl_tipoident" ColumnName="cl_tipoident" />
+                <ScalarProperty Name="cl_identifica" ColumnName="cl_identifica" />
+                <ScalarProperty Name="cl_nit" ColumnName="cl_nit" />
+                <ScalarProperty Name="cl_nombre1" ColumnName="cl_nombre1" />
+                <ScalarProperty Name="cl_nombre2" ColumnName="cl_nombre2" />
+                <ScalarProperty Name="cl_nombre3" ColumnName="cl_nombre3" />
+                <ScalarProperty Name="cl_apellido1" ColumnName="cl_apellido1" />
+                <ScalarProperty Name="cl_apellido2" ColumnName="cl_apellido2" />
+                <ScalarProperty Name="cl_apecasada" ColumnName="cl_apecasada" />
+                <ScalarProperty Name="cl_nombrelargo" ColumnName="cl_nombrelargo" />
+                <ScalarProperty Name="cl_genero" ColumnName="cl_genero" />
+                <ScalarProperty Name="cl_fechanac" ColumnName="cl_fechanac" />
+                <ScalarProperty Name="cl_ocupacion" ColumnName="cl_ocupacion" />
+                <ScalarProperty Name="cl_estadocivil" ColumnName="cl_estadocivil" />
+                <ScalarProperty Name="cl_RecibePublicidad" ColumnName="cl_RecibePublicidad" />
+                <ScalarProperty Name="cl_fechaing" ColumnName="cl_fechaing" />
+                <ScalarProperty Name="cl_fechamod" ColumnName="cl_fechamod" />
+                <ScalarProperty Name="cl_usuarioing" ColumnName="cl_usuarioing" />
+                <ScalarProperty Name="cl_usuariomod" ColumnName="cl_usuariomod" />
+                <ScalarProperty Name="cl_maquinaing" ColumnName="cl_maquinaing" />
+                <ScalarProperty Name="cl_maquinamod" ColumnName="cl_maquinamod" />
+                <ScalarProperty Name="cl_estado" ColumnName="cl_estado" />
+                <ScalarProperty Name="cl_timestamp" ColumnName="cl_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacto">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.Contacto">
+              <MappingFragment StoreEntitySet="Contacto">
+                <ScalarProperty Name="cn_empresa" ColumnName="cn_empresa" />
+                <ScalarProperty Name="cn_idContacto" ColumnName="cn_idContacto" />
+                <ScalarProperty Name="cn_tipoAsociado" ColumnName="cn_tipoAsociado" />
+                <ScalarProperty Name="cn_asociado" ColumnName="cn_asociado" />
+                <ScalarProperty Name="cn_tipoContacto" ColumnName="cn_tipoContacto" />
+                <ScalarProperty Name="cn_Contacto" ColumnName="cn_Contacto" />
+                <ScalarProperty Name="cn_Contacto2" ColumnName="cn_Contacto2" />
+                <ScalarProperty Name="cn_fechaing" ColumnName="cn_fechaing" />
+                <ScalarProperty Name="cn_fechamod" ColumnName="cn_fechamod" />
+                <ScalarProperty Name="cn_usuarioing" ColumnName="cn_usuarioing" />
+                <ScalarProperty Name="cn_usuariomod" ColumnName="cn_usuariomod" />
+                <ScalarProperty Name="cn_maquinaing" ColumnName="cn_maquinaing" />
+                <ScalarProperty Name="cn_maquinamod" ColumnName="cn_maquinamod" />
+                <ScalarProperty Name="cn_estado" ColumnName="cn_estado" />
+                <ScalarProperty Name="cn_timestamp" ColumnName="cn_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direccion">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.Direccion">
+              <MappingFragment StoreEntitySet="Direccion">
+                <ScalarProperty Name="di_empresa" ColumnName="di_empresa" />
+                <ScalarProperty Name="di_IdDireccion" ColumnName="di_IdDireccion" />
+                <ScalarProperty Name="di_TipoAsociado" ColumnName="di_TipoAsociado" />
+                <ScalarProperty Name="di_asociado" ColumnName="di_asociado" />
+                <ScalarProperty Name="di_TipoDireccion" ColumnName="di_TipoDireccion" />
+                <ScalarProperty Name="di_Direccion" ColumnName="di_Direccion" />
+                <ScalarProperty Name="di_Direccion2" ColumnName="di_Direccion2" />
+                <ScalarProperty Name="di_zona" ColumnName="di_zona" />
+                <ScalarProperty Name="di_municipio" ColumnName="di_municipio" />
+                <ScalarProperty Name="di_departamento" ColumnName="di_departamento" />
+                <ScalarProperty Name="di_pais" ColumnName="di_pais" />
+                <ScalarProperty Name="di_fechaing" ColumnName="di_fechaing" />
+                <ScalarProperty Name="di_fechamod" ColumnName="di_fechamod" />
+                <ScalarProperty Name="di_usuarioing" ColumnName="di_usuarioing" />
+                <ScalarProperty Name="di_usuariomod" ColumnName="di_usuariomod" />
+                <ScalarProperty Name="di_maquinaing" ColumnName="di_maquinaing" />
+                <ScalarProperty Name="di_maquinamod" ColumnName="di_maquinamod" />
+                <ScalarProperty Name="di_estado" ColumnName="di_estado" />
+                <ScalarProperty Name="di_timestamp" ColumnName="di_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Foto">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.Foto">
+              <MappingFragment StoreEntitySet="Foto">
+                <ScalarProperty Name="fo_empresa" ColumnName="fo_empresa" />
+                <ScalarProperty Name="fo_IdFoto" ColumnName="fo_IdFoto" />
+                <ScalarProperty Name="fo_TipoAsociado" ColumnName="fo_TipoAsociado" />
+                <ScalarProperty Name="fo_asociado" ColumnName="fo_asociado" />
+                <ScalarProperty Name="fo_foto" ColumnName="fo_foto" />
+                <ScalarProperty Name="fo_fechaing" ColumnName="fo_fechaing" />
+                <ScalarProperty Name="fo_fechamod" ColumnName="fo_fechamod" />
+                <ScalarProperty Name="fo_usuarioing" ColumnName="fo_usuarioing" />
+                <ScalarProperty Name="fo_usuariomod" ColumnName="fo_usuariomod" />
+                <ScalarProperty Name="fo_maquinaing" ColumnName="fo_maquinaing" />
+                <ScalarProperty Name="fo_maquinamod" ColumnName="fo_maquinamod" />
+                <ScalarProperty Name="fo_estado" ColumnName="fo_estado" />
+                <ScalarProperty Name="fo_timestamp" ColumnName="fo_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Huella">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.Huella">
+              <MappingFragment StoreEntitySet="Huella">
+                <ScalarProperty Name="hu_empresa" ColumnName="hu_empresa" />
+                <ScalarProperty Name="hu_IdHuella" ColumnName="hu_IdHuella" />
+                <ScalarProperty Name="hu_TipoAsociado" ColumnName="hu_TipoAsociado" />
+                <ScalarProperty Name="hu_asociado" ColumnName="hu_asociado" />
+                <ScalarProperty Name="hu_huella" ColumnName="hu_huella" />
+                <ScalarProperty Name="hu_mano" ColumnName="hu_mano" />
+                <ScalarProperty Name="hu_dedo" ColumnName="hu_dedo" />
+                <ScalarProperty Name="hu_huella_long" ColumnName="hu_huella_long" />
+                <ScalarProperty Name="hu_fechaing" ColumnName="hu_fechaing" />
+                <ScalarProperty Name="hu_fechamod" ColumnName="hu_fechamod" />
+                <ScalarProperty Name="hu_usuarioing" ColumnName="hu_usuarioing" />
+                <ScalarProperty Name="hu_usuariomod" ColumnName="hu_usuariomod" />
+                <ScalarProperty Name="hu_maquinaing" ColumnName="hu_maquinaing" />
+                <ScalarProperty Name="hu_maquinamod" ColumnName="hu_maquinamod" />
+                <ScalarProperty Name="hu_estado" ColumnName="hu_estado" />
+                <ScalarProperty Name="hu_timestamp" ColumnName="hu_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NitFactura">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.NitFactura">
+              <MappingFragment StoreEntitySet="NitFactura">
+                <ScalarProperty Name="nf_empresa" ColumnName="nf_empresa" />
+                <ScalarProperty Name="nf_Nit" ColumnName="nf_Nit" />
+                <ScalarProperty Name="nf_IdSucursal" ColumnName="nf_IdSucursal" />
+                <ScalarProperty Name="nf_Nombre" ColumnName="nf_Nombre" />
+                <ScalarProperty Name="nf_Direccion" ColumnName="nf_Direccion" />
+                <ScalarProperty Name="nf_actCentral" ColumnName="nf_actCentral" />
+                <ScalarProperty Name="nf_fechaing" ColumnName="nf_fechaing" />
+                <ScalarProperty Name="nf_fechamod" ColumnName="nf_fechamod" />
+                <ScalarProperty Name="nf_usuarioing" ColumnName="nf_usuarioing" />
+                <ScalarProperty Name="nf_usuariomod" ColumnName="nf_usuariomod" />
+                <ScalarProperty Name="nf_maquinaing" ColumnName="nf_maquinaing" />
+                <ScalarProperty Name="nf_maquinamod" ColumnName="nf_maquinamod" />
+                <ScalarProperty Name="nf_estado" ColumnName="nf_estado" />
+                <ScalarProperty Name="nf_timestamp" ColumnName="nf_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="opcion">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.opcion">
+              <MappingFragment StoreEntitySet="opcion">
+                <ScalarProperty Name="op_Empresa" ColumnName="op_Empresa" />
+                <ScalarProperty Name="op_CodigoOpcion" ColumnName="op_CodigoOpcion" />
+                <ScalarProperty Name="op_NombreOpcion" ColumnName="op_NombreOpcion" />
+                <ScalarProperty Name="op_DescOpcion" ColumnName="op_DescOpcion" />
+                <ScalarProperty Name="op_PadreOpcion" ColumnName="op_PadreOpcion" />
+                <ScalarProperty Name="op_Autenticar" ColumnName="op_Autenticar" />
+                <ScalarProperty Name="op_FechaIng" ColumnName="op_FechaIng" />
+                <ScalarProperty Name="op_FechaMod" ColumnName="op_FechaMod" />
+                <ScalarProperty Name="op_UsuarioIng" ColumnName="op_UsuarioIng" />
+                <ScalarProperty Name="op_UsuarioMod" ColumnName="op_UsuarioMod" />
+                <ScalarProperty Name="op_MaquinaIng" ColumnName="op_MaquinaIng" />
+                <ScalarProperty Name="op_MaquinaMod" ColumnName="op_MaquinaMod" />
+                <ScalarProperty Name="op_Estado" ColumnName="op_Estado" />
+                <ScalarProperty Name="op_timestamp" ColumnName="op_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="perfil">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.perfil">
+              <MappingFragment StoreEntitySet="perfil">
+                <ScalarProperty Name="pf_empresa" ColumnName="pf_empresa" />
+                <ScalarProperty Name="pf_codPerfil" ColumnName="pf_codPerfil" />
+                <ScalarProperty Name="pf_nomPerfil" ColumnName="pf_nomPerfil" />
+                <ScalarProperty Name="pf_descPerfil" ColumnName="pf_descPerfil" />
+                <ScalarProperty Name="pf_fechaing" ColumnName="pf_fechaing" />
+                <ScalarProperty Name="pf_fechamod" ColumnName="pf_fechamod" />
+                <ScalarProperty Name="pf_usuarioing" ColumnName="pf_usuarioing" />
+                <ScalarProperty Name="pf_usuariomod" ColumnName="pf_usuariomod" />
+                <ScalarProperty Name="pf_maquinaing" ColumnName="pf_maquinaing" />
+                <ScalarProperty Name="pf_maquinamod" ColumnName="pf_maquinamod" />
+                <ScalarProperty Name="pf_estado" ColumnName="pf_estado" />
+                <ScalarProperty Name="pf_timestamp" ColumnName="pf_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="perfilusuario">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.perfilusuario">
+              <MappingFragment StoreEntitySet="perfilusuario">
+                <ScalarProperty Name="pu_empresa" ColumnName="pu_empresa" />
+                <ScalarProperty Name="pu_IdSucursal" ColumnName="pu_IdSucursal" />
+                <ScalarProperty Name="pu_CodPerfilUsuario" ColumnName="pu_CodPerfilUsuario" />
+                <ScalarProperty Name="pu_codPerfil" ColumnName="pu_codPerfil" />
+                <ScalarProperty Name="pu_codUsuario" ColumnName="pu_codUsuario" />
+                <ScalarProperty Name="pu_fechaing" ColumnName="pu_fechaing" />
+                <ScalarProperty Name="pu_fechamod" ColumnName="pu_fechamod" />
+                <ScalarProperty Name="pu_usuarioing" ColumnName="pu_usuarioing" />
+                <ScalarProperty Name="pu_usuariomod" ColumnName="pu_usuariomod" />
+                <ScalarProperty Name="pu_maquinaing" ColumnName="pu_maquinaing" />
+                <ScalarProperty Name="pu_maquinamod" ColumnName="pu_maquinamod" />
+                <ScalarProperty Name="pu_estado" ColumnName="pu_estado" />
+                <ScalarProperty Name="pu_timestamp" ColumnName="pu_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="permiso">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.permiso">
+              <MappingFragment StoreEntitySet="permiso">
+                <ScalarProperty Name="pe_empresa" ColumnName="pe_empresa" />
+                <ScalarProperty Name="pe_IdSucursal" ColumnName="pe_IdSucursal" />
+                <ScalarProperty Name="pe_IdPermiso" ColumnName="pe_IdPermiso" />
+                <ScalarProperty Name="pe_CodPerfil" ColumnName="pe_CodPerfil" />
+                <ScalarProperty Name="pe_CodigoOpcion" ColumnName="pe_CodigoOpcion" />
+                <ScalarProperty Name="pe_FechaIng" ColumnName="pe_FechaIng" />
+                <ScalarProperty Name="pe_FechaMod" ColumnName="pe_FechaMod" />
+                <ScalarProperty Name="pe_UsuarioIng" ColumnName="pe_UsuarioIng" />
+                <ScalarProperty Name="pe_UsuarioMod" ColumnName="pe_UsuarioMod" />
+                <ScalarProperty Name="pe_MaquinaIng" ColumnName="pe_MaquinaIng" />
+                <ScalarProperty Name="pe_MaquinaMod" ColumnName="pe_MaquinaMod" />
+                <ScalarProperty Name="pe_estado" ColumnName="pe_estado" />
+                <ScalarProperty Name="pe_timestamp" ColumnName="pe_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedor">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.Proveedor">
+              <MappingFragment StoreEntitySet="Proveedor">
+                <ScalarProperty Name="pv_empresa" ColumnName="pv_empresa" />
+                <ScalarProperty Name="pv_proveedor" ColumnName="pv_proveedor" />
+                <ScalarProperty Name="pv_tipoProveedor" ColumnName="pv_tipoProveedor" />
+                <ScalarProperty Name="pv_nombre1" ColumnName="pv_nombre1" />
+                <ScalarProperty Name="pv_nombre2" ColumnName="pv_nombre2" />
+                <ScalarProperty Name="pv_nit" ColumnName="pv_nit" />
+                <ScalarProperty Name="pv_fechaing" ColumnName="pv_fechaing" />
+                <ScalarProperty Name="pv_fechamod" ColumnName="pv_fechamod" />
+                <ScalarProperty Name="pv_usuarioing" ColumnName="pv_usuarioing" />
+                <ScalarProperty Name="pv_usuariomod" ColumnName="pv_usuariomod" />
+                <ScalarProperty Name="pv_maquinaing" ColumnName="pv_maquinaing" />
+                <ScalarProperty Name="pv_maquinamod" ColumnName="pv_maquinamod" />
+                <ScalarProperty Name="pv_estado" ColumnName="pv_estado" />
+                <ScalarProperty Name="pv_timestamp" ColumnName="pv_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="us_empresa" ColumnName="us_empresa" />
+                <ScalarProperty Name="us_IdSucursal" ColumnName="us_IdSucursal" />
+                <ScalarProperty Name="us_codUsuario" ColumnName="us_codUsuario" />
+                <ScalarProperty Name="us_usuario" ColumnName="us_usuario" />
+                <ScalarProperty Name="us_nombre" ColumnName="us_nombre" />
+                <ScalarProperty Name="us_password" ColumnName="us_password" />
+                <ScalarProperty Name="us_estUsuario" ColumnName="us_estUsuario" />
+                <ScalarProperty Name="us_IdEmpleado" ColumnName="us_IdEmpleado" />
+                <ScalarProperty Name="us_resetPass" ColumnName="us_resetPass" />
+                <ScalarProperty Name="us_fechaing" ColumnName="us_fechaing" />
+                <ScalarProperty Name="us_fechamod" ColumnName="us_fechamod" />
+                <ScalarProperty Name="us_usuarioing" ColumnName="us_usuarioing" />
+                <ScalarProperty Name="us_usuariomod" ColumnName="us_usuariomod" />
+                <ScalarProperty Name="us_maquinaing" ColumnName="us_maquinaing" />
+                <ScalarProperty Name="us_maquinamod" ColumnName="us_maquinamod" />
+                <ScalarProperty Name="us_estado" ColumnName="us_estado" />
+                <ScalarProperty Name="us_timestamp" ColumnName="us_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_UltimosTelefonos">
+            <EntityTypeMapping TypeName="SSS_PERSONASModel.vw_UltimosTelefonos">
+              <MappingFragment StoreEntitySet="vw_UltimosTelefonos">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Asociado" ColumnName="Asociado" />
+                <ScalarProperty Name="TelCelular" ColumnName="TelCelular" />
+                <ScalarProperty Name="TelCasa" ColumnName="TelCasa" />
+                <ScalarProperty Name="TelTrabajo" ColumnName="TelTrabajo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_ABC_Cliente" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Cliente" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_Contacto" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Contacto" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_Direccion" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Direccion" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_Foto" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Foto" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_Huella" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Huella" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_NitFactura" FunctionName="SSS_PERSONASModel.Store.sp_ABC_NitFactura" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_Opcion" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Opcion" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_Perfil" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Perfil" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_PerfilUsuario" FunctionName="SSS_PERSONASModel.Store.sp_ABC_PerfilUsuario" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_Permiso" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Permiso" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_Proveedor" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Proveedor" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_Usuario" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Usuario" />
+          <FunctionImportMapping FunctionImportName="sp_Asigna_PermisosPerfil" FunctionName="SSS_PERSONASModel.Store.sp_Asigna_PermisosPerfil" />
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_Cliente" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Cliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Cliente_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="TipoCliente" ColumnName="TipoCliente" />
+                <ScalarProperty Name="NombreTipoCliente" ColumnName="NombreTipoCliente" />
+                <ScalarProperty Name="ClasificacionCliente" ColumnName="ClasificacionCliente" />
+                <ScalarProperty Name="NombreClasificacionCliente" ColumnName="NombreClasificacionCliente" />
+                <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
+                <ScalarProperty Name="NombreTipoIdenficacion" ColumnName="NombreTipoIdenficacion" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="Nit" ColumnName="Nit" />
+                <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+                <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+                <ScalarProperty Name="Nombre3" ColumnName="Nombre3" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="ApeCasada" ColumnName="ApeCasada" />
+                <ScalarProperty Name="NombreLargo" ColumnName="NombreLargo" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+                <ScalarProperty Name="NombreOcupacion" ColumnName="NombreOcupacion" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="NombreEstadoCivil" ColumnName="NombreEstadoCivil" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_Contacto" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Contacto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Contacto_Result">
+                <ScalarProperty Name="IdContacto" ColumnName="IdContacto" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="TipoAsociado" ColumnName="TipoAsociado" />
+                <ScalarProperty Name="NombreTipoAsociado" ColumnName="NombreTipoAsociado" />
+                <ScalarProperty Name="Asociado" ColumnName="Asociado" />
+                <ScalarProperty Name="TipoContacto" ColumnName="TipoContacto" />
+                <ScalarProperty Name="NombreTipoDireccion" ColumnName="NombreTipoDireccion" />
+                <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+                <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_Direccion" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Direccion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Direccion_Result">
+                <ScalarProperty Name="IdDireccion" ColumnName="IdDireccion" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="TipoAsociado" ColumnName="TipoAsociado" />
+                <ScalarProperty Name="NombreTipoAsociado" ColumnName="NombreTipoAsociado" />
+                <ScalarProperty Name="Asociado" ColumnName="Asociado" />
+                <ScalarProperty Name="TipoDireccion" ColumnName="TipoDireccion" />
+                <ScalarProperty Name="NombreTipoDireccion" ColumnName="NombreTipoDireccion" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Direccion2" ColumnName="Direccion2" />
+                <ScalarProperty Name="Zona" ColumnName="Zona" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="NombreMunicipio" ColumnName="NombreMunicipio" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="NombreDepartamento" ColumnName="NombreDepartamento" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="NombrePais" ColumnName="NombrePais" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_Foto" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Foto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Foto_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="IdFoto" ColumnName="IdFoto" />
+                <ScalarProperty Name="TipoAsociado" ColumnName="TipoAsociado" />
+                <ScalarProperty Name="Asociado" ColumnName="Asociado" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_Huella" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Huella">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Huella_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="IdHuella" ColumnName="IdHuella" />
+                <ScalarProperty Name="TipoAsociado" ColumnName="TipoAsociado" />
+                <ScalarProperty Name="Asociado" ColumnName="Asociado" />
+                <ScalarProperty Name="Huella" ColumnName="Huella" />
+                <ScalarProperty Name="longitudHuella" ColumnName="longitudHuella" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_NitFactura" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_NitFactura">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_NitFactura_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Nit" ColumnName="Nit" />
+                <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="CORRELATIVO" ColumnName="CORRELATIVO" />
+                <ScalarProperty Name="ActualizaCentral" ColumnName="ActualizaCentral" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_Opcion" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Opcion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Opcion_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CodigoOpcion" ColumnName="CodigoOpcion" />
+                <ScalarProperty Name="NombreOpcion" ColumnName="NombreOpcion" />
+                <ScalarProperty Name="DescripcionOpcion" ColumnName="DescripcionOpcion" />
+                <ScalarProperty Name="PadreOpcion" ColumnName="PadreOpcion" />
+                <ScalarProperty Name="Autenticar" ColumnName="Autenticar" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_Perfil" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Perfil">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Perfil_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CodigoPerfil" ColumnName="CodigoPerfil" />
+                <ScalarProperty Name="NombrePerfil" ColumnName="NombrePerfil" />
+                <ScalarProperty Name="DescripcionPerfil" ColumnName="DescripcionPerfil" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_PerfilUsuario" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_PerfilUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_PerfilUsuario_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CodigoPerfil" ColumnName="CodigoPerfil" />
+                <ScalarProperty Name="NombrePerfil" ColumnName="NombrePerfil" />
+                <ScalarProperty Name="CodigoUsuario" ColumnName="CodigoUsuario" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_Permiso" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Permiso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Permiso_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CodigoPerfil" ColumnName="CodigoPerfil" />
+                <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+                <ScalarProperty Name="CodigoOpcion" ColumnName="CodigoOpcion" />
+                <ScalarProperty Name="Opcion" ColumnName="Opcion" />
+                <ScalarProperty Name="DescOpcion" ColumnName="DescOpcion" />
+                <ScalarProperty Name="Padre" ColumnName="Padre" />
+                <ScalarProperty Name="Autenticar" ColumnName="Autenticar" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_PermisosUsuario" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_PermisosUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_PermisosUsuario_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="EstadoUsuario" ColumnName="EstadoUsuario" />
+                <ScalarProperty Name="CodigoPerfil" ColumnName="CodigoPerfil" />
+                <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+                <ScalarProperty Name="CodigoOpcion" ColumnName="CodigoOpcion" />
+                <ScalarProperty Name="PadreOpcion" ColumnName="PadreOpcion" />
+                <ScalarProperty Name="Opcion" ColumnName="Opcion" />
+                <ScalarProperty Name="DescOpcion" ColumnName="DescOpcion" />
+                <ScalarProperty Name="Autenticar" ColumnName="Autenticar" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_Proveedor" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Proveedor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Proveedor_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="TipoProveedor" ColumnName="TipoProveedor" />
+                <ScalarProperty Name="NombreTipoProveedor" ColumnName="NombreTipoProveedor" />
+                <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+                <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+                <ScalarProperty Name="Nit" ColumnName="Nit" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_Usuario" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Usuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Usuario_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CodigoUsuario" ColumnName="CodigoUsuario" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="EstadoUsuario" ColumnName="EstadoUsuario" />
+                <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+                <ScalarProperty Name="NombreLargoEmpleado" ColumnName="NombreLargoEmpleado" />
+                <ScalarProperty Name="TipoEmpleado" ColumnName="TipoEmpleado" />
+                <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="IniciaPass" ColumnName="IniciaPass" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_CargaPermisos" FunctionName="SSS_PERSONASModel.Store.sp_CargaPermisos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_CargaPermisos_Result">
+                <ScalarProperty Name="us_codusuario" ColumnName="us_codusuario" />
+                <ScalarProperty Name="us_usuario" ColumnName="us_usuario" />
+                <ScalarProperty Name="us_nombre" ColumnName="us_nombre" />
+                <ScalarProperty Name="pf_codPerfil" ColumnName="pf_codPerfil" />
+                <ScalarProperty Name="pf_nomperfil" ColumnName="pf_nomperfil" />
+                <ScalarProperty Name="pf_descperfil" ColumnName="pf_descperfil" />
+                <ScalarProperty Name="op_codigoopcion" ColumnName="op_codigoopcion" />
+                <ScalarProperty Name="op_nombreopcion" ColumnName="op_nombreopcion" />
+                <ScalarProperty Name="op_descopcion" ColumnName="op_descopcion" />
+                <ScalarProperty Name="CodPadre" ColumnName="CodPadre" />
+                <ScalarProperty Name="Padre" ColumnName="Padre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Login" FunctionName="SSS_PERSONASModel.Store.sp_Login">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Login_Result">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="resetpass" ColumnName="resetPass" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_RegistrosNuevos" FunctionName="SSS_PERSONASModel.Store.sp_RegistrosNuevos" />
+          <FunctionImportMapping FunctionImportName="sp_ValidaCumpleanios" FunctionName="SSS_PERSONASModel.Store.sp_ValidaCumpleanios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_ValidaCumpleanios_Result">
+                <ScalarProperty Name="NombreLargo" ColumnName="NombreLargo" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

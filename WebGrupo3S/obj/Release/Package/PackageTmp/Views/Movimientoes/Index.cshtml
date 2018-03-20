@@ -1,0 +1,104 @@
+﻿@model IEnumerable<WebGrupo3S.Models.Movimiento>
+
+<p>
+    @Html.ActionLink("Grabar transacción", "Gtransa", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Datos cliente", "Cliente", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Forma de pago", "Forma", null, new { @class = "btn btn-primary" })
+</p>
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal table-responsive col-md-10 box-body table-bordered">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Nit", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div>
+                @Html.TextBox("Nit", null, new { @class = "form-control", style = "width: 150px" })
+            </div>         
+        </div>
+    </div>
+    <div class="form-horizontal table-responsive col-md-8 box-body table-bordered">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Producto", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.TextBox("producto", null, new { @class = "form-control", style = "width: 200px" })                
+            </div>
+            @Html.Label("Valor", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.TextBox("Valor", null, new { @class = "form-control", style = "width: 100px" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Cantidad", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.TextBox("cantidad", null, new { @class = "form-control", style = "width: 100px" })
+            </div>
+            @Html.Label("Devolución", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.CheckBox("cantidad")
+            </div>
+            <div class="col-md-2">
+                <input type="submit" value="Agregar" class="btn btn-info" />
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Tipo movimiento
+                            </th>
+                            <th>
+                                Producto/Servicio
+                            </th>
+                            <th>
+                                Cantidad
+                            </th>
+                            <th>
+                                Total
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.mv_TipoMovimiento)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.mv_ProdServ)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.mv_Cantidad)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.mv_ValorMov)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edita", "Edit", new { id = item.mv_IdProdServ }, new { @class = "btn btn-primary btn-xs" })
+                                    @Html.ActionLink("de Baja", "Delete", new { id = item.mv_IdProdServ }, new { @class = "btn btn-info btn-xs" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+    @Scripts.Render("~/bundles/jqueryval")
+}

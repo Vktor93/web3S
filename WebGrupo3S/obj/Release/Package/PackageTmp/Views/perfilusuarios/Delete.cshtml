@@ -1,0 +1,43 @@
+﻿@model WebGrupo3S.Models.perfilusuario
+
+@{
+    ViewBag.Title = "Perfil usuarios";
+}
+<h3>Esta seguro que desea dar de baja siguiente perfil de usuario?</h3>
+<div>
+    <dl class="form-horizontal table-responsive col-md-5 box-body bg-aqua-active table-bordered">
+        <dt>
+            @Html.Label("Perfil")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_codPerfil)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.pu_NombrePerfil)
+        </dd>
+
+        <dt>
+            @Html.Label("Usuario")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_codUsuario)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_NombreUsuario)
+        </dd>
+ 
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Da de baja" class="btn btn-info" /> |
+            @Html.ActionLink("Retorna a lista", "Index")
+        </div>
+    }
+</div>

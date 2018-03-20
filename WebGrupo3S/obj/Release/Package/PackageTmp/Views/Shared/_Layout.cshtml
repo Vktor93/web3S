@@ -1,0 +1,306 @@
+﻿@using WebGrupo3S.Extensions
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Web-Grupo3S</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    @Styles.Render("~/Admin/plugins/font-awesome/css")
+    @Styles.Render("~/Admin/plugins/ionicons/css")
+    @Styles.Render("~/Admin/bootstrap/css")
+    @Styles.Render("~/Admin/dist/css")
+    @Styles.Render("~/Admin/dist/css/skins")
+</head>
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a  class="logo bg-light-blue-gradient">
+                <span class="logo-mini"><b>3</b>S</span>
+                <span class="logo-lg"><b>Grupo </b>3S</span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">Usted tiene 0 mensajes</li>
+                                <li>
+                                    <ul class="menu">
+ 
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">Usted tiene 0 notificaciones</li>
+                                <li>
+                                    <ul class="menu">
+ 
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown tasks-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-flag-o"></i>
+                                <span class="label label-danger">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">Usted tiene 0 tareas pendientes</li>
+                                <li>
+                                    <ul class="menu">
+
+                                    </ul>
+                                </li>
+                                <li class="footer">
+                                    <a href="#">View all tasks</a>
+                                </li>
+                            </ul>
+                        </li>
+                        @Html.Partial("_LoginPartial")
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="~/Admin/dist/img/user.svg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>@ViewData["nombre"]</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Activo</a>
+                    </div>
+                </div>
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Busqueda...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="Busqueda" id="search-btn" class="btn btn-flat bg-light-blue-gradient">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <ul class="sidebar-menu">
+                    <li class="header" style="color:darkblue; font-size:medium">MENU PRINCIPAL</li>
+                    <li id="left-sidebar-menu-seguridad" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-key"></i> <span>Información de Seguridad</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @if (Session["M1"].ToString() == "1") { 
+                                <li id="left-sidebar-menu-seguridad-roles"><a href="@Url.Action("Index", "perfils")"><i class="fa fa-circle-o"></i> Perfiles</a></li>
+                            }
+                            @if (Session["M2"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-seguridad-usuarios"><a href="@Url.Action("Index", "Usuarios")"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li id="left-sidebar-menu-planilla" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-user-plus"></i> <span>Planillas</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @if (Session["M3"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-planilla-horarios"><a href="@Url.Action("Index", "Horarios")"><i class="fa fa-circle-o"></i> Horarios</a></li>
+                            }
+                            @if (Session["M4"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-planilla-empleados"><a href="@Url.Action("Index", "Empleadoes")"><i class="fa fa-circle-o"></i> Empleados</a></li>
+                            }
+                           </ul>
+                    </li>
+                    <li id="left-sidebar-menu-cc" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-users"></i> <span>Cuentas Corrientes</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @if (Session["M5"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-cc-cuentaspagar"><a href="@Url.Action("Index", "NitFacturas")"><i class="fa fa-circle-o"></i> Nit Facturas</a></li>
+                            }
+                            @if (Session["M6"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-cc-clientes"><a href="@Url.Action("Index", "Clientes")"><i class="fa fa-circle-o"></i> Clientes</a></li>
+                            }
+                            @if (Session["M7"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-cc-proveedores"><a href="@Url.Action("Index", "Proveedors")"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                            }
+                            @if (Session["M8"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-cc-cuentascobrar"><a href="@Url.Action("Index", "CXC")"><i class="fa fa-circle-o"></i> Cuentas por Cobrar</a></li>
+                            }
+                            @if (Session["M9"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-cc-cuentaspagar"><a href="@Url.Action("Index", "CXP")"><i class="fa fa-circle-o"></i> Cuentas por Pagar</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li id="left-sidebar-menu-productos" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-star-half-full"></i> <span>Productos/Sucursales</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @if (Session["M10"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-productos-tipos"><a href="@Url.Action("Index", "TProductoes")"><i class="fa fa-circle-o"></i> Tipos de Productos</a></li>
+                            }
+                            @if (Session["M11"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-productos-productos"><a href="@Url.Action("Index", "Productoes")"><i class="fa fa-circle-o"></i> Productos</a></li>
+                            }
+                            @if (Session["M12"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-productos-tservicios"><a href="@Url.Action("Index", "TServicios")"><i class="fa fa-circle-o"></i> Tipos de Servicios</a></li>
+                            }
+                            @if (Session["M13"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-productos-Servicios"><a href="@Url.Action("Index", "Servicios")"><i class="fa fa-circle-o"></i> Servicios</a></li>
+                            }
+                            @if (Session["M14"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-productos-Existencia"><a href="@Url.Action("Index", "Sucursals")"><i class="fa fa-circle-o"></i> Sucursales</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li id="left-sidebar-menu-inventario" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-file-archive-o"></i> <span>Inventarios</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @if (Session["M19"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-inventario-entradas"><a href="@Url.Action("Index", "Entradas")"><i class="fa fa-circle-o"></i> Entradas de Inventario</a></li>
+                            }
+                            @if (Session["M20"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-inventario-salidas"><a href="@Url.Action("Index", "salidas")"><i class="fa fa-circle-o"></i> Salidas de Inventario</a></li>
+                            }
+                            @if (Session["M21"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-inventario-devolucion"><a href="@Url.Action("Index", "devoluciones")"><i class="fa fa-circle-o"></i> Devoluciones</a></li>
+                            }
+                            @if (Session["M22"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-inventario-Existencia"><a href="@Url.Action("Index", "Existencias")"><i class="fa fa-circle-o"></i> Existencias</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li id="left-sidebar-menu-caja" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-calendar-check-o"></i> <span>Punto de Venta</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @if (Session["M23"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-punto-facturacion"><a href="@Url.Action("Index", "Movimientoes")"><i class="fa fa-circle-o"></i> Punto de venta</a></li>
+                            }
+                            @if (Session["M24"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-punto-documentos"><a href="@Url.Action("Index", "Documentoes")"><i class="fa fa-circle-o"></i> Facturación</a></li>
+                            }
+                            @if (Session["M25"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-punto-cierrecaja"><a href="@Url.Action("Index", "cierrecaja")"><i class="fa fa-circle-o"></i> Cierre de Caja</a></li>
+                            }
+                            @if (Session["M26"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-punto-cierrediario"><a href="@Url.Action("Index", "cierrediario")"><i class="fa fa-circle-o"></i> Cierre Diario</a></li>
+                            }
+                        </ul>
+                    </li>
+                     <li id="left-sidebar-menu-calendar">
+                        <a href="@Url.Action("Index", "Calendar")">
+                            <i class="fa fa-calendar"></i>
+                            <span>Calendar</span>
+                            <small class="label pull-right bg-red">3</small>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper" style="background-color:white">
+            <section class="content-header">
+                <h2 class="title" style="width:700px; color:lightblue; text-align:left">@ViewBag.Title</h2>
+            </section>
+            <section class="content">
+                @RenderBody()
+            </section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.3.2
+            </div>
+            <strong>Copyrights | MVC ISONET | Layout &copy; 2017 <a href="http://ISONET.com">ISONET</a>.</strong> All rights
+            reserved.
+        </footer>
+        <aside class="control-sidebar control-sidebar-dark">
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-user-secret"></i></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">Configuración general</h3>
+                        <div class="form-group">
+                            <ul class="treeview-menu">
+                            @*@if (Session["M15"].ToString() == "1")
+                            {*@
+                                <li id="left-sidebar-menu-seguridad-opciones"><a href="@Url.Action("Index", "Opcions")">Opciones de Menu</a></li>
+                            @*}*@
+                            @if (Session["M16"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-complementos-secuencial"><a href="@Url.Action("Index", "Secuencials")">Secuencial</a></li>
+                            }
+                            @if (Session["M17"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-complementos-catalogos"><a href="@Url.Action("Index", "CabCatalogoes")">Catalogos</a></li>
+                            }
+                            @if (Session["M18"].ToString() == "1")
+                            {
+                                <li id="left-sidebar-menu-complementos-bitacoras"><a href="@Url.Action("Index", "bitacoras")">Bitacoras</a></li>
+                            }
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </aside>
+        <div class="control-sidebar-bg"></div>
+    </div>
+    @Scripts.Render("~/Admin/plugins/jquery/js")
+    @RenderSection("menu", required: false)
+    @Scripts.Render("~/Admin/bootstrap/js")
+    @Scripts.Render("~/Admin/plugins/slimscroll/js")
+    @Scripts.Render("~/Admin/plugins/fastclick/js")
+    @Scripts.Render("~/Scripts/Shared/_Layout")
+    @Scripts.Render("~/Admin/dist/js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿@using WebGrupo3S.Helpers
+@model IEnumerable<WebGrupo3S.Models.opcion>
+
+<p>
+    @Html.ActionLink("Retorna opciones", "Regresa", null, new { @class = "btn btn-info" })
+</p>
+
+<h2>@ViewData["Opcion"]</h2>
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead style="background-color:lavender">
+                        <tr>
+                            <th>
+                                Codigo
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Descripción
+                            </th>
+                            <th style="background-color:lavender">
+                                <div class="pull-right">
+                                    <a href="@Url.Action("PCreate", "opcions", routeValues: new { id = ViewBag.idpadre, nom = ViewBag.nombre })"><img width="20" height="20" src="/images/add.png" /></a>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.op_CodigoOpcion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.op_NombreOpcion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.op_DescOpcion)
+                                </td>
+                                <td>
+                                    @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Edita", "PEdit", "opcions", routeValues: new { id = item.op_CodigoOpcion, idp = ViewBag.idpadre, nom = ViewBag.nombre }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary btn-xs" })
+                                    @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-trash'></span>", "de Baja", "PDelete", "opcions", routeValues: new { id = item.op_CodigoOpcion, idp = ViewBag.idpadre, nom = ViewBag.nombre }, htmlAttributes: new { data_modal = "", @class = "btn btn-info btn-xs" })
+                                    @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-th-list'></span>", "Subopción", "Details", "opcions", routeValues: new { id = item.op_CodigoOpcion, nom = ViewBag.nombre + "-" + item.op_NombreOpcion }, htmlAttributes: new { @class = "btn btn-primary btn-xs" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

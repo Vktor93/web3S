@@ -1,0 +1,35 @@
+﻿@model WebGrupo3S.Models.opcion
+
+@{
+    ViewBag.Title = "Opciones";
+}
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Esta seguro que desea dar de baja siguiente registro?</h3>
+</div>
+<div class="body" style="width:700px">
+    <dl class="form-horizontal table-bordered">
+        <dt>
+            @Html.Label("nombre")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.op_NombreOpcion)
+        </dd>
+
+        <dt>
+            @Html.Label("Descripción")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.op_DescOpcion)
+        </dd>
+    </dl>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "opcions")'"><i class="glyphicon glyphicon-remove"></i>No</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i> Si</button>
+    </div>
+}

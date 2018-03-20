@@ -1,0 +1,83 @@
+﻿@using WebGrupo3S.Helpers
+@model IList<WebGrupo3S.Models.sp_Busqueda_Existencia_Result>
+
+@{
+    ViewBag.Title = "Existencias";
+}
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <div>
+                    @if (ViewBag.reporte == "1")
+                    {
+                        <a href="@Url.Action("Report", new { id = "PDF" })">  PDF   <img width="20" height="20" src="/images/pdf.png" /></a>
+                        <a href="@Url.Action("Report", new { id = "Excel" })">  EXCEL   <img width="20" height="20" src="/images/excel.png" /></a>
+                    }
+                </div>
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead style="background-color:lavender">
+                        <tr>
+                            <th>
+                                Sucursal
+                            </th>
+                            <th>
+                                Tipo
+                            </th>
+                            <th>
+                                Codigo
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Cantidad
+                            </th>
+                            <th>
+                                Precio Unitario
+                            </th>
+                            <th>
+                                Fecha Caducidad
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreSucursal)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DescripcionTipoProducto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodigoProducto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreProducto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cantidad)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PrecioUnitario)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FechaCaducidad)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

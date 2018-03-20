@@ -1,0 +1,101 @@
+﻿@using WebGrupo3S.Helpers
+@model IList<WebGrupo3S.Models.sp_Busqueda_Empleado_Result>
+
+@{
+    ViewBag.Title = "Empleados";
+}
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <div>
+                    @if (ViewBag.reporte == "1")
+                    {
+                        <a href="@Url.Action("Report", new { id = "PDF" })">  PDF   <img width="20" height="20" src="/images/pdf.png" /></a>
+                        <a href="@Url.Action("Report", new { id = "Excel" })">  EXCEL   <img width="20" height="20" src="/images/excel.png" /></a>
+                    }
+                </div>
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead style="background-color:lavender">
+                        <tr>
+                            <th>
+                                Cliente
+                            </th>
+                            <th>
+                                Tipo
+                            </th>
+                            <th>
+                                Identificación
+                            </th>
+                            <th>
+                                Nit
+                            </th>
+                            <th>
+                                Nombre Largo
+                            </th>
+                            <th style="background-color:white">
+                                <div class="pull-right">
+                                    @if (ViewBag.nuevo == "1")
+                                    {
+                                        <a href="@Url.Action("Create", "Empleadoes")"><img width="20" height="20" src="/images/add.png" /></a>
+                                    }
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Empleado)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TipoEmpleado)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Identificacion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nit)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreLargo)
+                                </td>
+                                <td>
+                                    @if (ViewBag.editar == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Edita", "Edit", "Empleadoes", routeValues: new { id = item.Empleado }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary btn-xs" })
+                                    }
+                                    @if (ViewBag.debaja == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-trash'></span>", "de Baja", "Delete", "Empleadoes", routeValues: new { id = item.Empleado }, htmlAttributes: new { data_modal = "", @class = "btn btn-info btn-xs" })
+                                    }
+                                    @if (ViewBag.horarios == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-time'></span>", "Horarios", "Horarios", "Empleadoes", routeValues: new { id = item.Empleado, nom = item.NombreLargo }, htmlAttributes: new { @class = "btn btn-primary btn-xs" })
+                                    }
+                                    @if (ViewBag.contactos == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-user'></span>", "Contactos", "contactos", "Empleadoes", routeValues: new { id = item.Empleado, nom = item.NombreLargo }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary btn-xs" })
+                                    }
+                                    @if (ViewBag.direccion == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-folder-open'></span>", "Direcciones", "direcciones", "Empleadoes", routeValues: new { id = item.Empleado, nom = item.NombreLargo }, htmlAttributes: new { data_modal = "", @class = "btn btn-info btn-xs" })
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

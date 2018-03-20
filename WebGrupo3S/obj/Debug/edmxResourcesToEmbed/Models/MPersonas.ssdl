@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSS_PERSONASModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="cl_empresa" />
+      <PropertyRef Name="cl_cliente" />
+    </Key>
+    <Property Name="cl_empresa" Type="smallint" Nullable="false" />
+    <Property Name="cl_cliente" Type="int" Nullable="false" />
+    <Property Name="cl_tipoCliente" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cl_ClasificacionCliente" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cl_tipoident" Type="char" MaxLength="10" />
+    <Property Name="cl_identifica" Type="nvarchar" MaxLength="50" />
+    <Property Name="cl_nit" Type="nvarchar" MaxLength="50" />
+    <Property Name="cl_nombre1" Type="nvarchar" MaxLength="50" />
+    <Property Name="cl_nombre2" Type="nvarchar" MaxLength="50" />
+    <Property Name="cl_nombre3" Type="nvarchar" MaxLength="50" />
+    <Property Name="cl_apellido1" Type="nvarchar" MaxLength="50" />
+    <Property Name="cl_apellido2" Type="nvarchar" MaxLength="50" />
+    <Property Name="cl_apecasada" Type="nvarchar" MaxLength="50" />
+    <Property Name="cl_nombrelargo" Type="nvarchar" MaxLength="250" />
+    <Property Name="cl_genero" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="cl_fechanac" Type="date" />
+    <Property Name="cl_ocupacion" Type="char" MaxLength="10" />
+    <Property Name="cl_estadocivil" Type="char" MaxLength="10" />
+    <Property Name="cl_RecibePublicidad" Type="int" />
+    <Property Name="cl_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="cl_fechamod" Type="datetime" />
+    <Property Name="cl_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cl_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cl_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cl_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cl_estado" Type="int" Nullable="false" />
+    <Property Name="cl_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contacto">
+    <Key>
+      <PropertyRef Name="cn_empresa" />
+      <PropertyRef Name="cn_idContacto" />
+    </Key>
+    <Property Name="cn_empresa" Type="smallint" Nullable="false" />
+    <Property Name="cn_idContacto" Type="int" Nullable="false" />
+    <Property Name="cn_tipoAsociado" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cn_asociado" Type="int" Nullable="false" />
+    <Property Name="cn_tipoContacto" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cn_Contacto" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cn_Contacto2" Type="nvarchar" MaxLength="50" />
+    <Property Name="cn_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="cn_fechamod" Type="datetime" />
+    <Property Name="cn_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cn_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cn_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cn_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cn_estado" Type="int" Nullable="false" />
+    <Property Name="cn_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Direccion">
+    <Key>
+      <PropertyRef Name="di_empresa" />
+      <PropertyRef Name="di_IdDireccion" />
+    </Key>
+    <Property Name="di_empresa" Type="smallint" Nullable="false" />
+    <Property Name="di_IdDireccion" Type="int" Nullable="false" />
+    <Property Name="di_TipoAsociado" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="di_asociado" Type="int" Nullable="false" />
+    <Property Name="di_TipoDireccion" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="di_Direccion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="di_Direccion2" Type="nvarchar" MaxLength="100" />
+    <Property Name="di_zona" Type="char" MaxLength="10" />
+    <Property Name="di_municipio" Type="char" MaxLength="10" />
+    <Property Name="di_departamento" Type="char" MaxLength="10" />
+    <Property Name="di_pais" Type="char" MaxLength="10" />
+    <Property Name="di_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="di_fechamod" Type="datetime" />
+    <Property Name="di_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="di_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="di_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="di_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="di_estado" Type="int" Nullable="false" />
+    <Property Name="di_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Foto">
+    <Key>
+      <PropertyRef Name="fo_empresa" />
+      <PropertyRef Name="fo_IdFoto" />
+    </Key>
+    <Property Name="fo_empresa" Type="smallint" Nullable="false" />
+    <Property Name="fo_IdFoto" Type="int" Nullable="false" />
+    <Property Name="fo_TipoAsociado" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="fo_asociado" Type="int" Nullable="false" />
+    <Property Name="fo_foto" Type="image" Nullable="false" />
+    <Property Name="fo_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="fo_fechamod" Type="datetime" />
+    <Property Name="fo_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fo_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="fo_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fo_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="fo_estado" Type="int" Nullable="false" />
+    <Property Name="fo_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Huella">
+    <Key>
+      <PropertyRef Name="hu_IdHuella" />
+    </Key>
+    <Property Name="hu_empresa" Type="smallint" Nullable="false" />
+    <Property Name="hu_IdHuella" Type="int" Nullable="false" />
+    <Property Name="hu_TipoAsociado" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="hu_asociado" Type="int" Nullable="false" />
+    <Property Name="hu_huella" Type="varbinary(max)" Nullable="false" />
+    <Property Name="hu_mano" Type="varchar" MaxLength="50" />
+    <Property Name="hu_dedo" Type="varchar" MaxLength="50" />
+    <Property Name="hu_huella_long" Type="int" />
+    <Property Name="hu_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="hu_fechamod" Type="datetime" />
+    <Property Name="hu_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="hu_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="hu_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="hu_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="hu_estado" Type="int" Nullable="false" />
+    <Property Name="hu_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NitFactura">
+    <Key>
+      <PropertyRef Name="nf_empresa" />
+      <PropertyRef Name="nf_Nit" />
+    </Key>
+    <Property Name="nf_empresa" Type="smallint" Nullable="false" />
+    <Property Name="nf_Nit" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nf_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="nf_Nombre" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="nf_Direccion" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="nf_actCentral" Type="int" Nullable="false" />
+    <Property Name="nf_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="nf_fechamod" Type="datetime" />
+    <Property Name="nf_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="nf_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="nf_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="nf_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="nf_estado" Type="int" Nullable="false" />
+    <Property Name="nf_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="opcion">
+    <Key>
+      <PropertyRef Name="op_Empresa" />
+      <PropertyRef Name="op_CodigoOpcion" />
+    </Key>
+    <Property Name="op_Empresa" Type="smallint" Nullable="false" />
+    <Property Name="op_CodigoOpcion" Type="int" Nullable="false" />
+    <Property Name="op_NombreOpcion" Type="varchar" MaxLength="100" />
+    <Property Name="op_DescOpcion" Type="varchar" MaxLength="150" />
+    <Property Name="op_PadreOpcion" Type="int" />
+    <Property Name="op_Autenticar" Type="bit" Nullable="false" />
+    <Property Name="op_FechaIng" Type="datetime" Nullable="false" />
+    <Property Name="op_FechaMod" Type="datetime" />
+    <Property Name="op_UsuarioIng" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="op_UsuarioMod" Type="varchar" MaxLength="50" />
+    <Property Name="op_MaquinaIng" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="op_MaquinaMod" Type="varchar" MaxLength="50" />
+    <Property Name="op_Estado" Type="int" Nullable="false" />
+    <Property Name="op_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="perfil">
+    <Key>
+      <PropertyRef Name="pf_empresa" />
+      <PropertyRef Name="pf_codPerfil" />
+    </Key>
+    <Property Name="pf_empresa" Type="int" Nullable="false" />
+    <Property Name="pf_codPerfil" Type="int" Nullable="false" />
+    <Property Name="pf_nomPerfil" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pf_descPerfil" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="pf_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="pf_fechamod" Type="datetime" />
+    <Property Name="pf_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pf_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pf_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pf_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pf_estado" Type="int" Nullable="false" />
+    <Property Name="pf_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="perfilusuario">
+    <Key>
+      <PropertyRef Name="pu_empresa" />
+      <PropertyRef Name="pu_IdSucursal" />
+      <PropertyRef Name="pu_CodPerfilUsuario" />
+    </Key>
+    <Property Name="pu_empresa" Type="int" Nullable="false" />
+    <Property Name="pu_IdSucursal" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="pu_CodPerfilUsuario" Type="int" Nullable="false" />
+    <Property Name="pu_codPerfil" Type="int" Nullable="false" />
+    <Property Name="pu_codUsuario" Type="int" Nullable="false" />
+    <Property Name="pu_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="pu_fechamod" Type="datetime" />
+    <Property Name="pu_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pu_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pu_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pu_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pu_estado" Type="int" Nullable="false" />
+    <Property Name="pu_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="permiso">
+    <Key>
+      <PropertyRef Name="pe_empresa" />
+      <PropertyRef Name="pe_IdSucursal" />
+      <PropertyRef Name="pe_IdPermiso" />
+    </Key>
+    <Property Name="pe_empresa" Type="smallint" Nullable="false" />
+    <Property Name="pe_IdSucursal" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="pe_IdPermiso" Type="int" Nullable="false" />
+    <Property Name="pe_CodPerfil" Type="int" Nullable="false" />
+    <Property Name="pe_CodigoOpcion" Type="int" Nullable="false" />
+    <Property Name="pe_FechaIng" Type="datetime" Nullable="false" />
+    <Property Name="pe_FechaMod" Type="datetime" />
+    <Property Name="pe_UsuarioIng" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pe_UsuarioMod" Type="varchar" MaxLength="50" />
+    <Property Name="pe_MaquinaIng" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pe_MaquinaMod" Type="varchar" MaxLength="50" />
+    <Property Name="pe_estado" Type="int" Nullable="false" />
+    <Property Name="pe_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="pv_empresa" />
+      <PropertyRef Name="pv_proveedor" />
+    </Key>
+    <Property Name="pv_empresa" Type="smallint" Nullable="false" />
+    <Property Name="pv_proveedor" Type="int" Nullable="false" />
+    <Property Name="pv_tipoProveedor" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="pv_nombre1" Type="nvarchar" MaxLength="100" />
+    <Property Name="pv_nombre2" Type="nvarchar" MaxLength="100" />
+    <Property Name="pv_nit" Type="nvarchar" MaxLength="50" />
+    <Property Name="pv_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="pv_fechamod" Type="datetime" />
+    <Property Name="pv_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pv_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pv_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pv_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pv_estado" Type="int" Nullable="false" />
+    <Property Name="pv_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="us_empresa" />
+      <PropertyRef Name="us_IdSucursal" />
+      <PropertyRef Name="us_codUsuario" />
+    </Key>
+    <Property Name="us_empresa" Type="smallint" Nullable="false" />
+    <Property Name="us_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="us_codUsuario" Type="int" Nullable="false" />
+    <Property Name="us_usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="us_nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="us_password" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="us_estUsuario" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="us_IdEmpleado" Type="int" />
+    <Property Name="us_resetPass" Type="int" Nullable="false" />
+    <Property Name="us_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="us_fechamod" Type="datetime" />
+    <Property Name="us_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="us_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="us_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="us_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="us_estado" Type="int" Nullable="false" />
+    <Property Name="us_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'sss_Personas.dbo.vw_UltimosTelefonos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_UltimosTelefonos">
+    <Key>
+      <PropertyRef Name="Empresa" />
+      <PropertyRef Name="Asociado" />
+    </Key>
+    <Property Name="Empresa" Type="smallint" Nullable="false" />
+    <Property Name="Asociado" Type="int" Nullable="false" />
+    <Property Name="TelCelular" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelCasa" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelTrabajo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="fn_ValidaDPI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="dpi" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="fn_ValidaNit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="nit" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ABC_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cl_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cl_opcion" Type="char" Mode="In" />
+    <Parameter Name="cl_cliente" Type="int" Mode="InOut" />
+    <Parameter Name="cl_tipoCliente" Type="char" Mode="In" />
+    <Parameter Name="cl_ClasificacionCliente" Type="char" Mode="In" />
+    <Parameter Name="cl_tipoident" Type="char" Mode="In" />
+    <Parameter Name="cl_identifica" Type="nvarchar" Mode="In" />
+    <Parameter Name="cl_nit" Type="nvarchar" Mode="In" />
+    <Parameter Name="cl_nombre1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cl_nombre2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cl_nombre3" Type="nvarchar" Mode="In" />
+    <Parameter Name="cl_apellido1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cl_apellido2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cl_apecasada" Type="nvarchar" Mode="In" />
+    <Parameter Name="cl_genero" Type="char" Mode="In" />
+    <Parameter Name="cl_fechanac" Type="date" Mode="In" />
+    <Parameter Name="cl_ocupacion" Type="char" Mode="In" />
+    <Parameter Name="cl_estadocivil" Type="char" Mode="In" />
+    <Parameter Name="cl_RecibePublicidad" Type="int" Mode="In" />
+    <Parameter Name="cl_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="cl_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Contacto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cn_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cn_opcion" Type="char" Mode="In" />
+    <Parameter Name="cn_IdContacto" Type="int" Mode="InOut" />
+    <Parameter Name="cn_tipoAsociado" Type="char" Mode="In" />
+    <Parameter Name="cn_asociado" Type="int" Mode="In" />
+    <Parameter Name="cn_tipoContacto" Type="char" Mode="In" />
+    <Parameter Name="cn_contacto" Type="nvarchar" Mode="In" />
+    <Parameter Name="cn_contacto2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cn_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="cn_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Direccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="di_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="di_opcion" Type="char" Mode="In" />
+    <Parameter Name="di_IdDireccion" Type="int" Mode="InOut" />
+    <Parameter Name="di_tipoAsociado" Type="char" Mode="In" />
+    <Parameter Name="di_asociado" Type="int" Mode="In" />
+    <Parameter Name="di_TipoDireccion" Type="char" Mode="In" />
+    <Parameter Name="di_Direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="di_Direccion2" Type="nvarchar" Mode="In" />
+    <Parameter Name="di_zona" Type="char" Mode="In" />
+    <Parameter Name="di_municipio" Type="char" Mode="In" />
+    <Parameter Name="di_departamento" Type="char" Mode="In" />
+    <Parameter Name="di_pais" Type="char" Mode="In" />
+    <Parameter Name="di_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="di_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Foto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fo_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="fo_opcion" Type="char" Mode="In" />
+    <Parameter Name="fo_IdFoto" Type="int" Mode="InOut" />
+    <Parameter Name="fo_tipoAsociado" Type="char" Mode="In" />
+    <Parameter Name="fo_asociado" Type="int" Mode="In" />
+    <Parameter Name="fo_foto" Type="image" Mode="In" />
+    <Parameter Name="fo_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="fo_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Huella" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="hu_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="hu_opcion" Type="char" Mode="In" />
+    <Parameter Name="hu_IdHuella" Type="int" Mode="InOut" />
+    <Parameter Name="hu_tipoAsociado" Type="char" Mode="In" />
+    <Parameter Name="hu_asociado" Type="int" Mode="In" />
+    <Parameter Name="hu_huella" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="hu_mano" Type="varchar" Mode="In" />
+    <Parameter Name="hu_dedo" Type="varchar" Mode="In" />
+    <Parameter Name="hu_huella_long" Type="int" Mode="In" />
+    <Parameter Name="hu_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="hu_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_NitFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nf_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="nf_opcion" Type="char" Mode="In" />
+    <Parameter Name="nf_nit" Type="nvarchar" Mode="InOut" />
+    <Parameter Name="nf_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="nf_Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="nf_Direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="nf_actCentral" Type="int" Mode="In" />
+    <Parameter Name="nf_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="nf_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Opcion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="op_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="op_opcion" Type="char" Mode="In" />
+    <Parameter Name="op_codigoOpcion" Type="int" Mode="InOut" />
+    <Parameter Name="op_NombreOpcion" Type="varchar" Mode="In" />
+    <Parameter Name="op_DescOpcion" Type="varchar" Mode="In" />
+    <Parameter Name="op_PadreOpcion" Type="int" Mode="In" />
+    <Parameter Name="op_autenticar" Type="bit" Mode="In" />
+    <Parameter Name="op_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="op_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Perfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pf_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pf_opcion" Type="char" Mode="In" />
+    <Parameter Name="pf_codPerfil" Type="int" Mode="InOut" />
+    <Parameter Name="pf_nomPerfil" Type="nvarchar" Mode="In" />
+    <Parameter Name="pf_DescPerfil" Type="nvarchar" Mode="In" />
+    <Parameter Name="pf_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="pf_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_PerfilUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pu_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pu_opcion" Type="char" Mode="In" />
+    <Parameter Name="pu_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="pu_codPerfilUsuario" Type="int" Mode="InOut" />
+    <Parameter Name="pu_codPerfil" Type="int" Mode="In" />
+    <Parameter Name="pu_codUsuario" Type="int" Mode="In" />
+    <Parameter Name="pu_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="pu_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Permiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pe_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pe_opcion" Type="char" Mode="In" />
+    <Parameter Name="pe_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="pe_IdPermiso" Type="int" Mode="InOut" />
+    <Parameter Name="pe_CodPerfil" Type="int" Mode="In" />
+    <Parameter Name="pe_codigoOpcion" Type="int" Mode="In" />
+    <Parameter Name="pe_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="pe_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pv_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pv_opcion" Type="char" Mode="In" />
+    <Parameter Name="pv_proveedor" Type="int" Mode="InOut" />
+    <Parameter Name="pv_tipoProveedor" Type="char" Mode="In" />
+    <Parameter Name="pv_nombre1" Type="varchar" Mode="In" />
+    <Parameter Name="pv_nombre2" Type="varchar" Mode="In" />
+    <Parameter Name="pv_nit" Type="varchar" Mode="In" />
+    <Parameter Name="pv_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="pv_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="us_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="us_opcion" Type="char" Mode="In" />
+    <Parameter Name="us_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="us_codUsuario" Type="int" Mode="InOut" />
+    <Parameter Name="us_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="us_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="us_password" Type="char" Mode="In" />
+    <Parameter Name="us_estUsuario" Type="char" Mode="In" />
+    <Parameter Name="us_IdEmpleado" Type="int" Mode="In" />
+    <Parameter Name="us_usuarioing" Type="nvarchar" Mode="In" />
+    <Parameter Name="us_resetPass" Type="int" Mode="In" />
+    <Parameter Name="us_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Asigna_PermisosPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ap_Empresa" Type="smallint" Mode="In" />
+    <Parameter Name="ap_idSucursal" Type="int" Mode="In" />
+    <Parameter Name="ap_CodPerfil" Type="int" Mode="In" />
+    <Parameter Name="ap_CodigoOpcion" Type="int" Mode="In" />
+    <Parameter Name="ap_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="cl_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cl_cliente" Type="int" Mode="In" />
+    <Parameter Name="cl_tipoCliente" Type="int" Mode="In" />
+    <Parameter Name="cl_tipoident" Type="int" Mode="In" />
+    <Parameter Name="cl_identifica" Type="varchar" Mode="In" />
+    <Parameter Name="cl_nit" Type="varchar" Mode="In" />
+    <Parameter Name="cl_nombre1" Type="varchar" Mode="In" />
+    <Parameter Name="cl_nombre2" Type="varchar" Mode="In" />
+    <Parameter Name="cl_nombre3" Type="varchar" Mode="In" />
+    <Parameter Name="cl_apellido1" Type="varchar" Mode="In" />
+    <Parameter Name="cl_apellido2" Type="varchar" Mode="In" />
+    <Parameter Name="cl_apecasada" Type="varchar" Mode="In" />
+    <Parameter Name="cl_fechanac" Type="date" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Contacto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="cn_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cn_idContacto" Type="int" Mode="In" />
+    <Parameter Name="cn_tipoasociado" Type="char" Mode="In" />
+    <Parameter Name="cn_asociado" Type="int" Mode="In" />
+    <Parameter Name="cn_tipoContacto" Type="char" Mode="In" />
+    <Parameter Name="cn_Contacto" Type="nvarchar" Mode="In" />
+    <Parameter Name="cn_Contacto2" Type="nvarchar" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Direccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="di_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="di_idDireccion" Type="int" Mode="In" />
+    <Parameter Name="di_tipoasociado" Type="char" Mode="In" />
+    <Parameter Name="di_asociado" Type="int" Mode="In" />
+    <Parameter Name="di_tipoDireccion" Type="char" Mode="In" />
+    <Parameter Name="di_Direccion" Type="varchar" Mode="In" />
+    <Parameter Name="di_Direccion2" Type="varchar" Mode="In" />
+    <Parameter Name="di_zona" Type="varchar" Mode="In" />
+    <Parameter Name="di_municipio" Type="varchar" Mode="In" />
+    <Parameter Name="di_departamento" Type="varchar" Mode="In" />
+    <Parameter Name="di_pais" Type="varchar" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Foto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="fo_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="fo_IdFoto" Type="int" Mode="In" />
+    <Parameter Name="fo_tipoAsociado" Type="char" Mode="In" />
+    <Parameter Name="fo_asociado" Type="int" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Huella" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="hu_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="hu_IdHuella" Type="int" Mode="In" />
+    <Parameter Name="hu_tipoAsociado" Type="char" Mode="In" />
+    <Parameter Name="hu_asociado" Type="int" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_NitFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="nf_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="nf_nit" Type="varchar" Mode="In" />
+    <Parameter Name="nf_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="nf_Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="nf_Direccion" Type="varchar" Mode="In" />
+    <Parameter Name="nf_actCentral" Type="int" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Opcion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="op_Empresa" Type="smallint" Mode="In" />
+    <Parameter Name="op_CodigoOpcion" Type="int" Mode="In" />
+    <Parameter Name="op_NombreOpcion" Type="varchar" Mode="In" />
+    <Parameter Name="op_DescOpcion" Type="varchar" Mode="In" />
+    <Parameter Name="op_PadreOpcion" Type="int" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Perfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="pf_empresa" Type="int" Mode="In" />
+    <Parameter Name="pf_codPerfil" Type="int" Mode="In" />
+    <Parameter Name="pf_nomPerfil" Type="varchar" Mode="In" />
+    <Parameter Name="pf_descPerfil" Type="varchar" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_PerfilUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="pu_empresa" Type="int" Mode="In" />
+    <Parameter Name="pu_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="pu_codPerfil" Type="int" Mode="In" />
+    <Parameter Name="pu_codUsuario" Type="int" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Permiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="pe_Empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pe_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="pe_CodPerfil" Type="int" Mode="In" />
+    <Parameter Name="pe_CodigoOpcion" Type="int" Mode="In" />
+    <Parameter Name="pe_PadreOpcion" Type="int" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_PermisosUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="us_Empresa" Type="smallint" Mode="In" />
+    <Parameter Name="us_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="us_CodUsuario" Type="int" Mode="In" />
+    <Parameter Name="us_CodPerfil" Type="int" Mode="In" />
+    <Parameter Name="us_CodigoOpcion" Type="int" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="pv_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pv_proveedor" Type="int" Mode="In" />
+    <Parameter Name="pv_tipoProveedor" Type="int" Mode="In" />
+    <Parameter Name="pv_nombre1" Type="varchar" Mode="In" />
+    <Parameter Name="pv_nombre2" Type="varchar" Mode="In" />
+    <Parameter Name="pv_nit" Type="varchar" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="us_empresa" Type="int" Mode="In" />
+    <Parameter Name="us_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="us_codUsuario" Type="int" Mode="In" />
+    <Parameter Name="us_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="us_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="us_estUsuario" Type="char" Mode="In" />
+    <Parameter Name="us_IdEmpleado" Type="int" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_CargaPermisos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cp_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cp_codUsuario" Type="int" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="lg_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="lg_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="lg_password" Type="varchar" Mode="In" />
+    <Parameter Name="lg_NombreUsuario" Type="nvarchar" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_RegistrosNuevos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cl_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ValidaCumpleanios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cl_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cl_cliente" Type="int" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="SSS_PERSONASModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Foto" EntityType="Self.Foto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Huella" EntityType="Self.Huella" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NitFactura" EntityType="Self.NitFactura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="opcion" EntityType="Self.opcion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="perfil" EntityType="Self.perfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="perfilusuario" EntityType="Self.perfilusuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="permiso" EntityType="Self.permiso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vw_UltimosTelefonos" EntityType="Self.vw_UltimosTelefonos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_UltimosTelefonos].[Empresa] AS [Empresa], 
+    [vw_UltimosTelefonos].[Asociado] AS [Asociado], 
+    [vw_UltimosTelefonos].[TelCelular] AS [TelCelular], 
+    [vw_UltimosTelefonos].[TelCasa] AS [TelCasa], 
+    [vw_UltimosTelefonos].[TelTrabajo] AS [TelTrabajo]
+    FROM [dbo].[vw_UltimosTelefonos] AS [vw_UltimosTelefonos]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

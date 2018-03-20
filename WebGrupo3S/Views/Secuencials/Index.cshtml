@@ -1,0 +1,71 @@
+﻿@using WebGrupo3S.Helpers
+@model IEnumerable<WebGrupo3S.Models.Secuencial>
+@{
+    ViewBag.Title = "Secuencias";
+}
+@Styles.Render("~/Admin/plugins/datatables/css")
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead style="background-color:lavender">
+                        <tr>
+                            <th>
+                                Codigo
+                            </th>
+                            <th>
+                                Tabla
+                            </th>
+                            <th>
+                                Base de datos
+                            </th>
+                            <th>
+                                Centralizado
+                            </th>
+                            <th>
+                                Secuencia
+                            </th>
+                            <th style="background-color:lavender">
+                                <div class="pull-right">
+                                    @if (ViewBag.nuevo == "1")
+                                    {
+                                        <a href="@Url.Action("Create", "Secuencials")"><img width="20" height="20" src="/images/add.png" /></a>
+                                    }
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.sc_codTabla)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.sc_tabla)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.sc_DataBase)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.sc_Centralizado)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.sc_secuencial)
+                                </td>
+                                <td></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

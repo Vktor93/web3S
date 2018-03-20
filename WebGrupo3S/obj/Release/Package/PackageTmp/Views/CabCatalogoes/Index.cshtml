@@ -1,0 +1,94 @@
+﻿@using WebGrupo3S.Helpers
+@model IList<WebGrupo3S.Models.sp_Busqueda_CabCatalogo_Result>
+
+@{
+    ViewBag.Title = "Catalogos";
+}
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <div>
+                    @if (ViewBag.reporte == "1")
+                    {
+                        <a href="@Url.Action("Report", new { id = "PDF" })">  PDF   <img width="20" height="20" src="/images/pdf.png" /></a>
+                        <a href="@Url.Action("Report", new { id = "Excel" })">  EXCEL   <img width="20" height="20" src="/images/excel.png" /></a>
+                    }
+                </div>
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead style="background-color:lavender">
+                        <tr>
+                            <th>
+                                Catalogo
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Valor1
+                            </th>
+                            <th>
+                                Valor2
+                            </th>
+                            <th>
+                                Valor3
+                            </th>
+                            <th style="background-color:white">
+                                <div class="pull-right">
+                                    @if (ViewBag.nuevo == "1")
+                                    {
+                                        <a href="@Url.Action("Create", "CabCatalogoes")"><img width="20" height="20" src="/images/add.png" /></a>
+                                    }
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IdCatalogo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreCatalogo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreValor1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreValor2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreValor3)
+                                </td>
+                                <td>
+                                    @if (ViewBag.editar == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Edita", "Edit", "CabCatalogoes", routeValues: new { id = item.IdCatalogo, cat = item.NombreCatalogo }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary btn-xs" })
+                                    }
+                                    @if (ViewBag.debaja == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-trash'></span>", "de Baja", "Delete", "CabCatalogoes", routeValues: new { id = item.IdCatalogo, cat = item.NombreCatalogo }, htmlAttributes: new { data_modal = "", @class = "btn btn-info btn-xs" })
+                                    }
+                                    @if (ViewBag.detalle == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-list-alt'></span>", "Detalle", "Details", "CabCatalogoes", routeValues: new { id = item.IdCatalogo, cat = item.NombreCatalogo, val1 = item.NombreValor1, val2 = item.NombreValor2, val3 = item.NombreValor3 }, htmlAttributes: new { @class = "btn btn-primary btn-xs" })
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

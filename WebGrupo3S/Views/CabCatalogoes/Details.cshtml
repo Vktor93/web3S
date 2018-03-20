@@ -1,0 +1,95 @@
+﻿@using WebGrupo3S.Helpers
+@model IList<WebGrupo3S.Models.sp_Busqueda_DetCatalogo_Result>
+
+@{
+    ViewBag.Title = "Detalle de catalogos";
+}
+
+<p>
+    @Html.ActionLink("Retorna Catalogos", "Regresa", null, new { @class = "btn btn-info" })
+</p>
+
+<h2>@ViewData["Catalogo"]</h2>
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <div>
+                    @if (ViewBag.reporte == "1")
+                    {
+                        <a href="@Url.Action("Report", new { id = "PDF" })">  PDF   <img width="20" height="20" src="/images/pdf.png" /></a>
+                        <a href="@Url.Action("Report", new { id = "Excel" })">  EXCEL   <img width="20" height="20" src="/images/excel.png" /></a>
+                    }
+                </div>
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead style="background-color:lavender">
+                        <tr>
+                            <th>
+                                Codigo
+                            </th>
+                            <th>
+                                Valor
+                            </th>
+                            <th>
+                                @ViewData["Valor1"]
+                            </th>
+                            <th>
+                                @ViewData["Valor2"]
+                            </th>
+                            <th>
+                                @ViewData["Valor3"]
+                            </th>
+                            <th style="background-color:lavender">
+                                <div class="pull-right">
+                                    @if (ViewBag.nuevo == "1")
+                                    {
+                                        <a href="@Url.Action("DCreate", "CabCatalogoes", routeValues: new { id = ViewBag.idcat, cat = ViewBag.catalogo, val1 = ViewBag.valor1 })"><img width="20" height="20" src="/images/add.png" /></a>
+                                    }
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Codigo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Valor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Valor1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Valor2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Valor3)
+                                </td>
+                                <td>
+                                    @if (ViewBag.editar == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Edita", "DEdit", "CabCatalogoes", routeValues: new { id = item.IdCatalogo, cod = item.Codigo, ncat = ViewBag.catalogo }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary btn-xs" })
+                                    }
+                                    @if (ViewBag.debaja == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-trash'></span>", "de Baja", "DDelete", "CabCatalogoes", routeValues: new { id = item.IdCatalogo, cod = item.Codigo, ncat = ViewBag.catalogo }, htmlAttributes: new { data_modal = "", @class = "btn btn-info btn-xs" })
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

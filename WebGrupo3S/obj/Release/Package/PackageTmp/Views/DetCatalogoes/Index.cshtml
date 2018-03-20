@@ -1,0 +1,79 @@
+﻿@model IList<WebGrupo3S.Models.sp_Busqueda_DetCatalogo_Result>
+
+<p>
+    @Html.ActionLink("Nuevo Registro", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+@{
+    ViewBag.Title = "Detalle de Catalogos";
+}
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Catalogo
+                            </th>
+                            <th>
+                                Codigo
+                            </th>
+                            <th>
+                                Valor
+                            </th>
+                            <th>
+                                Valor1
+                            </th>
+                            <th>
+                                Valor2
+                            </th>
+                            <th>
+                                Valor3
+                            </th>
+                              <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IdCatalogo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Codigo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Valor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Valor1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Valor2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Valor3)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IdCatalogo, cod = item.Codigo }, new { @class = "btn btn-primary btn-xs" })
+                                    @Html.ActionLink("de Baja", "Delete", new { id = item.IdCatalogo, cod = item.Codigo }, new { @class = "btn btn-info btn-xs" })
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

@@ -1,0 +1,95 @@
+﻿@using WebGrupo3S.Helpers
+@model IList<WebGrupo3S.Models.sp_Busqueda_Direccion_Result>
+
+<p>
+    @Html.ActionLink("Retorna proveedores", "Regresa", null, new { @class = "btn btn-info" })
+</p>
+
+@{
+    ViewBag.Title = "Direcciones";
+}
+
+<h2>@ViewData["Nombre"]</h2>
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead style="background-color:lavender">
+                        <tr>
+                            <th>
+                                Tipo de dirección
+                            </th>
+                            <th>
+                                Primer dirección
+                            </th>
+                            <th>
+                                Segunda dirección
+                            </th>
+                            <th>
+                                Zona
+                            </th>
+                            <th>
+                                Departamento
+                            </th>
+                            <th>
+                                Municipio
+                            </th>
+                            <th style="background-color:lavender">
+                                <div class="pull-right">
+                                    @if (ViewBag.nuevo == "1")
+                                    {
+                                        <a href="@Url.Action("CreaDireccion", "Proveedors", routeValues: new { id = ViewBag.idproveedor, aso = ViewBag.nombre })"><img width="20" height="20" src="/images/add.png" /></a>
+                                    }
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TipoDireccion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Direccion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Direccion2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Zona)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreDepartamento)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreMunicipio)
+                                </td>
+                                <td>
+                                    @if (ViewBag.editar == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Edita", "DEdit", "Proveedors", routeValues: new { id = item.IdDireccion, aso = ViewBag.idproveedor, nom = ViewData["Nombre"] }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary btn-xs" })
+                                    }
+                                    @if (ViewBag.debaja == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-trash'></span>", "de Baja", "dDelete", "Proveedors", routeValues: new { id = item.IdDireccion, aso = ViewBag.idproveedor, nom = ViewData["Nombre"] }, htmlAttributes: new { data_modal = "", @class = "btn btn-info btn-xs" })
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    <tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

@@ -1,0 +1,114 @@
+﻿@model WebGrupo3S.Models.Addnode
+@{
+    ViewBag.Title = "Opciones";
+}
+<h4>@ViewData["Perfil"]</h4>
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:400px; height:40px; text-align:center">Actualiza datos</h3>
+</div>
+@using (Html.BeginForm())
+{
+    <div class="body" style="width:400px">
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal table-bordered">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-body" style="width:380px; height:350px; overflow: scroll">
+                        <div id="tree"></div>
+                        <div class="clearfix"></div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="width:400px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "Perfils")'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
+        <button id="btnGetValue" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i>Grabar</button>
+    </div>
+}
+
+@section Scripts {
+    <script src="~/Scripts/gijgo.js"></script>
+<link href="http://code.gijgo.com/1.3.0/css/gijgo.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var tree = "";
+            $.ajax({
+                type: 'get',
+                dataType: 'json',
+                cache: false,
+                url: '@Url.Action("GetHierarchy")',
+                success: function (records, textStatus, jqXHR) {
+                    tree = $('#tree').tree({
+                        primaryKey: 'Id',
+                        dataSource: [{
+                            text: 'Información de Seguridad',
+                            children: [records[0], records[1]]
+                            
+                        }, {
+                            text: 'Planillas',
+                            children: [records[5], records[16]]
+                        }, {
+                            text: 'CuentasCorrientes',
+                            children: [records[20], records[13], records[7]]
+                        }, {
+                            text: 'Productos/Sucursales',
+                            children: [records[11], records[12], records[3], records[8], records[4]]
+                        }, {
+                            text: 'Calendario',
+                            children: null
+                        }, {
+                            text: 'Configuración General',
+                            children: [records[21], records[22], records[6], records[23]]
+                        }],
+                        dragAndDrop: true,
+                        checkboxes: true,
+                        iconsLibrary: 'glyphicons',
+                        uiLibrary: 'bootstrap'
+                    });
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert('Error - ' + errorThrown);
+                }
+            });
+
+            $('#btnGetValue').click(function () {
+                var result = tree.getCheckedNodes();
+                if (result == "") { alert("Please Select Node..!!") }
+                else {
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("GetOpciones")',
+                        //dataType: 'json',
+                        data: {datos: result.join()},
+                        success: function () {
+
+                        },
+                        error: function (ex) {
+                            
+                            console.log(ex);
+                            alert('Revision de opciones fallo: ' + ex);
+                        }
+                    });
+                    //alert(result)
+                }
+                return true;
+            });
+
+            $('.rbtnnodetype').click(function (e) {
+                if ($(this).val() == "Pn") {
+                    $('.petenddiv').attr("class", "petenddiv hidden");
+
+                    $("#ParentName").val("");
+                }
+                else {
+                    $('.petenddiv').attr("class", "petenddiv");
+                }
+            });
+
+        });
+
+    </script>
+
+}

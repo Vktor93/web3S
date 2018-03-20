@@ -1,0 +1,60 @@
+﻿@model WebGrupo3S.Models.DetCatalogo
+
+@{
+    ViewBag.Title = "Dar de baja";
+}
+
+<h3>Esta seguro que desea dar de baja siguiente detalle de catalogo?</h3>
+<div>
+    <dl class="form-horizontal table-responsive col-md-5 box-body bg-aqua-active table-bordered">
+        <dt>
+            @Html.Label("Codigo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_codigo)
+        </dd>
+        <dt>
+            @Html.Label("Valor")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor)
+        </dd>
+        <dt>
+            @Html.Label("Valor1")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor1)
+        </dd>
+
+        <dt>
+            @Html.Label("Valor2")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor2)
+        </dd>
+
+        <dt>
+            @Html.Label("Valor3")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor3)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Da de baja" class="btn btn-info" /> |
+            @Html.ActionLink("Retorna a lista", "Index")
+        </div>
+    }
+</div>

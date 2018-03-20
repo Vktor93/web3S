@@ -1,0 +1,66 @@
+﻿@model WebGrupo3S.Models.DetCatalogo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DetCatalogo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cd_valor1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cd_valor2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cd_valor3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cd_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cd_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cd_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_maquinamod)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

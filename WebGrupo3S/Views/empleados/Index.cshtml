@@ -1,0 +1,75 @@
+﻿@model IList<WebGrupo3S.Models.sp_Busqueda_Empleado_Result>
+
+<p>
+    @Html.ActionLink("Nuevo Registro", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+@{
+    ViewBag.Title = "Empleados";
+}
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Empleado
+                            </th>
+                            <th>
+                                Tipo
+                            </th>
+                            <th>
+                                Identificación
+                            </th>
+                            <th>
+                                Nit
+                            </th>
+                            <th>
+                                Nombre Largo
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Empleado)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TipoEmpleado)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Identificacion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nit)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreLargo)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edita", "Edit", new { id = item.Empleado }, new { @class = "btn btn-primary btn-xs" })
+                                    @Html.ActionLink("de Baja", "Delete", new { id = item.Empleado }, new { @class = "btn btn-info btn-xs" })
+                                    @Html.ActionLink("Horario", "Horario", new { id = item.Empleado }, new { @class = "btn btn-primary btn-xs" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}
+
+

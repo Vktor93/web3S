@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSS_COMPLEMENTOSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CabCatalogo">
+    <Key>
+      <PropertyRef Name="cc_empresa" />
+      <PropertyRef Name="cc_IdCatalogo" />
+    </Key>
+    <Property Name="cc_empresa" Type="Int16" Nullable="false" />
+    <Property Name="cc_IdCatalogo" Type="Int32" Nullable="false" />
+    <Property Name="cc_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cc_nomVal1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cc_nomVal2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cc_nomVal3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cc_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cc_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="cc_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cc_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cc_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cc_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cc_estado" Type="Int32" Nullable="false" />
+    <Property Name="cc_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Imagen">
+    <Key>
+      <PropertyRef Name="im_empresa" />
+      <PropertyRef Name="im_CodImagen" />
+    </Key>
+    <Property Name="im_empresa" Type="Int16" Nullable="false" />
+    <Property Name="im_CodImagen" Type="Int32" Nullable="false" />
+    <Property Name="im_NombreImagen" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="im_imagen" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="im_estImagen" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="im_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="im_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="im_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="im_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="im_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="im_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="im_estado" Type="Int32" Nullable="false" />
+    <Property Name="im_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Secuencial">
+    <Key>
+      <PropertyRef Name="sc_empresa" />
+      <PropertyRef Name="sc_codTabla" />
+    </Key>
+    <Property Name="sc_empresa" Type="Int32" Nullable="false" />
+    <Property Name="sc_codTabla" Type="Int32" Nullable="false" />
+    <Property Name="sc_tabla" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sc_secuencial" Type="Int32" Nullable="false" />
+    <Property Name="sc_DataBase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sc_Centralizado" Type="Int32" Nullable="false" />
+    <Property Name="sc_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sc_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="sc_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sc_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sc_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sc_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sc_estado" Type="Int32" Nullable="false" />
+    <Property Name="sc_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Bitacora">
+    <Key>
+      <PropertyRef Name="bt_empresa" />
+      <PropertyRef Name="bt_tipoOperacion" />
+      <PropertyRef Name="bt_fechaing" />
+      <PropertyRef Name="bt_usuarioing" />
+      <PropertyRef Name="bt_maquinaing" />
+      <PropertyRef Name="bt_estado" />
+      <PropertyRef Name="bt_timestamp" />
+    </Key>
+    <Property Name="bt_empresa" Type="Int16" Nullable="false" />
+    <Property Name="bt_tipoOperacion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="bt_nombreTabla" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bt_idRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bt_nombreCampo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bt_datoActual" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bt_datoAnterior" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bt_Comentario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="bt_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="bt_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="bt_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bt_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bt_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bt_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bt_estado" Type="Int32" Nullable="false" />
+    <Property Name="bt_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DetCatalogo">
+    <Key>
+      <PropertyRef Name="cd_empresa" />
+      <PropertyRef Name="cd_IdCatalogo" />
+      <PropertyRef Name="cd_codigo" />
+      <PropertyRef Name="cd_valor" />
+      <PropertyRef Name="cd_fechaing" />
+      <PropertyRef Name="cd_usuarioing" />
+      <PropertyRef Name="cd_maquinaing" />
+      <PropertyRef Name="cd_estado" />
+      <PropertyRef Name="cd_timestamp" />
+    </Key>
+    <Property Name="cd_empresa" Type="Int16" Nullable="false" />
+    <Property Name="cd_IdCatalogo" Type="Int32" Nullable="false" />
+    <Property Name="cd_codigo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cd_valor" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cd_valor1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cd_valor2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cd_valor3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cd_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cd_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="cd_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cd_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cd_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cd_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cd_estado" Type="Int32" Nullable="false" />
+    <Property Name="cd_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="vw_catalogo">
+    <Key>
+      <PropertyRef Name="Empresa" />
+      <PropertyRef Name="IdCatalogo" />
+      <PropertyRef Name="NomCatalogo" />
+      <PropertyRef Name="CodCatalogo" />
+      <PropertyRef Name="Descripcion" />
+    </Key>
+    <Property Name="Empresa" Type="Int16" Nullable="false" />
+    <Property Name="IdCatalogo" Type="Int32" Nullable="false" />
+    <Property Name="NomCatalogo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodCatalogo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Valor1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Valor2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Valor3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="SSS_COMPLEMENTOSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CabCatalogoes" EntityType="Self.CabCatalogo" />
+    <EntitySet Name="Imagens" EntityType="Self.Imagen" />
+    <EntitySet Name="Secuencials" EntityType="Self.Secuencial" />
+    <EntitySet Name="Bitacoras" EntityType="Self.Bitacora" />
+    <EntitySet Name="DetCatalogoes" EntityType="Self.DetCatalogo" />
+    <EntitySet Name="vw_catalogo" EntityType="Self.vw_catalogo" />
+    <FunctionImport Name="sp_ABC_Bitacora">
+      <Parameter Name="bt_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="bt_opcion" Mode="In" Type="String" />
+      <Parameter Name="bt_tipoOperacion" Mode="In" Type="String" />
+      <Parameter Name="bt_nombreTabla" Mode="In" Type="String" />
+      <Parameter Name="bt_IdRegistro" Mode="In" Type="String" />
+      <Parameter Name="bt_nombreCampo" Mode="In" Type="String" />
+      <Parameter Name="bt_datoActual" Mode="In" Type="String" />
+      <Parameter Name="bt_datoAnterior" Mode="In" Type="String" />
+      <Parameter Name="bt_comentario" Mode="In" Type="String" />
+      <Parameter Name="bt_usuario" Mode="In" Type="String" />
+      <Parameter Name="bt_timestamp" Mode="In" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_CabCatalogo">
+      <Parameter Name="cc_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cc_opcion" Mode="In" Type="String" />
+      <Parameter Name="cc_IdCatalogo" Mode="InOut" Type="Int32" />
+      <Parameter Name="cc_nombre" Mode="In" Type="String" />
+      <Parameter Name="cc_nomVal1" Mode="In" Type="String" />
+      <Parameter Name="cc_nomVal2" Mode="In" Type="String" />
+      <Parameter Name="cc_nomVal3" Mode="In" Type="String" />
+      <Parameter Name="cc_usuario" Mode="In" Type="String" />
+      <Parameter Name="cc_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_DetCatalogo">
+      <Parameter Name="cd_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cd_opcion" Mode="In" Type="String" />
+      <Parameter Name="cd_IdCatalogo" Mode="In" Type="Int32" />
+      <Parameter Name="cd_codigo" Mode="In" Type="String" />
+      <Parameter Name="cd_valor" Mode="In" Type="String" />
+      <Parameter Name="cd_Valor1" Mode="In" Type="String" />
+      <Parameter Name="cd_Valor2" Mode="In" Type="String" />
+      <Parameter Name="cd_Valor3" Mode="In" Type="String" />
+      <Parameter Name="cd_usuario" Mode="In" Type="String" />
+      <Parameter Name="cd_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_Imagen">
+      <Parameter Name="im_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="im_opcion" Mode="In" Type="String" />
+      <Parameter Name="im_CodImagen" Mode="InOut" Type="Int32" />
+      <Parameter Name="im_NombreImagen" Mode="In" Type="String" />
+      <Parameter Name="im_imagen" Mode="In" Type="Binary" />
+      <Parameter Name="im_estImagen" Mode="In" Type="String" />
+      <Parameter Name="im_usuario" Mode="In" Type="String" />
+      <Parameter Name="im_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Altas_Secuencial">
+      <Parameter Name="sc_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="sc_tabla" Mode="In" Type="String" />
+      <Parameter Name="sc_DataBase" Mode="In" Type="String" />
+      <Parameter Name="sc_centralizado" Mode="In" Type="Int32" />
+      <Parameter Name="sc_usuario" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_CabCatalogo" ReturnType="Collection(SSS_COMPLEMENTOSModel.sp_Busqueda_CabCatalogo_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="cc_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cc_IdCatalogo" Mode="In" Type="Int32" />
+      <Parameter Name="cc_nombre" Mode="In" Type="String" />
+      <Parameter Name="cc_nomVal1" Mode="In" Type="String" />
+      <Parameter Name="cc_nomVal2" Mode="In" Type="String" />
+      <Parameter Name="cc_nomVal3" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Catalogo" ReturnType="Collection(SSS_COMPLEMENTOSModel.sp_Busqueda_Catalogo_Result)">
+      <Parameter Name="ca_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="ca_IdCatalogo" Mode="In" Type="Int32" />
+      <Parameter Name="ca_NomCatalogo" Mode="In" Type="String" />
+      <Parameter Name="ca_CodCatalogo" Mode="In" Type="String" />
+      <Parameter Name="ca_Descripcion" Mode="In" Type="String" />
+      <Parameter Name="ca_Valor1" Mode="In" Type="String" />
+      <Parameter Name="ca_Valor2" Mode="In" Type="String" />
+      <Parameter Name="ca_Valor3" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_DetCatalogo" ReturnType="Collection(SSS_COMPLEMENTOSModel.sp_Busqueda_DetCatalogo_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="cd_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cd_IdCatalogo" Mode="In" Type="Int32" />
+      <Parameter Name="cd_codigo" Mode="In" Type="String" />
+      <Parameter Name="cd_valor" Mode="In" Type="String" />
+      <Parameter Name="cd_Valor1" Mode="In" Type="String" />
+      <Parameter Name="cd_Valor2" Mode="In" Type="String" />
+      <Parameter Name="cd_Valor3" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Imagen" ReturnType="Collection(SSS_COMPLEMENTOSModel.sp_Busqueda_Imagen_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="im_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="im_CodImagen" Mode="In" Type="Int32" />
+      <Parameter Name="im_NombreImagen" Mode="In" Type="String" />
+      <Parameter Name="im_estImagen" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CorrigeSecuenciales">
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Obtiene_Secuencial">
+      <Parameter Name="sc_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="sc_codtabla" Mode="In" Type="String" />
+      <Parameter Name="sec" Mode="InOut" Type="Int32" />
+      <Parameter Name="sc_usuario" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_Busqueda_CabCatalogo_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="IdCatalogo" Nullable="false" />
+    <Property Type="String" Name="NombreCatalogo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NombreValor1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NombreValor2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NombreValor3" Nullable="true" MaxLength="50" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_Catalogo_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="IdCatalogo" Nullable="false" />
+    <Property Type="String" Name="NomCatalogo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CodCatalogo" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Valor1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Valor2" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Valor3" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_DetCatalogo_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="IdCatalogo" Nullable="false" />
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Valor" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Valor1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Valor2" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Valor3" Nullable="true" MaxLength="100" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_Imagen_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodImagen" Nullable="false" />
+    <Property Type="String" Name="NombreImagen" Nullable="false" MaxLength="75" />
+    <Property Type="Binary" Name="Imagen" Nullable="false" MaxLength="Max" />
+    <Property Type="String" Name="EstImagen" Nullable="false" MaxLength="1" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,98 @@
+﻿@model WebGrupo3S.Models.perfilusuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>perfilusuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pu_codPerfil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_codPerfil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pu_codUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_codUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pu_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pu_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pu_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pu_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pu_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pu_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pu_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pu_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pu_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

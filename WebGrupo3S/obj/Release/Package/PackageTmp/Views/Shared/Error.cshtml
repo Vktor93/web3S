@@ -1,0 +1,28 @@
+﻿@model WebGrupo3S.Models.myError
+
+@{
+    ViewBag.Title = "Error";
+}
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Control: @Model.modulo</h3>
+</div>
+@using (Html.BeginForm())
+{
+    <h4>Accion:  @Model.opcion</h4>
+    <div class="form-horizontal table-bordered" , style="height: 200px; width:700px; overflow: scroll">
+        <h3>@Model.messageusuario</h3>
+    </div>
+    <div class="footer" style="width:700px">
+        <a href='javascript:history.go(-1)'>Retorna a pagina anterior</a>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+

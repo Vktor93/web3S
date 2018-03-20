@@ -1,0 +1,72 @@
+﻿@model WebGrupo3S.Models.TipoServicio
+
+@{
+    ViewBag.Title = "Tipo de servicio";
+}
+
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Actualiza datos</h3>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="body" style="width:700px">
+        <div class="form-horizontal table-bordered">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ts_empresa)
+            @Html.HiddenFor(model => model.ts_IdTipoServicio)
+            @Html.HiddenFor(model => model.ts_timestamp)
+
+            <div class="form-group">
+                @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.ts_nombre, new { htmlAttributes = new { @class = "form-control", style = "width: 200px" } })
+                    @Html.ValidationMessageFor(model => model.ts_nombre, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.ts_descripcion, new { htmlAttributes = new { @class = "form-control", style = "width: 400px" } })
+                    @Html.ValidationMessageFor(model => model.ts_descripcion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Tipo padre", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.ts_padre, new { htmlAttributes = new { @class = "form-control", style = "width: 100px" } })
+                    @Html.ValidationMessageFor(model => model.ts_padre, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Coordinación", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.DropDownListFor(model => model.ts_Coordinacion, new SelectList(ViewBag.CO, "Value", "Text"), new { style = "width: 150px; color:black" })
+                    @Html.ValidationMessageFor(model => model.ts_Coordinacion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("CuentaSAP", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.ts_CuentaSAP, new { htmlAttributes = new { @class = "form-control", style = "width: 100px" } })
+                    @Html.ValidationMessageFor(model => model.ts_CuentaSAP, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "TServicios")'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i> Grabar</button>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

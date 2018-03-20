@@ -1,0 +1,1621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSS_OPERACIONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ArqueoCaja">
+    <Key>
+      <PropertyRef Name="aq_empresa" />
+      <PropertyRef Name="aq_IdCierreCaja" />
+      <PropertyRef Name="aq_IdArqueoCaja" />
+    </Key>
+    <Property Name="aq_empresa" Type="Int16" Nullable="false" />
+    <Property Name="aq_IdCierreCaja" Type="Int32" Nullable="false" />
+    <Property Name="aq_IdArqueoCaja" Type="Int32" Nullable="false" />
+    <Property Name="aq_Moneda" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="aq_PresentacionMoneda" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="aq_Denominacion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="aq_Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="aq_MontoTotal" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="aq_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="aq_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="aq_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="aq_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aq_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="aq_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aq_estado" Type="Int32" Nullable="false" />
+    <Property Name="aq_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="CierreCaja">
+    <Key>
+      <PropertyRef Name="cj_empresa" />
+      <PropertyRef Name="cj_IdCierreCaja" />
+    </Key>
+    <Property Name="cj_empresa" Type="Int16" Nullable="false" />
+    <Property Name="cj_IdCierreCaja" Type="Int32" Nullable="false" />
+    <Property Name="cj_Terminal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cj_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="cj_FechaHoraCierre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cj_Moneda" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cj_SaldoAnterior" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_EntradasEfectivo" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_SalidasEfectivo" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_EfectivoTeorico" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_EfectivoFisico" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_AjusteEfectivo" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_ChequeTeorico" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_ChequeFisico" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_AjusteCheque" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_TarjetaTeorico" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_TarjetaFisico" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_AjusteTarjeta" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_Descuadre" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_RetiroEfectivoAdmin" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_SaldoActual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_estCierreCaja" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cj_TotalVenta" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_TotalPropina" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cj_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cj_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="cj_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cj_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cj_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cj_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cj_estado" Type="Int32" Nullable="false" />
+    <Property Name="cj_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="CierreDiario">
+    <Key>
+      <PropertyRef Name="cd_empresa" />
+      <PropertyRef Name="cd_IdSucursal" />
+      <PropertyRef Name="cd_IdCierreDiario" />
+    </Key>
+    <Property Name="cd_empresa" Type="Int16" Nullable="false" />
+    <Property Name="cd_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="cd_IdCierreDiario" Type="Int32" Nullable="false" />
+    <Property Name="cd_FechaCierreDiario" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="cd_estCierreDiario" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cd_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cd_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="cd_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cd_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cd_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cd_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cd_estado" Type="Int32" Nullable="false" />
+    <Property Name="cd_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="CuentaXCobrar">
+    <Key>
+      <PropertyRef Name="cc_empresa" />
+      <PropertyRef Name="cc_IdCuentaXCobrar" />
+    </Key>
+    <Property Name="cc_empresa" Type="Int16" Nullable="false" />
+    <Property Name="cc_IdCuentaXCobrar" Type="Int32" Nullable="false" />
+    <Property Name="cc_Cliente" Type="Int32" Nullable="false" />
+    <Property Name="cc_Saldo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="cc_fechaUltMov" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cc_MontoUltMov" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="cc_estCuentaXCobrar" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cc_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cc_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="cc_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cc_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cc_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cc_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cc_estado" Type="Int32" Nullable="false" />
+    <Property Name="cc_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Descuento">
+    <Key>
+      <PropertyRef Name="ds_empresa" />
+      <PropertyRef Name="ds_IdDescuento" />
+    </Key>
+    <Property Name="ds_empresa" Type="Int16" Nullable="false" />
+    <Property Name="ds_IdDescuento" Type="Int32" Nullable="false" />
+    <Property Name="ds_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="ds_TipoDescuento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ds_Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ds_Porcentaje" Type="Int32" Nullable="false" />
+    <Property Name="ds_Cantidad" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ds_IdDoc" Type="Int32" Nullable="false" />
+    <Property Name="ds_IdMov" Type="Int32" Nullable="false" />
+    <Property Name="ds_IdAutorizacion" Type="Int32" Nullable="false" />
+    <Property Name="ds_IdMovDescuento" Type="Int32" />
+    <Property Name="ds_Comentario" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="ds_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ds_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="ds_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ds_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ds_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ds_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ds_estado" Type="Int32" Nullable="false" />
+    <Property Name="ds_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DetalleCierreCaja">
+    <Key>
+      <PropertyRef Name="dj_empresa" />
+      <PropertyRef Name="dj_IdCierreCaja" />
+      <PropertyRef Name="dj_IdDetalleCierreCaja" />
+    </Key>
+    <Property Name="dj_empresa" Type="Int16" Nullable="false" />
+    <Property Name="dj_IdCierreCaja" Type="Int32" Nullable="false" />
+    <Property Name="dj_IdDetalleCierreCaja" Type="Int32" Nullable="false" />
+    <Property Name="dj_IdFormaPago" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="dj_Monto" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="dj_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dj_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="dj_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dj_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dj_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dj_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dj_estado" Type="Int32" Nullable="false" />
+    <Property Name="dj_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="dm_empresa" />
+      <PropertyRef Name="dm_IdSucursal" />
+      <PropertyRef Name="dm_IdDoc" />
+      <PropertyRef Name="dm_TipoDocumento" />
+    </Key>
+    <Property Name="dm_empresa" Type="Int16" Nullable="false" />
+    <Property Name="dm_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="dm_IdDoc" Type="Int32" Nullable="false" />
+    <Property Name="dm_TipoDocumento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="dm_TipoAsociado" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="dm_asociado" Type="Int32" />
+    <Property Name="dm_NombreAsociado" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="dm_DireccionAsociado" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="dm_Nit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dm_subtotal" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="dm_descuento" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="dm_total" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="dm_SerieDoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dm_NoDocumento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dm_fechaDoc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dm_EstDocumento" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="dm_Terminal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dm_MotivoAnulacion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="dm_MotivoNCND" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="dm_Comentario" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="dm_IdDocAnulado" Type="Int32" />
+    <Property Name="dm_IdCierreDiario" Type="Int32" />
+    <Property Name="dm_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dm_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="dm_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dm_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dm_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dm_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dm_estado" Type="Int32" Nullable="false" />
+    <Property Name="dm_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Existencia">
+    <Key>
+      <PropertyRef Name="ex_empresa" />
+      <PropertyRef Name="ex_IdSucursal" />
+      <PropertyRef Name="ex_TipoProducto" />
+      <PropertyRef Name="ex_IdProd" />
+      <PropertyRef Name="ex_fechaing" />
+    </Key>
+    <Property Name="ex_empresa" Type="Int16" Nullable="false" />
+    <Property Name="ex_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="ex_IdExistencia" Type="Int32" Nullable="false" />
+    <Property Name="ex_TipoProducto" Type="Int32" Nullable="false" />
+    <Property Name="ex_IdProd" Type="Int32" Nullable="false" />
+    <Property Name="ex_cantidad" Type="Int32" Nullable="false" />
+    <Property Name="ex_precioUnitario" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ex_FechaCaducidad" Type="DateTime" Precision="0" />
+    <Property Name="ex_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ex_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="ex_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ex_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ex_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ex_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ex_estado" Type="Int32" Nullable="false" />
+    <Property Name="ex_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="FacturaFormaPago">
+    <Key>
+      <PropertyRef Name="fp_empresa" />
+      <PropertyRef Name="fp_IdFacturaFormaPago" />
+    </Key>
+    <Property Name="fp_empresa" Type="Int16" Nullable="false" />
+    <Property Name="fp_IdFacturaFormaPago" Type="Int32" Nullable="false" />
+    <Property Name="fp_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="fp_IdDoc" Type="Int32" Nullable="false" />
+    <Property Name="fp_IdMovDocPromo" Type="Int32" />
+    <Property Name="fp_IdFormaPago" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="fp_IdAutorizacion" Type="Int32" />
+    <Property Name="fp_Cantidad" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fp_Unidades" Type="Int32" />
+    <Property Name="fp_NoDocumento" Type="Int64" />
+    <Property Name="fp_IdBanco" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="fp_IdMarcaTarjeta" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="fp_Comentario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="fp_Moneda" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="fp_TasaCambio" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fp_CantidadOriginal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fp_IdCierreCaja" Type="Int32" />
+    <Property Name="fp_ConfirmaCierreCaja" Type="Int32" />
+    <Property Name="fp_efectivoRecibido" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fp_efectivoVuelto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fp_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fp_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="fp_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fp_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fp_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fp_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fp_estado" Type="Int32" Nullable="false" />
+    <Property Name="fp_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="HorarioSucursal">
+    <Key>
+      <PropertyRef Name="hs_empresa" />
+      <PropertyRef Name="hs_IdSucursal" />
+      <PropertyRef Name="hs_dia" />
+      <PropertyRef Name="hs_Hora" />
+      <PropertyRef Name="hs_fechaing" />
+    </Key>
+    <Property Name="hs_empresa" Type="Int16" Nullable="false" />
+    <Property Name="hs_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="hs_dia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="hs_Hora" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="hs_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="hs_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="hs_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="hs_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hs_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="hs_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hs_estado" Type="Int32" Nullable="false" />
+    <Property Name="hs_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Movimiento">
+    <Key>
+      <PropertyRef Name="mv_empresa" />
+      <PropertyRef Name="mv_IdSucursal" />
+      <PropertyRef Name="mv_IdMov" />
+      <PropertyRef Name="mv_TipoMovimiento" />
+      <PropertyRef Name="mv_IdDoc" />
+    </Key>
+    <Property Name="mv_empresa" Type="Int16" Nullable="false" />
+    <Property Name="mv_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="mv_IdMov" Type="Int32" Nullable="false" />
+    <Property Name="mv_ProdServ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="mv_IdProdServ" Type="Int32" Nullable="false" />
+    <Property Name="mv_Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="mv_ValorMov" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mv_TipoMovimiento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="mv_FechaMov" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="mv_IdDoc" Type="Int32" Nullable="false" />
+    <Property Name="mv_IdOrdenServicio" Type="Int32" />
+    <Property Name="mv_IdDetalleOrdenServicio" Type="Int32" />
+    <Property Name="mv_IdAutorizacion" Type="Int32" />
+    <Property Name="mv_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="mv_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="mv_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mv_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mv_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mv_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mv_estado" Type="Int32" Nullable="false" />
+    <Property Name="mv_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="MovimientoCuentaXCobrar">
+    <Key>
+      <PropertyRef Name="mc_empresa" />
+      <PropertyRef Name="mc_IdCuentaXCobrar" />
+      <PropertyRef Name="mc_IdMovCuentaXCobrar" />
+    </Key>
+    <Property Name="mc_empresa" Type="Int16" Nullable="false" />
+    <Property Name="mc_IdCuentaXCobrar" Type="Int32" Nullable="false" />
+    <Property Name="mc_IdMovCuentaXCobrar" Type="Int32" Nullable="false" />
+    <Property Name="mc_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="mc_IdDoc" Type="Int32" Nullable="false" />
+    <Property Name="mc_Cliente" Type="Int32" Nullable="false" />
+    <Property Name="mc_FechaMov" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="mc_MontoMov" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="mc_CreditoDebito" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="mc_Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mc_estMovCuentaXCobrar" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="mc_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="mc_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="mc_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mc_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mc_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mc_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mc_estado" Type="Int32" Nullable="false" />
+    <Property Name="mc_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="PrecioProductoServicio">
+    <Key>
+      <PropertyRef Name="pp_empresa" />
+      <PropertyRef Name="pp_IdPrecProdServ" />
+    </Key>
+    <Property Name="pp_empresa" Type="Int16" Nullable="false" />
+    <Property Name="pp_IdPrecProdServ" Type="Int32" Nullable="false" />
+    <Property Name="pp_TipoPrecio" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="pp_IdProdServ" Type="Int32" Nullable="false" />
+    <Property Name="pp_precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="pp_PrecioMaximo" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="pp_fechaVigencia" Type="DateTime" Precision="3" />
+    <Property Name="pp_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="pp_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="pp_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pp_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pp_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pp_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pp_estado" Type="Int32" Nullable="false" />
+    <Property Name="pp_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="pr_empresa" />
+      <PropertyRef Name="pr_TipoProducto" />
+      <PropertyRef Name="pr_IdProd" />
+    </Key>
+    <Property Name="pr_empresa" Type="Int16" Nullable="false" />
+    <Property Name="pr_TipoProducto" Type="Int32" Nullable="false" />
+    <Property Name="pr_IdProd" Type="Int32" Nullable="false" />
+    <Property Name="pr_nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pr_descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="pr_CodigoBarras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pr_CodigoSAP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pr_IdMarca" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="pr_ImagenProd" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="pr_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="pr_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="pr_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pr_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pr_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pr_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pr_estado" Type="Int32" Nullable="false" />
+    <Property Name="pr_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Propina">
+    <Key>
+      <PropertyRef Name="pn_empresa" />
+      <PropertyRef Name="pn_IdSucursal" />
+      <PropertyRef Name="pn_IdPropina" />
+    </Key>
+    <Property Name="pn_empresa" Type="Int32" Nullable="false" />
+    <Property Name="pn_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="pn_IdPropina" Type="Int32" Nullable="false" />
+    <Property Name="pn_IdOrdenPago" Type="Int32" Nullable="false" />
+    <Property Name="pn_IdOrdenServicio" Type="Int32" Nullable="false" />
+    <Property Name="pn_IdDetalleOrdenServicio" Type="Int32" />
+    <Property Name="pn_Cantidad" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="pn_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="pn_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="pn_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pn_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pn_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pn_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pn_estado" Type="Int32" Nullable="false" />
+    <Property Name="pn_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SalidaEfectivoCaja">
+    <Key>
+      <PropertyRef Name="sc_empresa" />
+      <PropertyRef Name="sc_IdSalidaEfectivo" />
+    </Key>
+    <Property Name="sc_empresa" Type="Int16" Nullable="false" />
+    <Property Name="sc_IdSalidaEfectivo" Type="Int32" Nullable="false" />
+    <Property Name="sc_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="sc_FechaHoraSEC" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sc_MotivoSalidaEfectivo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="sc_Monto" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="sc_Moneda" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="sc_IdAutorizacion" Type="Int32" Nullable="false" />
+    <Property Name="sc_IdCierreCaja" Type="Int32" />
+    <Property Name="sc_ConfirmaCierreCaja" Type="Int32" />
+    <Property Name="sc_IdDoc" Type="Int32" />
+    <Property Name="sc_IdFacturaFormaPago" Type="Int32" />
+    <Property Name="sc_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sc_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="sc_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sc_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sc_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sc_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sc_estado" Type="Int32" Nullable="false" />
+    <Property Name="sc_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SerieFactura">
+    <Key>
+      <PropertyRef Name="sf_empresa" />
+      <PropertyRef Name="sf_IdSerieFactura" />
+    </Key>
+    <Property Name="sf_empresa" Type="Int16" Nullable="false" />
+    <Property Name="sf_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="sf_IdSerieFactura" Type="Int32" Nullable="false" />
+    <Property Name="sf_Terminal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sf_TipoCorrelativo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="sf_Serie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sf_RangoInicio" Type="Int32" Nullable="false" />
+    <Property Name="sf_RangoFinal" Type="Int32" Nullable="false" />
+    <Property Name="sf_NoFactura" Type="Int32" Nullable="false" />
+    <Property Name="sf_fechaVigencia" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sf_estRegistro" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="sf_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sf_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="sf_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sf_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sf_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sf_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sf_estado" Type="Int32" Nullable="false" />
+    <Property Name="sf_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="sv_empresa" />
+      <PropertyRef Name="sv_IdServicio" />
+    </Key>
+    <Property Name="sv_empresa" Type="Int16" Nullable="false" />
+    <Property Name="sv_TipoServicio" Type="Int32" Nullable="false" />
+    <Property Name="sv_IdServicio" Type="Int32" Nullable="false" />
+    <Property Name="sv_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sv_descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="sv_duracionServicio" Type="Int32" Nullable="false" />
+    <Property Name="sv_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sv_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="sv_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sv_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sv_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sv_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sv_estado" Type="Int32" Nullable="false" />
+    <Property Name="sv_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Sucursal">
+    <Key>
+      <PropertyRef Name="su_empresa" />
+      <PropertyRef Name="su_IdSucursal" />
+    </Key>
+    <Property Name="su_empresa" Type="Int16" Nullable="false" />
+    <Property Name="su_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="su_Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="su_Encargado" Type="Int32" Nullable="false" />
+    <Property Name="su_Direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="su_Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="su_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="su_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="su_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="su_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="su_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="su_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="su_estado" Type="Int32" Nullable="false" />
+    <Property Name="su_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="TipoProducto">
+    <Key>
+      <PropertyRef Name="tp_empresa" />
+      <PropertyRef Name="tp_IdTipoProducto" />
+    </Key>
+    <Property Name="tp_empresa" Type="Int16" Nullable="false" />
+    <Property Name="tp_IdTipoProducto" Type="Int32" Nullable="false" />
+    <Property Name="tp_ClasificacionTP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tp_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tp_descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="tp_padre" Type="Int32" />
+    <Property Name="tp_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="tp_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="tp_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tp_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tp_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tp_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tp_estado" Type="Int32" Nullable="false" />
+    <Property Name="tp_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="TipoServicio">
+    <Key>
+      <PropertyRef Name="ts_empresa" />
+      <PropertyRef Name="ts_IdTipoServicio" />
+    </Key>
+    <Property Name="ts_empresa" Type="Int16" Nullable="false" />
+    <Property Name="ts_IdTipoServicio" Type="Int32" Nullable="false" />
+    <Property Name="ts_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ts_descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ts_padre" Type="Int32" />
+    <Property Name="ts_Coordinacion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ts_CuentaSAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ts_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ts_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="ts_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ts_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ts_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ts_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ts_estado" Type="Int32" Nullable="false" />
+    <Property Name="ts_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityContainer Name="SSS_OPERACIONEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ArqueoCaja" EntityType="Self.ArqueoCaja" />
+    <EntitySet Name="CierreCaja" EntityType="Self.CierreCaja" />
+    <EntitySet Name="CierreDiario" EntityType="Self.CierreDiario" />
+    <EntitySet Name="CuentaXCobrar" EntityType="Self.CuentaXCobrar" />
+    <EntitySet Name="Descuento" EntityType="Self.Descuento" />
+    <EntitySet Name="DetalleCierreCaja" EntityType="Self.DetalleCierreCaja" />
+    <EntitySet Name="Documento" EntityType="Self.Documento" />
+    <EntitySet Name="Existencia" EntityType="Self.Existencia" />
+    <EntitySet Name="FacturaFormaPago" EntityType="Self.FacturaFormaPago" />
+    <EntitySet Name="HorarioSucursal" EntityType="Self.HorarioSucursal" />
+    <EntitySet Name="Movimiento" EntityType="Self.Movimiento" />
+    <EntitySet Name="MovimientoCuentaXCobrar" EntityType="Self.MovimientoCuentaXCobrar" />
+    <EntitySet Name="PrecioProductoServicio" EntityType="Self.PrecioProductoServicio" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <EntitySet Name="Propina" EntityType="Self.Propina" />
+    <EntitySet Name="SalidaEfectivoCaja" EntityType="Self.SalidaEfectivoCaja" />
+    <EntitySet Name="SerieFactura" EntityType="Self.SerieFactura" />
+    <EntitySet Name="Servicio" EntityType="Self.Servicio" />
+    <EntitySet Name="Sucursal" EntityType="Self.Sucursal" />
+    <EntitySet Name="TipoProducto" EntityType="Self.TipoProducto" />
+    <EntitySet Name="TipoServicio" EntityType="Self.TipoServicio" />
+    <FunctionImport Name="sp_ABC_ArqueoCaja">
+      <Parameter Name="aq_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="aq_opcion" Mode="In" Type="String" />
+      <Parameter Name="aq_IdCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="aq_IdArqueoCaja" Mode="InOut" Type="Int32" />
+      <Parameter Name="aq_Moneda" Mode="In" Type="String" />
+      <Parameter Name="aq_PresentacionMoneda" Mode="In" Type="String" />
+      <Parameter Name="aq_Denominacion" Mode="In" Type="String" />
+      <Parameter Name="aq_Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="aq_MontoTotal" Mode="In" Type="Decimal" />
+      <Parameter Name="aq_usuario" Mode="In" Type="String" />
+      <Parameter Name="aq_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_CierreCaja">
+      <Parameter Name="cj_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cj_opcion" Mode="In" Type="String" />
+      <Parameter Name="cj_IdCierreCaja" Mode="InOut" Type="Int32" />
+      <Parameter Name="cj_Terminal" Mode="In" Type="String" />
+      <Parameter Name="cj_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="cj_Moneda" Mode="In" Type="String" />
+      <Parameter Name="cj_SaldoAnterior" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_EntradasEfectivo" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_SalidasEfectivo" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_EfectivoTeorico" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_EfectivoFisico" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_AjusteEfectivo" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_ChequeTeorico" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_ChequeFisico" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_AjusteCheque" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_TarjetaTeorico" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_TarjetaFisico" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_AjusteTarjeta" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_Descuadre" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_RetiroEfectivoAdmin" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_SaldoActual" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_estCierreCaja" Mode="In" Type="String" />
+      <Parameter Name="cj_TotalVenta" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_TotalPropina" Mode="In" Type="Decimal" />
+      <Parameter Name="cj_usuario" Mode="In" Type="String" />
+      <Parameter Name="cj_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_CierreDiario">
+      <Parameter Name="cd_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cd_opcion" Mode="In" Type="String" />
+      <Parameter Name="cd_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="cd_IdCierreDiario" Mode="InOut" Type="Int32" />
+      <Parameter Name="cd_FechaCierreDiario" Mode="In" Type="DateTime" />
+      <Parameter Name="cd_estCierreDiario" Mode="In" Type="String" />
+      <Parameter Name="cd_usuario" Mode="In" Type="String" />
+      <Parameter Name="cd_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_CuentaXCobrar">
+      <Parameter Name="cc_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cc_opcion" Mode="In" Type="String" />
+      <Parameter Name="cc_IdCuentaXCobrar" Mode="InOut" Type="Int32" />
+      <Parameter Name="cc_Cliente" Mode="In" Type="Int32" />
+      <Parameter Name="cc_Saldo" Mode="In" Type="Decimal" />
+      <Parameter Name="cc_fechaUltMov" Mode="In" Type="DateTime" />
+      <Parameter Name="cc_MontoUltMov" Mode="In" Type="Decimal" />
+      <Parameter Name="cc_estCuentaXCobrar" Mode="In" Type="String" />
+      <Parameter Name="cc_usuario" Mode="In" Type="String" />
+      <Parameter Name="cc_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_Descuento">
+      <Parameter Name="ds_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="ds_opcion" Mode="In" Type="String" />
+      <Parameter Name="ds_IdDescuento" Mode="InOut" Type="Int32" />
+      <Parameter Name="ds_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="ds_TipoDescuento" Mode="In" Type="String" />
+      <Parameter Name="ds_Descripcion" Mode="In" Type="String" />
+      <Parameter Name="ds_Porcentaje" Mode="In" Type="Int32" />
+      <Parameter Name="ds_Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="ds_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="ds_IdMov" Mode="In" Type="Int32" />
+      <Parameter Name="ds_IdAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="ds_IdMovDescuento" Mode="In" Type="Int32" />
+      <Parameter Name="ds_Comentario" Mode="In" Type="String" />
+      <Parameter Name="ds_usuario" Mode="In" Type="String" />
+      <Parameter Name="ds_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_DetalleCierreCaja">
+      <Parameter Name="dj_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="dj_opcion" Mode="In" Type="String" />
+      <Parameter Name="dj_IdCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="dj_IdDetalleCierreCaja" Mode="InOut" Type="Int32" />
+      <Parameter Name="dj_IdFormaPago" Mode="In" Type="String" />
+      <Parameter Name="dj_Monto" Mode="In" Type="Decimal" />
+      <Parameter Name="dj_usuario" Mode="In" Type="String" />
+      <Parameter Name="dj_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_Documento">
+      <Parameter Name="dm_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="dm_opcion" Mode="In" Type="String" />
+      <Parameter Name="dm_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="dm_IdDoc" Mode="InOut" Type="Int32" />
+      <Parameter Name="dm_tipoDocumento" Mode="In" Type="String" />
+      <Parameter Name="dm_TipoAsociado" Mode="In" Type="String" />
+      <Parameter Name="dm_asociado" Mode="In" Type="Int32" />
+      <Parameter Name="dm_NombreAsociado" Mode="In" Type="String" />
+      <Parameter Name="dm_DireccionAsociado" Mode="In" Type="String" />
+      <Parameter Name="dm_Nit" Mode="In" Type="String" />
+      <Parameter Name="dm_subtotal" Mode="In" Type="Decimal" />
+      <Parameter Name="dm_descuento" Mode="In" Type="Decimal" />
+      <Parameter Name="dm_total" Mode="In" Type="Decimal" />
+      <Parameter Name="dm_SerieDoc" Mode="In" Type="String" />
+      <Parameter Name="dm_NoDocumento" Mode="In" Type="String" />
+      <Parameter Name="dm_fechaDoc" Mode="In" Type="DateTime" />
+      <Parameter Name="dm_estDocumento" Mode="In" Type="String" />
+      <Parameter Name="dm_Terminal" Mode="In" Type="String" />
+      <Parameter Name="dm_Descripcion" Mode="In" Type="String" />
+      <Parameter Name="dm_MotivoAnulacion" Mode="In" Type="String" />
+      <Parameter Name="dm_MotivoNCND" Mode="In" Type="String" />
+      <Parameter Name="dm_Comentario" Mode="In" Type="String" />
+      <Parameter Name="cc_estCuentaXCobrar" Mode="In" Type="String" />
+      <Parameter Name="dm_IdDocAnulado" Mode="In" Type="Int32" />
+      <Parameter Name="dm_IdCierreDiario" Mode="In" Type="Int32" />
+      <Parameter Name="dm_usuario" Mode="In" Type="String" />
+      <Parameter Name="dm_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_Existencia">
+      <Parameter Name="ex_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="ex_opcion" Mode="In" Type="String" />
+      <Parameter Name="ex_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="ex_IdExistencia" Mode="InOut" Type="Int32" />
+      <Parameter Name="ex_TipoProducto" Mode="In" Type="Int32" />
+      <Parameter Name="ex_IdProd" Mode="In" Type="Int32" />
+      <Parameter Name="ex_Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="ex_precioUnitario" Mode="In" Type="Decimal" />
+      <Parameter Name="ex_FechaCaducidad" Mode="In" Type="DateTime" />
+      <Parameter Name="ex_usuario" Mode="In" Type="String" />
+      <Parameter Name="ex_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_FacturaFormaPago">
+      <Parameter Name="fp_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="fp_opcion" Mode="In" Type="String" />
+      <Parameter Name="fp_IdFacturaFormaPago" Mode="InOut" Type="Int32" />
+      <Parameter Name="fp_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdMov" Mode="InOut" Type="Int32" />
+      <Parameter Name="fp_IdFormaPago" Mode="In" Type="String" />
+      <Parameter Name="fp_IdAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="fp_Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="fp_efectivoRecibido" Mode="In" Type="Decimal" />
+      <Parameter Name="fp_efectivoVuelto" Mode="In" Type="Decimal" />
+      <Parameter Name="fp_Unidades" Mode="In" Type="Int32" />
+      <Parameter Name="fp_NoDocumento" Mode="In" Type="Int64" />
+      <Parameter Name="fp_IdBanco" Mode="In" Type="String" />
+      <Parameter Name="fp_Comentario" Mode="In" Type="String" />
+      <Parameter Name="fp_Moneda" Mode="In" Type="String" />
+      <Parameter Name="fp_IdMarcaTarjeta" Mode="In" Type="String" />
+      <Parameter Name="fp_IdOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdDetalleOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdServicio" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdProducto" Mode="In" Type="Int32" />
+      <Parameter Name="fp_TipoDocumentoPromo" Mode="In" Type="String" />
+      <Parameter Name="fp_IdCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="fp_ConfirmaCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="fp_usuario" Mode="In" Type="String" />
+      <Parameter Name="fp_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_Movimiento">
+      <Parameter Name="mv_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="mv_opcion" Mode="In" Type="String" />
+      <Parameter Name="mv_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="mv_IdMov" Mode="InOut" Type="Int32" />
+      <Parameter Name="mv_ProdServ" Mode="In" Type="String" />
+      <Parameter Name="mv_IdProdServ" Mode="In" Type="Int32" />
+      <Parameter Name="mv_Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="mv_ValorMov" Mode="In" Type="Decimal" />
+      <Parameter Name="mv_TipoMovimiento" Mode="In" Type="String" />
+      <Parameter Name="mv_FechaMov" Mode="In" Type="DateTime" />
+      <Parameter Name="mv_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="mv_IdOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="mv_IdDetalleOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="mv_IdAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="mv_usuario" Mode="In" Type="String" />
+      <Parameter Name="mv_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+      <Parameter Name="mv_IdEmpleado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_MovimientoCuentaXCobrar">
+      <Parameter Name="mc_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="mc_opcion" Mode="In" Type="String" />
+      <Parameter Name="mc_IdCuentaXCobrar" Mode="InOut" Type="Int32" />
+      <Parameter Name="mc_IdMovCuentaXCobrar" Mode="InOut" Type="Int32" />
+      <Parameter Name="mc_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="mc_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="mc_Cliente" Mode="In" Type="Int32" />
+      <Parameter Name="mc_FechaMov" Mode="In" Type="DateTime" />
+      <Parameter Name="mc_MontoMov" Mode="In" Type="Decimal" />
+      <Parameter Name="mc_CreditoDebito" Mode="In" Type="String" />
+      <Parameter Name="mc_Descripcion" Mode="In" Type="String" />
+      <Parameter Name="mc_estMovCuentaXCobrar" Mode="In" Type="String" />
+      <Parameter Name="mc_usuario" Mode="In" Type="String" />
+      <Parameter Name="mc_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_PrecioProductoServicio">
+      <Parameter Name="pp_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="pp_opcion" Mode="In" Type="String" />
+      <Parameter Name="pp_TipoPrecio" Mode="In" Type="String" />
+      <Parameter Name="pp_IdPrecProdServ" Mode="InOut" Type="Int32" />
+      <Parameter Name="pp_IdProdServ" Mode="In" Type="Int32" />
+      <Parameter Name="pp_precio" Mode="In" Type="Decimal" />
+      <Parameter Name="pp_precioMaximo" Mode="In" Type="Decimal" />
+      <Parameter Name="pp_usuario" Mode="In" Type="String" />
+      <Parameter Name="pp_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_Producto">
+      <Parameter Name="pr_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="pr_opcion" Mode="In" Type="String" />
+      <Parameter Name="pr_TipoProducto" Mode="In" Type="Int32" />
+      <Parameter Name="pr_IdProd" Mode="InOut" Type="Int32" />
+      <Parameter Name="pr_nombre" Mode="In" Type="String" />
+      <Parameter Name="pr_descripcion" Mode="In" Type="String" />
+      <Parameter Name="pr_CodigoBarras" Mode="In" Type="String" />
+      <Parameter Name="pr_CodigoSAP" Mode="In" Type="String" />
+      <Parameter Name="pr_IdMarca" Mode="In" Type="String" />
+      <Parameter Name="pr_ImagenProd" Mode="In" Type="Binary" />
+      <Parameter Name="pr_usuario" Mode="In" Type="String" />
+      <Parameter Name="pr_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_Propina">
+      <Parameter Name="pn_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="pn_opcion" Mode="In" Type="String" />
+      <Parameter Name="pn_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="pn_IdPropina" Mode="InOut" Type="Int32" />
+      <Parameter Name="pn_IdOrdenPago" Mode="In" Type="Int32" />
+      <Parameter Name="pn_IdOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="pn_IdDetalleOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="pn_Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="pn_usuario" Mode="In" Type="String" />
+      <Parameter Name="pn_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_SalidaEfectivoCaja">
+      <Parameter Name="sc_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="sc_opcion" Mode="In" Type="String" />
+      <Parameter Name="sc_IdSalidaEfectivo" Mode="InOut" Type="Int32" />
+      <Parameter Name="sc_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="sc_Moneda" Mode="In" Type="String" />
+      <Parameter Name="sc_MotivoSalidaEfectivo" Mode="In" Type="String" />
+      <Parameter Name="sc_Monto" Mode="In" Type="Decimal" />
+      <Parameter Name="sc_IdAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="sc_IdCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="sc_ConfirmaCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="sc_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="sc_IdFacturaFormaPago" Mode="In" Type="Int32" />
+      <Parameter Name="sc_usuario" Mode="In" Type="String" />
+      <Parameter Name="sc_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_SerieFactura">
+      <Parameter Name="sf_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="sf_opcion" Mode="In" Type="String" />
+      <Parameter Name="sf_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="sf_IdSerieFactura" Mode="InOut" Type="Int32" />
+      <Parameter Name="sf_Terminal" Mode="In" Type="String" />
+      <Parameter Name="sf_TipoCorrelativo" Mode="In" Type="String" />
+      <Parameter Name="sf_Serie" Mode="In" Type="String" />
+      <Parameter Name="sf_RangoInicio" Mode="In" Type="Int32" />
+      <Parameter Name="sf_RangoFinal" Mode="In" Type="Int32" />
+      <Parameter Name="sf_NoFactura" Mode="In" Type="Int32" />
+      <Parameter Name="sf_estRegistro" Mode="In" Type="String" />
+      <Parameter Name="sf_usuario" Mode="In" Type="String" />
+      <Parameter Name="sf_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_Servicio">
+      <Parameter Name="sv_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="sv_opcion" Mode="In" Type="String" />
+      <Parameter Name="sv_TipoServicio" Mode="In" Type="Int32" />
+      <Parameter Name="sv_IdServicio" Mode="InOut" Type="Int32" />
+      <Parameter Name="sv_nombre" Mode="In" Type="String" />
+      <Parameter Name="sv_descripcion" Mode="In" Type="String" />
+      <Parameter Name="sv_duracionServicio" Mode="In" Type="Int32" />
+      <Parameter Name="sv_usuario" Mode="In" Type="String" />
+      <Parameter Name="sv_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_Sucursal">
+      <Parameter Name="su_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="su_opcion" Mode="In" Type="String" />
+      <Parameter Name="su_IdSucursal" Mode="InOut" Type="Int32" />
+      <Parameter Name="su_Nombre" Mode="In" Type="String" />
+      <Parameter Name="su_IdEncargado" Mode="In" Type="Int32" />
+      <Parameter Name="su_Direccion" Mode="In" Type="String" />
+      <Parameter Name="su_Telefono" Mode="In" Type="String" />
+      <Parameter Name="su_usuario" Mode="In" Type="String" />
+      <Parameter Name="su_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_TipoProducto">
+      <Parameter Name="tp_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="tp_opcion" Mode="In" Type="String" />
+      <Parameter Name="tp_IdTipoProducto" Mode="InOut" Type="Int32" />
+      <Parameter Name="tp_ClasificacionTP" Mode="In" Type="String" />
+      <Parameter Name="tp_nombre" Mode="In" Type="String" />
+      <Parameter Name="tp_descripcion" Mode="In" Type="String" />
+      <Parameter Name="tp_padre" Mode="In" Type="Int32" />
+      <Parameter Name="tp_usuario" Mode="In" Type="String" />
+      <Parameter Name="tp_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_TipoServicio">
+      <Parameter Name="ts_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="ts_opcion" Mode="In" Type="String" />
+      <Parameter Name="ts_IdTipoServ" Mode="InOut" Type="Int32" />
+      <Parameter Name="ts_nombre" Mode="In" Type="String" />
+      <Parameter Name="ts_descripcion" Mode="In" Type="String" />
+      <Parameter Name="ts_padre" Mode="In" Type="Int32" />
+      <Parameter Name="ts_Coordinacion" Mode="In" Type="String" />
+      <Parameter Name="ts_CuentaSAP" Mode="In" Type="String" />
+      <Parameter Name="ts_usuario" Mode="In" Type="String" />
+      <Parameter Name="ts_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_AlertaCumpleanios">
+      <Parameter Name="cl_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cl_Cliente" Mode="In" Type="Int32" />
+      <Parameter Name="Alerta" Mode="InOut" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_AnulaFactura">
+      <Parameter Name="dm_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="dm_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="dm_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="dm_TipoAsociado" Mode="In" Type="String" />
+      <Parameter Name="dm_asociado" Mode="In" Type="Int32" />
+      <Parameter Name="dm_NombreAsociado" Mode="In" Type="String" />
+      <Parameter Name="dm_DireccionAsociado" Mode="In" Type="String" />
+      <Parameter Name="dm_Nit" Mode="In" Type="String" />
+      <Parameter Name="dm_SerieDoc" Mode="In" Type="String" />
+      <Parameter Name="dm_NoDocumento" Mode="In" Type="String" />
+      <Parameter Name="dm_Terminal" Mode="In" Type="String" />
+      <Parameter Name="dm_MotivoAnulacion" Mode="In" Type="String" />
+      <Parameter Name="dm_IdDocNuevo" Mode="InOut" Type="Int32" />
+      <Parameter Name="dm_timeStampNuevo" Mode="InOut" Type="Binary" />
+      <Parameter Name="dm_usuario" Mode="In" Type="String" />
+      <Parameter Name="dm_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_aplicar_descuento">
+      <Parameter Name="IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="Empresa" Mode="In" Type="Int32" />
+      <Parameter Name="IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="ValorMov" Mode="In" Type="Decimal" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="IDAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="TipoDescuento" Mode="In" Type="String" />
+      <Parameter Name="DescuentoDescripcion" Mode="In" Type="String" />
+      <Parameter Name="DescuentoPorcentaje" Mode="In" Type="Decimal" />
+      <Parameter Name="ProdServ" Mode="In" Type="String" />
+      <Parameter Name="IdProdServ" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="IDOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="IDDetalleOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="IdMovOriginador" Mode="In" Type="Int32" />
+      <Parameter Name="Comentario" Mode="In" Type="String" />
+      <Parameter Name="IDDescuento" Mode="InOut" Type="Int32" />
+      <Parameter Name="IDMovDescuento" Mode="InOut" Type="Int32" />
+      <Parameter Name="TimestampDescuento" Mode="InOut" Type="Binary" />
+      <Parameter Name="timestampMovimiento" Mode="InOut" Type="Binary" />
+      <Parameter Name="Reversion" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_ArqueoCaja" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_ArqueoCaja_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="aq_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="aq_IdCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="aq_IdArqueoCaja" Mode="In" Type="Int32" />
+      <Parameter Name="aq_Moneda" Mode="In" Type="String" />
+      <Parameter Name="aq_PresentacionMoneda" Mode="In" Type="String" />
+      <Parameter Name="aq_Denominacion" Mode="In" Type="String" />
+      <Parameter Name="aq_Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="aq_MontoTotal" Mode="In" Type="Decimal" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_CierreCaja" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_CierreCaja_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="cj_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="cj_IdCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="cj_Terminal" Mode="In" Type="String" />
+      <Parameter Name="cj_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="cj_FechaHoraCierre" Mode="In" Type="DateTime" />
+      <Parameter Name="cj_Moneda" Mode="In" Type="String" />
+      <Parameter Name="cj_estCierreCaja" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_CierreDiario" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_CierreDiario_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="cd_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="cd_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="cd_IdCierreDiario" Mode="In" Type="Int32" />
+      <Parameter Name="cd_FechaCierreDiario" Mode="In" Type="DateTime" />
+      <Parameter Name="cd_estCierreDiario" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_CuentaXCobrar" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_CuentaXCobrar_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="cc_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="cc_IdCuentaXCobrar" Mode="In" Type="Int32" />
+      <Parameter Name="cc_Cliente" Mode="In" Type="Int32" />
+      <Parameter Name="cc_Saldo" Mode="In" Type="Decimal" />
+      <Parameter Name="cc_FechaUltMov" Mode="In" Type="DateTime" />
+      <Parameter Name="cc_MontoUltMov" Mode="In" Type="Decimal" />
+      <Parameter Name="cc_estCuentaXCobrar" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Descuento" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_Descuento_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="ds_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="ds_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="ds_IdDescuento" Mode="In" Type="Int32" />
+      <Parameter Name="ds_TipoDescuento" Mode="In" Type="String" />
+      <Parameter Name="ds_Descripcion" Mode="In" Type="String" />
+      <Parameter Name="ds_Porcentaje" Mode="In" Type="Int32" />
+      <Parameter Name="ds_Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="ds_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="ds_IdMov" Mode="In" Type="Int32" />
+      <Parameter Name="ds_IdAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="ds_IdMovDescuento" Mode="In" Type="Int32" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_DetalleCierreCaja" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_DetalleCierreCaja_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="dj_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="dj_IdCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="dj_IdDetalleCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="dj_IdFormaPago" Mode="In" Type="String" />
+      <Parameter Name="dj_Monto" Mode="In" Type="Int32" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Documento" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_Documento_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="dm_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="dm_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="dm_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="dm_TipoDocumento" Mode="In" Type="String" />
+      <Parameter Name="dm_TipoAsociado" Mode="In" Type="String" />
+      <Parameter Name="dm_asociado" Mode="In" Type="Int32" />
+      <Parameter Name="dm_subtotal" Mode="In" Type="Decimal" />
+      <Parameter Name="dm_descuento" Mode="In" Type="Decimal" />
+      <Parameter Name="dm_total" Mode="In" Type="Decimal" />
+      <Parameter Name="dm_NoDocumento" Mode="In" Type="String" />
+      <Parameter Name="dm_fechaDoc" Mode="In" Type="DateTime" />
+      <Parameter Name="dm_estDocumento" Mode="In" Type="String" />
+      <Parameter Name="dm_MotivoAnulacion" Mode="In" Type="String" />
+      <Parameter Name="dm_MotivoNCND" Mode="In" Type="String" />
+      <Parameter Name="dm_Comentario" Mode="In" Type="String" />
+      <Parameter Name="dm_Terminal" Mode="In" Type="String" />
+      <Parameter Name="dm_IdDocAnulado" Mode="In" Type="Int32" />
+      <Parameter Name="dm_IdCierreDiario" Mode="In" Type="Int32" />
+      <Parameter Name="dm_nit" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Existencia" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_Existencia_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="ex_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="ex_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="ex_IdExistencia" Mode="In" Type="Int32" />
+      <Parameter Name="ex_TipoProducto" Mode="In" Type="Int32" />
+      <Parameter Name="ex_IdProd" Mode="In" Type="Int32" />
+      <Parameter Name="ex_cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="ex_precioUnitario" Mode="In" Type="Decimal" />
+      <Parameter Name="ex_FechaCaducidad" Mode="In" Type="DateTime" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_FacturaFormaPago" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_FacturaFormaPago_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="fp_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdFacturaFormaPago" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdMovDocPromo" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdFormaPago" Mode="In" Type="String" />
+      <Parameter Name="fp_IdAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="fp_Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="fp_Unidades" Mode="In" Type="Int32" />
+      <Parameter Name="fp_NoDocumento" Mode="In" Type="Int64" />
+      <Parameter Name="fp_IdBanco" Mode="In" Type="String" />
+      <Parameter Name="fp_Comentario" Mode="In" Type="String" />
+      <Parameter Name="fp_Moneda" Mode="In" Type="String" />
+      <Parameter Name="fp_TasaCambio" Mode="In" Type="Decimal" />
+      <Parameter Name="fp_CantidadOriginal" Mode="In" Type="Decimal" />
+      <Parameter Name="fp_IdCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="fp_ConfirmaCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="fp_efectivoRecibido" Mode="In" Type="Decimal" />
+      <Parameter Name="fp_efectivoVuelto" Mode="In" Type="Decimal" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_HorarioEmpleadoSucursal">
+      <Parameter Name="he_opcion" Mode="In" Type="String" />
+      <Parameter Name="he_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="he_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="he_IdEmpleado" Mode="In" Type="Int32" />
+      <Parameter Name="he_fechaCita" Mode="In" Type="DateTime" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Movimiento">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="mv_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="mv_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="mv_IdMov" Mode="In" Type="Int32" />
+      <Parameter Name="mv_ProdServ" Mode="In" Type="String" />
+      <Parameter Name="mv_IdProdServ" Mode="In" Type="Int32" />
+      <Parameter Name="mv_Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="mv_ValorMov" Mode="In" Type="Decimal" />
+      <Parameter Name="mv_TipoMovimiento" Mode="In" Type="String" />
+      <Parameter Name="mv_FechaMov" Mode="In" Type="DateTime" />
+      <Parameter Name="mv_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="mv_IdOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="mv_IdDetalleOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="mv_IdAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_MovimientoCuentaXCobrar" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_MovimientoCuentaXCobrar_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="mc_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="mc_IdCuentaXCobrar" Mode="In" Type="Int32" />
+      <Parameter Name="mc_IdMovCuentaXCobrar" Mode="In" Type="Int32" />
+      <Parameter Name="mc_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="mc_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="mc_Cliente" Mode="In" Type="Int32" />
+      <Parameter Name="mc_FechaMov" Mode="In" Type="DateTime" />
+      <Parameter Name="mc_MontoMov" Mode="In" Type="Decimal" />
+      <Parameter Name="mc_CreditoDebito" Mode="In" Type="String" />
+      <Parameter Name="mc_Descripcion" Mode="In" Type="String" />
+      <Parameter Name="mc_estMovCuentaXCobrar" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_PrecioProductoServicio" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_PrecioProductoServicio_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="pp_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="pp_TipoPrecio" Mode="In" Type="String" />
+      <Parameter Name="pp_IdPrecProdServ" Mode="In" Type="Int32" />
+      <Parameter Name="pp_IdProdServ" Mode="In" Type="Int32" />
+      <Parameter Name="pp_fechaVigencia" Mode="In" Type="DateTime" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Producto" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_Producto_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="pr_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="pr_TipoProducto" Mode="In" Type="Int32" />
+      <Parameter Name="pr_IdProd" Mode="In" Type="Int32" />
+      <Parameter Name="pr_nombre" Mode="In" Type="String" />
+      <Parameter Name="pr_descripcion" Mode="In" Type="String" />
+      <Parameter Name="pr_CodigoBarras" Mode="In" Type="String" />
+      <Parameter Name="pr_CodigoSAP" Mode="In" Type="String" />
+      <Parameter Name="pr_IdMarca" Mode="In" Type="String" />
+      <Parameter Name="pr_ClasificacionTP" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Propina">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="pn_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="pn_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="pn_IdPropina" Mode="In" Type="Int32" />
+      <Parameter Name="pn_IdOrdenPago" Mode="In" Type="Int32" />
+      <Parameter Name="pn_IdOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="pn_IdDetalleOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="pn_Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="pn_empleado" Mode="In" Type="Int32" />
+      <Parameter Name="pn_fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_SalidaEfectivoCaja" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_SalidaEfectivoCaja_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="sc_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="sc_IdSalidaEfectivo" Mode="In" Type="Int32" />
+      <Parameter Name="sc_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="sc_FechaHoraSEC" Mode="In" Type="DateTime" />
+      <Parameter Name="sc_MotivoSalidaEfectivo" Mode="In" Type="String" />
+      <Parameter Name="sc_Monto" Mode="In" Type="Int32" />
+      <Parameter Name="sc_IdAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="sc_IdCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="sc_ConfirmaCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="sc_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="sc_IdFacturaFormaPago" Mode="In" Type="Int32" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Servicio" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_Servicio_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="sv_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="sv_tipoServicio" Mode="In" Type="Int32" />
+      <Parameter Name="sv_IdServicio" Mode="In" Type="Int32" />
+      <Parameter Name="sv_nombre" Mode="In" Type="String" />
+      <Parameter Name="sv_descripcion" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Sucursal" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_Sucursal_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="su_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="su_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="su_Nombre" Mode="In" Type="String" />
+      <Parameter Name="su_Encargado" Mode="In" Type="Int32" />
+      <Parameter Name="su_Direccion" Mode="In" Type="String" />
+      <Parameter Name="su_Telefono" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_TipoProducto" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_TipoProducto_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="tp_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="tp_IdTipoProducto" Mode="In" Type="Int32" />
+      <Parameter Name="tp_ClasificacionTP" Mode="In" Type="String" />
+      <Parameter Name="tp_nombre" Mode="In" Type="String" />
+      <Parameter Name="tp_descripcion" Mode="In" Type="String" />
+      <Parameter Name="tp_padre" Mode="In" Type="Int32" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_TipoServicio" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_TipoServicio_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="ts_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="ts_IdTipoServicio" Mode="In" Type="Int32" />
+      <Parameter Name="ts_nombre" Mode="In" Type="String" />
+      <Parameter Name="ts_descripcion" Mode="In" Type="String" />
+      <Parameter Name="ts_padre" Mode="In" Type="Int32" />
+      <Parameter Name="ts_Coordinacion" Mode="In" Type="String" />
+      <Parameter Name="ts_CuentaSAP" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ConfirmaCierreCaja">
+      <Parameter Name="cj_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cj_opcion" Mode="In" Type="Int32" />
+      <Parameter Name="cj_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="cj_Terminal" Mode="In" Type="String" />
+      <Parameter Name="cj_Moneda" Mode="In" Type="String" />
+      <Parameter Name="cj_IdCierreCaja" Mode="In" Type="Int32" />
+      <Parameter Name="cj_usuario" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ConversionMoneda">
+      <Parameter Name="cm_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cm_moneda" Mode="In" Type="String" />
+      <Parameter Name="cm_monto" Mode="InOut" Type="Decimal" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CuadreFacturaFormaPago">
+      <Parameter Name="fp_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="fp_opcion" Mode="In" Type="String" />
+      <Parameter Name="fp_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdDoc" Mode="InOut" Type="Int32" />
+      <Parameter Name="fp_usuario" Mode="In" Type="String" />
+      <Parameter Name="fp_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DatosMontosFactura">
+      <Parameter Name="df_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="df_opcion" Mode="In" Type="Int32" />
+      <Parameter Name="df_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="df_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="df_MontoTotal" Mode="InOut" Type="Decimal" />
+      <Parameter Name="df_MontoTotalProducto" Mode="InOut" Type="Decimal" />
+      <Parameter Name="df_MontoTotalServicio" Mode="InOut" Type="Decimal" />
+      <Parameter Name="df_MontoDescuentos" Mode="InOut" Type="Decimal" />
+      <Parameter Name="df_MontoPropina" Mode="InOut" Type="Decimal" />
+      <Parameter Name="df_MontoCanjeado" Mode="InOut" Type="Decimal" />
+      <Parameter Name="df_MontoPagoDirecto" Mode="InOut" Type="Decimal" />
+      <Parameter Name="df_MontoPendiente" Mode="InOut" Type="Decimal" />
+      <Parameter Name="df_MontoFacturable" Mode="InOut" Type="Decimal" />
+      <Parameter Name="df_MontoPagoIndirecto" Mode="InOut" Type="Decimal" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GenerarCierreCaja">
+      <Parameter Name="cj_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cj_opcion" Mode="In" Type="Int32" />
+      <Parameter Name="cj_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="cj_Terminal" Mode="In" Type="String" />
+      <Parameter Name="cj_Moneda" Mode="In" Type="String" />
+      <Parameter Name="cj_usuario" Mode="In" Type="String" />
+      <Parameter Name="cj_IdCierreCaja" Mode="InOut" Type="Int32" />
+      <Parameter Name="cj_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GenerarCierreDiario">
+      <Parameter Name="cd_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cd_opcion" Mode="In" Type="Int32" />
+      <Parameter Name="cd_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="cd_usuario" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Obtiene_NoFactura">
+      <Parameter Name="sf_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="sf_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="sf_Terminal" Mode="In" Type="String" />
+      <Parameter Name="sf_TipoCorrelativo" Mode="In" Type="String" />
+      <Parameter Name="sf_Serie" Mode="InOut" Type="String" />
+      <Parameter Name="sf_NoFactura" Mode="InOut" Type="Int32" />
+      <Parameter Name="sc_usuario" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Validaciones_FacturaFormaPago">
+      <Parameter Name="fp_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="fp_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdDoc" Mode="InOut" Type="Int32" />
+      <Parameter Name="fp_IdFormaPago" Mode="InOut" Type="String" />
+      <Parameter Name="fp_IdAutorizacion" Mode="In" Type="Int32" />
+      <Parameter Name="fp_Cantidad" Mode="In" Type="Decimal" />
+      <Parameter Name="fp_Unidades" Mode="In" Type="Int32" />
+      <Parameter Name="fp_NoDocumento" Mode="In" Type="Int64" />
+      <Parameter Name="fp_IdBanco" Mode="In" Type="String" />
+      <Parameter Name="fp_Comentario" Mode="In" Type="String" />
+      <Parameter Name="fp_IdMarcaTarjeta" Mode="In" Type="String" />
+      <Parameter Name="fp_IdOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdDetalleOrdenServicio" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdServicio" Mode="In" Type="Int32" />
+      <Parameter Name="fp_IdProducto" Mode="In" Type="Int32" />
+      <Parameter Name="fp_TipoDocumentoPromo" Mode="In" Type="String" />
+      <Parameter Name="fp_usuario" Mode="In" Type="String" />
+      <Parameter Name="fp_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="CuentaXPagar" EntityType="SSS_OPERACIONModel.CuentaXPagar" />
+    <EntitySet Name="MovimientoCuentaXPagar" EntityType="SSS_OPERACIONModel.MovimientoCuentaXPagar" />
+  </EntityContainer>
+  <ComplexType Name="sp_Busqueda_ArqueoCaja_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="IdCierreCaja" Nullable="false" />
+    <Property Type="Int32" Name="IdArqueoCaja" Nullable="false" />
+    <Property Type="String" Name="Moneda" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionMoneda" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PresentacionMoneda" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionPM" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Denominacion" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DescripcionDenominacion" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="Cantidad" Nullable="false" />
+    <Property Type="Decimal" Name="MontoTotal" Nullable="false" Precision="19" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_CierreCaja_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodigoCierreCaja" Nullable="false" />
+    <Property Type="String" Name="IdCaja" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="CodigoSucursal" Nullable="false" />
+    <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="FechaHoraCierre" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Moneda" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionMoneda" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="SaldoAnterior" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="EntradasEfectivo" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="SalidasEfectivo" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="EfectivoTeorico" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="EfectivoFisico" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="AjusteEfectivo" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="ChequeTeorico" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="ChequeFisico" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="AjusteCheque" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="TarjetaTeorico" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="TarjetaFisico" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="AjusteTarjeta" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Descuadre" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="RetiroEfectivoAdmin" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="SaldoActual" Nullable="true" Precision="19" />
+    <Property Type="String" Name="EstatusCierreCaja" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="TotalVenta" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="TotalPropina" Nullable="true" Precision="19" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_CierreDiario_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSucursal" Nullable="false" />
+    <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdCierreDiario" Nullable="false" />
+    <Property Type="DateTime" Name="FechaCierreDiario" Nullable="false" />
+    <Property Type="String" Name="EstatusCierreCaja" Nullable="false" MaxLength="10" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_CuentaXCobrar_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodigoCuentaXCobrar" Nullable="false" />
+    <Property Type="Int32" Name="Cliente" Nullable="false" />
+    <Property Type="String" Name="NombreLargo" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Nit" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Idenficacion" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Saldo" Nullable="false" Precision="19" />
+    <Property Type="DateTime" Name="FechaDocumento" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" />
+    <Property Type="String" Name="EstatusCXC" Nullable="false" MaxLength="10" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_Descuento_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSucursal" Nullable="false" />
+    <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CodigoDescuento" Nullable="false" />
+    <Property Type="String" Name="TipoDescuento" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="NombreTipoDocumento" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="Porcentaje" Nullable="false" />
+    <Property Type="Decimal" Name="Cantidad" Nullable="false" Precision="19" />
+    <Property Type="Int32" Name="IdDocumento" Nullable="false" />
+    <Property Type="Int32" Name="IdMovimiento" Nullable="false" />
+    <Property Type="Int32" Name="IdAutorizacion" Nullable="false" />
+    <Property Type="Int32" Name="IdMovimientoDescuento" Nullable="true" />
+    <Property Type="String" Name="Comentario" Nullable="true" MaxLength="300" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_DetalleCierreCaja_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="IdCierreCaja" Nullable="false" />
+    <Property Type="Int32" Name="IdDetalleCierreCaja" Nullable="false" />
+    <Property Type="String" Name="IdFormaPago" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionFormaPago" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Monto" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Terminal" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaHoraCierre" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Moneda" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionMoneda" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="EstatusCierreCaja" Nullable="false" MaxLength="10" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_Documento_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSucursal" Nullable="false" />
+    <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CodigoDocumento" Nullable="false" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="NombreTipoDocumento" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TipoAsociado" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NombreTipoAsociado" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="Cliente" Nullable="true" />
+    <Property Type="String" Name="Nombre1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nombre2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Apellido1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Apellido2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NombreAsociado" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DireccionAsociado" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Nit" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Idenficacion" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="true" />
+    <Property Type="Decimal" Name="Subtotal" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="Descuento" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" />
+    <Property Type="String" Name="NoDocumento" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NumSerie" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaDocumento" Nullable="false" Precision="23" />
+    <Property Type="String" Name="EstadoDocumento" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="MotivoAnulacion" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DescripcionMotivoAnulacion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MotivoNotaCreditoDebito" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DescripcionMotivoNotraCreditoDebito" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Comentario" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Terminal" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IdDocumentoAnulado" Nullable="true" />
+    <Property Type="Int32" Name="IdCierreDiario" Nullable="true" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_Existencia_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSucursal" Nullable="false" />
+    <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CodigoExistencia" Nullable="false" />
+    <Property Type="Int32" Name="TipoProducto" Nullable="false" />
+    <Property Type="String" Name="DescripcionTipoProducto" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CodigoProducto" Nullable="false" />
+    <Property Type="String" Name="NombreProducto" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="Cantidad" Nullable="false" />
+    <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="19" />
+    <Property Type="DateTime" Name="FechaCaducidad" Nullable="true" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_FacturaFormaPago_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="IdFacturaFormaPago" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSucursal" Nullable="false" />
+    <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdDocumento" Nullable="false" />
+    <Property Type="Int32" Name="IdMovimientoDocPromo" Nullable="true" />
+    <Property Type="String" Name="CodigoFormaPago" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="NombreFormaPago" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CodigoAutorizacion" Nullable="true" />
+    <Property Type="Decimal" Name="CantidadPagada" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="UnidadesPagadas" Nullable="true" />
+    <Property Type="Int64" Name="NoDocumento" Nullable="true" />
+    <Property Type="String" Name="CodigoBanco" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NombreBanco" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CodigoMarcaTarjeta" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Comentario" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NombreMoneda" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="TasaCambio" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="CantidadOriginal" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="IdCierreCaja" Nullable="true" />
+    <Property Type="Int32" Name="ConfirmaCierreCaja" Nullable="true" />
+    <Property Type="Decimal" Name="EfectivoRecibido" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="EfectivoVuelto" Nullable="true" Precision="19" />
+    <Property Type="String" Name="EstadoDocumento" Nullable="true" MaxLength="2" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_MovimientoCuentaXCobrar_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodigoCuentaXCobrar" Nullable="false" />
+    <Property Type="Int32" Name="CodigoMovimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSucursal" Nullable="false" />
+    <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="NumeroDocumento" Nullable="false" />
+    <Property Type="Int32" Name="Cliente" Nullable="false" />
+    <Property Type="String" Name="NombreLargo" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Nit" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Idenficacion" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaMovimiento" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="MontoMovimiento" Nullable="false" Precision="19" />
+    <Property Type="String" Name="CredigoDebito" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="DescripcionMov" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="EstatusMovCXC" Nullable="false" MaxLength="10" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_PrecioProductoServicio_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="String" Name="TipoPrecio" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionTipoPrecio" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CodigoPrecioProductoServicio" Nullable="false" />
+    <Property Type="Int32" Name="CodigoProductoServicio" Nullable="false" />
+    <Property Type="String" Name="NombreProducto" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DescripcionProducto" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="FechaVigencia" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Precio" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="PrecioMaximo" Nullable="true" Precision="19" />
+    <Property Type="Binary" Name="TimeStamp_Producto" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_Producto_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="TipoProducto" Nullable="false" />
+    <Property Type="String" Name="DescripcionTipoProducto" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CodigoProducto" Nullable="false" />
+    <Property Type="String" Name="NombreProducto" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="CodigoBarras" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IDProducto" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CodigoMarca" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NombreMarca" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CodigoClasificaProducto" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ClasificaProducto" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="PrecioProducto" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="PrecioMaximoProducto" Nullable="true" Precision="19" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_SalidaEfectivoCaja_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="IdSalidaEfectivoCaja" Nullable="false" />
+    <Property Type="Int32" Name="IdSucursal" Nullable="false" />
+    <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="FechaHoraSalidaEfectivo" Nullable="false" Precision="23" />
+    <Property Type="String" Name="IdMotivoSalidaEfectivo" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionMotivo" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Monto" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DescripcionMoneda" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IdAutorizacion" Nullable="false" />
+    <Property Type="Int32" Name="IdCierreCaja" Nullable="true" />
+    <Property Type="Int32" Name="ConfirmaCierreCaja" Nullable="true" />
+    <Property Type="Int32" Name="IdDocumento" Nullable="true" />
+    <Property Type="Int32" Name="IdFacturaFormaPago" Nullable="true" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_Servicio_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="TipoServicio" Nullable="false" />
+    <Property Type="String" Name="DescripcionTipoServicio" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CodigoServicio" Nullable="false" />
+    <Property Type="String" Name="NombreServicio" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="DuracionServicio" Nullable="false" />
+    <Property Type="String" Name="CodCoordinacion" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Coordinacion" Nullable="false" MaxLength="100" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_Sucursal_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSucursal" Nullable="false" />
+    <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="Encargado" Nullable="false" />
+    <Property Type="String" Name="NombreEmpleado" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Telefono" Nullable="false" MaxLength="50" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_TipoProducto_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="TipoProducto" Nullable="false" />
+    <Property Type="String" Name="ClasificacionTipoProducto" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionClasificacion" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NombreTipoProducto" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="ProductoPadre" Nullable="true" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_TipoServicio_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="TipoServicio" Nullable="false" />
+    <Property Type="String" Name="NombreTipoServicio" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="ServicioPadre" Nullable="true" />
+    <Property Type="String" Name="CodigoCoordinacion" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="NombreCoordinacion" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CuentaSAP" Nullable="true" MaxLength="50" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <EntityType Name="CuentaXPagar">
+    <Key>
+      <PropertyRef Name="cp_empresa" />
+      <PropertyRef Name="cp_IdCuentaXPagar" />
+    </Key>
+    <Property Name="cp_empresa" Type="Int16" Nullable="false" />
+    <Property Name="cp_IdCuentaXPagar" Type="Int32" Nullable="false" />
+    <Property Name="cp_Proveedor" Type="Int32" Nullable="false" />
+    <Property Name="cp_Saldo" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="cp_fechaUltMov" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cp_MontoUltMov" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="cp_estCuentaXPagar" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="cp_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cp_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="cp_usuarioing" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cp_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cp_maquinaing" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cp_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cp_estado" Type="Int32" Nullable="false" />
+    <Property Name="cp_timestamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="MovimientoCuentaXPagar">
+    <Key>
+      <PropertyRef Name="mp_empresa" />
+      <PropertyRef Name="mp_IdCuentaXPagar" />
+      <PropertyRef Name="mp_IdMovCuentaXPagar" />
+    </Key>
+    <Property Name="mp_empresa" Type="Int16" Nullable="false" />
+    <Property Name="mp_IdCuentaXPagar" Type="Int32" Nullable="false" />
+    <Property Name="mp_IdMovCuentaXPagar" Type="Int32" Nullable="false" />
+    <Property Name="mp_IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="mp_IdDoc" Type="Int32" Nullable="false" />
+    <Property Name="mp_Proveedor" Type="Int32" Nullable="false" />
+    <Property Name="mp_FechaMov" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="mp_MontoMov" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="mp_CreditoDebito" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="mp_Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="mp_estMovCuentaXPagar" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="mp_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="mp_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="mp_usuarioing" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mp_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mp_maquinaing" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mp_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mp_estado" Type="Int32" Nullable="false" />
+    <Property Name="mp_timestamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

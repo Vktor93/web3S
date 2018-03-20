@@ -1,0 +1,103 @@
+﻿@model IList<object>
+
+@{
+    List<WebGrupo3S.Models.sp_Busqueda_Horario_Result> lstHorarios = Model.ToList()[0] as List<WebGrupo3S.Models.sp_Busqueda_Horario_Result>;
+    List<WebGrupo3S.Models.sp_Busqueda_HorarioEmpleado_Result> lstHempleado = Model.ToList()[1] as List<WebGrupo3S.Models.sp_Busqueda_HorarioEmpleado_Result>;
+}
+@{
+    ViewBag.Title = "Empleados - Horarios";
+}
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:800px; height:40px; text-align:center">Actualiza datos</h3>
+</div>
+@Styles.Render("~/Admin/plugins/datatables/css")
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal table-responsive col-md-12", style="height: 350px; width:400px; overflow: scroll">
+        <h4> Horarios</h4>
+        <hr />
+        <div class="col-md-12">
+            <div class="box", style="width:320px">
+                <div class="box-body">
+                    <table id="datosH" class="table table-hover table-bordered">
+                        @foreach (var item in lstHorarios)
+                        {
+                            <tr>
+                                <td>
+                                    @*<input type="checkbox" name="checkgrp" onclick="return OptionsSelected(this)" value="2" id="eXAMPLE"><LABEL">@Html.DisplayFor(modelItem => item.NombreHorario)</LABEL>*@
+                                    <input type='checkbox' name='CHECKH' value='0'>
+                                    @Html.DisplayFor(modelItem => item.NombreHorario)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footerH" style="width:200px">
+            <button id="btnasigna" class="btn btn-info btn-xs" type="button"><i class="glyphicon glyphicon-circle-arrow-right"></i>Asigna</button>
+        </div>
+    </div>
+    <div class="form-horizontal table-responsive col-md-12", style="height: 350px; width:400px; overflow: scroll">
+        <h4> Horarios empleado</h4>
+        <hr />
+        <div class="col-md-12">
+            <div class="box", style="width:320px">
+                <div class="box-body">
+                    <table id="datosE" class="table table-responsive table-hover table-bordered">
+                        @foreach (var item in lstHempleado)
+                        {
+                            <tr>
+                                <td>
+                                    <input type='checkbox' name='CHECKE' value='0'>
+                                    @Html.DisplayFor(modelItem => item.NombreHorario)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footerE" style="width:200px">
+            <button id="btnremove" class="btn btn-info btn-xs" type="button"><i class="glyphicon glyphicon-circle-arrow-left"></i>Desasigna</button>
+        </div>
+    </div>
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "Empleadoes")'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i> Graba</button>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+    @Scripts.Render("~/bundles/jquery")
+    <script language="javascript" type="text/javascript">
+        $(function()
+        {
+            $("#btnasigna").click(function ()
+            //{
+            //    if (document.datosE.elements.length > 0)
+            //       for (i = 0; i < document.datosE.elements.length; i++)
+            //           document.datosE.elements.remove();
+                for (i = 0; i < document.datosH.elements.length; i++)
+                    if (document.datosH.elements[i].type == "checkbox")
+                        if (document.datosH.elements[i].checked == true)
+                            document.datosE.elements.appendTo(document.datosH.elements[i])
+
+                //mover("datosH", "datosE");
+            });
+
+            $("#btnremove").click(function ()
+            {
+                mover("datosE","datosH");
+            });
+        });
+
+        function mover(origen, destino)
+        {
+            $("#" + origen + " option:selected").remove().appendTo("#" + destino);
+        }
+    </script>
+}

@@ -1,0 +1,57 @@
+﻿@model WebGrupo3S.Models.DetCatalogo
+@{
+    ViewBag.Title = "Detalle de catalogos";
+}
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Esta seguro que desea dar de baja siguiente registro?</h3>
+</div>
+<div class="body" style="width:700px">
+    <h2>@ViewData["Catalogo"]</h2>
+    <dl class="form-horizontal table-bordered">
+        <dt>
+            @Html.Label("Codigo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_codigo)
+        </dd>
+        <dt>
+            @Html.Label("Valor")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor)
+        </dd>
+        <dt>
+            @Html.Label("Valor1")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor1)
+        </dd>
+
+        <dt>
+            @Html.Label("Valor2")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor2)
+        </dd>
+
+        <dt>
+            @Html.Label("Valor3")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cd_valor3)
+        </dd>
+    </dl>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Details", "CabCatalogoes",new { id =  ViewBag.idcat, cat = ViewBag.catalogo, val1 = ViewBag.valor1 })'"><i class="glyphicon glyphicon-remove"></i>No</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i> Si</button>
+    </div>
+}

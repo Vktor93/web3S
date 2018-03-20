@@ -1,0 +1,146 @@
+﻿@model WebGrupo3S.Models.MovimientoCuentaXCobrar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MovimientoCuentaXCobrar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_IdSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_IdSucursal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_IdDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_IdDoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_FechaMov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_FechaMov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_MontoMov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_MontoMov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_CreditoDebito)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_CreditoDebito)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_estMovCuentaXCobrar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_estMovCuentaXCobrar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mc_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mc_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

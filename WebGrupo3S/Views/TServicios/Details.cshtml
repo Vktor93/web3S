@@ -1,0 +1,122 @@
+﻿@model WebGrupo3S.Models.TipoServicio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoServicio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_padre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_padre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_Coordinacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_Coordinacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_CuentaSAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_CuentaSAP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ts_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ts_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

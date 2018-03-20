@@ -1,0 +1,87 @@
+﻿@using WebGrupo3S.Helpers
+@model IList<WebGrupo3S.Models.sp_Busqueda_Servicio_Result>
+
+@{
+    ViewBag.Title = "Servicios";
+}
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <div>
+                    @if (ViewBag.reporte == "1")
+                    {
+                        <a href="@Url.Action("Report", new { id = "PDF" })">  PDF   <img width="20" height="20" src="/images/pdf.png" /></a>
+                        <a href="@Url.Action("Report", new { id = "Excel" })">  EXCEL   <img width="20" height="20" src="/images/excel.png" /></a>
+                    }
+                </div>
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead style="background-color:lavender">
+                        <tr>
+                            <th>
+                                Tipo
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Descripción
+                            </th>
+                            <th>
+                                Duración
+                            </th>
+                            <th style="background-color:lavender">
+                                <div class="pull-right">
+                                    @if (ViewBag.nuevo == "1")
+                                    {
+                                        <a href="@Url.Action("Create", "Servicios")"><img width="20" height="20" src="/images/add.png" /></a>
+                                    }
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TipoServicio)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreServicio)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Descripcion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DuracionServicio)
+                                </td>
+                                <td>
+                                    @if (ViewBag.editar == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Edita", "Edit", "Servicios", routeValues: new { id = item.CodigoServicio }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary btn-xs" })
+                                    }
+                                    @if (ViewBag.debaja == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-trash'></span>", "de Baja", "Delete", "Servicios", routeValues: new { id = item.CodigoServicio }, htmlAttributes: new { data_modal = "", @class = "btn btn-info btn-xs" })
+                                    }
+                                    @if (ViewBag.precios == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pushpin'></span>", "Precio", "precio", "Servicios", routeValues: new { id = item.CodigoServicio, nom = item.NombreServicio }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary btn-xs" })
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

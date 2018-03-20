@@ -1,0 +1,190 @@
+﻿@model WebGrupo3S.Models.Empleado
+
+@{
+    ViewBag.Title = "Empleados";
+}
+<link href="~/Content/themes/base/all.css" rel="stylesheet" />
+<link href="~/Content/Combobox.css" rel="stylesheet" />
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Nuevo Registro</h3>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="body" style="width:700px; height: 380px; overflow: scroll">
+        <div class="form-horizontal table-bordered">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.Label("Tipo", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.DropDownListFor(model => model.em_tipoEmpleado, new SelectList(ViewBag.TE, "Value", "Text"), htmlAttributes: new { @class = "form-control combobox" })
+                    @Html.ValidationMessageFor(model => model.em_tipoEmpleado, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Tipo Identificación", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.DropDownListFor(model => model.em_tipoIdentifica, new SelectList(ViewBag.TI, "Value", "Text"), htmlAttributes: new { @class = "form-control combobox" })
+                    @Html.ValidationMessageFor(model => model.em_tipoIdentifica, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Identificación", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_Identifica, new { htmlAttributes = new { @class = "form-control", style = "width: 200px" } })
+                    @Html.ValidationMessageFor(model => model.em_Identifica, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Nit", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_Nit, new { htmlAttributes = new { @class = "form-control", style = "width: 120px" } })
+                    @Html.ValidationMessageFor(model => model.em_Nit, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Nombre1", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_Nombre1, new { htmlAttributes = new { @class = "form-control", style = "width: 300px" } })
+                    @Html.ValidationMessageFor(model => model.em_Nombre1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Nombre2", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_Nombre2, new { htmlAttributes = new { @class = "form-control", style = "width: 300px" } })
+                    @Html.ValidationMessageFor(model => model.em_Nombre2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Nombre3", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_Nombre3, new { htmlAttributes = new { @class = "form-control", style = "width: 300px" } })
+                    @Html.ValidationMessageFor(model => model.em_Nombre3, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Apellido1", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_Apellido1, new { htmlAttributes = new { @class = "form-control", style = "width: 300px" } })
+                    @Html.ValidationMessageFor(model => model.em_Apellido1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Apellido2", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_Apellido2, new { htmlAttributes = new { @class = "form-control", style = "width: 300px" } })
+                    @Html.ValidationMessageFor(model => model.em_Apellido2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Apellida de casada", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_ApeCasada, new { htmlAttributes = new { @class = "form-control", style = "width: 300px" } })
+                    @Html.ValidationMessageFor(model => model.em_ApeCasada, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Nombre largo", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_nombrelargo, new { htmlAttributes = new { @class = "form-control", style = "width: 500px" } })
+                    @Html.ValidationMessageFor(model => model.em_nombrelargo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Alias", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_Alias, new { htmlAttributes = new { @class = "form-control", style = "width: 200px" } })
+                    @Html.ValidationMessageFor(model => model.em_Alias, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Genero", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.DropDownListFor(model => model.em_genero, new SelectList(ViewBag.GE, "Value", "Text"), new { style = "width: 85px; color:black" })
+                    @Html.ValidationMessageFor(model => model.em_genero, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Fecha de nacimiento", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_FechaNac, "Date", new { htmlAttributes = new { @class = "form-control", style = "width: 160px" } })
+                    @Html.ValidationMessageFor(model => model.em_FechaNac, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Ocupación", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.DropDownListFor(model => model.em_ocupacion, new SelectList(ViewBag.OP, "Value", "Text"), htmlAttributes: new { @class = "form-control combobox" })
+                    @Html.ValidationMessageFor(model => model.em_ocupacion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Estado civil", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.DropDownListFor(model => model.em_estadoCivil, new SelectList(ViewBag.EC, "Value", "Text"), htmlAttributes: new { @class = "form-control combobox" })
+                    @Html.ValidationMessageFor(model => model.em_estadoCivil, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Fecha de ingreso", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_FechaIngreso, "Date", new { htmlAttributes = new { @class = "form-control", style = "width: 160px" } })
+                    @Html.ValidationMessageFor(model => model.em_FechaIngreso, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Fecha de salida", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_FechaSalida, "Date", new { htmlAttributes = new { @class = "form-control", style = "width: 160px" } })
+                    @Html.ValidationMessageFor(model => model.em_FechaSalida, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Sueldo Base", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_SueldoBase, new { htmlAttributes = new { @class = "form-control", style = "width: 100px" } })
+                    @Html.ValidationMessageFor(model => model.em_SueldoBase, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Bonificación", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.em_Bonificacion, new { htmlAttributes = new { @class = "form-control", style = "width: 100px" } })
+                    @Html.ValidationMessageFor(model => model.em_Bonificacion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "Empleadoes")'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i>Crear</button>
+    </div>
+}
+
+@section Scripts {
+    <script src="~/Scripts/jquery.combobox.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

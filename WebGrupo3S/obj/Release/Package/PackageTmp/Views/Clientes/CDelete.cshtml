@@ -1,0 +1,54 @@
+﻿@model WebGrupo3S.Models.Contacto
+
+@{
+    ViewBag.Title = "Contactos";
+}
+
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Esta seguro que desea dar de baja siguiente registro?</h3>
+</div>
+<div class="body" style="width:700px">
+    <h2>@ViewData["asociado"]</h2>
+    <dl class="form-horizontal table-bordered">
+        <dt>
+            @Html.Label("Asociado")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cn_asociado)
+        </dd>
+
+        <dt>
+            @Html.Label("Tipo de contacto")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cn_tipoContacto)
+        </dd>
+
+        <dt>
+            @Html.Label("Primer Contacto")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cn_Contacto)
+        </dd>
+
+        <dt>
+            @Html.Label("Segundo contacto")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cn_Contacto2)
+        </dd>
+    </dl>
+
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Contactos", "Clientes", new { id = Convert.ToInt16(ViewData["idcliente"]), nom = ViewData["asociado"].ToString() })'"><i class="glyphicon glyphicon-remove"></i>No</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i> Si</button>
+    </div>
+}

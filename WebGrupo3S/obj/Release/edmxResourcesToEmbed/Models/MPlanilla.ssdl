@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSS_PLANILLAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="em_empresa" />
+      <PropertyRef Name="em_IdEmpleado" />
+    </Key>
+    <Property Name="em_empresa" Type="smallint" Nullable="false" />
+    <Property Name="em_IdEmpleado" Type="int" Nullable="false" />
+    <Property Name="em_tipoEmpleado" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="em_tipoIdentifica" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="em_Identifica" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="em_Nit" Type="varchar" MaxLength="50" />
+    <Property Name="em_Nombre1" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="em_Nombre2" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="em_Nombre3" Type="nvarchar" MaxLength="100" />
+    <Property Name="em_Apellido1" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="em_Apellido2" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="em_ApeCasada" Type="nvarchar" MaxLength="100" />
+    <Property Name="em_nombrelargo" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="em_Alias" Type="nvarchar" MaxLength="50" />
+    <Property Name="em_genero" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="em_FechaNac" Type="date" Nullable="false" />
+    <Property Name="em_ocupacion" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="em_estadoCivil" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="em_estEmpleado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="em_FechaIngreso" Type="datetime" Nullable="false" />
+    <Property Name="em_FechaSalida" Type="datetime" />
+    <Property Name="em_SueldoBase" Type="money" Nullable="false" />
+    <Property Name="em_Bonificacion" Type="money" Nullable="false" />
+    <Property Name="em_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="em_fechamod" Type="datetime" />
+    <Property Name="em_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="em_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="em_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="em_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="em_estado" Type="int" Nullable="false" />
+    <Property Name="em_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Horario">
+    <Key>
+      <PropertyRef Name="ho_empresa" />
+      <PropertyRef Name="ho_IdHorario" />
+      <PropertyRef Name="ho_diaSemana" />
+    </Key>
+    <Property Name="ho_empresa" Type="smallint" Nullable="false" />
+    <Property Name="ho_IdHorario" Type="int" Nullable="false" />
+    <Property Name="ho_diaSemana" Type="int" Nullable="false" />
+    <Property Name="ho_Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ho_Descripcion" Type="varchar" MaxLength="200" />
+    <Property Name="ho_HoraEntrada" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="ho_HoraSalida" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="ho_HoraSalidaAlmuerzo" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="ho_HoraEntradaAlmuerzo" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="ho_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="ho_fechamod" Type="datetime" />
+    <Property Name="ho_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ho_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="ho_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ho_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="ho_estado" Type="int" Nullable="false" />
+    <Property Name="ho_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HorarioEmpleado">
+    <Key>
+      <PropertyRef Name="he_empresa" />
+      <PropertyRef Name="he_IdHorario" />
+      <PropertyRef Name="he_diaSemana" />
+      <PropertyRef Name="he_IdEmpleado" />
+    </Key>
+    <Property Name="he_empresa" Type="smallint" Nullable="false" />
+    <Property Name="he_IdHorario" Type="int" Nullable="false" />
+    <Property Name="he_diaSemana" Type="int" Nullable="false" />
+    <Property Name="he_IdEmpleado" Type="int" Nullable="false" />
+    <Property Name="he_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="he_fechamod" Type="datetime" />
+    <Property Name="he_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="he_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="he_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="he_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="he_estado" Type="int" Nullable="false" />
+    <Property Name="he_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <Function Name="sp_ABC_Empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="em_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="em_opcion" Type="char" Mode="In" />
+    <Parameter Name="em_IdEmpleado" Type="int" Mode="InOut" />
+    <Parameter Name="em_tipoEmpleado" Type="char" Mode="In" />
+    <Parameter Name="em_tipoIdentifica" Type="char" Mode="In" />
+    <Parameter Name="em_Identifica" Type="varchar" Mode="In" />
+    <Parameter Name="em_Nit" Type="varchar" Mode="In" />
+    <Parameter Name="em_Nombre1" Type="varchar" Mode="In" />
+    <Parameter Name="em_Nombre2" Type="varchar" Mode="In" />
+    <Parameter Name="em_Nombre3" Type="varchar" Mode="In" />
+    <Parameter Name="em_Apellido1" Type="varchar" Mode="In" />
+    <Parameter Name="em_Apellido2" Type="varchar" Mode="In" />
+    <Parameter Name="em_ApeCasada" Type="varchar" Mode="In" />
+    <Parameter Name="em_Alias" Type="varchar" Mode="In" />
+    <Parameter Name="em_genero" Type="char" Mode="In" />
+    <Parameter Name="em_FechaNac" Type="date" Mode="In" />
+    <Parameter Name="em_ocupacion" Type="char" Mode="In" />
+    <Parameter Name="em_estadoCivil" Type="char" Mode="In" />
+    <Parameter Name="em_estEmpleado" Type="char" Mode="In" />
+    <Parameter Name="em_FechaIngreso" Type="datetime" Mode="In" />
+    <Parameter Name="em_FechaSalida" Type="datetime" Mode="In" />
+    <Parameter Name="em_SueldoBase" Type="money" Mode="In" />
+    <Parameter Name="em_Bonificacion" Type="money" Mode="In" />
+    <Parameter Name="em_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="em_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Horario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ho_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="ho_opcion" Type="char" Mode="In" />
+    <Parameter Name="ho_IdHorario" Type="int" Mode="InOut" />
+    <Parameter Name="ho_diaSemana" Type="int" Mode="In" />
+    <Parameter Name="ho_Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="ho_Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="ho_HoraEntrada" Type="char" Mode="In" />
+    <Parameter Name="ho_HoraSalida" Type="char" Mode="In" />
+    <Parameter Name="ho_HoraSalidaAlmuerzo" Type="char" Mode="In" />
+    <Parameter Name="ho_HoraEntradaAlmuerzo" Type="char" Mode="In" />
+    <Parameter Name="ho_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="ho_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_HorarioEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="he_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="he_opcion" Type="char" Mode="In" />
+    <Parameter Name="he_IdHorario" Type="int" Mode="In" />
+    <Parameter Name="he_diaSemana" Type="int" Mode="In" />
+    <Parameter Name="he_IdEmpleado" Type="int" Mode="In" />
+    <Parameter Name="he_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="he_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="em_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="em_IdEmpleado" Type="int" Mode="In" />
+    <Parameter Name="em_tipoEmpleado" Type="char" Mode="In" />
+    <Parameter Name="em_tipoIdentifica" Type="char" Mode="In" />
+    <Parameter Name="em_Identifica" Type="varchar" Mode="In" />
+    <Parameter Name="em_Nit" Type="varchar" Mode="In" />
+    <Parameter Name="em_Nombre1" Type="varchar" Mode="In" />
+    <Parameter Name="em_Nombre2" Type="varchar" Mode="In" />
+    <Parameter Name="em_Nombre3" Type="varchar" Mode="In" />
+    <Parameter Name="em_Apellido1" Type="varchar" Mode="In" />
+    <Parameter Name="em_Apellido2" Type="varchar" Mode="In" />
+    <Parameter Name="em_ApeCasada" Type="varchar" Mode="In" />
+    <Parameter Name="em_Alias" Type="varchar" Mode="In" />
+    <Parameter Name="em_genero" Type="char" Mode="In" />
+    <Parameter Name="em_FechaNac" Type="date" Mode="In" />
+    <Parameter Name="em_ocupacion" Type="varchar" Mode="In" />
+    <Parameter Name="em_estadoCivil" Type="char" Mode="In" />
+    <Parameter Name="em_estEmpleado" Type="char" Mode="In" />
+    <Parameter Name="em_FechaIngreso" Type="datetime" Mode="In" />
+    <Parameter Name="em_FechaSalida" Type="datetime" Mode="In" />
+    <Parameter Name="em_SueldoBase" Type="money" Mode="In" />
+    <Parameter Name="em_Bonificacion" Type="money" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Horario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="ho_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="ho_IdHorario" Type="int" Mode="In" />
+    <Parameter Name="ho_diaSemana" Type="int" Mode="In" />
+    <Parameter Name="ho_Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="ho_Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="ho_HoraEntrada" Type="char" Mode="In" />
+    <Parameter Name="ho_HoraSalida" Type="char" Mode="In" />
+    <Parameter Name="ho_HoraSalidaAlmuerzo" Type="char" Mode="In" />
+    <Parameter Name="ho_HoraEntradaAlmuerzo" Type="char" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_HorarioEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="he_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="he_IdHorario" Type="int" Mode="In" />
+    <Parameter Name="he_diaSemana" Type="int" Mode="In" />
+    <Parameter Name="he_IdEmpleado" Type="int" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="SSS_PLANILLAModelStoreContainer">
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Horario" EntityType="Self.Horario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HorarioEmpleado" EntityType="Self.HorarioEmpleado" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

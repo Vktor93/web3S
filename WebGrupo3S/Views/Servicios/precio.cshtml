@@ -1,0 +1,75 @@
+﻿@using WebGrupo3S.Helpers
+@model IList<WebGrupo3S.Models.sp_Busqueda_PrecioProductoServicio_Result>
+
+@{
+    ViewBag.Title = "Precios";
+}
+<p>
+    @Html.ActionLink("Retorna Servicios", "Regresa", null, new { @class = "btn btn-info" })
+</p>
+
+<h2>@ViewData["Nombre"]</h2>
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead style="background-color:lavender">
+                        <tr>
+                            <th>
+                                Precio
+                            </th>
+                            <th>
+                                PrecioMaximo
+                            </th>
+                            <th>
+                                Fecha de vigencia
+                            </th>
+                            <th style="background-color:lavender">
+                                <div class="pull-right">
+                                    @if (ViewBag.nuevo == "1")
+                                    {
+                                        <a href="@Url.Action("PCreate", "Servicios", routeValues: new { id = ViewBag.idcat, cat = ViewBag.catalogo, val1 = ViewBag.valor1 })"><img width="20" height="20" src="/images/add.png" /></a>
+                                    }
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Precio)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PrecioMaximo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FechaVigencia)
+                                </td>
+                                <td>
+                                    @if (ViewBag.editar == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Edita", "PEdit", "Servicios", routeValues: new { id = item.CodigoPrecioProductoServicio }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary btn-xs" })
+                                    }
+                                    @if (ViewBag.debaja == "1")
+                                    {
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-trash'></span>", "de Baja", "PDelete", "Servicios", routeValues: new { id = item.CodigoPrecioProductoServicio }, htmlAttributes: new { data_modal = "", @class = "btn btn-info btn-xs" })
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

@@ -1,0 +1,114 @@
+﻿@model WebGrupo3S.Models.TipoProducto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoProducto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_ClasificacionTP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_ClasificacionTP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_padre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_padre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tp_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tp_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

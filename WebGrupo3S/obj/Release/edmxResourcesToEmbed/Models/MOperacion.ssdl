@@ -1,0 +1,1338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSS_OPERACIONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ArqueoCaja">
+    <Key>
+      <PropertyRef Name="aq_empresa" />
+      <PropertyRef Name="aq_IdCierreCaja" />
+      <PropertyRef Name="aq_IdArqueoCaja" />
+    </Key>
+    <Property Name="aq_empresa" Type="smallint" Nullable="false" />
+    <Property Name="aq_IdCierreCaja" Type="int" Nullable="false" />
+    <Property Name="aq_IdArqueoCaja" Type="int" Nullable="false" />
+    <Property Name="aq_Moneda" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="aq_PresentacionMoneda" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="aq_Denominacion" Type="char" MaxLength="10" />
+    <Property Name="aq_Cantidad" Type="int" Nullable="false" />
+    <Property Name="aq_MontoTotal" Type="money" Nullable="false" />
+    <Property Name="aq_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="aq_fechamod" Type="datetime" />
+    <Property Name="aq_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="aq_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="aq_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="aq_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="aq_estado" Type="int" Nullable="false" />
+    <Property Name="aq_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CierreCaja">
+    <Key>
+      <PropertyRef Name="cj_empresa" />
+      <PropertyRef Name="cj_IdCierreCaja" />
+    </Key>
+    <Property Name="cj_empresa" Type="smallint" Nullable="false" />
+    <Property Name="cj_IdCierreCaja" Type="int" Nullable="false" />
+    <Property Name="cj_Terminal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cj_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="cj_FechaHoraCierre" Type="datetime" Nullable="false" />
+    <Property Name="cj_Moneda" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cj_SaldoAnterior" Type="money" />
+    <Property Name="cj_EntradasEfectivo" Type="money" />
+    <Property Name="cj_SalidasEfectivo" Type="money" />
+    <Property Name="cj_EfectivoTeorico" Type="money" />
+    <Property Name="cj_EfectivoFisico" Type="money" />
+    <Property Name="cj_AjusteEfectivo" Type="money" />
+    <Property Name="cj_ChequeTeorico" Type="money" />
+    <Property Name="cj_ChequeFisico" Type="money" />
+    <Property Name="cj_AjusteCheque" Type="money" />
+    <Property Name="cj_TarjetaTeorico" Type="money" />
+    <Property Name="cj_TarjetaFisico" Type="money" />
+    <Property Name="cj_AjusteTarjeta" Type="money" />
+    <Property Name="cj_Descuadre" Type="money" />
+    <Property Name="cj_RetiroEfectivoAdmin" Type="money" />
+    <Property Name="cj_SaldoActual" Type="money" />
+    <Property Name="cj_estCierreCaja" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cj_TotalVenta" Type="money" />
+    <Property Name="cj_TotalPropina" Type="money" />
+    <Property Name="cj_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="cj_fechamod" Type="datetime" />
+    <Property Name="cj_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cj_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cj_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cj_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cj_estado" Type="int" Nullable="false" />
+    <Property Name="cj_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CierreDiario">
+    <Key>
+      <PropertyRef Name="cd_empresa" />
+      <PropertyRef Name="cd_IdSucursal" />
+      <PropertyRef Name="cd_IdCierreDiario" />
+    </Key>
+    <Property Name="cd_empresa" Type="smallint" Nullable="false" />
+    <Property Name="cd_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="cd_IdCierreDiario" Type="int" Nullable="false" />
+    <Property Name="cd_FechaCierreDiario" Type="date" Nullable="false" />
+    <Property Name="cd_estCierreDiario" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cd_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="cd_fechamod" Type="datetime" />
+    <Property Name="cd_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cd_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cd_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cd_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cd_estado" Type="int" Nullable="false" />
+    <Property Name="cd_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CuentaXCobrar">
+    <Key>
+      <PropertyRef Name="cc_empresa" />
+      <PropertyRef Name="cc_IdCuentaXCobrar" />
+    </Key>
+    <Property Name="cc_empresa" Type="smallint" Nullable="false" />
+    <Property Name="cc_IdCuentaXCobrar" Type="int" Nullable="false" />
+    <Property Name="cc_Cliente" Type="int" Nullable="false" />
+    <Property Name="cc_Saldo" Type="money" Nullable="false" />
+    <Property Name="cc_fechaUltMov" Type="datetime" Nullable="false" />
+    <Property Name="cc_MontoUltMov" Type="money" Nullable="false" />
+    <Property Name="cc_estCuentaXCobrar" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cc_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="cc_fechamod" Type="datetime" />
+    <Property Name="cc_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cc_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cc_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cc_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cc_estado" Type="int" Nullable="false" />
+    <Property Name="cc_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CuentaXPagar">
+    <Key>
+      <PropertyRef Name="cp_empresa" />
+      <PropertyRef Name="cp_IdCuentaXPagar" />
+    </Key>
+    <Property Name="cp_empresa" Type="smallint" Nullable="false" />
+    <Property Name="cp_IdCuentaXPagar" Type="int" Nullable="false" />
+    <Property Name="cp_Proveedor" Type="int" Nullable="false" />
+    <Property Name="cp_Saldo" Type="money" Nullable="false" />
+    <Property Name="cp_fechaUltMov" Type="datetime" Nullable="false" />
+    <Property Name="cp_MontoUltMov" Type="money" Nullable="false" />
+    <Property Name="cp_estCuentaXPagar" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cp_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="cp_fechamod" Type="datetime" />
+    <Property Name="cp_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cp_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cp_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cp_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cp_estado" Type="int" Nullable="false" />
+    <Property Name="cp_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Descuento">
+    <Key>
+      <PropertyRef Name="ds_empresa" />
+      <PropertyRef Name="ds_IdDescuento" />
+    </Key>
+    <Property Name="ds_empresa" Type="smallint" Nullable="false" />
+    <Property Name="ds_IdDescuento" Type="int" Nullable="false" />
+    <Property Name="ds_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="ds_TipoDescuento" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="ds_Descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ds_Porcentaje" Type="int" Nullable="false" />
+    <Property Name="ds_Cantidad" Type="money" Nullable="false" />
+    <Property Name="ds_IdDoc" Type="int" Nullable="false" />
+    <Property Name="ds_IdMov" Type="int" Nullable="false" />
+    <Property Name="ds_IdAutorizacion" Type="int" Nullable="false" />
+    <Property Name="ds_IdMovDescuento" Type="int" />
+    <Property Name="ds_Comentario" Type="varchar" MaxLength="300" />
+    <Property Name="ds_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="ds_fechamod" Type="datetime" />
+    <Property Name="ds_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ds_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="ds_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ds_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="ds_estado" Type="int" Nullable="false" />
+    <Property Name="ds_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleCierreCaja">
+    <Key>
+      <PropertyRef Name="dj_empresa" />
+      <PropertyRef Name="dj_IdCierreCaja" />
+      <PropertyRef Name="dj_IdDetalleCierreCaja" />
+    </Key>
+    <Property Name="dj_empresa" Type="smallint" Nullable="false" />
+    <Property Name="dj_IdCierreCaja" Type="int" Nullable="false" />
+    <Property Name="dj_IdDetalleCierreCaja" Type="int" Nullable="false" />
+    <Property Name="dj_IdFormaPago" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="dj_Monto" Type="money" Nullable="false" />
+    <Property Name="dj_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="dj_fechamod" Type="datetime" />
+    <Property Name="dj_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dj_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="dj_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dj_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="dj_estado" Type="int" Nullable="false" />
+    <Property Name="dj_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="dm_empresa" />
+      <PropertyRef Name="dm_IdSucursal" />
+      <PropertyRef Name="dm_IdDoc" />
+      <PropertyRef Name="dm_TipoDocumento" />
+    </Key>
+    <Property Name="dm_empresa" Type="smallint" Nullable="false" />
+    <Property Name="dm_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="dm_IdDoc" Type="int" Nullable="false" />
+    <Property Name="dm_TipoDocumento" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="dm_TipoAsociado" Type="char" MaxLength="10" />
+    <Property Name="dm_asociado" Type="int" />
+    <Property Name="dm_NombreAsociado" Type="nvarchar" MaxLength="250" />
+    <Property Name="dm_DireccionAsociado" Type="nvarchar" MaxLength="250" />
+    <Property Name="dm_Nit" Type="varchar" MaxLength="50" />
+    <Property Name="dm_subtotal" Type="money" Nullable="false" />
+    <Property Name="dm_descuento" Type="money" Nullable="false" />
+    <Property Name="dm_total" Type="money" Nullable="false" />
+    <Property Name="dm_SerieDoc" Type="nvarchar" MaxLength="50" />
+    <Property Name="dm_NoDocumento" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dm_fechaDoc" Type="datetime" Nullable="false" />
+    <Property Name="dm_EstDocumento" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="dm_Terminal" Type="varchar" MaxLength="50" />
+    <Property Name="dm_MotivoAnulacion" Type="char" MaxLength="10" />
+    <Property Name="dm_MotivoNCND" Type="char" MaxLength="10" />
+    <Property Name="dm_Comentario" Type="varchar" MaxLength="300" />
+    <Property Name="dm_IdDocAnulado" Type="int" />
+    <Property Name="dm_IdCierreDiario" Type="int" />
+    <Property Name="dm_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="dm_fechamod" Type="datetime" />
+    <Property Name="dm_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dm_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="dm_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dm_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="dm_estado" Type="int" Nullable="false" />
+    <Property Name="dm_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Existencia">
+    <Key>
+      <PropertyRef Name="ex_empresa" />
+      <PropertyRef Name="ex_IdSucursal" />
+      <PropertyRef Name="ex_TipoProducto" />
+      <PropertyRef Name="ex_IdProd" />
+      <PropertyRef Name="ex_fechaing" />
+    </Key>
+    <Property Name="ex_empresa" Type="smallint" Nullable="false" />
+    <Property Name="ex_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="ex_IdExistencia" Type="int" Nullable="false" />
+    <Property Name="ex_TipoProducto" Type="int" Nullable="false" />
+    <Property Name="ex_IdProd" Type="int" Nullable="false" />
+    <Property Name="ex_cantidad" Type="int" Nullable="false" />
+    <Property Name="ex_precioUnitario" Type="money" Nullable="false" />
+    <Property Name="ex_FechaCaducidad" Type="date" />
+    <Property Name="ex_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="ex_fechamod" Type="datetime" />
+    <Property Name="ex_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ex_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="ex_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ex_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="ex_estado" Type="int" Nullable="false" />
+    <Property Name="ex_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FacturaFormaPago">
+    <Key>
+      <PropertyRef Name="fp_empresa" />
+      <PropertyRef Name="fp_IdFacturaFormaPago" />
+    </Key>
+    <Property Name="fp_empresa" Type="smallint" Nullable="false" />
+    <Property Name="fp_IdFacturaFormaPago" Type="int" Nullable="false" />
+    <Property Name="fp_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="fp_IdDoc" Type="int" Nullable="false" />
+    <Property Name="fp_IdMovDocPromo" Type="int" />
+    <Property Name="fp_IdFormaPago" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="fp_IdAutorizacion" Type="int" />
+    <Property Name="fp_Cantidad" Type="money" />
+    <Property Name="fp_Unidades" Type="int" />
+    <Property Name="fp_NoDocumento" Type="bigint" />
+    <Property Name="fp_IdBanco" Type="char" MaxLength="10" />
+    <Property Name="fp_IdMarcaTarjeta" Type="char" MaxLength="10" />
+    <Property Name="fp_Comentario" Type="nvarchar" MaxLength="200" />
+    <Property Name="fp_Moneda" Type="char" MaxLength="10" />
+    <Property Name="fp_TasaCambio" Type="money" />
+    <Property Name="fp_CantidadOriginal" Type="money" />
+    <Property Name="fp_IdCierreCaja" Type="int" />
+    <Property Name="fp_ConfirmaCierreCaja" Type="int" />
+    <Property Name="fp_efectivoRecibido" Type="money" />
+    <Property Name="fp_efectivoVuelto" Type="money" />
+    <Property Name="fp_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="fp_fechamod" Type="datetime" />
+    <Property Name="fp_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fp_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="fp_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fp_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="fp_estado" Type="int" Nullable="false" />
+    <Property Name="fp_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HorarioSucursal">
+    <Key>
+      <PropertyRef Name="hs_empresa" />
+      <PropertyRef Name="hs_IdSucursal" />
+      <PropertyRef Name="hs_dia" />
+      <PropertyRef Name="hs_Hora" />
+      <PropertyRef Name="hs_fechaing" />
+    </Key>
+    <Property Name="hs_empresa" Type="smallint" Nullable="false" />
+    <Property Name="hs_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="hs_dia" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="hs_Hora" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="hs_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="hs_fechamod" Type="datetime" />
+    <Property Name="hs_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="hs_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="hs_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="hs_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="hs_estado" Type="int" Nullable="false" />
+    <Property Name="hs_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movimiento">
+    <Key>
+      <PropertyRef Name="mv_empresa" />
+      <PropertyRef Name="mv_IdSucursal" />
+      <PropertyRef Name="mv_IdMov" />
+      <PropertyRef Name="mv_TipoMovimiento" />
+      <PropertyRef Name="mv_IdDoc" />
+    </Key>
+    <Property Name="mv_empresa" Type="smallint" Nullable="false" />
+    <Property Name="mv_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="mv_IdMov" Type="int" Nullable="false" />
+    <Property Name="mv_ProdServ" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="mv_IdProdServ" Type="int" Nullable="false" />
+    <Property Name="mv_Cantidad" Type="int" Nullable="false" />
+    <Property Name="mv_ValorMov" Type="money" Nullable="false" />
+    <Property Name="mv_TipoMovimiento" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="mv_FechaMov" Type="datetime" Nullable="false" />
+    <Property Name="mv_IdDoc" Type="int" Nullable="false" />
+    <Property Name="mv_IdOrdenServicio" Type="int" />
+    <Property Name="mv_IdDetalleOrdenServicio" Type="int" />
+    <Property Name="mv_IdAutorizacion" Type="int" />
+    <Property Name="mv_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="mv_fechamod" Type="datetime" />
+    <Property Name="mv_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mv_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="mv_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mv_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="mv_estado" Type="int" Nullable="false" />
+    <Property Name="mv_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MovimientoCuentaXCobrar">
+    <Key>
+      <PropertyRef Name="mc_empresa" />
+      <PropertyRef Name="mc_IdCuentaXCobrar" />
+      <PropertyRef Name="mc_IdMovCuentaXCobrar" />
+    </Key>
+    <Property Name="mc_empresa" Type="smallint" Nullable="false" />
+    <Property Name="mc_IdCuentaXCobrar" Type="int" Nullable="false" />
+    <Property Name="mc_IdMovCuentaXCobrar" Type="int" Nullable="false" />
+    <Property Name="mc_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="mc_IdDoc" Type="int" Nullable="false" />
+    <Property Name="mc_Cliente" Type="int" Nullable="false" />
+    <Property Name="mc_FechaMov" Type="datetime" Nullable="false" />
+    <Property Name="mc_MontoMov" Type="money" Nullable="false" />
+    <Property Name="mc_CreditoDebito" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="mc_Descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="mc_estMovCuentaXCobrar" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="mc_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="mc_fechamod" Type="datetime" />
+    <Property Name="mc_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mc_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="mc_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mc_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="mc_estado" Type="int" Nullable="false" />
+    <Property Name="mc_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MovimientoCuentaXPagar">
+    <Key>
+      <PropertyRef Name="mp_empresa" />
+      <PropertyRef Name="mp_IdCuentaXPagar" />
+      <PropertyRef Name="mp_IdMovCuentaXPagar" />
+    </Key>
+    <Property Name="mp_empresa" Type="smallint" Nullable="false" />
+    <Property Name="mp_IdCuentaXPagar" Type="int" Nullable="false" />
+    <Property Name="mp_IdMovCuentaXPagar" Type="int" Nullable="false" />
+    <Property Name="mp_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="mp_IdDoc" Type="int" Nullable="false" />
+    <Property Name="mp_Proveedor" Type="int" Nullable="false" />
+    <Property Name="mp_FechaMov" Type="datetime" Nullable="false" />
+    <Property Name="mp_MontoMov" Type="money" Nullable="false" />
+    <Property Name="mp_CreditoDebito" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="mp_Descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="mp_estMovCuentaXPagar" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="mp_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="mp_fechamod" Type="datetime" />
+    <Property Name="mp_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mp_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="mp_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mp_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="mp_estado" Type="int" Nullable="false" />
+    <Property Name="mp_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrecioProductoServicio">
+    <Key>
+      <PropertyRef Name="pp_empresa" />
+      <PropertyRef Name="pp_IdPrecProdServ" />
+    </Key>
+    <Property Name="pp_empresa" Type="smallint" Nullable="false" />
+    <Property Name="pp_IdPrecProdServ" Type="int" Nullable="false" />
+    <Property Name="pp_TipoPrecio" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="pp_IdProdServ" Type="int" Nullable="false" />
+    <Property Name="pp_precio" Type="money" Nullable="false" />
+    <Property Name="pp_PrecioMaximo" Type="money" />
+    <Property Name="pp_fechaVigencia" Type="datetime" />
+    <Property Name="pp_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="pp_fechamod" Type="datetime" />
+    <Property Name="pp_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pp_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pp_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pp_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pp_estado" Type="int" Nullable="false" />
+    <Property Name="pp_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="pr_empresa" />
+      <PropertyRef Name="pr_TipoProducto" />
+      <PropertyRef Name="pr_IdProd" />
+    </Key>
+    <Property Name="pr_empresa" Type="smallint" Nullable="false" />
+    <Property Name="pr_TipoProducto" Type="int" Nullable="false" />
+    <Property Name="pr_IdProd" Type="int" Nullable="false" />
+    <Property Name="pr_nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="pr_descripcion" Type="nvarchar" MaxLength="150" />
+    <Property Name="pr_CodigoBarras" Type="varchar" MaxLength="50" />
+    <Property Name="pr_CodigoSAP" Type="varchar" MaxLength="50" />
+    <Property Name="pr_IdMarca" Type="char" MaxLength="10" />
+    <Property Name="pr_ImagenProd" Type="image" />
+    <Property Name="pr_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="pr_fechamod" Type="datetime" />
+    <Property Name="pr_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pr_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pr_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pr_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pr_estado" Type="int" Nullable="false" />
+    <Property Name="pr_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Propina">
+    <Key>
+      <PropertyRef Name="pn_empresa" />
+      <PropertyRef Name="pn_IdSucursal" />
+      <PropertyRef Name="pn_IdPropina" />
+    </Key>
+    <Property Name="pn_empresa" Type="int" Nullable="false" />
+    <Property Name="pn_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="pn_IdPropina" Type="int" Nullable="false" />
+    <Property Name="pn_IdOrdenPago" Type="int" Nullable="false" />
+    <Property Name="pn_IdOrdenServicio" Type="int" Nullable="false" />
+    <Property Name="pn_IdDetalleOrdenServicio" Type="int" />
+    <Property Name="pn_Cantidad" Type="money" />
+    <Property Name="pn_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="pn_fechamod" Type="datetime" />
+    <Property Name="pn_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pn_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pn_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pn_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="pn_estado" Type="int" Nullable="false" />
+    <Property Name="pn_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalidaEfectivoCaja">
+    <Key>
+      <PropertyRef Name="sc_empresa" />
+      <PropertyRef Name="sc_IdSalidaEfectivo" />
+    </Key>
+    <Property Name="sc_empresa" Type="smallint" Nullable="false" />
+    <Property Name="sc_IdSalidaEfectivo" Type="int" Nullable="false" />
+    <Property Name="sc_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="sc_FechaHoraSEC" Type="datetime" Nullable="false" />
+    <Property Name="sc_MotivoSalidaEfectivo" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="sc_Monto" Type="money" Nullable="false" />
+    <Property Name="sc_Moneda" Type="char" MaxLength="10" />
+    <Property Name="sc_IdAutorizacion" Type="int" Nullable="false" />
+    <Property Name="sc_IdCierreCaja" Type="int" />
+    <Property Name="sc_ConfirmaCierreCaja" Type="int" />
+    <Property Name="sc_IdDoc" Type="int" />
+    <Property Name="sc_IdFacturaFormaPago" Type="int" />
+    <Property Name="sc_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="sc_fechamod" Type="datetime" />
+    <Property Name="sc_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sc_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="sc_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sc_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="sc_estado" Type="int" Nullable="false" />
+    <Property Name="sc_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SerieFactura">
+    <Key>
+      <PropertyRef Name="sf_empresa" />
+      <PropertyRef Name="sf_IdSerieFactura" />
+    </Key>
+    <Property Name="sf_empresa" Type="smallint" Nullable="false" />
+    <Property Name="sf_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="sf_IdSerieFactura" Type="int" Nullable="false" />
+    <Property Name="sf_Terminal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sf_TipoCorrelativo" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="sf_Serie" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sf_RangoInicio" Type="int" Nullable="false" />
+    <Property Name="sf_RangoFinal" Type="int" Nullable="false" />
+    <Property Name="sf_NoFactura" Type="int" Nullable="false" />
+    <Property Name="sf_fechaVigencia" Type="datetime" Nullable="false" />
+    <Property Name="sf_estRegistro" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="sf_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="sf_fechamod" Type="datetime" />
+    <Property Name="sf_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sf_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="sf_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sf_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="sf_estado" Type="int" Nullable="false" />
+    <Property Name="sf_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="sv_empresa" />
+      <PropertyRef Name="sv_IdServicio" />
+    </Key>
+    <Property Name="sv_empresa" Type="smallint" Nullable="false" />
+    <Property Name="sv_TipoServicio" Type="int" Nullable="false" />
+    <Property Name="sv_IdServicio" Type="int" Nullable="false" />
+    <Property Name="sv_nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sv_descripcion" Type="nvarchar" MaxLength="150" />
+    <Property Name="sv_duracionServicio" Type="int" Nullable="false" />
+    <Property Name="sv_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="sv_fechamod" Type="datetime" />
+    <Property Name="sv_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sv_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="sv_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sv_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="sv_estado" Type="int" Nullable="false" />
+    <Property Name="sv_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sucursal">
+    <Key>
+      <PropertyRef Name="su_empresa" />
+      <PropertyRef Name="su_IdSucursal" />
+    </Key>
+    <Property Name="su_empresa" Type="smallint" Nullable="false" />
+    <Property Name="su_IdSucursal" Type="int" Nullable="false" />
+    <Property Name="su_Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="su_Encargado" Type="int" Nullable="false" />
+    <Property Name="su_Direccion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="su_Telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="su_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="su_fechamod" Type="datetime" />
+    <Property Name="su_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="su_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="su_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="su_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="su_estado" Type="int" Nullable="false" />
+    <Property Name="su_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoProducto">
+    <Key>
+      <PropertyRef Name="tp_empresa" />
+      <PropertyRef Name="tp_IdTipoProducto" />
+    </Key>
+    <Property Name="tp_empresa" Type="smallint" Nullable="false" />
+    <Property Name="tp_IdTipoProducto" Type="int" Nullable="false" />
+    <Property Name="tp_ClasificacionTP" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="tp_nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tp_descripcion" Type="nvarchar" MaxLength="150" />
+    <Property Name="tp_padre" Type="int" />
+    <Property Name="tp_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="tp_fechamod" Type="datetime" />
+    <Property Name="tp_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tp_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="tp_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tp_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="tp_estado" Type="int" Nullable="false" />
+    <Property Name="tp_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoServicio">
+    <Key>
+      <PropertyRef Name="ts_empresa" />
+      <PropertyRef Name="ts_IdTipoServicio" />
+    </Key>
+    <Property Name="ts_empresa" Type="smallint" Nullable="false" />
+    <Property Name="ts_IdTipoServicio" Type="int" Nullable="false" />
+    <Property Name="ts_nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ts_descripcion" Type="nvarchar" MaxLength="150" />
+    <Property Name="ts_padre" Type="int" />
+    <Property Name="ts_Coordinacion" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="ts_CuentaSAP" Type="nvarchar" MaxLength="50" />
+    <Property Name="ts_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="ts_fechamod" Type="datetime" />
+    <Property Name="ts_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ts_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="ts_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ts_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="ts_estado" Type="int" Nullable="false" />
+    <Property Name="ts_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <Function Name="sp_ABC_ArqueoCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="aq_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="aq_opcion" Type="char" Mode="In" />
+    <Parameter Name="aq_IdCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="aq_IdArqueoCaja" Type="int" Mode="InOut" />
+    <Parameter Name="aq_Moneda" Type="char" Mode="In" />
+    <Parameter Name="aq_PresentacionMoneda" Type="char" Mode="In" />
+    <Parameter Name="aq_Denominacion" Type="char" Mode="In" />
+    <Parameter Name="aq_Cantidad" Type="int" Mode="In" />
+    <Parameter Name="aq_MontoTotal" Type="money" Mode="In" />
+    <Parameter Name="aq_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="aq_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_CierreCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cj_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cj_opcion" Type="char" Mode="In" />
+    <Parameter Name="cj_IdCierreCaja" Type="int" Mode="InOut" />
+    <Parameter Name="cj_Terminal" Type="varchar" Mode="In" />
+    <Parameter Name="cj_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="cj_Moneda" Type="char" Mode="In" />
+    <Parameter Name="cj_SaldoAnterior" Type="money" Mode="In" />
+    <Parameter Name="cj_EntradasEfectivo" Type="money" Mode="In" />
+    <Parameter Name="cj_SalidasEfectivo" Type="money" Mode="In" />
+    <Parameter Name="cj_EfectivoTeorico" Type="money" Mode="In" />
+    <Parameter Name="cj_EfectivoFisico" Type="money" Mode="In" />
+    <Parameter Name="cj_AjusteEfectivo" Type="money" Mode="In" />
+    <Parameter Name="cj_ChequeTeorico" Type="money" Mode="In" />
+    <Parameter Name="cj_ChequeFisico" Type="money" Mode="In" />
+    <Parameter Name="cj_AjusteCheque" Type="money" Mode="In" />
+    <Parameter Name="cj_TarjetaTeorico" Type="money" Mode="In" />
+    <Parameter Name="cj_TarjetaFisico" Type="money" Mode="In" />
+    <Parameter Name="cj_AjusteTarjeta" Type="money" Mode="In" />
+    <Parameter Name="cj_Descuadre" Type="money" Mode="In" />
+    <Parameter Name="cj_RetiroEfectivoAdmin" Type="money" Mode="In" />
+    <Parameter Name="cj_SaldoActual" Type="money" Mode="In" />
+    <Parameter Name="cj_estCierreCaja" Type="char" Mode="In" />
+    <Parameter Name="cj_TotalVenta" Type="money" Mode="In" />
+    <Parameter Name="cj_TotalPropina" Type="money" Mode="In" />
+    <Parameter Name="cj_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="cj_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_CierreDiario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cd_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cd_opcion" Type="char" Mode="In" />
+    <Parameter Name="cd_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="cd_IdCierreDiario" Type="int" Mode="InOut" />
+    <Parameter Name="cd_FechaCierreDiario" Type="date" Mode="In" />
+    <Parameter Name="cd_estCierreDiario" Type="char" Mode="In" />
+    <Parameter Name="cd_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="cd_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_CuentaXCobrar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cc_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cc_opcion" Type="char" Mode="In" />
+    <Parameter Name="cc_IdCuentaXCobrar" Type="int" Mode="InOut" />
+    <Parameter Name="cc_Cliente" Type="int" Mode="In" />
+    <Parameter Name="cc_Saldo" Type="money" Mode="In" />
+    <Parameter Name="cc_fechaUltMov" Type="datetime" Mode="In" />
+    <Parameter Name="cc_MontoUltMov" Type="money" Mode="In" />
+    <Parameter Name="cc_estCuentaXCobrar" Type="char" Mode="In" />
+    <Parameter Name="cc_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="cc_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Descuento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ds_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="ds_opcion" Type="char" Mode="In" />
+    <Parameter Name="ds_IdDescuento" Type="int" Mode="InOut" />
+    <Parameter Name="ds_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="ds_TipoDescuento" Type="char" Mode="In" />
+    <Parameter Name="ds_Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="ds_Porcentaje" Type="int" Mode="In" />
+    <Parameter Name="ds_Cantidad" Type="money" Mode="In" />
+    <Parameter Name="ds_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="ds_IdMov" Type="int" Mode="In" />
+    <Parameter Name="ds_IdAutorizacion" Type="int" Mode="In" />
+    <Parameter Name="ds_IdMovDescuento" Type="int" Mode="In" />
+    <Parameter Name="ds_Comentario" Type="varchar" Mode="In" />
+    <Parameter Name="ds_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="ds_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_DetalleCierreCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dj_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="dj_opcion" Type="char" Mode="In" />
+    <Parameter Name="dj_IdCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="dj_IdDetalleCierreCaja" Type="int" Mode="InOut" />
+    <Parameter Name="dj_IdFormaPago" Type="char" Mode="In" />
+    <Parameter Name="dj_Monto" Type="money" Mode="In" />
+    <Parameter Name="dj_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="dj_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Documento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dm_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="dm_opcion" Type="char" Mode="In" />
+    <Parameter Name="dm_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="dm_IdDoc" Type="int" Mode="InOut" />
+    <Parameter Name="dm_tipoDocumento" Type="char" Mode="In" />
+    <Parameter Name="dm_TipoAsociado" Type="char" Mode="In" />
+    <Parameter Name="dm_asociado" Type="int" Mode="In" />
+    <Parameter Name="dm_NombreAsociado" Type="varchar" Mode="In" />
+    <Parameter Name="dm_DireccionAsociado" Type="varchar" Mode="In" />
+    <Parameter Name="dm_Nit" Type="varchar" Mode="In" />
+    <Parameter Name="dm_subtotal" Type="money" Mode="In" />
+    <Parameter Name="dm_descuento" Type="money" Mode="In" />
+    <Parameter Name="dm_total" Type="money" Mode="In" />
+    <Parameter Name="dm_SerieDoc" Type="varchar" Mode="In" />
+    <Parameter Name="dm_NoDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="dm_fechaDoc" Type="datetime" Mode="In" />
+    <Parameter Name="dm_estDocumento" Type="char" Mode="In" />
+    <Parameter Name="dm_Terminal" Type="varchar" Mode="In" />
+    <Parameter Name="dm_Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="dm_MotivoAnulacion" Type="char" Mode="In" />
+    <Parameter Name="dm_MotivoNCND" Type="char" Mode="In" />
+    <Parameter Name="dm_Comentario" Type="varchar" Mode="In" />
+    <Parameter Name="cc_estCuentaXCobrar" Type="char" Mode="In" />
+    <Parameter Name="dm_IdDocAnulado" Type="int" Mode="In" />
+    <Parameter Name="dm_IdCierreDiario" Type="int" Mode="In" />
+    <Parameter Name="dm_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="dm_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Existencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ex_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="ex_opcion" Type="char" Mode="In" />
+    <Parameter Name="ex_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="ex_IdExistencia" Type="int" Mode="InOut" />
+    <Parameter Name="ex_TipoProducto" Type="int" Mode="In" />
+    <Parameter Name="ex_IdProd" Type="int" Mode="In" />
+    <Parameter Name="ex_Cantidad" Type="int" Mode="In" />
+    <Parameter Name="ex_precioUnitario" Type="money" Mode="In" />
+    <Parameter Name="ex_FechaCaducidad" Type="date" Mode="In" />
+    <Parameter Name="ex_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="ex_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_FacturaFormaPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fp_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="fp_opcion" Type="char" Mode="In" />
+    <Parameter Name="fp_IdFacturaFormaPago" Type="int" Mode="InOut" />
+    <Parameter Name="fp_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="fp_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="fp_IdMov" Type="int" Mode="InOut" />
+    <Parameter Name="fp_IdFormaPago" Type="char" Mode="In" />
+    <Parameter Name="fp_IdAutorizacion" Type="int" Mode="In" />
+    <Parameter Name="fp_Cantidad" Type="money" Mode="In" />
+    <Parameter Name="fp_efectivoRecibido" Type="money" Mode="In" />
+    <Parameter Name="fp_efectivoVuelto" Type="money" Mode="In" />
+    <Parameter Name="fp_Unidades" Type="int" Mode="In" />
+    <Parameter Name="fp_NoDocumento" Type="bigint" Mode="In" />
+    <Parameter Name="fp_IdBanco" Type="char" Mode="In" />
+    <Parameter Name="fp_Comentario" Type="varchar" Mode="In" />
+    <Parameter Name="fp_Moneda" Type="char" Mode="In" />
+    <Parameter Name="fp_IdMarcaTarjeta" Type="char" Mode="In" />
+    <Parameter Name="fp_IdOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="fp_IdDetalleOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="fp_IdServicio" Type="int" Mode="In" />
+    <Parameter Name="fp_IdProducto" Type="int" Mode="In" />
+    <Parameter Name="fp_TipoDocumentoPromo" Type="char" Mode="In" />
+    <Parameter Name="fp_IdCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="fp_ConfirmaCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="fp_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="fp_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Movimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mv_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="mv_opcion" Type="char" Mode="In" />
+    <Parameter Name="mv_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="mv_IdMov" Type="int" Mode="InOut" />
+    <Parameter Name="mv_ProdServ" Type="char" Mode="In" />
+    <Parameter Name="mv_IdProdServ" Type="int" Mode="In" />
+    <Parameter Name="mv_Cantidad" Type="int" Mode="In" />
+    <Parameter Name="mv_ValorMov" Type="money" Mode="In" />
+    <Parameter Name="mv_TipoMovimiento" Type="char" Mode="In" />
+    <Parameter Name="mv_FechaMov" Type="datetime" Mode="In" />
+    <Parameter Name="mv_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="mv_IdOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="mv_IdDetalleOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="mv_IdAutorizacion" Type="int" Mode="In" />
+    <Parameter Name="mv_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="mv_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+    <Parameter Name="mv_IdEmpleado" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_ABC_MovimientoCuentaXCobrar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mc_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="mc_opcion" Type="char" Mode="In" />
+    <Parameter Name="mc_IdCuentaXCobrar" Type="int" Mode="InOut" />
+    <Parameter Name="mc_IdMovCuentaXCobrar" Type="int" Mode="InOut" />
+    <Parameter Name="mc_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="mc_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="mc_Cliente" Type="int" Mode="In" />
+    <Parameter Name="mc_FechaMov" Type="datetime" Mode="In" />
+    <Parameter Name="mc_MontoMov" Type="money" Mode="In" />
+    <Parameter Name="mc_CreditoDebito" Type="char" Mode="In" />
+    <Parameter Name="mc_Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="mc_estMovCuentaXCobrar" Type="char" Mode="In" />
+    <Parameter Name="mc_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="mc_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_PrecioProductoServicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pp_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pp_opcion" Type="char" Mode="In" />
+    <Parameter Name="pp_TipoPrecio" Type="char" Mode="In" />
+    <Parameter Name="pp_IdPrecProdServ" Type="int" Mode="InOut" />
+    <Parameter Name="pp_IdProdServ" Type="int" Mode="In" />
+    <Parameter Name="pp_precio" Type="money" Mode="In" />
+    <Parameter Name="pp_precioMaximo" Type="money" Mode="In" />
+    <Parameter Name="pp_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="pp_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pr_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pr_opcion" Type="char" Mode="In" />
+    <Parameter Name="pr_TipoProducto" Type="int" Mode="In" />
+    <Parameter Name="pr_IdProd" Type="int" Mode="InOut" />
+    <Parameter Name="pr_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="pr_descripcion" Type="nvarchar" Mode="In" />
+    <Parameter Name="pr_CodigoBarras" Type="nvarchar" Mode="In" />
+    <Parameter Name="pr_CodigoSAP" Type="nvarchar" Mode="In" />
+    <Parameter Name="pr_IdMarca" Type="char" Mode="In" />
+    <Parameter Name="pr_ImagenProd" Type="image" Mode="In" />
+    <Parameter Name="pr_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="pr_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Propina" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pn_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pn_opcion" Type="char" Mode="In" />
+    <Parameter Name="pn_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="pn_IdPropina" Type="int" Mode="InOut" />
+    <Parameter Name="pn_IdOrdenPago" Type="int" Mode="In" />
+    <Parameter Name="pn_IdOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="pn_IdDetalleOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="pn_Cantidad" Type="money" Mode="In" />
+    <Parameter Name="pn_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="pn_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_SalidaEfectivoCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sc_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="sc_opcion" Type="char" Mode="In" />
+    <Parameter Name="sc_IdSalidaEfectivo" Type="int" Mode="InOut" />
+    <Parameter Name="sc_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="sc_Moneda" Type="char" Mode="In" />
+    <Parameter Name="sc_MotivoSalidaEfectivo" Type="char" Mode="In" />
+    <Parameter Name="sc_Monto" Type="money" Mode="In" />
+    <Parameter Name="sc_IdAutorizacion" Type="int" Mode="In" />
+    <Parameter Name="sc_IdCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="sc_ConfirmaCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="sc_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="sc_IdFacturaFormaPago" Type="int" Mode="In" />
+    <Parameter Name="sc_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="sc_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_SerieFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sf_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="sf_opcion" Type="char" Mode="In" />
+    <Parameter Name="sf_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="sf_IdSerieFactura" Type="int" Mode="InOut" />
+    <Parameter Name="sf_Terminal" Type="varchar" Mode="In" />
+    <Parameter Name="sf_TipoCorrelativo" Type="char" Mode="In" />
+    <Parameter Name="sf_Serie" Type="varchar" Mode="In" />
+    <Parameter Name="sf_RangoInicio" Type="int" Mode="In" />
+    <Parameter Name="sf_RangoFinal" Type="int" Mode="In" />
+    <Parameter Name="sf_NoFactura" Type="int" Mode="In" />
+    <Parameter Name="sf_estRegistro" Type="char" Mode="In" />
+    <Parameter Name="sf_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="sf_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Servicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sv_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="sv_opcion" Type="char" Mode="In" />
+    <Parameter Name="sv_TipoServicio" Type="int" Mode="In" />
+    <Parameter Name="sv_IdServicio" Type="int" Mode="InOut" />
+    <Parameter Name="sv_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="sv_descripcion" Type="nvarchar" Mode="In" />
+    <Parameter Name="sv_duracionServicio" Type="int" Mode="In" />
+    <Parameter Name="sv_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="sv_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Sucursal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="su_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="su_opcion" Type="char" Mode="In" />
+    <Parameter Name="su_IdSucursal" Type="int" Mode="InOut" />
+    <Parameter Name="su_Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="su_IdEncargado" Type="int" Mode="In" />
+    <Parameter Name="su_Direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="su_Telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="su_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="su_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_TipoProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tp_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="tp_opcion" Type="char" Mode="In" />
+    <Parameter Name="tp_IdTipoProducto" Type="int" Mode="InOut" />
+    <Parameter Name="tp_ClasificacionTP" Type="char" Mode="In" />
+    <Parameter Name="tp_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="tp_descripcion" Type="nvarchar" Mode="In" />
+    <Parameter Name="tp_padre" Type="int" Mode="In" />
+    <Parameter Name="tp_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="tp_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_TipoServicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ts_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="ts_opcion" Type="char" Mode="In" />
+    <Parameter Name="ts_IdTipoServ" Type="int" Mode="InOut" />
+    <Parameter Name="ts_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="ts_descripcion" Type="nvarchar" Mode="In" />
+    <Parameter Name="ts_padre" Type="int" Mode="In" />
+    <Parameter Name="ts_Coordinacion" Type="char" Mode="In" />
+    <Parameter Name="ts_CuentaSAP" Type="nvarchar" Mode="In" />
+    <Parameter Name="ts_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="ts_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_AlertaCumpleanios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cl_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cl_Cliente" Type="int" Mode="In" />
+    <Parameter Name="Alerta" Type="varchar" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_AnulaFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dm_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="dm_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="dm_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="dm_TipoAsociado" Type="char" Mode="In" />
+    <Parameter Name="dm_asociado" Type="int" Mode="In" />
+    <Parameter Name="dm_NombreAsociado" Type="varchar" Mode="In" />
+    <Parameter Name="dm_DireccionAsociado" Type="varchar" Mode="In" />
+    <Parameter Name="dm_Nit" Type="varchar" Mode="In" />
+    <Parameter Name="dm_SerieDoc" Type="varchar" Mode="In" />
+    <Parameter Name="dm_NoDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="dm_Terminal" Type="varchar" Mode="In" />
+    <Parameter Name="dm_MotivoAnulacion" Type="char" Mode="In" />
+    <Parameter Name="dm_IdDocNuevo" Type="int" Mode="InOut" />
+    <Parameter Name="dm_timeStampNuevo" Type="timestamp" Mode="InOut" />
+    <Parameter Name="dm_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="dm_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_aplicar_descuento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdDoc" Type="int" Mode="In" />
+    <Parameter Name="Empresa" Type="int" Mode="In" />
+    <Parameter Name="IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="ValorMov" Type="money" Mode="In" />
+    <Parameter Name="Cantidad" Type="int" Mode="In" />
+    <Parameter Name="IDAutorizacion" Type="int" Mode="In" />
+    <Parameter Name="TipoDescuento" Type="varchar" Mode="In" />
+    <Parameter Name="DescuentoDescripcion" Type="varchar" Mode="In" />
+    <Parameter Name="DescuentoPorcentaje" Type="decimal" Mode="In" />
+    <Parameter Name="ProdServ" Type="char" Mode="In" />
+    <Parameter Name="IdProdServ" Type="int" Mode="In" />
+    <Parameter Name="Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="IDOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="IDDetalleOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="IdMovOriginador" Type="int" Mode="In" />
+    <Parameter Name="Comentario" Type="varchar" Mode="In" />
+    <Parameter Name="IDDescuento" Type="int" Mode="InOut" />
+    <Parameter Name="IDMovDescuento" Type="int" Mode="InOut" />
+    <Parameter Name="TimestampDescuento" Type="timestamp" Mode="InOut" />
+    <Parameter Name="timestampMovimiento" Type="timestamp" Mode="InOut" />
+    <Parameter Name="Reversion" Type="char" Mode="In" />
+    <Parameter Name="error" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_ArqueoCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="aq_empresa" Type="int" Mode="In" />
+    <Parameter Name="aq_IdCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="aq_IdArqueoCaja" Type="int" Mode="In" />
+    <Parameter Name="aq_Moneda" Type="char" Mode="In" />
+    <Parameter Name="aq_PresentacionMoneda" Type="char" Mode="In" />
+    <Parameter Name="aq_Denominacion" Type="char" Mode="In" />
+    <Parameter Name="aq_Cantidad" Type="int" Mode="In" />
+    <Parameter Name="aq_MontoTotal" Type="money" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_CierreCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="cj_empresa" Type="int" Mode="In" />
+    <Parameter Name="cj_IdCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="cj_Terminal" Type="varchar" Mode="In" />
+    <Parameter Name="cj_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="cj_FechaHoraCierre" Type="datetime" Mode="In" />
+    <Parameter Name="cj_Moneda" Type="char" Mode="In" />
+    <Parameter Name="cj_estCierreCaja" Type="char" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_CierreDiario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="cd_empresa" Type="int" Mode="In" />
+    <Parameter Name="cd_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="cd_IdCierreDiario" Type="int" Mode="In" />
+    <Parameter Name="cd_FechaCierreDiario" Type="date" Mode="In" />
+    <Parameter Name="cd_estCierreDiario" Type="char" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_CuentaXCobrar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="cc_empresa" Type="int" Mode="In" />
+    <Parameter Name="cc_IdCuentaXCobrar" Type="int" Mode="In" />
+    <Parameter Name="cc_Cliente" Type="int" Mode="In" />
+    <Parameter Name="cc_Saldo" Type="money" Mode="In" />
+    <Parameter Name="cc_FechaUltMov" Type="datetime" Mode="In" />
+    <Parameter Name="cc_MontoUltMov" Type="money" Mode="In" />
+    <Parameter Name="cc_estCuentaXCobrar" Type="char" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Descuento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="ds_empresa" Type="int" Mode="In" />
+    <Parameter Name="ds_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="ds_IdDescuento" Type="int" Mode="In" />
+    <Parameter Name="ds_TipoDescuento" Type="char" Mode="In" />
+    <Parameter Name="ds_Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="ds_Porcentaje" Type="int" Mode="In" />
+    <Parameter Name="ds_Cantidad" Type="money" Mode="In" />
+    <Parameter Name="ds_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="ds_IdMov" Type="int" Mode="In" />
+    <Parameter Name="ds_IdAutorizacion" Type="int" Mode="In" />
+    <Parameter Name="ds_IdMovDescuento" Type="int" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_DetalleCierreCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="dj_empresa" Type="int" Mode="In" />
+    <Parameter Name="dj_IdCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="dj_IdDetalleCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="dj_IdFormaPago" Type="varchar" Mode="In" />
+    <Parameter Name="dj_Monto" Type="int" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Documento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="dm_empresa" Type="int" Mode="In" />
+    <Parameter Name="dm_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="dm_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="dm_TipoDocumento" Type="char" Mode="In" />
+    <Parameter Name="dm_TipoAsociado" Type="char" Mode="In" />
+    <Parameter Name="dm_asociado" Type="int" Mode="In" />
+    <Parameter Name="dm_subtotal" Type="money" Mode="In" />
+    <Parameter Name="dm_descuento" Type="money" Mode="In" />
+    <Parameter Name="dm_total" Type="money" Mode="In" />
+    <Parameter Name="dm_NoDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="dm_fechaDoc" Type="datetime" Mode="In" />
+    <Parameter Name="dm_estDocumento" Type="char" Mode="In" />
+    <Parameter Name="dm_MotivoAnulacion" Type="char" Mode="In" />
+    <Parameter Name="dm_MotivoNCND" Type="char" Mode="In" />
+    <Parameter Name="dm_Comentario" Type="varchar" Mode="In" />
+    <Parameter Name="dm_Terminal" Type="varchar" Mode="In" />
+    <Parameter Name="dm_IdDocAnulado" Type="int" Mode="In" />
+    <Parameter Name="dm_IdCierreDiario" Type="int" Mode="In" />
+    <Parameter Name="dm_nit" Type="varchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Existencia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="ex_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="ex_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="ex_IdExistencia" Type="int" Mode="In" />
+    <Parameter Name="ex_TipoProducto" Type="int" Mode="In" />
+    <Parameter Name="ex_IdProd" Type="int" Mode="In" />
+    <Parameter Name="ex_cantidad" Type="int" Mode="In" />
+    <Parameter Name="ex_precioUnitario" Type="money" Mode="In" />
+    <Parameter Name="ex_FechaCaducidad" Type="date" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_FacturaFormaPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="fp_empresa" Type="int" Mode="In" />
+    <Parameter Name="fp_IdFacturaFormaPago" Type="int" Mode="In" />
+    <Parameter Name="fp_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="fp_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="fp_IdMovDocPromo" Type="int" Mode="In" />
+    <Parameter Name="fp_IdFormaPago" Type="char" Mode="In" />
+    <Parameter Name="fp_IdAutorizacion" Type="int" Mode="In" />
+    <Parameter Name="fp_Cantidad" Type="money" Mode="In" />
+    <Parameter Name="fp_Unidades" Type="int" Mode="In" />
+    <Parameter Name="fp_NoDocumento" Type="bigint" Mode="In" />
+    <Parameter Name="fp_IdBanco" Type="char" Mode="In" />
+    <Parameter Name="fp_Comentario" Type="varchar" Mode="In" />
+    <Parameter Name="fp_Moneda" Type="char" Mode="In" />
+    <Parameter Name="fp_TasaCambio" Type="money" Mode="In" />
+    <Parameter Name="fp_CantidadOriginal" Type="money" Mode="In" />
+    <Parameter Name="fp_IdCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="fp_ConfirmaCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="fp_efectivoRecibido" Type="money" Mode="In" />
+    <Parameter Name="fp_efectivoVuelto" Type="money" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_HorarioEmpleadoSucursal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="he_opcion" Type="char" Mode="In" />
+    <Parameter Name="he_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="he_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="he_IdEmpleado" Type="int" Mode="In" />
+    <Parameter Name="he_fechaCita" Type="date" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Movimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="mv_empresa" Type="int" Mode="In" />
+    <Parameter Name="mv_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="mv_IdMov" Type="int" Mode="In" />
+    <Parameter Name="mv_ProdServ" Type="char" Mode="In" />
+    <Parameter Name="mv_IdProdServ" Type="int" Mode="In" />
+    <Parameter Name="mv_Cantidad" Type="int" Mode="In" />
+    <Parameter Name="mv_ValorMov" Type="money" Mode="In" />
+    <Parameter Name="mv_TipoMovimiento" Type="char" Mode="In" />
+    <Parameter Name="mv_FechaMov" Type="date" Mode="In" />
+    <Parameter Name="mv_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="mv_IdOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="mv_IdDetalleOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="mv_IdAutorizacion" Type="int" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_MovimientoCuentaXCobrar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="mc_empresa" Type="int" Mode="In" />
+    <Parameter Name="mc_IdCuentaXCobrar" Type="int" Mode="In" />
+    <Parameter Name="mc_IdMovCuentaXCobrar" Type="int" Mode="In" />
+    <Parameter Name="mc_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="mc_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="mc_Cliente" Type="int" Mode="In" />
+    <Parameter Name="mc_FechaMov" Type="datetime" Mode="In" />
+    <Parameter Name="mc_MontoMov" Type="money" Mode="In" />
+    <Parameter Name="mc_CreditoDebito" Type="char" Mode="In" />
+    <Parameter Name="mc_Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="mc_estMovCuentaXCobrar" Type="char" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_PrecioProductoServicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="pp_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pp_TipoPrecio" Type="char" Mode="In" />
+    <Parameter Name="pp_IdPrecProdServ" Type="int" Mode="In" />
+    <Parameter Name="pp_IdProdServ" Type="int" Mode="In" />
+    <Parameter Name="pp_fechaVigencia" Type="datetime" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="pr_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="pr_TipoProducto" Type="int" Mode="In" />
+    <Parameter Name="pr_IdProd" Type="int" Mode="In" />
+    <Parameter Name="pr_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="pr_descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="pr_CodigoBarras" Type="varchar" Mode="In" />
+    <Parameter Name="pr_CodigoSAP" Type="varchar" Mode="In" />
+    <Parameter Name="pr_IdMarca" Type="char" Mode="In" />
+    <Parameter Name="pr_ClasificacionTP" Type="char" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Propina" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="pn_empresa" Type="int" Mode="In" />
+    <Parameter Name="pn_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="pn_IdPropina" Type="int" Mode="In" />
+    <Parameter Name="pn_IdOrdenPago" Type="int" Mode="In" />
+    <Parameter Name="pn_IdOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="pn_IdDetalleOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="pn_Cantidad" Type="money" Mode="In" />
+    <Parameter Name="pn_empleado" Type="int" Mode="In" />
+    <Parameter Name="pn_fecha" Type="date" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_SalidaEfectivoCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="sc_empresa" Type="int" Mode="In" />
+    <Parameter Name="sc_IdSalidaEfectivo" Type="int" Mode="In" />
+    <Parameter Name="sc_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="sc_FechaHoraSEC" Type="datetime" Mode="In" />
+    <Parameter Name="sc_MotivoSalidaEfectivo" Type="char" Mode="In" />
+    <Parameter Name="sc_Monto" Type="int" Mode="In" />
+    <Parameter Name="sc_IdAutorizacion" Type="int" Mode="In" />
+    <Parameter Name="sc_IdCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="sc_ConfirmaCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="sc_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="sc_IdFacturaFormaPago" Type="int" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Servicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="sv_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="sv_tipoServicio" Type="int" Mode="In" />
+    <Parameter Name="sv_IdServicio" Type="int" Mode="In" />
+    <Parameter Name="sv_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="sv_descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Sucursal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="su_empresa" Type="int" Mode="In" />
+    <Parameter Name="su_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="su_Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="su_Encargado" Type="int" Mode="In" />
+    <Parameter Name="su_Direccion" Type="varchar" Mode="In" />
+    <Parameter Name="su_Telefono" Type="varchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_TipoProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="tp_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="tp_IdTipoProducto" Type="int" Mode="In" />
+    <Parameter Name="tp_ClasificacionTP" Type="char" Mode="In" />
+    <Parameter Name="tp_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="tp_descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="tp_padre" Type="int" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_TipoServicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="ts_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="ts_IdTipoServicio" Type="int" Mode="In" />
+    <Parameter Name="ts_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="ts_descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="ts_padre" Type="int" Mode="In" />
+    <Parameter Name="ts_Coordinacion" Type="char" Mode="In" />
+    <Parameter Name="ts_CuentaSAP" Type="nvarchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ConfirmaCierreCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cj_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cj_opcion" Type="int" Mode="In" />
+    <Parameter Name="cj_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="cj_Terminal" Type="varchar" Mode="In" />
+    <Parameter Name="cj_Moneda" Type="char" Mode="In" />
+    <Parameter Name="cj_IdCierreCaja" Type="int" Mode="In" />
+    <Parameter Name="cj_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ConversionMoneda" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cm_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cm_moneda" Type="char" Mode="In" />
+    <Parameter Name="cm_monto" Type="money" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_CuadreFacturaFormaPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fp_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="fp_opcion" Type="char" Mode="In" />
+    <Parameter Name="fp_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="fp_IdDoc" Type="int" Mode="InOut" />
+    <Parameter Name="fp_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="fp_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_DatosMontosFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="df_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="df_opcion" Type="int" Mode="In" />
+    <Parameter Name="df_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="df_IdDoc" Type="int" Mode="In" />
+    <Parameter Name="df_MontoTotal" Type="money" Mode="InOut" />
+    <Parameter Name="df_MontoTotalProducto" Type="money" Mode="InOut" />
+    <Parameter Name="df_MontoTotalServicio" Type="money" Mode="InOut" />
+    <Parameter Name="df_MontoDescuentos" Type="money" Mode="InOut" />
+    <Parameter Name="df_MontoPropina" Type="money" Mode="InOut" />
+    <Parameter Name="df_MontoCanjeado" Type="money" Mode="InOut" />
+    <Parameter Name="df_MontoPagoDirecto" Type="money" Mode="InOut" />
+    <Parameter Name="df_MontoPendiente" Type="money" Mode="InOut" />
+    <Parameter Name="df_MontoFacturable" Type="money" Mode="InOut" />
+    <Parameter Name="df_MontoPagoIndirecto" Type="money" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_GenerarCierreCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cj_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cj_opcion" Type="int" Mode="In" />
+    <Parameter Name="cj_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="cj_Terminal" Type="varchar" Mode="In" />
+    <Parameter Name="cj_Moneda" Type="char" Mode="In" />
+    <Parameter Name="cj_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="cj_IdCierreCaja" Type="int" Mode="InOut" />
+    <Parameter Name="cj_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_GenerarCierreDiario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cd_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cd_opcion" Type="int" Mode="In" />
+    <Parameter Name="cd_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="cd_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Obtiene_NoFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sf_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="sf_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="sf_Terminal" Type="varchar" Mode="In" />
+    <Parameter Name="sf_TipoCorrelativo" Type="char" Mode="In" />
+    <Parameter Name="sf_Serie" Type="varchar" Mode="InOut" />
+    <Parameter Name="sf_NoFactura" Type="int" Mode="InOut" />
+    <Parameter Name="sc_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Validaciones_FacturaFormaPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fp_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="fp_IdSucursal" Type="int" Mode="In" />
+    <Parameter Name="fp_IdDoc" Type="int" Mode="InOut" />
+    <Parameter Name="fp_IdFormaPago" Type="char" Mode="InOut" />
+    <Parameter Name="fp_IdAutorizacion" Type="int" Mode="In" />
+    <Parameter Name="fp_Cantidad" Type="money" Mode="In" />
+    <Parameter Name="fp_Unidades" Type="int" Mode="In" />
+    <Parameter Name="fp_NoDocumento" Type="bigint" Mode="In" />
+    <Parameter Name="fp_IdBanco" Type="char" Mode="In" />
+    <Parameter Name="fp_Comentario" Type="varchar" Mode="In" />
+    <Parameter Name="fp_IdMarcaTarjeta" Type="char" Mode="In" />
+    <Parameter Name="fp_IdOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="fp_IdDetalleOrdenServicio" Type="int" Mode="In" />
+    <Parameter Name="fp_IdServicio" Type="int" Mode="In" />
+    <Parameter Name="fp_IdProducto" Type="int" Mode="In" />
+    <Parameter Name="fp_TipoDocumentoPromo" Type="char" Mode="In" />
+    <Parameter Name="fp_usuario" Type="varchar" Mode="In" />
+    <Parameter Name="fp_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="SSS_OPERACIONModelStoreContainer">
+    <EntitySet Name="ArqueoCaja" EntityType="Self.ArqueoCaja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CierreCaja" EntityType="Self.CierreCaja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CierreDiario" EntityType="Self.CierreDiario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CuentaXCobrar" EntityType="Self.CuentaXCobrar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CuentaXPagar" EntityType="Self.CuentaXPagar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Descuento" EntityType="Self.Descuento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalleCierreCaja" EntityType="Self.DetalleCierreCaja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Existencia" EntityType="Self.Existencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FacturaFormaPago" EntityType="Self.FacturaFormaPago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HorarioSucursal" EntityType="Self.HorarioSucursal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movimiento" EntityType="Self.Movimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovimientoCuentaXCobrar" EntityType="Self.MovimientoCuentaXCobrar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovimientoCuentaXPagar" EntityType="Self.MovimientoCuentaXPagar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrecioProductoServicio" EntityType="Self.PrecioProductoServicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Propina" EntityType="Self.Propina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalidaEfectivoCaja" EntityType="Self.SalidaEfectivoCaja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SerieFactura" EntityType="Self.SerieFactura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sucursal" EntityType="Self.Sucursal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoProducto" EntityType="Self.TipoProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoServicio" EntityType="Self.TipoServicio" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

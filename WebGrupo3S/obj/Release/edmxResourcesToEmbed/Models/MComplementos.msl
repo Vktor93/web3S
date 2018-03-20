@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SSS_COMPLEMENTOSModelStoreContainer" CdmEntityContainer="SSS_COMPLEMENTOSEntities">
+    <EntitySetMapping Name="CabCatalogoes">
+      <EntityTypeMapping TypeName="SSS_COMPLEMENTOSModel.CabCatalogo">
+        <MappingFragment StoreEntitySet="CabCatalogo">
+          <ScalarProperty Name="cc_empresa" ColumnName="cc_empresa" />
+          <ScalarProperty Name="cc_IdCatalogo" ColumnName="cc_IdCatalogo" />
+          <ScalarProperty Name="cc_nombre" ColumnName="cc_nombre" />
+          <ScalarProperty Name="cc_nomVal1" ColumnName="cc_nomVal1" />
+          <ScalarProperty Name="cc_nomVal2" ColumnName="cc_nomVal2" />
+          <ScalarProperty Name="cc_nomVal3" ColumnName="cc_nomVal3" />
+          <ScalarProperty Name="cc_fechaing" ColumnName="cc_fechaing" />
+          <ScalarProperty Name="cc_fechamod" ColumnName="cc_fechamod" />
+          <ScalarProperty Name="cc_usuarioing" ColumnName="cc_usuarioing" />
+          <ScalarProperty Name="cc_usuariomod" ColumnName="cc_usuariomod" />
+          <ScalarProperty Name="cc_maquinaing" ColumnName="cc_maquinaing" />
+          <ScalarProperty Name="cc_maquinamod" ColumnName="cc_maquinamod" />
+          <ScalarProperty Name="cc_estado" ColumnName="cc_estado" />
+          <ScalarProperty Name="cc_timestamp" ColumnName="cc_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imagens">
+      <EntityTypeMapping TypeName="SSS_COMPLEMENTOSModel.Imagen">
+        <MappingFragment StoreEntitySet="Imagen">
+          <ScalarProperty Name="im_empresa" ColumnName="im_empresa" />
+          <ScalarProperty Name="im_CodImagen" ColumnName="im_CodImagen" />
+          <ScalarProperty Name="im_NombreImagen" ColumnName="im_NombreImagen" />
+          <ScalarProperty Name="im_imagen" ColumnName="im_imagen" />
+          <ScalarProperty Name="im_estImagen" ColumnName="im_estImagen" />
+          <ScalarProperty Name="im_fechaing" ColumnName="im_fechaing" />
+          <ScalarProperty Name="im_fechamod" ColumnName="im_fechamod" />
+          <ScalarProperty Name="im_usuarioing" ColumnName="im_usuarioing" />
+          <ScalarProperty Name="im_usuariomod" ColumnName="im_usuariomod" />
+          <ScalarProperty Name="im_maquinaing" ColumnName="im_maquinaing" />
+          <ScalarProperty Name="im_maquinamod" ColumnName="im_maquinamod" />
+          <ScalarProperty Name="im_estado" ColumnName="im_estado" />
+          <ScalarProperty Name="im_timestamp" ColumnName="im_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Secuencials">
+      <EntityTypeMapping TypeName="SSS_COMPLEMENTOSModel.Secuencial">
+        <MappingFragment StoreEntitySet="Secuencial">
+          <ScalarProperty Name="sc_empresa" ColumnName="sc_empresa" />
+          <ScalarProperty Name="sc_codTabla" ColumnName="sc_codTabla" />
+          <ScalarProperty Name="sc_tabla" ColumnName="sc_tabla" />
+          <ScalarProperty Name="sc_secuencial" ColumnName="sc_secuencial" />
+          <ScalarProperty Name="sc_DataBase" ColumnName="sc_DataBase" />
+          <ScalarProperty Name="sc_Centralizado" ColumnName="sc_Centralizado" />
+          <ScalarProperty Name="sc_fechaing" ColumnName="sc_fechaing" />
+          <ScalarProperty Name="sc_fechamod" ColumnName="sc_fechamod" />
+          <ScalarProperty Name="sc_usuarioing" ColumnName="sc_usuarioing" />
+          <ScalarProperty Name="sc_usuariomod" ColumnName="sc_usuariomod" />
+          <ScalarProperty Name="sc_maquinaing" ColumnName="sc_maquinaing" />
+          <ScalarProperty Name="sc_maquinamod" ColumnName="sc_maquinamod" />
+          <ScalarProperty Name="sc_estado" ColumnName="sc_estado" />
+          <ScalarProperty Name="sc_timestamp" ColumnName="sc_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bitacoras">
+      <EntityTypeMapping TypeName="SSS_COMPLEMENTOSModel.Bitacora">
+        <MappingFragment StoreEntitySet="Bitacora">
+          <ScalarProperty Name="bt_empresa" ColumnName="bt_empresa" />
+          <ScalarProperty Name="bt_tipoOperacion" ColumnName="bt_tipoOperacion" />
+          <ScalarProperty Name="bt_nombreTabla" ColumnName="bt_nombreTabla" />
+          <ScalarProperty Name="bt_idRegistro" ColumnName="bt_idRegistro" />
+          <ScalarProperty Name="bt_nombreCampo" ColumnName="bt_nombreCampo" />
+          <ScalarProperty Name="bt_datoActual" ColumnName="bt_datoActual" />
+          <ScalarProperty Name="bt_datoAnterior" ColumnName="bt_datoAnterior" />
+          <ScalarProperty Name="bt_Comentario" ColumnName="bt_Comentario" />
+          <ScalarProperty Name="bt_fechaing" ColumnName="bt_fechaing" />
+          <ScalarProperty Name="bt_fechamod" ColumnName="bt_fechamod" />
+          <ScalarProperty Name="bt_usuarioing" ColumnName="bt_usuarioing" />
+          <ScalarProperty Name="bt_usuariomod" ColumnName="bt_usuariomod" />
+          <ScalarProperty Name="bt_maquinaing" ColumnName="bt_maquinaing" />
+          <ScalarProperty Name="bt_maquinamod" ColumnName="bt_maquinamod" />
+          <ScalarProperty Name="bt_estado" ColumnName="bt_estado" />
+          <ScalarProperty Name="bt_timestamp" ColumnName="bt_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetCatalogoes">
+      <EntityTypeMapping TypeName="SSS_COMPLEMENTOSModel.DetCatalogo">
+        <MappingFragment StoreEntitySet="DetCatalogo">
+          <ScalarProperty Name="cd_empresa" ColumnName="cd_empresa" />
+          <ScalarProperty Name="cd_IdCatalogo" ColumnName="cd_IdCatalogo" />
+          <ScalarProperty Name="cd_codigo" ColumnName="cd_codigo" />
+          <ScalarProperty Name="cd_valor" ColumnName="cd_valor" />
+          <ScalarProperty Name="cd_valor1" ColumnName="cd_valor1" />
+          <ScalarProperty Name="cd_valor2" ColumnName="cd_valor2" />
+          <ScalarProperty Name="cd_valor3" ColumnName="cd_valor3" />
+          <ScalarProperty Name="cd_fechaing" ColumnName="cd_fechaing" />
+          <ScalarProperty Name="cd_fechamod" ColumnName="cd_fechamod" />
+          <ScalarProperty Name="cd_usuarioing" ColumnName="cd_usuarioing" />
+          <ScalarProperty Name="cd_usuariomod" ColumnName="cd_usuariomod" />
+          <ScalarProperty Name="cd_maquinaing" ColumnName="cd_maquinaing" />
+          <ScalarProperty Name="cd_maquinamod" ColumnName="cd_maquinamod" />
+          <ScalarProperty Name="cd_estado" ColumnName="cd_estado" />
+          <ScalarProperty Name="cd_timestamp" ColumnName="cd_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_catalogo">
+      <EntityTypeMapping TypeName="SSS_COMPLEMENTOSModel.vw_catalogo">
+        <MappingFragment StoreEntitySet="vw_catalogo">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdCatalogo" ColumnName="IdCatalogo" />
+          <ScalarProperty Name="NomCatalogo" ColumnName="NomCatalogo" />
+          <ScalarProperty Name="CodCatalogo" ColumnName="CodCatalogo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Valor1" ColumnName="Valor1" />
+          <ScalarProperty Name="Valor2" ColumnName="Valor2" />
+          <ScalarProperty Name="Valor3" ColumnName="Valor3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ABC_Bitacora" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_ABC_Bitacora" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_CabCatalogo" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_ABC_CabCatalogo" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_DetCatalogo" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_ABC_DetCatalogo" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Imagen" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_ABC_Imagen" />
+    <FunctionImportMapping FunctionImportName="sp_Altas_Secuencial" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_Altas_Secuencial" />
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_CabCatalogo" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_Busqueda_CabCatalogo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_COMPLEMENTOSModel.sp_Busqueda_CabCatalogo_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdCatalogo" ColumnName="IdCatalogo" />
+          <ScalarProperty Name="NombreCatalogo" ColumnName="NombreCatalogo" />
+          <ScalarProperty Name="NombreValor1" ColumnName="NombreValor1" />
+          <ScalarProperty Name="NombreValor2" ColumnName="NombreValor2" />
+          <ScalarProperty Name="NombreValor3" ColumnName="NombreValor3" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Catalogo" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_Busqueda_Catalogo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_COMPLEMENTOSModel.sp_Busqueda_Catalogo_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdCatalogo" ColumnName="IdCatalogo" />
+          <ScalarProperty Name="NomCatalogo" ColumnName="NomCatalogo" />
+          <ScalarProperty Name="CodCatalogo" ColumnName="CodCatalogo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Valor1" ColumnName="Valor1" />
+          <ScalarProperty Name="Valor2" ColumnName="Valor2" />
+          <ScalarProperty Name="Valor3" ColumnName="Valor3" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_DetCatalogo" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_Busqueda_DetCatalogo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_COMPLEMENTOSModel.sp_Busqueda_DetCatalogo_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdCatalogo" ColumnName="IdCatalogo" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Valor1" ColumnName="Valor1" />
+          <ScalarProperty Name="Valor2" ColumnName="Valor2" />
+          <ScalarProperty Name="Valor3" ColumnName="Valor3" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Imagen" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_Busqueda_Imagen">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_COMPLEMENTOSModel.sp_Busqueda_Imagen_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodImagen" ColumnName="CodImagen" />
+          <ScalarProperty Name="NombreImagen" ColumnName="NombreImagen" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="EstImagen" ColumnName="EstImagen" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CorrigeSecuenciales" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_CorrigeSecuenciales" />
+    <FunctionImportMapping FunctionImportName="sp_Obtiene_Secuencial" FunctionName="SSS_COMPLEMENTOSModel.Store.sp_Obtiene_Secuencial" />
+  </EntityContainerMapping>
+</Mapping>

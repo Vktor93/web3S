@@ -1,0 +1,65 @@
+﻿@model IList<WebGrupo3S.Models.sp_Busqueda_Permiso_Result>
+
+<p>
+    @Html.ActionLink("Agrega opción", "agregaopcion", null, new { @class = "btn btn-primary" })
+</p>
+
+<h2>@ViewData["Opcion"]</h2>
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                Codigo
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Descripción
+                            </th>
+                            <th>
+                                Autenticar
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodigoOpcion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Opcion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DescOpcion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Autenticar)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("de Baja", "Delete", new { id = item.CodigoPerfil, opc = item.CodigoOpcion }, new { @class = "btn btn-info btn-xs" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

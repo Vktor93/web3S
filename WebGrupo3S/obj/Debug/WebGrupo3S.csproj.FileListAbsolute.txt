@@ -1,0 +1,428 @@
+C:\Proyectos\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.csprojResolveAssemblyReference.cache
+C:\Proyectos\WebGrupo3S\WebGrupo3S\obj\Debug\RdlCompile.cache
+C:\Proyectos\WebGrupo3S\WebGrupo3S\obj\Debug\RdlCompile.compiled
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.exe
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.exe.config
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.rsp
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\csi.exe
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\csi.rsp
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.AppContext.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Collections.Immutable.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.IO.FileSystem.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Reflection.Metadata.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.exe
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.exe.config
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.rsp
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\VBCSCompiler.exe
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\VBCSCompiler.exe.config
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.dll.config
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.pdb
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Antlr3.Runtime.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\EntityFramework.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\EntityFramework.SqlServer.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Google.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.Common.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Web.Infrastructure.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Newtonsoft.Json.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Owin.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Helpers.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Mvc.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Optimization.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Razor.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Deployment.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Razor.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\WebGrease.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Antlr3.Runtime.pdb
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Newtonsoft.Json.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Helpers.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Mvc.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Optimization.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Razor.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Deployment.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Razor.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\EntityFramework.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\EntityFramework.SqlServer.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Google.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Helpers.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Mvc.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Optimization.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Razor.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\EntityFramework.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.dll
+C:\Proyectos\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.pdb
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.exe
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.exe.config
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.rsp
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\csi.exe
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\csi.rsp
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.AppContext.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.exe
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.exe.config
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.rsp
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\VBCSCompiler.exe
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.dll.config
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.pdb
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Antlr3.Runtime.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\EntityFramework.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\EntityFramework.SqlServer.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Newtonsoft.Json.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Owin.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Helpers.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Mvc.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Optimization.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Razor.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Deployment.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Razor.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\WebGrease.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Antlr3.Runtime.pdb
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Newtonsoft.Json.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Helpers.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Mvc.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Optimization.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.Razor.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Deployment.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Razor.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\EntityFramework.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\EntityFramework.SqlServer.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Helpers.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Mvc.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Optimization.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Razor.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\EntityFramework.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.csprojResolveAssemblyReference.cache
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.dll
+C:\Users\desarrollo\proyectos\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.pdb
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.exe
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.exe.config
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.rsp
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\csi.exe
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\csi.rsp
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.AppContext.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Collections.Immutable.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.IO.FileSystem.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Reflection.Metadata.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.exe
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.exe.config
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.rsp
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\VBCSCompiler.exe
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\VBCSCompiler.exe.config
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.dll.config
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.pdb
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Antlr3.Runtime.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\EntityFramework.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\EntityFramework.SqlServer.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Google.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.Common.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.WebForms.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Web.Infrastructure.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Newtonsoft.Json.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Owin.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Helpers.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Mvc.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Optimization.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Razor.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Deployment.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Razor.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\WebGrease.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Antlr3.Runtime.pdb
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Newtonsoft.Json.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Helpers.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Mvc.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Optimization.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Razor.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Deployment.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Razor.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\EntityFramework.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\EntityFramework.SqlServer.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Google.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Helpers.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Mvc.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Optimization.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Razor.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\EntityFramework.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\EntityFramework.SqlServer.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Google.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.csprojResolveAssemblyReference.cache
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.pdb
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.csprojResolveAssemblyReference.cache
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\obj\Debug\WebGrupo3S.pdb
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.exe
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.exe.config
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\csc.rsp
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\csi.exe
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\csi.rsp
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.AppContext.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Collections.Immutable.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.IO.FileSystem.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\System.Reflection.Metadata.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.exe
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.exe.config
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\vbc.rsp
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\VBCSCompiler.exe
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\roslyn\VBCSCompiler.exe.config
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.dll.config
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\WebGrupo3S.pdb
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Antlr3.Runtime.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\EntityFramework.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\EntityFramework.SqlServer.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Google.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.Common.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.ReportViewer.WebForms.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Web.Infrastructure.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Newtonsoft.Json.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Owin.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Helpers.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Mvc.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Optimization.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Razor.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Deployment.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Razor.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\WebGrease.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Antlr3.Runtime.pdb
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Newtonsoft.Json.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Helpers.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Mvc.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Optimization.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.Razor.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Deployment.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\System.Web.WebPages.Razor.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\EntityFramework.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\EntityFramework.SqlServer.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Google.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Helpers.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Mvc.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Optimization.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.Razor.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\EntityFramework.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\EntityFramework.SqlServer.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Google.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Users\developer\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\obj\Debug\RdlCompile.cache
+D:\Users\desarrollo\Documents\Visual Studio 2015\Projects\WebGrupo3S\WebGrupo3S\obj\Debug\RdlCompile.compiled

@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SSS_PERSONASModelStoreContainer" CdmEntityContainer="SSS_PERSONASEntities">
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="cl_empresa" ColumnName="cl_empresa" />
+          <ScalarProperty Name="cl_cliente" ColumnName="cl_cliente" />
+          <ScalarProperty Name="cl_tipoCliente" ColumnName="cl_tipoCliente" />
+          <ScalarProperty Name="cl_ClasificacionCliente" ColumnName="cl_ClasificacionCliente" />
+          <ScalarProperty Name="cl_tipoident" ColumnName="cl_tipoident" />
+          <ScalarProperty Name="cl_identifica" ColumnName="cl_identifica" />
+          <ScalarProperty Name="cl_nit" ColumnName="cl_nit" />
+          <ScalarProperty Name="cl_nombre1" ColumnName="cl_nombre1" />
+          <ScalarProperty Name="cl_nombre2" ColumnName="cl_nombre2" />
+          <ScalarProperty Name="cl_nombre3" ColumnName="cl_nombre3" />
+          <ScalarProperty Name="cl_apellido1" ColumnName="cl_apellido1" />
+          <ScalarProperty Name="cl_apellido2" ColumnName="cl_apellido2" />
+          <ScalarProperty Name="cl_apecasada" ColumnName="cl_apecasada" />
+          <ScalarProperty Name="cl_nombrelargo" ColumnName="cl_nombrelargo" />
+          <ScalarProperty Name="cl_genero" ColumnName="cl_genero" />
+          <ScalarProperty Name="cl_fechanac" ColumnName="cl_fechanac" />
+          <ScalarProperty Name="cl_ocupacion" ColumnName="cl_ocupacion" />
+          <ScalarProperty Name="cl_estadocivil" ColumnName="cl_estadocivil" />
+          <ScalarProperty Name="cl_RecibePublicidad" ColumnName="cl_RecibePublicidad" />
+          <ScalarProperty Name="cl_fechaing" ColumnName="cl_fechaing" />
+          <ScalarProperty Name="cl_fechamod" ColumnName="cl_fechamod" />
+          <ScalarProperty Name="cl_usuarioing" ColumnName="cl_usuarioing" />
+          <ScalarProperty Name="cl_usuariomod" ColumnName="cl_usuariomod" />
+          <ScalarProperty Name="cl_maquinaing" ColumnName="cl_maquinaing" />
+          <ScalarProperty Name="cl_maquinamod" ColumnName="cl_maquinamod" />
+          <ScalarProperty Name="cl_estado" ColumnName="cl_estado" />
+          <ScalarProperty Name="cl_timestamp" ColumnName="cl_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacto">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.Contacto">
+        <MappingFragment StoreEntitySet="Contacto">
+          <ScalarProperty Name="cn_empresa" ColumnName="cn_empresa" />
+          <ScalarProperty Name="cn_idContacto" ColumnName="cn_idContacto" />
+          <ScalarProperty Name="cn_tipoAsociado" ColumnName="cn_tipoAsociado" />
+          <ScalarProperty Name="cn_asociado" ColumnName="cn_asociado" />
+          <ScalarProperty Name="cn_tipoContacto" ColumnName="cn_tipoContacto" />
+          <ScalarProperty Name="cn_Contacto" ColumnName="cn_Contacto" />
+          <ScalarProperty Name="cn_Contacto2" ColumnName="cn_Contacto2" />
+          <ScalarProperty Name="cn_fechaing" ColumnName="cn_fechaing" />
+          <ScalarProperty Name="cn_fechamod" ColumnName="cn_fechamod" />
+          <ScalarProperty Name="cn_usuarioing" ColumnName="cn_usuarioing" />
+          <ScalarProperty Name="cn_usuariomod" ColumnName="cn_usuariomod" />
+          <ScalarProperty Name="cn_maquinaing" ColumnName="cn_maquinaing" />
+          <ScalarProperty Name="cn_maquinamod" ColumnName="cn_maquinamod" />
+          <ScalarProperty Name="cn_estado" ColumnName="cn_estado" />
+          <ScalarProperty Name="cn_timestamp" ColumnName="cn_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Direccion">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.Direccion">
+        <MappingFragment StoreEntitySet="Direccion">
+          <ScalarProperty Name="di_empresa" ColumnName="di_empresa" />
+          <ScalarProperty Name="di_IdDireccion" ColumnName="di_IdDireccion" />
+          <ScalarProperty Name="di_TipoAsociado" ColumnName="di_TipoAsociado" />
+          <ScalarProperty Name="di_asociado" ColumnName="di_asociado" />
+          <ScalarProperty Name="di_TipoDireccion" ColumnName="di_TipoDireccion" />
+          <ScalarProperty Name="di_Direccion" ColumnName="di_Direccion" />
+          <ScalarProperty Name="di_Direccion2" ColumnName="di_Direccion2" />
+          <ScalarProperty Name="di_zona" ColumnName="di_zona" />
+          <ScalarProperty Name="di_municipio" ColumnName="di_municipio" />
+          <ScalarProperty Name="di_departamento" ColumnName="di_departamento" />
+          <ScalarProperty Name="di_pais" ColumnName="di_pais" />
+          <ScalarProperty Name="di_fechaing" ColumnName="di_fechaing" />
+          <ScalarProperty Name="di_fechamod" ColumnName="di_fechamod" />
+          <ScalarProperty Name="di_usuarioing" ColumnName="di_usuarioing" />
+          <ScalarProperty Name="di_usuariomod" ColumnName="di_usuariomod" />
+          <ScalarProperty Name="di_maquinaing" ColumnName="di_maquinaing" />
+          <ScalarProperty Name="di_maquinamod" ColumnName="di_maquinamod" />
+          <ScalarProperty Name="di_estado" ColumnName="di_estado" />
+          <ScalarProperty Name="di_timestamp" ColumnName="di_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foto">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.Foto">
+        <MappingFragment StoreEntitySet="Foto">
+          <ScalarProperty Name="fo_empresa" ColumnName="fo_empresa" />
+          <ScalarProperty Name="fo_IdFoto" ColumnName="fo_IdFoto" />
+          <ScalarProperty Name="fo_TipoAsociado" ColumnName="fo_TipoAsociado" />
+          <ScalarProperty Name="fo_asociado" ColumnName="fo_asociado" />
+          <ScalarProperty Name="fo_foto" ColumnName="fo_foto" />
+          <ScalarProperty Name="fo_fechaing" ColumnName="fo_fechaing" />
+          <ScalarProperty Name="fo_fechamod" ColumnName="fo_fechamod" />
+          <ScalarProperty Name="fo_usuarioing" ColumnName="fo_usuarioing" />
+          <ScalarProperty Name="fo_usuariomod" ColumnName="fo_usuariomod" />
+          <ScalarProperty Name="fo_maquinaing" ColumnName="fo_maquinaing" />
+          <ScalarProperty Name="fo_maquinamod" ColumnName="fo_maquinamod" />
+          <ScalarProperty Name="fo_estado" ColumnName="fo_estado" />
+          <ScalarProperty Name="fo_timestamp" ColumnName="fo_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Huella">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.Huella">
+        <MappingFragment StoreEntitySet="Huella">
+          <ScalarProperty Name="hu_empresa" ColumnName="hu_empresa" />
+          <ScalarProperty Name="hu_IdHuella" ColumnName="hu_IdHuella" />
+          <ScalarProperty Name="hu_TipoAsociado" ColumnName="hu_TipoAsociado" />
+          <ScalarProperty Name="hu_asociado" ColumnName="hu_asociado" />
+          <ScalarProperty Name="hu_huella" ColumnName="hu_huella" />
+          <ScalarProperty Name="hu_mano" ColumnName="hu_mano" />
+          <ScalarProperty Name="hu_dedo" ColumnName="hu_dedo" />
+          <ScalarProperty Name="hu_huella_long" ColumnName="hu_huella_long" />
+          <ScalarProperty Name="hu_fechaing" ColumnName="hu_fechaing" />
+          <ScalarProperty Name="hu_fechamod" ColumnName="hu_fechamod" />
+          <ScalarProperty Name="hu_usuarioing" ColumnName="hu_usuarioing" />
+          <ScalarProperty Name="hu_usuariomod" ColumnName="hu_usuariomod" />
+          <ScalarProperty Name="hu_maquinaing" ColumnName="hu_maquinaing" />
+          <ScalarProperty Name="hu_maquinamod" ColumnName="hu_maquinamod" />
+          <ScalarProperty Name="hu_estado" ColumnName="hu_estado" />
+          <ScalarProperty Name="hu_timestamp" ColumnName="hu_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NitFactura">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.NitFactura">
+        <MappingFragment StoreEntitySet="NitFactura">
+          <ScalarProperty Name="nf_empresa" ColumnName="nf_empresa" />
+          <ScalarProperty Name="nf_Nit" ColumnName="nf_Nit" />
+          <ScalarProperty Name="nf_IdSucursal" ColumnName="nf_IdSucursal" />
+          <ScalarProperty Name="nf_Nombre" ColumnName="nf_Nombre" />
+          <ScalarProperty Name="nf_Direccion" ColumnName="nf_Direccion" />
+          <ScalarProperty Name="nf_actCentral" ColumnName="nf_actCentral" />
+          <ScalarProperty Name="nf_fechaing" ColumnName="nf_fechaing" />
+          <ScalarProperty Name="nf_fechamod" ColumnName="nf_fechamod" />
+          <ScalarProperty Name="nf_usuarioing" ColumnName="nf_usuarioing" />
+          <ScalarProperty Name="nf_usuariomod" ColumnName="nf_usuariomod" />
+          <ScalarProperty Name="nf_maquinaing" ColumnName="nf_maquinaing" />
+          <ScalarProperty Name="nf_maquinamod" ColumnName="nf_maquinamod" />
+          <ScalarProperty Name="nf_estado" ColumnName="nf_estado" />
+          <ScalarProperty Name="nf_timestamp" ColumnName="nf_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="opcion">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.opcion">
+        <MappingFragment StoreEntitySet="opcion">
+          <ScalarProperty Name="op_Empresa" ColumnName="op_Empresa" />
+          <ScalarProperty Name="op_CodigoOpcion" ColumnName="op_CodigoOpcion" />
+          <ScalarProperty Name="op_NombreOpcion" ColumnName="op_NombreOpcion" />
+          <ScalarProperty Name="op_DescOpcion" ColumnName="op_DescOpcion" />
+          <ScalarProperty Name="op_PadreOpcion" ColumnName="op_PadreOpcion" />
+          <ScalarProperty Name="op_Autenticar" ColumnName="op_Autenticar" />
+          <ScalarProperty Name="op_FechaIng" ColumnName="op_FechaIng" />
+          <ScalarProperty Name="op_FechaMod" ColumnName="op_FechaMod" />
+          <ScalarProperty Name="op_UsuarioIng" ColumnName="op_UsuarioIng" />
+          <ScalarProperty Name="op_UsuarioMod" ColumnName="op_UsuarioMod" />
+          <ScalarProperty Name="op_MaquinaIng" ColumnName="op_MaquinaIng" />
+          <ScalarProperty Name="op_MaquinaMod" ColumnName="op_MaquinaMod" />
+          <ScalarProperty Name="op_Estado" ColumnName="op_Estado" />
+          <ScalarProperty Name="op_timestamp" ColumnName="op_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="perfil">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.perfil">
+        <MappingFragment StoreEntitySet="perfil">
+          <ScalarProperty Name="pf_empresa" ColumnName="pf_empresa" />
+          <ScalarProperty Name="pf_codPerfil" ColumnName="pf_codPerfil" />
+          <ScalarProperty Name="pf_nomPerfil" ColumnName="pf_nomPerfil" />
+          <ScalarProperty Name="pf_descPerfil" ColumnName="pf_descPerfil" />
+          <ScalarProperty Name="pf_fechaing" ColumnName="pf_fechaing" />
+          <ScalarProperty Name="pf_fechamod" ColumnName="pf_fechamod" />
+          <ScalarProperty Name="pf_usuarioing" ColumnName="pf_usuarioing" />
+          <ScalarProperty Name="pf_usuariomod" ColumnName="pf_usuariomod" />
+          <ScalarProperty Name="pf_maquinaing" ColumnName="pf_maquinaing" />
+          <ScalarProperty Name="pf_maquinamod" ColumnName="pf_maquinamod" />
+          <ScalarProperty Name="pf_estado" ColumnName="pf_estado" />
+          <ScalarProperty Name="pf_timestamp" ColumnName="pf_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="perfilusuario">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.perfilusuario">
+        <MappingFragment StoreEntitySet="perfilusuario">
+          <ScalarProperty Name="pu_empresa" ColumnName="pu_empresa" />
+          <ScalarProperty Name="pu_IdSucursal" ColumnName="pu_IdSucursal" />
+          <ScalarProperty Name="pu_CodPerfilUsuario" ColumnName="pu_CodPerfilUsuario" />
+          <ScalarProperty Name="pu_codPerfil" ColumnName="pu_codPerfil" />
+          <ScalarProperty Name="pu_codUsuario" ColumnName="pu_codUsuario" />
+          <ScalarProperty Name="pu_fechaing" ColumnName="pu_fechaing" />
+          <ScalarProperty Name="pu_fechamod" ColumnName="pu_fechamod" />
+          <ScalarProperty Name="pu_usuarioing" ColumnName="pu_usuarioing" />
+          <ScalarProperty Name="pu_usuariomod" ColumnName="pu_usuariomod" />
+          <ScalarProperty Name="pu_maquinaing" ColumnName="pu_maquinaing" />
+          <ScalarProperty Name="pu_maquinamod" ColumnName="pu_maquinamod" />
+          <ScalarProperty Name="pu_estado" ColumnName="pu_estado" />
+          <ScalarProperty Name="pu_timestamp" ColumnName="pu_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permiso">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.permiso">
+        <MappingFragment StoreEntitySet="permiso">
+          <ScalarProperty Name="pe_empresa" ColumnName="pe_empresa" />
+          <ScalarProperty Name="pe_IdSucursal" ColumnName="pe_IdSucursal" />
+          <ScalarProperty Name="pe_IdPermiso" ColumnName="pe_IdPermiso" />
+          <ScalarProperty Name="pe_CodPerfil" ColumnName="pe_CodPerfil" />
+          <ScalarProperty Name="pe_CodigoOpcion" ColumnName="pe_CodigoOpcion" />
+          <ScalarProperty Name="pe_FechaIng" ColumnName="pe_FechaIng" />
+          <ScalarProperty Name="pe_FechaMod" ColumnName="pe_FechaMod" />
+          <ScalarProperty Name="pe_UsuarioIng" ColumnName="pe_UsuarioIng" />
+          <ScalarProperty Name="pe_UsuarioMod" ColumnName="pe_UsuarioMod" />
+          <ScalarProperty Name="pe_MaquinaIng" ColumnName="pe_MaquinaIng" />
+          <ScalarProperty Name="pe_MaquinaMod" ColumnName="pe_MaquinaMod" />
+          <ScalarProperty Name="pe_estado" ColumnName="pe_estado" />
+          <ScalarProperty Name="pe_timestamp" ColumnName="pe_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="pv_empresa" ColumnName="pv_empresa" />
+          <ScalarProperty Name="pv_proveedor" ColumnName="pv_proveedor" />
+          <ScalarProperty Name="pv_tipoProveedor" ColumnName="pv_tipoProveedor" />
+          <ScalarProperty Name="pv_nombre1" ColumnName="pv_nombre1" />
+          <ScalarProperty Name="pv_nombre2" ColumnName="pv_nombre2" />
+          <ScalarProperty Name="pv_nit" ColumnName="pv_nit" />
+          <ScalarProperty Name="pv_fechaing" ColumnName="pv_fechaing" />
+          <ScalarProperty Name="pv_fechamod" ColumnName="pv_fechamod" />
+          <ScalarProperty Name="pv_usuarioing" ColumnName="pv_usuarioing" />
+          <ScalarProperty Name="pv_usuariomod" ColumnName="pv_usuariomod" />
+          <ScalarProperty Name="pv_maquinaing" ColumnName="pv_maquinaing" />
+          <ScalarProperty Name="pv_maquinamod" ColumnName="pv_maquinamod" />
+          <ScalarProperty Name="pv_estado" ColumnName="pv_estado" />
+          <ScalarProperty Name="pv_timestamp" ColumnName="pv_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="us_empresa" ColumnName="us_empresa" />
+          <ScalarProperty Name="us_IdSucursal" ColumnName="us_IdSucursal" />
+          <ScalarProperty Name="us_codUsuario" ColumnName="us_codUsuario" />
+          <ScalarProperty Name="us_usuario" ColumnName="us_usuario" />
+          <ScalarProperty Name="us_nombre" ColumnName="us_nombre" />
+          <ScalarProperty Name="us_password" ColumnName="us_password" />
+          <ScalarProperty Name="us_estUsuario" ColumnName="us_estUsuario" />
+          <ScalarProperty Name="us_IdEmpleado" ColumnName="us_IdEmpleado" />
+          <ScalarProperty Name="us_resetPass" ColumnName="us_resetPass" />
+          <ScalarProperty Name="us_fechaing" ColumnName="us_fechaing" />
+          <ScalarProperty Name="us_fechamod" ColumnName="us_fechamod" />
+          <ScalarProperty Name="us_usuarioing" ColumnName="us_usuarioing" />
+          <ScalarProperty Name="us_usuariomod" ColumnName="us_usuariomod" />
+          <ScalarProperty Name="us_maquinaing" ColumnName="us_maquinaing" />
+          <ScalarProperty Name="us_maquinamod" ColumnName="us_maquinamod" />
+          <ScalarProperty Name="us_estado" ColumnName="us_estado" />
+          <ScalarProperty Name="us_timestamp" ColumnName="us_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_UltimosTelefonos">
+      <EntityTypeMapping TypeName="SSS_PERSONASModel.vw_UltimosTelefonos">
+        <MappingFragment StoreEntitySet="vw_UltimosTelefonos">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Asociado" ColumnName="Asociado" />
+          <ScalarProperty Name="TelCelular" ColumnName="TelCelular" />
+          <ScalarProperty Name="TelCasa" ColumnName="TelCasa" />
+          <ScalarProperty Name="TelTrabajo" ColumnName="TelTrabajo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ABC_Cliente" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Cliente" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Contacto" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Contacto" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Direccion" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Direccion" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Foto" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Foto" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Huella" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Huella" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_NitFactura" FunctionName="SSS_PERSONASModel.Store.sp_ABC_NitFactura" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Opcion" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Opcion" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Perfil" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Perfil" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_PerfilUsuario" FunctionName="SSS_PERSONASModel.Store.sp_ABC_PerfilUsuario" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Permiso" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Permiso" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Proveedor" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Proveedor" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Usuario" FunctionName="SSS_PERSONASModel.Store.sp_ABC_Usuario" />
+    <FunctionImportMapping FunctionImportName="sp_Asigna_PermisosPerfil" FunctionName="SSS_PERSONASModel.Store.sp_Asigna_PermisosPerfil" />
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Cliente" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Cliente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Cliente_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="TipoCliente" ColumnName="TipoCliente" />
+          <ScalarProperty Name="NombreTipoCliente" ColumnName="NombreTipoCliente" />
+          <ScalarProperty Name="ClasificacionCliente" ColumnName="ClasificacionCliente" />
+          <ScalarProperty Name="NombreClasificacionCliente" ColumnName="NombreClasificacionCliente" />
+          <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
+          <ScalarProperty Name="NombreTipoIdenficacion" ColumnName="NombreTipoIdenficacion" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="Nit" ColumnName="Nit" />
+          <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+          <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+          <ScalarProperty Name="Nombre3" ColumnName="Nombre3" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="ApeCasada" ColumnName="ApeCasada" />
+          <ScalarProperty Name="NombreLargo" ColumnName="NombreLargo" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+          <ScalarProperty Name="NombreOcupacion" ColumnName="NombreOcupacion" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="NombreEstadoCivil" ColumnName="NombreEstadoCivil" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Contacto" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Contacto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Contacto_Result">
+          <ScalarProperty Name="IdContacto" ColumnName="IdContacto" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="TipoAsociado" ColumnName="TipoAsociado" />
+          <ScalarProperty Name="NombreTipoAsociado" ColumnName="NombreTipoAsociado" />
+          <ScalarProperty Name="Asociado" ColumnName="Asociado" />
+          <ScalarProperty Name="TipoContacto" ColumnName="TipoContacto" />
+          <ScalarProperty Name="NombreTipoDireccion" ColumnName="NombreTipoDireccion" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+          <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Direccion" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Direccion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Direccion_Result">
+          <ScalarProperty Name="IdDireccion" ColumnName="IdDireccion" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="TipoAsociado" ColumnName="TipoAsociado" />
+          <ScalarProperty Name="NombreTipoAsociado" ColumnName="NombreTipoAsociado" />
+          <ScalarProperty Name="Asociado" ColumnName="Asociado" />
+          <ScalarProperty Name="TipoDireccion" ColumnName="TipoDireccion" />
+          <ScalarProperty Name="NombreTipoDireccion" ColumnName="NombreTipoDireccion" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Direccion2" ColumnName="Direccion2" />
+          <ScalarProperty Name="Zona" ColumnName="Zona" />
+          <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+          <ScalarProperty Name="NombreMunicipio" ColumnName="NombreMunicipio" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="NombreDepartamento" ColumnName="NombreDepartamento" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="NombrePais" ColumnName="NombrePais" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Foto" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Foto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Foto_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdFoto" ColumnName="IdFoto" />
+          <ScalarProperty Name="TipoAsociado" ColumnName="TipoAsociado" />
+          <ScalarProperty Name="Asociado" ColumnName="Asociado" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Huella" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Huella">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Huella_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdHuella" ColumnName="IdHuella" />
+          <ScalarProperty Name="TipoAsociado" ColumnName="TipoAsociado" />
+          <ScalarProperty Name="Asociado" ColumnName="Asociado" />
+          <ScalarProperty Name="Huella" ColumnName="Huella" />
+          <ScalarProperty Name="longitudHuella" ColumnName="longitudHuella" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_NitFactura" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_NitFactura">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_NitFactura_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Nit" ColumnName="Nit" />
+          <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="CORRELATIVO" ColumnName="CORRELATIVO" />
+          <ScalarProperty Name="ActualizaCentral" ColumnName="ActualizaCentral" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Opcion" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Opcion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Opcion_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoOpcion" ColumnName="CodigoOpcion" />
+          <ScalarProperty Name="NombreOpcion" ColumnName="NombreOpcion" />
+          <ScalarProperty Name="DescripcionOpcion" ColumnName="DescripcionOpcion" />
+          <ScalarProperty Name="PadreOpcion" ColumnName="PadreOpcion" />
+          <ScalarProperty Name="Autenticar" ColumnName="Autenticar" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Perfil" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Perfil">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Perfil_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoPerfil" ColumnName="CodigoPerfil" />
+          <ScalarProperty Name="NombrePerfil" ColumnName="NombrePerfil" />
+          <ScalarProperty Name="DescripcionPerfil" ColumnName="DescripcionPerfil" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_PerfilUsuario" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_PerfilUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_PerfilUsuario_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoPerfil" ColumnName="CodigoPerfil" />
+          <ScalarProperty Name="NombrePerfil" ColumnName="NombrePerfil" />
+          <ScalarProperty Name="CodigoUsuario" ColumnName="CodigoUsuario" />
+          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Permiso" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Permiso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Permiso_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoPerfil" ColumnName="CodigoPerfil" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="CodigoOpcion" ColumnName="CodigoOpcion" />
+          <ScalarProperty Name="Opcion" ColumnName="Opcion" />
+          <ScalarProperty Name="DescOpcion" ColumnName="DescOpcion" />
+          <ScalarProperty Name="Padre" ColumnName="Padre" />
+          <ScalarProperty Name="Autenticar" ColumnName="Autenticar" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_PermisosUsuario" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_PermisosUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_PermisosUsuario_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+          <ScalarProperty Name="EstadoUsuario" ColumnName="EstadoUsuario" />
+          <ScalarProperty Name="CodigoPerfil" ColumnName="CodigoPerfil" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="CodigoOpcion" ColumnName="CodigoOpcion" />
+          <ScalarProperty Name="PadreOpcion" ColumnName="PadreOpcion" />
+          <ScalarProperty Name="Opcion" ColumnName="Opcion" />
+          <ScalarProperty Name="DescOpcion" ColumnName="DescOpcion" />
+          <ScalarProperty Name="Autenticar" ColumnName="Autenticar" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Proveedor" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Proveedor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Proveedor_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+          <ScalarProperty Name="TipoProveedor" ColumnName="TipoProveedor" />
+          <ScalarProperty Name="NombreTipoProveedor" ColumnName="NombreTipoProveedor" />
+          <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+          <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+          <ScalarProperty Name="Nit" ColumnName="Nit" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Usuario" FunctionName="SSS_PERSONASModel.Store.sp_Busqueda_Usuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Busqueda_Usuario_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoUsuario" ColumnName="CodigoUsuario" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+          <ScalarProperty Name="EstadoUsuario" ColumnName="EstadoUsuario" />
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+          <ScalarProperty Name="NombreLargoEmpleado" ColumnName="NombreLargoEmpleado" />
+          <ScalarProperty Name="TipoEmpleado" ColumnName="TipoEmpleado" />
+          <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="IniciaPass" ColumnName="IniciaPass" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CargaPermisos" FunctionName="SSS_PERSONASModel.Store.sp_CargaPermisos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_CargaPermisos_Result">
+          <ScalarProperty Name="us_codusuario" ColumnName="us_codusuario" />
+          <ScalarProperty Name="us_usuario" ColumnName="us_usuario" />
+          <ScalarProperty Name="us_nombre" ColumnName="us_nombre" />
+          <ScalarProperty Name="pf_codPerfil" ColumnName="pf_codPerfil" />
+          <ScalarProperty Name="pf_nomperfil" ColumnName="pf_nomperfil" />
+          <ScalarProperty Name="pf_descperfil" ColumnName="pf_descperfil" />
+          <ScalarProperty Name="op_codigoopcion" ColumnName="op_codigoopcion" />
+          <ScalarProperty Name="op_nombreopcion" ColumnName="op_nombreopcion" />
+          <ScalarProperty Name="op_descopcion" ColumnName="op_descopcion" />
+          <ScalarProperty Name="CodPadre" ColumnName="CodPadre" />
+          <ScalarProperty Name="Padre" ColumnName="Padre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Login" FunctionName="SSS_PERSONASModel.Store.sp_Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_Login_Result">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="resetpass" ColumnName="resetPass" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_RegistrosNuevos" FunctionName="SSS_PERSONASModel.Store.sp_RegistrosNuevos" />
+    <FunctionImportMapping FunctionImportName="sp_ValidaCumpleanios" FunctionName="SSS_PERSONASModel.Store.sp_ValidaCumpleanios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PERSONASModel.sp_ValidaCumpleanios_Result">
+          <ScalarProperty Name="NombreLargo" ColumnName="NombreLargo" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

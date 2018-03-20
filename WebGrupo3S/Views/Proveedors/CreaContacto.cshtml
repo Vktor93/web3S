@@ -1,0 +1,54 @@
+﻿@model WebGrupo3S.Models.Contacto
+
+@{
+    ViewBag.Title = "Contactos";
+}
+<link href="~/Content/themes/base/all.css" rel="stylesheet" />
+<link href="~/Content/Combobox.css" rel="stylesheet" />
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Nuevo Registro</h3>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="body" style="width:700px">
+        <div class="form-horizontal table-bordered">
+            <h2>@ViewData["Nombre"]</h2>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.cn_tipoAsociado)
+            @Html.HiddenFor(model => model.cn_asociado)
+            <div class="form-group">
+                @Html.Label("Tipo de Contacto", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.DropDownListFor(model => model.cn_tipoContacto, new SelectList(ViewBag.CO, "Value", "Text"), htmlAttributes: new { @class = "form-control combobox" })
+                    @Html.ValidationMessageFor(model => model.cn_tipoContacto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Primer contacto", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.cn_Contacto, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.cn_Contacto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Segundo contacto", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.cn_Contacto2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.cn_Contacto2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Contactos", "Proveedors", new { id =  ViewBag.idproveedor, nom = ViewBag.nombre })'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i>Crear</button>
+    </div>
+}
+
+@section Scripts {
+    <script src="~/Scripts/jquery.combobox.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

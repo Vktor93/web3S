@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebGrupo3S.Models.Bitacora>
+
+@{
+    ViewBag.Title = "Bitacora";
+}
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <div>
+                    <a href="@Url.Action("Report", new { id = "PDF" })">  PDF   <img width="20" height="20" src="/images/pdf.png" /></a>
+                    <a href="@Url.Action("Report", new { id = "Excel" })">  EXCEL   <img width="20" height="20" src="/images/excel.png" /></a>
+                </div>
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead style="background-color:lavender">
+                        <tr>
+                            <th>
+                                Fecha Ingreso
+                            </th>
+                            <th>
+                                Nombre Tabla
+                            </th>
+                            <th>
+                                Campo
+                            </th>
+                            <th>
+                                Dato Actual
+                            </th>
+                            <th>
+                                Dato Anterior
+                            </th>
+                            <th>
+                                Comentario
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.bt_fechaing)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.bt_nombreTabla)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.bt_nombreCampo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.bt_datoActual)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.bt_datoAnterior)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.bt_Comentario)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}
+

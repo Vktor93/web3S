@@ -1,0 +1,62 @@
+﻿@using WebGrupo3S.Helpers
+@model IList<WebGrupo3S.Models.sp_Busqueda_PerfilUsuario_Result>
+
+<p>
+    @Html.ActionLink("Retorna Perfiles", "Regresa", null, new { @class = "btn btn-info" })
+</p>
+
+@{
+    ViewBag.Title = "Perfiles de Usuario";
+}
+
+<h2>@ViewData["Nombre"]</h2>
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Codigo Perfil
+                            </th>
+                            <th>
+                                Nombre Perfil
+                            </th>
+                            <th>
+                                <div class="pull-right">
+                                    @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-plus'></span>", "Nuevo Registro", "CreaPerfil", "Usuarios", routeValues: new { id = ViewBag.idusu, nom = ViewBag.nombre }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary btn-xs" })
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodigoPerfil)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombrePerfil)
+                                </td>
+                                <td>
+                                    @*@Html.ActionLink("Edit", "PEdit", new { id = item.CodigoPerfil, usu = item.CodigoUsuario }, new { @class = "btn btn-primary btn-xs" })*@
+                                    @Html.ActionLink("de Baja", "PDelete", new { id = item.CodigoPerfil, usu = item.CodigoUsuario }, new { @class = "btn btn-info btn-xs" })
+                                </td>
+                            </tr>
+                        }
+                    <tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

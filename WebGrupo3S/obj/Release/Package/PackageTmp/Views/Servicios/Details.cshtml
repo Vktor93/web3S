@@ -1,0 +1,114 @@
+﻿@model WebGrupo3S.Models.Servicio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Servicio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_TipoServicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_TipoServicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_duracionServicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_duracionServicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sv_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sv_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

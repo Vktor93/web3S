@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSS_COMPLEMENTOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SSS_COMPLEMENTOS.dbo.Bitacora' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Bitacora">
+    <Key>
+      <PropertyRef Name="bt_empresa" />
+      <PropertyRef Name="bt_tipoOperacion" />
+      <PropertyRef Name="bt_fechaing" />
+      <PropertyRef Name="bt_usuarioing" />
+      <PropertyRef Name="bt_maquinaing" />
+      <PropertyRef Name="bt_estado" />
+      <PropertyRef Name="bt_timestamp" />
+    </Key>
+    <Property Name="bt_empresa" Type="smallint" Nullable="false" />
+    <Property Name="bt_tipoOperacion" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="bt_nombreTabla" Type="nvarchar" MaxLength="50" />
+    <Property Name="bt_idRegistro" Type="nvarchar" MaxLength="50" />
+    <Property Name="bt_nombreCampo" Type="nvarchar" MaxLength="50" />
+    <Property Name="bt_datoActual" Type="nvarchar" MaxLength="50" />
+    <Property Name="bt_datoAnterior" Type="nvarchar" MaxLength="50" />
+    <Property Name="bt_Comentario" Type="nvarchar" MaxLength="200" />
+    <Property Name="bt_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="bt_fechamod" Type="datetime" />
+    <Property Name="bt_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="bt_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="bt_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="bt_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="bt_estado" Type="int" Nullable="false" />
+    <Property Name="bt_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CabCatalogo">
+    <Key>
+      <PropertyRef Name="cc_empresa" />
+      <PropertyRef Name="cc_IdCatalogo" />
+    </Key>
+    <Property Name="cc_empresa" Type="smallint" Nullable="false" />
+    <Property Name="cc_IdCatalogo" Type="int" Nullable="false" />
+    <Property Name="cc_nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cc_nomVal1" Type="nvarchar" MaxLength="50" />
+    <Property Name="cc_nomVal2" Type="nvarchar" MaxLength="50" />
+    <Property Name="cc_nomVal3" Type="nvarchar" MaxLength="50" />
+    <Property Name="cc_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="cc_fechamod" Type="datetime" />
+    <Property Name="cc_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cc_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cc_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cc_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cc_estado" Type="int" Nullable="false" />
+    <Property Name="cc_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SSS_COMPLEMENTOS.dbo.DetCatalogo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="DetCatalogo">
+    <Key>
+      <PropertyRef Name="cd_empresa" />
+      <PropertyRef Name="cd_IdCatalogo" />
+      <PropertyRef Name="cd_codigo" />
+      <PropertyRef Name="cd_valor" />
+      <PropertyRef Name="cd_fechaing" />
+      <PropertyRef Name="cd_usuarioing" />
+      <PropertyRef Name="cd_maquinaing" />
+      <PropertyRef Name="cd_estado" />
+      <PropertyRef Name="cd_timestamp" />
+    </Key>
+    <Property Name="cd_empresa" Type="smallint" Nullable="false" />
+    <Property Name="cd_IdCatalogo" Type="int" Nullable="false" />
+    <Property Name="cd_codigo" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cd_valor" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="cd_valor1" Type="nvarchar" MaxLength="100" />
+    <Property Name="cd_valor2" Type="nvarchar" MaxLength="100" />
+    <Property Name="cd_valor3" Type="nvarchar" MaxLength="100" />
+    <Property Name="cd_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="cd_fechamod" Type="datetime" />
+    <Property Name="cd_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cd_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cd_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cd_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="cd_estado" Type="int" Nullable="false" />
+    <Property Name="cd_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Imagen">
+    <Key>
+      <PropertyRef Name="im_empresa" />
+      <PropertyRef Name="im_CodImagen" />
+    </Key>
+    <Property Name="im_empresa" Type="smallint" Nullable="false" />
+    <Property Name="im_CodImagen" Type="int" Nullable="false" />
+    <Property Name="im_NombreImagen" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="im_imagen" Type="image" Nullable="false" />
+    <Property Name="im_estImagen" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="im_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="im_fechamod" Type="datetime" />
+    <Property Name="im_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="im_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="im_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="im_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="im_estado" Type="int" Nullable="false" />
+    <Property Name="im_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Secuencial">
+    <Key>
+      <PropertyRef Name="sc_empresa" />
+      <PropertyRef Name="sc_codTabla" />
+    </Key>
+    <Property Name="sc_empresa" Type="int" Nullable="false" />
+    <Property Name="sc_codTabla" Type="int" Nullable="false" />
+    <Property Name="sc_tabla" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="sc_secuencial" Type="int" Nullable="false" />
+    <Property Name="sc_DataBase" Type="nvarchar" MaxLength="50" />
+    <Property Name="sc_Centralizado" Type="int" Nullable="false" />
+    <Property Name="sc_fechaing" Type="datetime" Nullable="false" />
+    <Property Name="sc_fechamod" Type="datetime" />
+    <Property Name="sc_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sc_usuariomod" Type="nvarchar" MaxLength="50" />
+    <Property Name="sc_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sc_maquinamod" Type="nvarchar" MaxLength="50" />
+    <Property Name="sc_estado" Type="int" Nullable="false" />
+    <Property Name="sc_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SSS_COMPLEMENTOS.dbo.vw_catalogo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_catalogo">
+    <Key>
+      <PropertyRef Name="Empresa" />
+      <PropertyRef Name="IdCatalogo" />
+      <PropertyRef Name="NomCatalogo" />
+      <PropertyRef Name="CodCatalogo" />
+      <PropertyRef Name="Descripcion" />
+    </Key>
+    <Property Name="Empresa" Type="smallint" Nullable="false" />
+    <Property Name="IdCatalogo" Type="int" Nullable="false" />
+    <Property Name="NomCatalogo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodCatalogo" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Valor1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Valor2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Valor3" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Function Name="sp_ABC_Bitacora" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bt_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="bt_opcion" Type="char" Mode="In" />
+    <Parameter Name="bt_tipoOperacion" Type="char" Mode="In" />
+    <Parameter Name="bt_nombreTabla" Type="nvarchar" Mode="In" />
+    <Parameter Name="bt_IdRegistro" Type="nvarchar" Mode="In" />
+    <Parameter Name="bt_nombreCampo" Type="nvarchar" Mode="In" />
+    <Parameter Name="bt_datoActual" Type="nvarchar" Mode="In" />
+    <Parameter Name="bt_datoAnterior" Type="nvarchar" Mode="In" />
+    <Parameter Name="bt_comentario" Type="nvarchar" Mode="In" />
+    <Parameter Name="bt_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="bt_timestamp" Type="timestamp" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_CabCatalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cc_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cc_opcion" Type="char" Mode="In" />
+    <Parameter Name="cc_IdCatalogo" Type="int" Mode="InOut" />
+    <Parameter Name="cc_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="cc_nomVal1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cc_nomVal2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cc_nomVal3" Type="nvarchar" Mode="In" />
+    <Parameter Name="cc_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="cc_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_DetCatalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cd_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cd_opcion" Type="char" Mode="In" />
+    <Parameter Name="cd_IdCatalogo" Type="int" Mode="In" />
+    <Parameter Name="cd_codigo" Type="char" Mode="In" />
+    <Parameter Name="cd_valor" Type="nvarchar" Mode="In" />
+    <Parameter Name="cd_Valor1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cd_Valor2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cd_Valor3" Type="nvarchar" Mode="In" />
+    <Parameter Name="cd_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="cd_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ABC_Imagen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="im_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="im_opcion" Type="char" Mode="In" />
+    <Parameter Name="im_CodImagen" Type="int" Mode="InOut" />
+    <Parameter Name="im_NombreImagen" Type="nvarchar" Mode="In" />
+    <Parameter Name="im_imagen" Type="image" Mode="In" />
+    <Parameter Name="im_estImagen" Type="char" Mode="In" />
+    <Parameter Name="im_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="im_timestamp" Type="timestamp" Mode="InOut" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Altas_Secuencial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sc_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="sc_tabla" Type="nvarchar" Mode="In" />
+    <Parameter Name="sc_DataBase" Type="nvarchar" Mode="In" />
+    <Parameter Name="sc_centralizado" Type="int" Mode="In" />
+    <Parameter Name="sc_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_CabCatalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="cc_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cc_IdCatalogo" Type="int" Mode="In" />
+    <Parameter Name="cc_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="cc_nomVal1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cc_nomVal2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cc_nomVal3" Type="nvarchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Catalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ca_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="ca_IdCatalogo" Type="int" Mode="In" />
+    <Parameter Name="ca_NomCatalogo" Type="nvarchar" Mode="In" />
+    <Parameter Name="ca_CodCatalogo" Type="char" Mode="In" />
+    <Parameter Name="ca_Descripcion" Type="nvarchar" Mode="In" />
+    <Parameter Name="ca_Valor1" Type="nvarchar" Mode="In" />
+    <Parameter Name="ca_Valor2" Type="nvarchar" Mode="In" />
+    <Parameter Name="ca_Valor3" Type="nvarchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_DetCatalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="cd_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="cd_IdCatalogo" Type="int" Mode="In" />
+    <Parameter Name="cd_codigo" Type="char" Mode="In" />
+    <Parameter Name="cd_valor" Type="nvarchar" Mode="In" />
+    <Parameter Name="cd_Valor1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cd_Valor2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cd_Valor3" Type="nvarchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Busqueda_Imagen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+    <Parameter Name="im_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="im_CodImagen" Type="int" Mode="In" />
+    <Parameter Name="im_NombreImagen" Type="nvarchar" Mode="In" />
+    <Parameter Name="im_estImagen" Type="nvarchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_CorrigeSecuenciales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Obtiene_Secuencial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sc_empresa" Type="smallint" Mode="In" />
+    <Parameter Name="sc_codtabla" Type="nvarchar" Mode="In" />
+    <Parameter Name="sec" Type="int" Mode="InOut" />
+    <Parameter Name="sc_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="SSS_COMPLEMENTOSModelStoreContainer">
+    <EntitySet Name="CabCatalogo" EntityType="Self.CabCatalogo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Imagen" EntityType="Self.Imagen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Secuencial" EntityType="Self.Secuencial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bitacora" EntityType="Self.Bitacora" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Bitacora].[bt_empresa] AS [bt_empresa], 
+    [Bitacora].[bt_tipoOperacion] AS [bt_tipoOperacion], 
+    [Bitacora].[bt_nombreTabla] AS [bt_nombreTabla], 
+    [Bitacora].[bt_idRegistro] AS [bt_idRegistro], 
+    [Bitacora].[bt_nombreCampo] AS [bt_nombreCampo], 
+    [Bitacora].[bt_datoActual] AS [bt_datoActual], 
+    [Bitacora].[bt_datoAnterior] AS [bt_datoAnterior], 
+    [Bitacora].[bt_Comentario] AS [bt_Comentario], 
+    [Bitacora].[bt_fechaing] AS [bt_fechaing], 
+    [Bitacora].[bt_fechamod] AS [bt_fechamod], 
+    [Bitacora].[bt_usuarioing] AS [bt_usuarioing], 
+    [Bitacora].[bt_usuariomod] AS [bt_usuariomod], 
+    [Bitacora].[bt_maquinaing] AS [bt_maquinaing], 
+    [Bitacora].[bt_maquinamod] AS [bt_maquinamod], 
+    [Bitacora].[bt_estado] AS [bt_estado], 
+    [Bitacora].[bt_timestamp] AS [bt_timestamp]
+    FROM [dbo].[Bitacora] AS [Bitacora]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DetCatalogo" EntityType="Self.DetCatalogo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DetCatalogo].[cd_empresa] AS [cd_empresa], 
+    [DetCatalogo].[cd_IdCatalogo] AS [cd_IdCatalogo], 
+    [DetCatalogo].[cd_codigo] AS [cd_codigo], 
+    [DetCatalogo].[cd_valor] AS [cd_valor], 
+    [DetCatalogo].[cd_valor1] AS [cd_valor1], 
+    [DetCatalogo].[cd_valor2] AS [cd_valor2], 
+    [DetCatalogo].[cd_valor3] AS [cd_valor3], 
+    [DetCatalogo].[cd_fechaing] AS [cd_fechaing], 
+    [DetCatalogo].[cd_fechamod] AS [cd_fechamod], 
+    [DetCatalogo].[cd_usuarioing] AS [cd_usuarioing], 
+    [DetCatalogo].[cd_usuariomod] AS [cd_usuariomod], 
+    [DetCatalogo].[cd_maquinaing] AS [cd_maquinaing], 
+    [DetCatalogo].[cd_maquinamod] AS [cd_maquinamod], 
+    [DetCatalogo].[cd_estado] AS [cd_estado], 
+    [DetCatalogo].[cd_timestamp] AS [cd_timestamp]
+    FROM [dbo].[DetCatalogo] AS [DetCatalogo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_catalogo" EntityType="Self.vw_catalogo" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_catalogo].[Empresa] AS [Empresa], 
+    [vw_catalogo].[IdCatalogo] AS [IdCatalogo], 
+    [vw_catalogo].[NomCatalogo] AS [NomCatalogo], 
+    [vw_catalogo].[CodCatalogo] AS [CodCatalogo], 
+    [vw_catalogo].[Descripcion] AS [Descripcion], 
+    [vw_catalogo].[Valor1] AS [Valor1], 
+    [vw_catalogo].[Valor2] AS [Valor2], 
+    [vw_catalogo].[Valor3] AS [Valor3]
+    FROM [dbo].[vw_catalogo] AS [vw_catalogo]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

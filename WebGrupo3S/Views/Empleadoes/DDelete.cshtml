@@ -1,0 +1,65 @@
+﻿@model WebGrupo3S.Models.Direccion
+
+@{
+    ViewBag.Title = "Direcciones";
+}
+
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Esta seguro que desea dar de baja siguiente registro?</h3>
+</div>
+<div class="body" style="width:700px">
+    <h2>@ViewData["asociado"]</h2>
+    <dl class="form-horizontal table-bordered">
+        <dt>
+            @Html.Label("Tipo de dirección")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.di_TipoDireccion)
+        </dd>
+        <dt>
+            @Html.Label("Primera dirección")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.di_Direccion)
+        </dd>
+        <dt>
+            @Html.Label("Segunda dirección")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.di_Direccion2)
+        </dd>
+        <dt>
+            @Html.Label("Zona")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.di_zona)
+        </dd>
+        <dt>
+            @Html.Label("Municipio")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.di_municipio)
+        </dd>
+        <dt>
+            @Html.Label("Deparmento")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.di_departamento)
+        </dd>
+        <dt>
+            @Html.Label("País")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.di_pais)
+        </dd>
+    </dl>
+
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Direcciones", "Empleadoes", new { id = Convert.ToInt16(ViewData["idempleado"]), nom = ViewData["asociado"].ToString() })'"><i class="glyphicon glyphicon-remove"></i>No</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i> Si</button>
+    </div>
+}

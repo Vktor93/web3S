@@ -1,0 +1,52 @@
+﻿@model WebGrupo3S.Models.opcion
+@{
+    ViewBag.Title = "Opciones";
+}
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Actualiza datos</h3>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="body" style="width:700px">
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal table-bordered">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.op_Empresa)
+            @Html.HiddenFor(model => model.op_CodigoOpcion)
+            @Html.HiddenFor(model => model.op_timestamp)
+
+            <div class="form-group">
+                @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.op_NombreOpcion, new { htmlAttributes = new { @class = "form-control", style = "width: 300px; background - color:white" } })
+                    @Html.ValidationMessageFor(model => model.op_NombreOpcion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Descripción", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.op_DescOpcion, new { htmlAttributes = new { @class = "form-control", style = "width: 300px; background - color:white" } })
+                    @Html.ValidationMessageFor(model => model.op_DescOpcion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Opción Padre", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-6">
+                    @Html.DropDownListFor(model => model.op_PadreOpcion, new SelectList(ViewBag.PadreId, "Value", "Text"), new { style = "width: 400px; color:black" })
+                    @Html.ValidationMessageFor(model => model.op_PadreOpcion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "opcions")'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i>Grabar</button>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,86 @@
+﻿@model IList<WebGrupo3S.Models.sp_Busqueda_CuentaXCobrar_Result>
+
+<p>
+    @Html.ActionLink("Nuevo Registro", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+@{
+    ViewBag.Title = "Cuentas por cobrar";
+}
+
+@Styles.Render("~/Admin/plugins/datatables/css")
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-body">
+                <table id="datos" class="table table-responsive table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Cliente
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Nit
+                            </th>
+                            <th>
+                                Identificación
+                            </th>
+                            <th>
+                                Saldo
+                            </th>
+                            <th>
+                                Total
+                            </th>
+                            <th>
+                                Fecha de documento
+                            </th>
+ 
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cliente)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreLargo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nit)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Idenficacion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Saldo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Total)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FechaDocumento)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edita", "Edit", new { id = item.TipoServicio }, new { @class = "btn btn-primary btn-xs" })
+                                    @Html.ActionLink("de Baja", "Delete", new { id = item.TipoServicio }, new { @class = "btn btn-info btn-xs" })
+                                    @Html.ActionLink("Detalle", "Details", new { id = item.TipoServicio }, new { @class = "btn btn-primary btn-xs" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Admin/plugins/datatables/js")
+    @Scripts.Render("~/Scripts/Tables/Data")
+}

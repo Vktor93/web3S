@@ -1,0 +1,146 @@
+﻿@model WebGrupo3S.Models.Movimiento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movimiento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_ProdServ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_ProdServ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_IdProdServ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_IdProdServ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_ValorMov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_ValorMov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_FechaMov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_FechaMov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_IdOrdenServicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_IdOrdenServicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_IdDetalleOrdenServicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_IdDetalleOrdenServicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_IdAutorizacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_IdAutorizacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mv_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mv_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

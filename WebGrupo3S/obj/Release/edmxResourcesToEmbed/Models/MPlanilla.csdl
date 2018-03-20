@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSS_PLANILLAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="em_empresa" />
+      <PropertyRef Name="em_IdEmpleado" />
+    </Key>
+    <Property Name="em_empresa" Type="Int16" Nullable="false" />
+    <Property Name="em_IdEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="em_tipoEmpleado" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="em_tipoIdentifica" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="em_Identifica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="em_Nit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="em_Nombre1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="em_Nombre2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="em_Nombre3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="em_Apellido1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="em_Apellido2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="em_ApeCasada" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="em_nombrelargo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="em_Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="em_genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="em_FechaNac" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="em_ocupacion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="em_estadoCivil" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="em_estEmpleado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="em_FechaIngreso" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="em_FechaSalida" Type="DateTime" Precision="3" />
+    <Property Name="em_SueldoBase" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="em_Bonificacion" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="em_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="em_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="em_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="em_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="em_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="em_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="em_estado" Type="Int32" Nullable="false" />
+    <Property Name="em_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Horario">
+    <Key>
+      <PropertyRef Name="ho_empresa" />
+      <PropertyRef Name="ho_IdHorario" />
+      <PropertyRef Name="ho_diaSemana" />
+    </Key>
+    <Property Name="ho_empresa" Type="Int16" Nullable="false" />
+    <Property Name="ho_IdHorario" Type="Int32" Nullable="false" />
+    <Property Name="ho_diaSemana" Type="Int32" Nullable="false" />
+    <Property Name="ho_Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ho_Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ho_HoraEntrada" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ho_HoraSalida" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ho_HoraSalidaAlmuerzo" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ho_HoraEntradaAlmuerzo" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ho_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ho_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="ho_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ho_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ho_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ho_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ho_estado" Type="Int32" Nullable="false" />
+    <Property Name="ho_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="HorarioEmpleado">
+    <Key>
+      <PropertyRef Name="he_empresa" />
+      <PropertyRef Name="he_IdHorario" />
+      <PropertyRef Name="he_diaSemana" />
+      <PropertyRef Name="he_IdEmpleado" />
+    </Key>
+    <Property Name="he_empresa" Type="Int16" Nullable="false" />
+    <Property Name="he_IdHorario" Type="Int32" Nullable="false" />
+    <Property Name="he_diaSemana" Type="Int32" Nullable="false" />
+    <Property Name="he_IdEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="he_fechaing" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="he_fechamod" Type="DateTime" Precision="3" />
+    <Property Name="he_usuarioing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="he_usuariomod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="he_maquinaing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="he_maquinamod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="he_estado" Type="Int32" Nullable="false" />
+    <Property Name="he_timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityContainer Name="SSS_PLANILLAEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Empleadoes" EntityType="Self.Empleado" />
+    <EntitySet Name="Horarios" EntityType="Self.Horario" />
+    <EntitySet Name="HorarioEmpleadoes" EntityType="Self.HorarioEmpleado" />
+    <FunctionImport Name="sp_ABC_Empleado">
+      <Parameter Name="em_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="em_opcion" Mode="In" Type="String" />
+      <Parameter Name="em_IdEmpleado" Mode="InOut" Type="Int32" />
+      <Parameter Name="em_tipoEmpleado" Mode="In" Type="String" />
+      <Parameter Name="em_tipoIdentifica" Mode="In" Type="String" />
+      <Parameter Name="em_Identifica" Mode="In" Type="String" />
+      <Parameter Name="em_Nit" Mode="In" Type="String" />
+      <Parameter Name="em_Nombre1" Mode="In" Type="String" />
+      <Parameter Name="em_Nombre2" Mode="In" Type="String" />
+      <Parameter Name="em_Nombre3" Mode="In" Type="String" />
+      <Parameter Name="em_Apellido1" Mode="In" Type="String" />
+      <Parameter Name="em_Apellido2" Mode="In" Type="String" />
+      <Parameter Name="em_ApeCasada" Mode="In" Type="String" />
+      <Parameter Name="em_Alias" Mode="In" Type="String" />
+      <Parameter Name="em_genero" Mode="In" Type="String" />
+      <Parameter Name="em_FechaNac" Mode="In" Type="DateTime" />
+      <Parameter Name="em_ocupacion" Mode="In" Type="String" />
+      <Parameter Name="em_estadoCivil" Mode="In" Type="String" />
+      <Parameter Name="em_estEmpleado" Mode="In" Type="String" />
+      <Parameter Name="em_FechaIngreso" Mode="In" Type="DateTime" />
+      <Parameter Name="em_FechaSalida" Mode="In" Type="DateTime" />
+      <Parameter Name="em_SueldoBase" Mode="In" Type="Decimal" />
+      <Parameter Name="em_Bonificacion" Mode="In" Type="Decimal" />
+      <Parameter Name="em_Usuario" Mode="In" Type="String" />
+      <Parameter Name="em_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_Horario">
+      <Parameter Name="ho_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="ho_opcion" Mode="In" Type="String" />
+      <Parameter Name="ho_IdHorario" Mode="InOut" Type="Int32" />
+      <Parameter Name="ho_diaSemana" Mode="In" Type="Int32" />
+      <Parameter Name="ho_Nombre" Mode="In" Type="String" />
+      <Parameter Name="ho_Descripcion" Mode="In" Type="String" />
+      <Parameter Name="ho_HoraEntrada" Mode="In" Type="String" />
+      <Parameter Name="ho_HoraSalida" Mode="In" Type="String" />
+      <Parameter Name="ho_HoraSalidaAlmuerzo" Mode="In" Type="String" />
+      <Parameter Name="ho_HoraEntradaAlmuerzo" Mode="In" Type="String" />
+      <Parameter Name="ho_Usuario" Mode="In" Type="String" />
+      <Parameter Name="ho_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_HorarioEmpleado">
+      <Parameter Name="he_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="he_opcion" Mode="In" Type="String" />
+      <Parameter Name="he_IdHorario" Mode="In" Type="Int32" />
+      <Parameter Name="he_diaSemana" Mode="In" Type="Int32" />
+      <Parameter Name="he_IdEmpleado" Mode="In" Type="Int32" />
+      <Parameter Name="he_Usuario" Mode="In" Type="String" />
+      <Parameter Name="he_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Empleado" ReturnType="Collection(SSS_PLANILLAModel.sp_Busqueda_Empleado_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="em_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="em_IdEmpleado" Mode="In" Type="Int32" />
+      <Parameter Name="em_tipoEmpleado" Mode="In" Type="String" />
+      <Parameter Name="em_tipoIdentifica" Mode="In" Type="String" />
+      <Parameter Name="em_Identifica" Mode="In" Type="String" />
+      <Parameter Name="em_Nit" Mode="In" Type="String" />
+      <Parameter Name="em_Nombre1" Mode="In" Type="String" />
+      <Parameter Name="em_Nombre2" Mode="In" Type="String" />
+      <Parameter Name="em_Nombre3" Mode="In" Type="String" />
+      <Parameter Name="em_Apellido1" Mode="In" Type="String" />
+      <Parameter Name="em_Apellido2" Mode="In" Type="String" />
+      <Parameter Name="em_ApeCasada" Mode="In" Type="String" />
+      <Parameter Name="em_Alias" Mode="In" Type="String" />
+      <Parameter Name="em_genero" Mode="In" Type="String" />
+      <Parameter Name="em_FechaNac" Mode="In" Type="DateTime" />
+      <Parameter Name="em_ocupacion" Mode="In" Type="String" />
+      <Parameter Name="em_estadoCivil" Mode="In" Type="String" />
+      <Parameter Name="em_estEmpleado" Mode="In" Type="String" />
+      <Parameter Name="em_FechaIngreso" Mode="In" Type="DateTime" />
+      <Parameter Name="em_FechaSalida" Mode="In" Type="DateTime" />
+      <Parameter Name="em_SueldoBase" Mode="In" Type="Decimal" />
+      <Parameter Name="em_Bonificacion" Mode="In" Type="Decimal" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_Horario" ReturnType="Collection(SSS_PLANILLAModel.sp_Busqueda_Horario_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="ho_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="ho_IdHorario" Mode="In" Type="Int32" />
+      <Parameter Name="ho_diaSemana" Mode="In" Type="Int32" />
+      <Parameter Name="ho_Nombre" Mode="In" Type="String" />
+      <Parameter Name="ho_Descripcion" Mode="In" Type="String" />
+      <Parameter Name="ho_HoraEntrada" Mode="In" Type="String" />
+      <Parameter Name="ho_HoraSalida" Mode="In" Type="String" />
+      <Parameter Name="ho_HoraSalidaAlmuerzo" Mode="In" Type="String" />
+      <Parameter Name="ho_HoraEntradaAlmuerzo" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_HorarioEmpleado" ReturnType="Collection(SSS_PLANILLAModel.sp_Busqueda_HorarioEmpleado_Result)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="he_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="he_IdHorario" Mode="In" Type="Int32" />
+      <Parameter Name="he_diaSemana" Mode="In" Type="Int32" />
+      <Parameter Name="he_IdEmpleado" Mode="In" Type="Int32" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_Busqueda_Empleado_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="Empleado" Nullable="false" />
+    <Property Type="String" Name="TipoEmpleado" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="NombreTipoEmpleado" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TipoIdentifica" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="NombreTipoIdentifica" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Identificacion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Nit" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nombre1" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Nombre2" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Nombre3" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Apellido1" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Apellido2" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ApeCasada" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="NombreLargo" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Genero" Nullable="false" MaxLength="1" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" />
+    <Property Type="String" Name="Ocupación" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionOcupacion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EstadoCivil" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DescripcionEstadoCivil" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EstadoEmpleado" Nullable="false" MaxLength="1" />
+    <Property Type="DateTime" Name="FechaIngreso" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="FechaSalida" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="SueldoBase" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="Bonificacion" Nullable="false" Precision="19" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_Horario_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="IdHorario" Nullable="false" />
+    <Property Type="Int32" Name="DiaSemana" Nullable="false" />
+    <Property Type="String" Name="NombreHorario" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DescripcionHorario" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="HoraEntrada" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="HoraSalida" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="HoraSalidaAlmuerzo" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="HoraEntradaAlmuerzo" Nullable="false" MaxLength="8" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_HorarioEmpleado_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="IdHorario" Nullable="false" />
+    <Property Type="Int32" Name="DiaSemana" Nullable="false" />
+    <Property Type="String" Name="NombreHorario" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DescripcionHorario" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="IdEmpleado" Nullable="false" />
+    <Property Type="String" Name="NombreLargo" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="HoraEntrada" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="HoraSalida" Nullable="false" MaxLength="8" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+</Schema>

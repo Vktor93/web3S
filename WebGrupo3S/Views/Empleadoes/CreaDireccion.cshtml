@@ -1,0 +1,151 @@
+﻿@model WebGrupo3S.Models.Direccion
+
+@{
+    ViewBag.Title = "Direcciones";
+}
+
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Nuevo Registro</h3>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="body" style="width:700px; height: 380px; overflow: scroll">
+        <div class="form-horizontal table-bordered">
+            <h2>@ViewData["Nombre"]</h2>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.di_TipoAsociado)
+            @Html.HiddenFor(model => model.di_asociado)
+            <div class="form-group">
+                @Html.Label("Tipo de Dirección", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.DropDownListFor(model => model.di_TipoDireccion, new SelectList(ViewBag.DI, "Value", "Text"), new { style = "width: 400px; color:black" })
+                    @Html.ValidationMessageFor(model => model.di_TipoDireccion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Primer dirección", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.di_Direccion, new { htmlAttributes = new { @class = "form-control", style = "width: 500px" } })
+                    @Html.ValidationMessageFor(model => model.di_Direccion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Segunda dirección", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.di_Direccion2, new { htmlAttributes = new { @class = "form-control", style = "width: 500px" } })
+                    @Html.ValidationMessageFor(model => model.di_Direccion2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Zona", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.di_zona, new { htmlAttributes = new { @class = "form-control", style = "width: 100px" } })
+                    @Html.ValidationMessageFor(model => model.di_zona, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Pais", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.DropDownListFor(model => model.di_pais, new SelectList(ViewBag.PA, "Value", "Text"), new { style = "width: 400px; color:black" })
+                    @Html.ValidationMessageFor(model => model.di_pais, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Departamento", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.DropDownListFor(model => model.di_departamento, new SelectList(ViewBag.DE, "Value", "Text"), new { style = "width: 400px; color:black" })
+                    @Html.ValidationMessageFor(model => model.di_departamento, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Municipio", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.DropDownListFor(model => model.di_municipio, new SelectList(ViewBag.MU, "Value", "Text"), new { style = "width: 400px; color:black" })
+                    @Html.ValidationMessageFor(model => model.di_municipio, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Direcciones", "Empleadoes", new { id =  ViewBag.idempleado, nom = ViewBag.nombre })'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i>Crear</button>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="../../Scripts/jquery-3.1.1.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#di_pais").change(function () {
+            $("#di_departamento").empty();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetDepto")', 
+                dataType: 'json',
+                data: { id: $("#di_pais").val() },
+
+                success: function (deptos) {
+                    $.each(deptos, function (i, depto) {
+                        $("#di_departamento").append('<option value="' + depto.Value + '">' +
+                         depto.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Despliegue de departamentos fallo.' + ex);
+                }
+            });
+            $("#di_municipio").empty();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetMuni")',
+                dataType: 'json',
+                data: { id: $("#di_departamento").val() },
+
+                success: function (munis) {
+                    $.each(munis, function (i, muni) {
+                        $("#di_municipio").append('<option value="' + muni.Value + '">' +
+                         muni.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Despliegue de municipios fallo.' + ex);
+                }
+            });
+            return false;
+        })
+        $("#di_departamento").change(function () {
+            $("#di_municipio").empty();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetMuni")',
+                dataType: 'json',
+                data: { id: $("#di_departamento").val() },
+
+                success: function (munis) {
+                    $.each(munis, function (i, muni) {
+                        $("#di_municipio").append('<option value="' + muni.Value + '">' +
+                         muni.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Despliegue de municipios fallo.' + ex);
+                }
+            });
+            return false;
+        })
+     });
+</script> 
+}
+
+

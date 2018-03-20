@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SSS_PLANILLAModelStoreContainer" CdmEntityContainer="SSS_PLANILLAEntities">
+    <EntitySetMapping Name="Empleadoes">
+      <EntityTypeMapping TypeName="SSS_PLANILLAModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="em_empresa" ColumnName="em_empresa" />
+          <ScalarProperty Name="em_IdEmpleado" ColumnName="em_IdEmpleado" />
+          <ScalarProperty Name="em_tipoEmpleado" ColumnName="em_tipoEmpleado" />
+          <ScalarProperty Name="em_tipoIdentifica" ColumnName="em_tipoIdentifica" />
+          <ScalarProperty Name="em_Identifica" ColumnName="em_Identifica" />
+          <ScalarProperty Name="em_Nit" ColumnName="em_Nit" />
+          <ScalarProperty Name="em_Nombre1" ColumnName="em_Nombre1" />
+          <ScalarProperty Name="em_Nombre2" ColumnName="em_Nombre2" />
+          <ScalarProperty Name="em_Nombre3" ColumnName="em_Nombre3" />
+          <ScalarProperty Name="em_Apellido1" ColumnName="em_Apellido1" />
+          <ScalarProperty Name="em_Apellido2" ColumnName="em_Apellido2" />
+          <ScalarProperty Name="em_ApeCasada" ColumnName="em_ApeCasada" />
+          <ScalarProperty Name="em_nombrelargo" ColumnName="em_nombrelargo" />
+          <ScalarProperty Name="em_Alias" ColumnName="em_Alias" />
+          <ScalarProperty Name="em_genero" ColumnName="em_genero" />
+          <ScalarProperty Name="em_FechaNac" ColumnName="em_FechaNac" />
+          <ScalarProperty Name="em_ocupacion" ColumnName="em_ocupacion" />
+          <ScalarProperty Name="em_estadoCivil" ColumnName="em_estadoCivil" />
+          <ScalarProperty Name="em_estEmpleado" ColumnName="em_estEmpleado" />
+          <ScalarProperty Name="em_FechaIngreso" ColumnName="em_FechaIngreso" />
+          <ScalarProperty Name="em_FechaSalida" ColumnName="em_FechaSalida" />
+          <ScalarProperty Name="em_SueldoBase" ColumnName="em_SueldoBase" />
+          <ScalarProperty Name="em_Bonificacion" ColumnName="em_Bonificacion" />
+          <ScalarProperty Name="em_fechaing" ColumnName="em_fechaing" />
+          <ScalarProperty Name="em_fechamod" ColumnName="em_fechamod" />
+          <ScalarProperty Name="em_usuarioing" ColumnName="em_usuarioing" />
+          <ScalarProperty Name="em_usuariomod" ColumnName="em_usuariomod" />
+          <ScalarProperty Name="em_maquinaing" ColumnName="em_maquinaing" />
+          <ScalarProperty Name="em_maquinamod" ColumnName="em_maquinamod" />
+          <ScalarProperty Name="em_estado" ColumnName="em_estado" />
+          <ScalarProperty Name="em_timestamp" ColumnName="em_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horarios">
+      <EntityTypeMapping TypeName="SSS_PLANILLAModel.Horario">
+        <MappingFragment StoreEntitySet="Horario">
+          <ScalarProperty Name="ho_empresa" ColumnName="ho_empresa" />
+          <ScalarProperty Name="ho_IdHorario" ColumnName="ho_IdHorario" />
+          <ScalarProperty Name="ho_diaSemana" ColumnName="ho_diaSemana" />
+          <ScalarProperty Name="ho_Nombre" ColumnName="ho_Nombre" />
+          <ScalarProperty Name="ho_Descripcion" ColumnName="ho_Descripcion" />
+          <ScalarProperty Name="ho_HoraEntrada" ColumnName="ho_HoraEntrada" />
+          <ScalarProperty Name="ho_HoraSalida" ColumnName="ho_HoraSalida" />
+          <ScalarProperty Name="ho_HoraSalidaAlmuerzo" ColumnName="ho_HoraSalidaAlmuerzo" />
+          <ScalarProperty Name="ho_HoraEntradaAlmuerzo" ColumnName="ho_HoraEntradaAlmuerzo" />
+          <ScalarProperty Name="ho_fechaing" ColumnName="ho_fechaing" />
+          <ScalarProperty Name="ho_fechamod" ColumnName="ho_fechamod" />
+          <ScalarProperty Name="ho_usuarioing" ColumnName="ho_usuarioing" />
+          <ScalarProperty Name="ho_usuariomod" ColumnName="ho_usuariomod" />
+          <ScalarProperty Name="ho_maquinaing" ColumnName="ho_maquinaing" />
+          <ScalarProperty Name="ho_maquinamod" ColumnName="ho_maquinamod" />
+          <ScalarProperty Name="ho_estado" ColumnName="ho_estado" />
+          <ScalarProperty Name="ho_timestamp" ColumnName="ho_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HorarioEmpleadoes">
+      <EntityTypeMapping TypeName="SSS_PLANILLAModel.HorarioEmpleado">
+        <MappingFragment StoreEntitySet="HorarioEmpleado">
+          <ScalarProperty Name="he_empresa" ColumnName="he_empresa" />
+          <ScalarProperty Name="he_IdHorario" ColumnName="he_IdHorario" />
+          <ScalarProperty Name="he_diaSemana" ColumnName="he_diaSemana" />
+          <ScalarProperty Name="he_IdEmpleado" ColumnName="he_IdEmpleado" />
+          <ScalarProperty Name="he_fechaing" ColumnName="he_fechaing" />
+          <ScalarProperty Name="he_fechamod" ColumnName="he_fechamod" />
+          <ScalarProperty Name="he_usuarioing" ColumnName="he_usuarioing" />
+          <ScalarProperty Name="he_usuariomod" ColumnName="he_usuariomod" />
+          <ScalarProperty Name="he_maquinaing" ColumnName="he_maquinaing" />
+          <ScalarProperty Name="he_maquinamod" ColumnName="he_maquinamod" />
+          <ScalarProperty Name="he_estado" ColumnName="he_estado" />
+          <ScalarProperty Name="he_timestamp" ColumnName="he_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ABC_Empleado" FunctionName="SSS_PLANILLAModel.Store.sp_ABC_Empleado" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Horario" FunctionName="SSS_PLANILLAModel.Store.sp_ABC_Horario" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_HorarioEmpleado" FunctionName="SSS_PLANILLAModel.Store.sp_ABC_HorarioEmpleado" />
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Empleado" FunctionName="SSS_PLANILLAModel.Store.sp_Busqueda_Empleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PLANILLAModel.sp_Busqueda_Empleado_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="TipoEmpleado" ColumnName="TipoEmpleado" />
+          <ScalarProperty Name="NombreTipoEmpleado" ColumnName="NombreTipoEmpleado" />
+          <ScalarProperty Name="TipoIdentifica" ColumnName="TipoIdentifica" />
+          <ScalarProperty Name="NombreTipoIdentifica" ColumnName="NombreTipoIdentifica" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="Nit" ColumnName="Nit" />
+          <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+          <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+          <ScalarProperty Name="Nombre3" ColumnName="Nombre3" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="ApeCasada" ColumnName="ApeCasada" />
+          <ScalarProperty Name="NombreLargo" ColumnName="NombreLargo" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Ocupación" ColumnName="Ocupación" />
+          <ScalarProperty Name="DescripcionOcupacion" ColumnName="DescripcionOcupacion" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="DescripcionEstadoCivil" ColumnName="DescripcionEstadoCivil" />
+          <ScalarProperty Name="EstadoEmpleado" ColumnName="EstadoEmpleado" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+          <ScalarProperty Name="SueldoBase" ColumnName="SueldoBase" />
+          <ScalarProperty Name="Bonificacion" ColumnName="Bonificacion" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Horario" FunctionName="SSS_PLANILLAModel.Store.sp_Busqueda_Horario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PLANILLAModel.sp_Busqueda_Horario_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdHorario" ColumnName="IdHorario" />
+          <ScalarProperty Name="DiaSemana" ColumnName="DiaSemana" />
+          <ScalarProperty Name="NombreHorario" ColumnName="NombreHorario" />
+          <ScalarProperty Name="DescripcionHorario" ColumnName="DescripcionHorario" />
+          <ScalarProperty Name="HoraEntrada" ColumnName="HoraEntrada" />
+          <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+          <ScalarProperty Name="HoraSalidaAlmuerzo" ColumnName="HoraSalidaAlmuerzo" />
+          <ScalarProperty Name="HoraEntradaAlmuerzo" ColumnName="HoraEntradaAlmuerzo" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_HorarioEmpleado" FunctionName="SSS_PLANILLAModel.Store.sp_Busqueda_HorarioEmpleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_PLANILLAModel.sp_Busqueda_HorarioEmpleado_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdHorario" ColumnName="IdHorario" />
+          <ScalarProperty Name="DiaSemana" ColumnName="DiaSemana" />
+          <ScalarProperty Name="NombreHorario" ColumnName="NombreHorario" />
+          <ScalarProperty Name="DescripcionHorario" ColumnName="DescripcionHorario" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="NombreLargo" ColumnName="NombreLargo" />
+          <ScalarProperty Name="HoraEntrada" ColumnName="HoraEntrada" />
+          <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,56 @@
+﻿@model WebGrupo3S.Models.Proveedor
+
+@{
+    ViewBag.Title = "Proveedores";
+}
+
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Esta seguro que desea dar de baja siguiente registro?</h3>
+</div>
+<div class="body" style="width:700px">
+    <dl class="form-horizontal table-bordered">
+        <dt>
+            @Html.Label("Tipo de proveedor")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pv_tipoProveedor)
+        </dd>
+
+        <dt>
+            @Html.Label("Nombre1")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pv_nombre1)
+        </dd>
+
+        <dt>
+            @Html.Label("Nombre2")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pv_nombre2)
+        </dd>
+
+        <dt>
+            @Html.Label("Nit")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pv_nit)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="footer" style="width:700px">
+            <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "Proveedors")'"><i class="glyphicon glyphicon-remove"></i>No</button>
+            <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i> Si</button>
+        </div>
+    }
+</div>
+

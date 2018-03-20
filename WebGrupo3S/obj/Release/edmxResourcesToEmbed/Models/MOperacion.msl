@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SSS_OPERACIONModelStoreContainer" CdmEntityContainer="SSS_OPERACIONEntities">
+    <EntitySetMapping Name="ArqueoCaja">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.ArqueoCaja">
+        <MappingFragment StoreEntitySet="ArqueoCaja">
+          <ScalarProperty Name="aq_empresa" ColumnName="aq_empresa" />
+          <ScalarProperty Name="aq_IdCierreCaja" ColumnName="aq_IdCierreCaja" />
+          <ScalarProperty Name="aq_IdArqueoCaja" ColumnName="aq_IdArqueoCaja" />
+          <ScalarProperty Name="aq_Moneda" ColumnName="aq_Moneda" />
+          <ScalarProperty Name="aq_PresentacionMoneda" ColumnName="aq_PresentacionMoneda" />
+          <ScalarProperty Name="aq_Denominacion" ColumnName="aq_Denominacion" />
+          <ScalarProperty Name="aq_Cantidad" ColumnName="aq_Cantidad" />
+          <ScalarProperty Name="aq_MontoTotal" ColumnName="aq_MontoTotal" />
+          <ScalarProperty Name="aq_fechaing" ColumnName="aq_fechaing" />
+          <ScalarProperty Name="aq_fechamod" ColumnName="aq_fechamod" />
+          <ScalarProperty Name="aq_usuarioing" ColumnName="aq_usuarioing" />
+          <ScalarProperty Name="aq_usuariomod" ColumnName="aq_usuariomod" />
+          <ScalarProperty Name="aq_maquinaing" ColumnName="aq_maquinaing" />
+          <ScalarProperty Name="aq_maquinamod" ColumnName="aq_maquinamod" />
+          <ScalarProperty Name="aq_estado" ColumnName="aq_estado" />
+          <ScalarProperty Name="aq_timestamp" ColumnName="aq_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CierreCaja">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.CierreCaja">
+        <MappingFragment StoreEntitySet="CierreCaja">
+          <ScalarProperty Name="cj_empresa" ColumnName="cj_empresa" />
+          <ScalarProperty Name="cj_IdCierreCaja" ColumnName="cj_IdCierreCaja" />
+          <ScalarProperty Name="cj_Terminal" ColumnName="cj_Terminal" />
+          <ScalarProperty Name="cj_IdSucursal" ColumnName="cj_IdSucursal" />
+          <ScalarProperty Name="cj_FechaHoraCierre" ColumnName="cj_FechaHoraCierre" />
+          <ScalarProperty Name="cj_Moneda" ColumnName="cj_Moneda" />
+          <ScalarProperty Name="cj_SaldoAnterior" ColumnName="cj_SaldoAnterior" />
+          <ScalarProperty Name="cj_EntradasEfectivo" ColumnName="cj_EntradasEfectivo" />
+          <ScalarProperty Name="cj_SalidasEfectivo" ColumnName="cj_SalidasEfectivo" />
+          <ScalarProperty Name="cj_EfectivoTeorico" ColumnName="cj_EfectivoTeorico" />
+          <ScalarProperty Name="cj_EfectivoFisico" ColumnName="cj_EfectivoFisico" />
+          <ScalarProperty Name="cj_AjusteEfectivo" ColumnName="cj_AjusteEfectivo" />
+          <ScalarProperty Name="cj_ChequeTeorico" ColumnName="cj_ChequeTeorico" />
+          <ScalarProperty Name="cj_ChequeFisico" ColumnName="cj_ChequeFisico" />
+          <ScalarProperty Name="cj_AjusteCheque" ColumnName="cj_AjusteCheque" />
+          <ScalarProperty Name="cj_TarjetaTeorico" ColumnName="cj_TarjetaTeorico" />
+          <ScalarProperty Name="cj_TarjetaFisico" ColumnName="cj_TarjetaFisico" />
+          <ScalarProperty Name="cj_AjusteTarjeta" ColumnName="cj_AjusteTarjeta" />
+          <ScalarProperty Name="cj_Descuadre" ColumnName="cj_Descuadre" />
+          <ScalarProperty Name="cj_RetiroEfectivoAdmin" ColumnName="cj_RetiroEfectivoAdmin" />
+          <ScalarProperty Name="cj_SaldoActual" ColumnName="cj_SaldoActual" />
+          <ScalarProperty Name="cj_estCierreCaja" ColumnName="cj_estCierreCaja" />
+          <ScalarProperty Name="cj_TotalVenta" ColumnName="cj_TotalVenta" />
+          <ScalarProperty Name="cj_TotalPropina" ColumnName="cj_TotalPropina" />
+          <ScalarProperty Name="cj_fechaing" ColumnName="cj_fechaing" />
+          <ScalarProperty Name="cj_fechamod" ColumnName="cj_fechamod" />
+          <ScalarProperty Name="cj_usuarioing" ColumnName="cj_usuarioing" />
+          <ScalarProperty Name="cj_usuariomod" ColumnName="cj_usuariomod" />
+          <ScalarProperty Name="cj_maquinaing" ColumnName="cj_maquinaing" />
+          <ScalarProperty Name="cj_maquinamod" ColumnName="cj_maquinamod" />
+          <ScalarProperty Name="cj_estado" ColumnName="cj_estado" />
+          <ScalarProperty Name="cj_timestamp" ColumnName="cj_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CierreDiario">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.CierreDiario">
+        <MappingFragment StoreEntitySet="CierreDiario">
+          <ScalarProperty Name="cd_empresa" ColumnName="cd_empresa" />
+          <ScalarProperty Name="cd_IdSucursal" ColumnName="cd_IdSucursal" />
+          <ScalarProperty Name="cd_IdCierreDiario" ColumnName="cd_IdCierreDiario" />
+          <ScalarProperty Name="cd_FechaCierreDiario" ColumnName="cd_FechaCierreDiario" />
+          <ScalarProperty Name="cd_estCierreDiario" ColumnName="cd_estCierreDiario" />
+          <ScalarProperty Name="cd_fechaing" ColumnName="cd_fechaing" />
+          <ScalarProperty Name="cd_fechamod" ColumnName="cd_fechamod" />
+          <ScalarProperty Name="cd_usuarioing" ColumnName="cd_usuarioing" />
+          <ScalarProperty Name="cd_usuariomod" ColumnName="cd_usuariomod" />
+          <ScalarProperty Name="cd_maquinaing" ColumnName="cd_maquinaing" />
+          <ScalarProperty Name="cd_maquinamod" ColumnName="cd_maquinamod" />
+          <ScalarProperty Name="cd_estado" ColumnName="cd_estado" />
+          <ScalarProperty Name="cd_timestamp" ColumnName="cd_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CuentaXCobrar">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.CuentaXCobrar">
+        <MappingFragment StoreEntitySet="CuentaXCobrar">
+          <ScalarProperty Name="cc_empresa" ColumnName="cc_empresa" />
+          <ScalarProperty Name="cc_IdCuentaXCobrar" ColumnName="cc_IdCuentaXCobrar" />
+          <ScalarProperty Name="cc_Cliente" ColumnName="cc_Cliente" />
+          <ScalarProperty Name="cc_Saldo" ColumnName="cc_Saldo" />
+          <ScalarProperty Name="cc_fechaUltMov" ColumnName="cc_fechaUltMov" />
+          <ScalarProperty Name="cc_MontoUltMov" ColumnName="cc_MontoUltMov" />
+          <ScalarProperty Name="cc_estCuentaXCobrar" ColumnName="cc_estCuentaXCobrar" />
+          <ScalarProperty Name="cc_fechaing" ColumnName="cc_fechaing" />
+          <ScalarProperty Name="cc_fechamod" ColumnName="cc_fechamod" />
+          <ScalarProperty Name="cc_usuarioing" ColumnName="cc_usuarioing" />
+          <ScalarProperty Name="cc_usuariomod" ColumnName="cc_usuariomod" />
+          <ScalarProperty Name="cc_maquinaing" ColumnName="cc_maquinaing" />
+          <ScalarProperty Name="cc_maquinamod" ColumnName="cc_maquinamod" />
+          <ScalarProperty Name="cc_estado" ColumnName="cc_estado" />
+          <ScalarProperty Name="cc_timestamp" ColumnName="cc_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Descuento">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.Descuento">
+        <MappingFragment StoreEntitySet="Descuento">
+          <ScalarProperty Name="ds_empresa" ColumnName="ds_empresa" />
+          <ScalarProperty Name="ds_IdDescuento" ColumnName="ds_IdDescuento" />
+          <ScalarProperty Name="ds_IdSucursal" ColumnName="ds_IdSucursal" />
+          <ScalarProperty Name="ds_TipoDescuento" ColumnName="ds_TipoDescuento" />
+          <ScalarProperty Name="ds_Descripcion" ColumnName="ds_Descripcion" />
+          <ScalarProperty Name="ds_Porcentaje" ColumnName="ds_Porcentaje" />
+          <ScalarProperty Name="ds_Cantidad" ColumnName="ds_Cantidad" />
+          <ScalarProperty Name="ds_IdDoc" ColumnName="ds_IdDoc" />
+          <ScalarProperty Name="ds_IdMov" ColumnName="ds_IdMov" />
+          <ScalarProperty Name="ds_IdAutorizacion" ColumnName="ds_IdAutorizacion" />
+          <ScalarProperty Name="ds_IdMovDescuento" ColumnName="ds_IdMovDescuento" />
+          <ScalarProperty Name="ds_Comentario" ColumnName="ds_Comentario" />
+          <ScalarProperty Name="ds_fechaing" ColumnName="ds_fechaing" />
+          <ScalarProperty Name="ds_fechamod" ColumnName="ds_fechamod" />
+          <ScalarProperty Name="ds_usuarioing" ColumnName="ds_usuarioing" />
+          <ScalarProperty Name="ds_usuariomod" ColumnName="ds_usuariomod" />
+          <ScalarProperty Name="ds_maquinaing" ColumnName="ds_maquinaing" />
+          <ScalarProperty Name="ds_maquinamod" ColumnName="ds_maquinamod" />
+          <ScalarProperty Name="ds_estado" ColumnName="ds_estado" />
+          <ScalarProperty Name="ds_timestamp" ColumnName="ds_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleCierreCaja">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.DetalleCierreCaja">
+        <MappingFragment StoreEntitySet="DetalleCierreCaja">
+          <ScalarProperty Name="dj_empresa" ColumnName="dj_empresa" />
+          <ScalarProperty Name="dj_IdCierreCaja" ColumnName="dj_IdCierreCaja" />
+          <ScalarProperty Name="dj_IdDetalleCierreCaja" ColumnName="dj_IdDetalleCierreCaja" />
+          <ScalarProperty Name="dj_IdFormaPago" ColumnName="dj_IdFormaPago" />
+          <ScalarProperty Name="dj_Monto" ColumnName="dj_Monto" />
+          <ScalarProperty Name="dj_fechaing" ColumnName="dj_fechaing" />
+          <ScalarProperty Name="dj_fechamod" ColumnName="dj_fechamod" />
+          <ScalarProperty Name="dj_usuarioing" ColumnName="dj_usuarioing" />
+          <ScalarProperty Name="dj_usuariomod" ColumnName="dj_usuariomod" />
+          <ScalarProperty Name="dj_maquinaing" ColumnName="dj_maquinaing" />
+          <ScalarProperty Name="dj_maquinamod" ColumnName="dj_maquinamod" />
+          <ScalarProperty Name="dj_estado" ColumnName="dj_estado" />
+          <ScalarProperty Name="dj_timestamp" ColumnName="dj_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documento">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.Documento">
+        <MappingFragment StoreEntitySet="Documento">
+          <ScalarProperty Name="dm_empresa" ColumnName="dm_empresa" />
+          <ScalarProperty Name="dm_IdSucursal" ColumnName="dm_IdSucursal" />
+          <ScalarProperty Name="dm_IdDoc" ColumnName="dm_IdDoc" />
+          <ScalarProperty Name="dm_TipoDocumento" ColumnName="dm_TipoDocumento" />
+          <ScalarProperty Name="dm_TipoAsociado" ColumnName="dm_TipoAsociado" />
+          <ScalarProperty Name="dm_asociado" ColumnName="dm_asociado" />
+          <ScalarProperty Name="dm_NombreAsociado" ColumnName="dm_NombreAsociado" />
+          <ScalarProperty Name="dm_DireccionAsociado" ColumnName="dm_DireccionAsociado" />
+          <ScalarProperty Name="dm_Nit" ColumnName="dm_Nit" />
+          <ScalarProperty Name="dm_subtotal" ColumnName="dm_subtotal" />
+          <ScalarProperty Name="dm_descuento" ColumnName="dm_descuento" />
+          <ScalarProperty Name="dm_total" ColumnName="dm_total" />
+          <ScalarProperty Name="dm_SerieDoc" ColumnName="dm_SerieDoc" />
+          <ScalarProperty Name="dm_NoDocumento" ColumnName="dm_NoDocumento" />
+          <ScalarProperty Name="dm_fechaDoc" ColumnName="dm_fechaDoc" />
+          <ScalarProperty Name="dm_EstDocumento" ColumnName="dm_EstDocumento" />
+          <ScalarProperty Name="dm_Terminal" ColumnName="dm_Terminal" />
+          <ScalarProperty Name="dm_MotivoAnulacion" ColumnName="dm_MotivoAnulacion" />
+          <ScalarProperty Name="dm_MotivoNCND" ColumnName="dm_MotivoNCND" />
+          <ScalarProperty Name="dm_Comentario" ColumnName="dm_Comentario" />
+          <ScalarProperty Name="dm_IdDocAnulado" ColumnName="dm_IdDocAnulado" />
+          <ScalarProperty Name="dm_IdCierreDiario" ColumnName="dm_IdCierreDiario" />
+          <ScalarProperty Name="dm_fechaing" ColumnName="dm_fechaing" />
+          <ScalarProperty Name="dm_fechamod" ColumnName="dm_fechamod" />
+          <ScalarProperty Name="dm_usuarioing" ColumnName="dm_usuarioing" />
+          <ScalarProperty Name="dm_usuariomod" ColumnName="dm_usuariomod" />
+          <ScalarProperty Name="dm_maquinaing" ColumnName="dm_maquinaing" />
+          <ScalarProperty Name="dm_maquinamod" ColumnName="dm_maquinamod" />
+          <ScalarProperty Name="dm_estado" ColumnName="dm_estado" />
+          <ScalarProperty Name="dm_timestamp" ColumnName="dm_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Existencia">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.Existencia">
+        <MappingFragment StoreEntitySet="Existencia">
+          <ScalarProperty Name="ex_empresa" ColumnName="ex_empresa" />
+          <ScalarProperty Name="ex_IdSucursal" ColumnName="ex_IdSucursal" />
+          <ScalarProperty Name="ex_IdExistencia" ColumnName="ex_IdExistencia" />
+          <ScalarProperty Name="ex_TipoProducto" ColumnName="ex_TipoProducto" />
+          <ScalarProperty Name="ex_IdProd" ColumnName="ex_IdProd" />
+          <ScalarProperty Name="ex_cantidad" ColumnName="ex_cantidad" />
+          <ScalarProperty Name="ex_precioUnitario" ColumnName="ex_precioUnitario" />
+          <ScalarProperty Name="ex_FechaCaducidad" ColumnName="ex_FechaCaducidad" />
+          <ScalarProperty Name="ex_fechaing" ColumnName="ex_fechaing" />
+          <ScalarProperty Name="ex_fechamod" ColumnName="ex_fechamod" />
+          <ScalarProperty Name="ex_usuarioing" ColumnName="ex_usuarioing" />
+          <ScalarProperty Name="ex_usuariomod" ColumnName="ex_usuariomod" />
+          <ScalarProperty Name="ex_maquinaing" ColumnName="ex_maquinaing" />
+          <ScalarProperty Name="ex_maquinamod" ColumnName="ex_maquinamod" />
+          <ScalarProperty Name="ex_estado" ColumnName="ex_estado" />
+          <ScalarProperty Name="ex_timestamp" ColumnName="ex_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacturaFormaPago">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.FacturaFormaPago">
+        <MappingFragment StoreEntitySet="FacturaFormaPago">
+          <ScalarProperty Name="fp_empresa" ColumnName="fp_empresa" />
+          <ScalarProperty Name="fp_IdFacturaFormaPago" ColumnName="fp_IdFacturaFormaPago" />
+          <ScalarProperty Name="fp_IdSucursal" ColumnName="fp_IdSucursal" />
+          <ScalarProperty Name="fp_IdDoc" ColumnName="fp_IdDoc" />
+          <ScalarProperty Name="fp_IdMovDocPromo" ColumnName="fp_IdMovDocPromo" />
+          <ScalarProperty Name="fp_IdFormaPago" ColumnName="fp_IdFormaPago" />
+          <ScalarProperty Name="fp_IdAutorizacion" ColumnName="fp_IdAutorizacion" />
+          <ScalarProperty Name="fp_Cantidad" ColumnName="fp_Cantidad" />
+          <ScalarProperty Name="fp_Unidades" ColumnName="fp_Unidades" />
+          <ScalarProperty Name="fp_NoDocumento" ColumnName="fp_NoDocumento" />
+          <ScalarProperty Name="fp_IdBanco" ColumnName="fp_IdBanco" />
+          <ScalarProperty Name="fp_IdMarcaTarjeta" ColumnName="fp_IdMarcaTarjeta" />
+          <ScalarProperty Name="fp_Comentario" ColumnName="fp_Comentario" />
+          <ScalarProperty Name="fp_Moneda" ColumnName="fp_Moneda" />
+          <ScalarProperty Name="fp_TasaCambio" ColumnName="fp_TasaCambio" />
+          <ScalarProperty Name="fp_CantidadOriginal" ColumnName="fp_CantidadOriginal" />
+          <ScalarProperty Name="fp_IdCierreCaja" ColumnName="fp_IdCierreCaja" />
+          <ScalarProperty Name="fp_ConfirmaCierreCaja" ColumnName="fp_ConfirmaCierreCaja" />
+          <ScalarProperty Name="fp_efectivoRecibido" ColumnName="fp_efectivoRecibido" />
+          <ScalarProperty Name="fp_efectivoVuelto" ColumnName="fp_efectivoVuelto" />
+          <ScalarProperty Name="fp_fechaing" ColumnName="fp_fechaing" />
+          <ScalarProperty Name="fp_fechamod" ColumnName="fp_fechamod" />
+          <ScalarProperty Name="fp_usuarioing" ColumnName="fp_usuarioing" />
+          <ScalarProperty Name="fp_usuariomod" ColumnName="fp_usuariomod" />
+          <ScalarProperty Name="fp_maquinaing" ColumnName="fp_maquinaing" />
+          <ScalarProperty Name="fp_maquinamod" ColumnName="fp_maquinamod" />
+          <ScalarProperty Name="fp_estado" ColumnName="fp_estado" />
+          <ScalarProperty Name="fp_timestamp" ColumnName="fp_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HorarioSucursal">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.HorarioSucursal">
+        <MappingFragment StoreEntitySet="HorarioSucursal">
+          <ScalarProperty Name="hs_empresa" ColumnName="hs_empresa" />
+          <ScalarProperty Name="hs_IdSucursal" ColumnName="hs_IdSucursal" />
+          <ScalarProperty Name="hs_dia" ColumnName="hs_dia" />
+          <ScalarProperty Name="hs_Hora" ColumnName="hs_Hora" />
+          <ScalarProperty Name="hs_fechaing" ColumnName="hs_fechaing" />
+          <ScalarProperty Name="hs_fechamod" ColumnName="hs_fechamod" />
+          <ScalarProperty Name="hs_usuarioing" ColumnName="hs_usuarioing" />
+          <ScalarProperty Name="hs_usuariomod" ColumnName="hs_usuariomod" />
+          <ScalarProperty Name="hs_maquinaing" ColumnName="hs_maquinaing" />
+          <ScalarProperty Name="hs_maquinamod" ColumnName="hs_maquinamod" />
+          <ScalarProperty Name="hs_estado" ColumnName="hs_estado" />
+          <ScalarProperty Name="hs_timestamp" ColumnName="hs_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movimiento">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.Movimiento">
+        <MappingFragment StoreEntitySet="Movimiento">
+          <ScalarProperty Name="mv_empresa" ColumnName="mv_empresa" />
+          <ScalarProperty Name="mv_IdSucursal" ColumnName="mv_IdSucursal" />
+          <ScalarProperty Name="mv_IdMov" ColumnName="mv_IdMov" />
+          <ScalarProperty Name="mv_ProdServ" ColumnName="mv_ProdServ" />
+          <ScalarProperty Name="mv_IdProdServ" ColumnName="mv_IdProdServ" />
+          <ScalarProperty Name="mv_Cantidad" ColumnName="mv_Cantidad" />
+          <ScalarProperty Name="mv_ValorMov" ColumnName="mv_ValorMov" />
+          <ScalarProperty Name="mv_TipoMovimiento" ColumnName="mv_TipoMovimiento" />
+          <ScalarProperty Name="mv_FechaMov" ColumnName="mv_FechaMov" />
+          <ScalarProperty Name="mv_IdDoc" ColumnName="mv_IdDoc" />
+          <ScalarProperty Name="mv_IdOrdenServicio" ColumnName="mv_IdOrdenServicio" />
+          <ScalarProperty Name="mv_IdDetalleOrdenServicio" ColumnName="mv_IdDetalleOrdenServicio" />
+          <ScalarProperty Name="mv_IdAutorizacion" ColumnName="mv_IdAutorizacion" />
+          <ScalarProperty Name="mv_fechaing" ColumnName="mv_fechaing" />
+          <ScalarProperty Name="mv_fechamod" ColumnName="mv_fechamod" />
+          <ScalarProperty Name="mv_usuarioing" ColumnName="mv_usuarioing" />
+          <ScalarProperty Name="mv_usuariomod" ColumnName="mv_usuariomod" />
+          <ScalarProperty Name="mv_maquinaing" ColumnName="mv_maquinaing" />
+          <ScalarProperty Name="mv_maquinamod" ColumnName="mv_maquinamod" />
+          <ScalarProperty Name="mv_estado" ColumnName="mv_estado" />
+          <ScalarProperty Name="mv_timestamp" ColumnName="mv_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovimientoCuentaXCobrar">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.MovimientoCuentaXCobrar">
+        <MappingFragment StoreEntitySet="MovimientoCuentaXCobrar">
+          <ScalarProperty Name="mc_empresa" ColumnName="mc_empresa" />
+          <ScalarProperty Name="mc_IdCuentaXCobrar" ColumnName="mc_IdCuentaXCobrar" />
+          <ScalarProperty Name="mc_IdMovCuentaXCobrar" ColumnName="mc_IdMovCuentaXCobrar" />
+          <ScalarProperty Name="mc_IdSucursal" ColumnName="mc_IdSucursal" />
+          <ScalarProperty Name="mc_IdDoc" ColumnName="mc_IdDoc" />
+          <ScalarProperty Name="mc_Cliente" ColumnName="mc_Cliente" />
+          <ScalarProperty Name="mc_FechaMov" ColumnName="mc_FechaMov" />
+          <ScalarProperty Name="mc_MontoMov" ColumnName="mc_MontoMov" />
+          <ScalarProperty Name="mc_CreditoDebito" ColumnName="mc_CreditoDebito" />
+          <ScalarProperty Name="mc_Descripcion" ColumnName="mc_Descripcion" />
+          <ScalarProperty Name="mc_estMovCuentaXCobrar" ColumnName="mc_estMovCuentaXCobrar" />
+          <ScalarProperty Name="mc_fechaing" ColumnName="mc_fechaing" />
+          <ScalarProperty Name="mc_fechamod" ColumnName="mc_fechamod" />
+          <ScalarProperty Name="mc_usuarioing" ColumnName="mc_usuarioing" />
+          <ScalarProperty Name="mc_usuariomod" ColumnName="mc_usuariomod" />
+          <ScalarProperty Name="mc_maquinaing" ColumnName="mc_maquinaing" />
+          <ScalarProperty Name="mc_maquinamod" ColumnName="mc_maquinamod" />
+          <ScalarProperty Name="mc_estado" ColumnName="mc_estado" />
+          <ScalarProperty Name="mc_timestamp" ColumnName="mc_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrecioProductoServicio">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.PrecioProductoServicio">
+        <MappingFragment StoreEntitySet="PrecioProductoServicio">
+          <ScalarProperty Name="pp_empresa" ColumnName="pp_empresa" />
+          <ScalarProperty Name="pp_IdPrecProdServ" ColumnName="pp_IdPrecProdServ" />
+          <ScalarProperty Name="pp_TipoPrecio" ColumnName="pp_TipoPrecio" />
+          <ScalarProperty Name="pp_IdProdServ" ColumnName="pp_IdProdServ" />
+          <ScalarProperty Name="pp_precio" ColumnName="pp_precio" />
+          <ScalarProperty Name="pp_PrecioMaximo" ColumnName="pp_PrecioMaximo" />
+          <ScalarProperty Name="pp_fechaVigencia" ColumnName="pp_fechaVigencia" />
+          <ScalarProperty Name="pp_fechaing" ColumnName="pp_fechaing" />
+          <ScalarProperty Name="pp_fechamod" ColumnName="pp_fechamod" />
+          <ScalarProperty Name="pp_usuarioing" ColumnName="pp_usuarioing" />
+          <ScalarProperty Name="pp_usuariomod" ColumnName="pp_usuariomod" />
+          <ScalarProperty Name="pp_maquinaing" ColumnName="pp_maquinaing" />
+          <ScalarProperty Name="pp_maquinamod" ColumnName="pp_maquinamod" />
+          <ScalarProperty Name="pp_estado" ColumnName="pp_estado" />
+          <ScalarProperty Name="pp_timestamp" ColumnName="pp_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="pr_empresa" ColumnName="pr_empresa" />
+          <ScalarProperty Name="pr_TipoProducto" ColumnName="pr_TipoProducto" />
+          <ScalarProperty Name="pr_IdProd" ColumnName="pr_IdProd" />
+          <ScalarProperty Name="pr_nombre" ColumnName="pr_nombre" />
+          <ScalarProperty Name="pr_descripcion" ColumnName="pr_descripcion" />
+          <ScalarProperty Name="pr_CodigoBarras" ColumnName="pr_CodigoBarras" />
+          <ScalarProperty Name="pr_CodigoSAP" ColumnName="pr_CodigoSAP" />
+          <ScalarProperty Name="pr_IdMarca" ColumnName="pr_IdMarca" />
+          <ScalarProperty Name="pr_ImagenProd" ColumnName="pr_ImagenProd" />
+          <ScalarProperty Name="pr_fechaing" ColumnName="pr_fechaing" />
+          <ScalarProperty Name="pr_fechamod" ColumnName="pr_fechamod" />
+          <ScalarProperty Name="pr_usuarioing" ColumnName="pr_usuarioing" />
+          <ScalarProperty Name="pr_usuariomod" ColumnName="pr_usuariomod" />
+          <ScalarProperty Name="pr_maquinaing" ColumnName="pr_maquinaing" />
+          <ScalarProperty Name="pr_maquinamod" ColumnName="pr_maquinamod" />
+          <ScalarProperty Name="pr_estado" ColumnName="pr_estado" />
+          <ScalarProperty Name="pr_timestamp" ColumnName="pr_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Propina">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.Propina">
+        <MappingFragment StoreEntitySet="Propina">
+          <ScalarProperty Name="pn_empresa" ColumnName="pn_empresa" />
+          <ScalarProperty Name="pn_IdSucursal" ColumnName="pn_IdSucursal" />
+          <ScalarProperty Name="pn_IdPropina" ColumnName="pn_IdPropina" />
+          <ScalarProperty Name="pn_IdOrdenPago" ColumnName="pn_IdOrdenPago" />
+          <ScalarProperty Name="pn_IdOrdenServicio" ColumnName="pn_IdOrdenServicio" />
+          <ScalarProperty Name="pn_IdDetalleOrdenServicio" ColumnName="pn_IdDetalleOrdenServicio" />
+          <ScalarProperty Name="pn_Cantidad" ColumnName="pn_Cantidad" />
+          <ScalarProperty Name="pn_fechaing" ColumnName="pn_fechaing" />
+          <ScalarProperty Name="pn_fechamod" ColumnName="pn_fechamod" />
+          <ScalarProperty Name="pn_usuarioing" ColumnName="pn_usuarioing" />
+          <ScalarProperty Name="pn_usuariomod" ColumnName="pn_usuariomod" />
+          <ScalarProperty Name="pn_maquinaing" ColumnName="pn_maquinaing" />
+          <ScalarProperty Name="pn_maquinamod" ColumnName="pn_maquinamod" />
+          <ScalarProperty Name="pn_estado" ColumnName="pn_estado" />
+          <ScalarProperty Name="pn_timestamp" ColumnName="pn_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalidaEfectivoCaja">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.SalidaEfectivoCaja">
+        <MappingFragment StoreEntitySet="SalidaEfectivoCaja">
+          <ScalarProperty Name="sc_empresa" ColumnName="sc_empresa" />
+          <ScalarProperty Name="sc_IdSalidaEfectivo" ColumnName="sc_IdSalidaEfectivo" />
+          <ScalarProperty Name="sc_IdSucursal" ColumnName="sc_IdSucursal" />
+          <ScalarProperty Name="sc_FechaHoraSEC" ColumnName="sc_FechaHoraSEC" />
+          <ScalarProperty Name="sc_MotivoSalidaEfectivo" ColumnName="sc_MotivoSalidaEfectivo" />
+          <ScalarProperty Name="sc_Monto" ColumnName="sc_Monto" />
+          <ScalarProperty Name="sc_Moneda" ColumnName="sc_Moneda" />
+          <ScalarProperty Name="sc_IdAutorizacion" ColumnName="sc_IdAutorizacion" />
+          <ScalarProperty Name="sc_IdCierreCaja" ColumnName="sc_IdCierreCaja" />
+          <ScalarProperty Name="sc_ConfirmaCierreCaja" ColumnName="sc_ConfirmaCierreCaja" />
+          <ScalarProperty Name="sc_IdDoc" ColumnName="sc_IdDoc" />
+          <ScalarProperty Name="sc_IdFacturaFormaPago" ColumnName="sc_IdFacturaFormaPago" />
+          <ScalarProperty Name="sc_fechaing" ColumnName="sc_fechaing" />
+          <ScalarProperty Name="sc_fechamod" ColumnName="sc_fechamod" />
+          <ScalarProperty Name="sc_usuarioing" ColumnName="sc_usuarioing" />
+          <ScalarProperty Name="sc_usuariomod" ColumnName="sc_usuariomod" />
+          <ScalarProperty Name="sc_maquinaing" ColumnName="sc_maquinaing" />
+          <ScalarProperty Name="sc_maquinamod" ColumnName="sc_maquinamod" />
+          <ScalarProperty Name="sc_estado" ColumnName="sc_estado" />
+          <ScalarProperty Name="sc_timestamp" ColumnName="sc_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SerieFactura">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.SerieFactura">
+        <MappingFragment StoreEntitySet="SerieFactura">
+          <ScalarProperty Name="sf_empresa" ColumnName="sf_empresa" />
+          <ScalarProperty Name="sf_IdSucursal" ColumnName="sf_IdSucursal" />
+          <ScalarProperty Name="sf_IdSerieFactura" ColumnName="sf_IdSerieFactura" />
+          <ScalarProperty Name="sf_Terminal" ColumnName="sf_Terminal" />
+          <ScalarProperty Name="sf_TipoCorrelativo" ColumnName="sf_TipoCorrelativo" />
+          <ScalarProperty Name="sf_Serie" ColumnName="sf_Serie" />
+          <ScalarProperty Name="sf_RangoInicio" ColumnName="sf_RangoInicio" />
+          <ScalarProperty Name="sf_RangoFinal" ColumnName="sf_RangoFinal" />
+          <ScalarProperty Name="sf_NoFactura" ColumnName="sf_NoFactura" />
+          <ScalarProperty Name="sf_fechaVigencia" ColumnName="sf_fechaVigencia" />
+          <ScalarProperty Name="sf_estRegistro" ColumnName="sf_estRegistro" />
+          <ScalarProperty Name="sf_fechaing" ColumnName="sf_fechaing" />
+          <ScalarProperty Name="sf_fechamod" ColumnName="sf_fechamod" />
+          <ScalarProperty Name="sf_usuarioing" ColumnName="sf_usuarioing" />
+          <ScalarProperty Name="sf_usuariomod" ColumnName="sf_usuariomod" />
+          <ScalarProperty Name="sf_maquinaing" ColumnName="sf_maquinaing" />
+          <ScalarProperty Name="sf_maquinamod" ColumnName="sf_maquinamod" />
+          <ScalarProperty Name="sf_estado" ColumnName="sf_estado" />
+          <ScalarProperty Name="sf_timestamp" ColumnName="sf_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicio">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.Servicio">
+        <MappingFragment StoreEntitySet="Servicio">
+          <ScalarProperty Name="sv_empresa" ColumnName="sv_empresa" />
+          <ScalarProperty Name="sv_TipoServicio" ColumnName="sv_TipoServicio" />
+          <ScalarProperty Name="sv_IdServicio" ColumnName="sv_IdServicio" />
+          <ScalarProperty Name="sv_nombre" ColumnName="sv_nombre" />
+          <ScalarProperty Name="sv_descripcion" ColumnName="sv_descripcion" />
+          <ScalarProperty Name="sv_duracionServicio" ColumnName="sv_duracionServicio" />
+          <ScalarProperty Name="sv_fechaing" ColumnName="sv_fechaing" />
+          <ScalarProperty Name="sv_fechamod" ColumnName="sv_fechamod" />
+          <ScalarProperty Name="sv_usuarioing" ColumnName="sv_usuarioing" />
+          <ScalarProperty Name="sv_usuariomod" ColumnName="sv_usuariomod" />
+          <ScalarProperty Name="sv_maquinaing" ColumnName="sv_maquinaing" />
+          <ScalarProperty Name="sv_maquinamod" ColumnName="sv_maquinamod" />
+          <ScalarProperty Name="sv_estado" ColumnName="sv_estado" />
+          <ScalarProperty Name="sv_timestamp" ColumnName="sv_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sucursal">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.Sucursal">
+        <MappingFragment StoreEntitySet="Sucursal">
+          <ScalarProperty Name="su_empresa" ColumnName="su_empresa" />
+          <ScalarProperty Name="su_IdSucursal" ColumnName="su_IdSucursal" />
+          <ScalarProperty Name="su_Nombre" ColumnName="su_Nombre" />
+          <ScalarProperty Name="su_Encargado" ColumnName="su_Encargado" />
+          <ScalarProperty Name="su_Direccion" ColumnName="su_Direccion" />
+          <ScalarProperty Name="su_Telefono" ColumnName="su_Telefono" />
+          <ScalarProperty Name="su_fechaing" ColumnName="su_fechaing" />
+          <ScalarProperty Name="su_fechamod" ColumnName="su_fechamod" />
+          <ScalarProperty Name="su_usuarioing" ColumnName="su_usuarioing" />
+          <ScalarProperty Name="su_usuariomod" ColumnName="su_usuariomod" />
+          <ScalarProperty Name="su_maquinaing" ColumnName="su_maquinaing" />
+          <ScalarProperty Name="su_maquinamod" ColumnName="su_maquinamod" />
+          <ScalarProperty Name="su_estado" ColumnName="su_estado" />
+          <ScalarProperty Name="su_timestamp" ColumnName="su_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoProducto">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.TipoProducto">
+        <MappingFragment StoreEntitySet="TipoProducto">
+          <ScalarProperty Name="tp_empresa" ColumnName="tp_empresa" />
+          <ScalarProperty Name="tp_IdTipoProducto" ColumnName="tp_IdTipoProducto" />
+          <ScalarProperty Name="tp_ClasificacionTP" ColumnName="tp_ClasificacionTP" />
+          <ScalarProperty Name="tp_nombre" ColumnName="tp_nombre" />
+          <ScalarProperty Name="tp_descripcion" ColumnName="tp_descripcion" />
+          <ScalarProperty Name="tp_padre" ColumnName="tp_padre" />
+          <ScalarProperty Name="tp_fechaing" ColumnName="tp_fechaing" />
+          <ScalarProperty Name="tp_fechamod" ColumnName="tp_fechamod" />
+          <ScalarProperty Name="tp_usuarioing" ColumnName="tp_usuarioing" />
+          <ScalarProperty Name="tp_usuariomod" ColumnName="tp_usuariomod" />
+          <ScalarProperty Name="tp_maquinaing" ColumnName="tp_maquinaing" />
+          <ScalarProperty Name="tp_maquinamod" ColumnName="tp_maquinamod" />
+          <ScalarProperty Name="tp_estado" ColumnName="tp_estado" />
+          <ScalarProperty Name="tp_timestamp" ColumnName="tp_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoServicio">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.TipoServicio">
+        <MappingFragment StoreEntitySet="TipoServicio">
+          <ScalarProperty Name="ts_empresa" ColumnName="ts_empresa" />
+          <ScalarProperty Name="ts_IdTipoServicio" ColumnName="ts_IdTipoServicio" />
+          <ScalarProperty Name="ts_nombre" ColumnName="ts_nombre" />
+          <ScalarProperty Name="ts_descripcion" ColumnName="ts_descripcion" />
+          <ScalarProperty Name="ts_padre" ColumnName="ts_padre" />
+          <ScalarProperty Name="ts_Coordinacion" ColumnName="ts_Coordinacion" />
+          <ScalarProperty Name="ts_CuentaSAP" ColumnName="ts_CuentaSAP" />
+          <ScalarProperty Name="ts_fechaing" ColumnName="ts_fechaing" />
+          <ScalarProperty Name="ts_fechamod" ColumnName="ts_fechamod" />
+          <ScalarProperty Name="ts_usuarioing" ColumnName="ts_usuarioing" />
+          <ScalarProperty Name="ts_usuariomod" ColumnName="ts_usuariomod" />
+          <ScalarProperty Name="ts_maquinaing" ColumnName="ts_maquinaing" />
+          <ScalarProperty Name="ts_maquinamod" ColumnName="ts_maquinamod" />
+          <ScalarProperty Name="ts_estado" ColumnName="ts_estado" />
+          <ScalarProperty Name="ts_timestamp" ColumnName="ts_timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ABC_ArqueoCaja" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_ArqueoCaja" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_CierreCaja" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_CierreCaja" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_CierreDiario" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_CierreDiario" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_CuentaXCobrar" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_CuentaXCobrar" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Descuento" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_Descuento" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_DetalleCierreCaja" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_DetalleCierreCaja" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Documento" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_Documento" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Existencia" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_Existencia" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_FacturaFormaPago" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_FacturaFormaPago" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Movimiento" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_Movimiento" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_MovimientoCuentaXCobrar" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_MovimientoCuentaXCobrar" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_PrecioProductoServicio" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_PrecioProductoServicio" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Producto" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_Producto" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Propina" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_Propina" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_SalidaEfectivoCaja" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_SalidaEfectivoCaja" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_SerieFactura" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_SerieFactura" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Servicio" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_Servicio" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_Sucursal" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_Sucursal" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_TipoProducto" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_TipoProducto" />
+    <FunctionImportMapping FunctionImportName="sp_ABC_TipoServicio" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_TipoServicio" />
+    <FunctionImportMapping FunctionImportName="sp_AlertaCumpleanios" FunctionName="SSS_OPERACIONModel.Store.sp_AlertaCumpleanios" />
+    <FunctionImportMapping FunctionImportName="sp_AnulaFactura" FunctionName="SSS_OPERACIONModel.Store.sp_AnulaFactura" />
+    <FunctionImportMapping FunctionImportName="sp_aplicar_descuento" FunctionName="SSS_OPERACIONModel.Store.sp_aplicar_descuento" />
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_ArqueoCaja" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_ArqueoCaja">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_ArqueoCaja_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdCierreCaja" ColumnName="IdCierreCaja" />
+          <ScalarProperty Name="IdArqueoCaja" ColumnName="IdArqueoCaja" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="DescripcionMoneda" ColumnName="DescripcionMoneda" />
+          <ScalarProperty Name="PresentacionMoneda" ColumnName="PresentacionMoneda" />
+          <ScalarProperty Name="DescripcionPM" ColumnName="DescripcionPM" />
+          <ScalarProperty Name="Denominacion" ColumnName="Denominacion" />
+          <ScalarProperty Name="DescripcionDenominacion" ColumnName="DescripcionDenominacion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_CierreCaja" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_CierreCaja">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_CierreCaja_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoCierreCaja" ColumnName="CodigoCierreCaja" />
+          <ScalarProperty Name="IdCaja" ColumnName="IdCaja" />
+          <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+          <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+          <ScalarProperty Name="FechaHoraCierre" ColumnName="FechaHoraCierre" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="DescripcionMoneda" ColumnName="DescripcionMoneda" />
+          <ScalarProperty Name="SaldoAnterior" ColumnName="SaldoAnterior" />
+          <ScalarProperty Name="EntradasEfectivo" ColumnName="EntradasEfectivo" />
+          <ScalarProperty Name="SalidasEfectivo" ColumnName="SalidasEfectivo" />
+          <ScalarProperty Name="EfectivoTeorico" ColumnName="EfectivoTeorico" />
+          <ScalarProperty Name="EfectivoFisico" ColumnName="EfectivoFisico" />
+          <ScalarProperty Name="AjusteEfectivo" ColumnName="AjusteEfectivo" />
+          <ScalarProperty Name="ChequeTeorico" ColumnName="ChequeTeorico" />
+          <ScalarProperty Name="ChequeFisico" ColumnName="ChequeFisico" />
+          <ScalarProperty Name="AjusteCheque" ColumnName="AjusteCheque" />
+          <ScalarProperty Name="TarjetaTeorico" ColumnName="TarjetaTeorico" />
+          <ScalarProperty Name="TarjetaFisico" ColumnName="TarjetaFisico" />
+          <ScalarProperty Name="AjusteTarjeta" ColumnName="AjusteTarjeta" />
+          <ScalarProperty Name="Descuadre" ColumnName="Descuadre" />
+          <ScalarProperty Name="RetiroEfectivoAdmin" ColumnName="RetiroEfectivoAdmin" />
+          <ScalarProperty Name="SaldoActual" ColumnName="SaldoActual" />
+          <ScalarProperty Name="EstatusCierreCaja" ColumnName="EstatusCierreCaja" />
+          <ScalarProperty Name="TotalVenta" ColumnName="TotalVenta" />
+          <ScalarProperty Name="TotalPropina" ColumnName="TotalPropina" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_CierreDiario" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_CierreDiario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_CierreDiario_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+          <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+          <ScalarProperty Name="IdCierreDiario" ColumnName="IdCierreDiario" />
+          <ScalarProperty Name="FechaCierreDiario" ColumnName="FechaCierreDiario" />
+          <ScalarProperty Name="EstatusCierreCaja" ColumnName="EstatusCierreCaja" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_CuentaXCobrar" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_CuentaXCobrar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_CuentaXCobrar_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoCuentaXCobrar" ColumnName="CodigoCuentaXCobrar" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="NombreLargo" ColumnName="NombreLargo" />
+          <ScalarProperty Name="Nit" ColumnName="Nit" />
+          <ScalarProperty Name="Idenficacion" ColumnName="Idenficacion" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="FechaDocumento" ColumnName="FechaDocumento" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="EstatusCXC" ColumnName="EstatusCXC" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Descuento" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_Descuento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_Descuento_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+          <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+          <ScalarProperty Name="CodigoDescuento" ColumnName="CodigoDescuento" />
+          <ScalarProperty Name="TipoDescuento" ColumnName="TipoDescuento" />
+          <ScalarProperty Name="NombreTipoDocumento" ColumnName="NombreTipoDocumento" />
+          <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
+          <ScalarProperty Name="IdAutorizacion" ColumnName="IdAutorizacion" />
+          <ScalarProperty Name="IdMovimientoDescuento" ColumnName="IdMovimientoDescuento" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_DetalleCierreCaja" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_DetalleCierreCaja">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_DetalleCierreCaja_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdCierreCaja" ColumnName="IdCierreCaja" />
+          <ScalarProperty Name="IdDetalleCierreCaja" ColumnName="IdDetalleCierreCaja" />
+          <ScalarProperty Name="IdFormaPago" ColumnName="IdFormaPago" />
+          <ScalarProperty Name="DescripcionFormaPago" ColumnName="DescripcionFormaPago" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+          <ScalarProperty Name="FechaHoraCierre" ColumnName="FechaHoraCierre" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="DescripcionMoneda" ColumnName="DescripcionMoneda" />
+          <ScalarProperty Name="EstatusCierreCaja" ColumnName="EstatusCierreCaja" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Documento" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_Documento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_Documento_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+          <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+          <ScalarProperty Name="CodigoDocumento" ColumnName="CodigoDocumento" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="NombreTipoDocumento" ColumnName="NombreTipoDocumento" />
+          <ScalarProperty Name="TipoAsociado" ColumnName="TipoAsociado" />
+          <ScalarProperty Name="NombreTipoAsociado" ColumnName="NombreTipoAsociado" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+          <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="NombreAsociado" ColumnName="NombreAsociado" />
+          <ScalarProperty Name="DireccionAsociado" ColumnName="DireccionAsociado" />
+          <ScalarProperty Name="Nit" ColumnName="Nit" />
+          <ScalarProperty Name="Idenficacion" ColumnName="Idenficacion" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="NoDocumento" ColumnName="NoDocumento" />
+          <ScalarProperty Name="NumSerie" ColumnName="NumSerie" />
+          <ScalarProperty Name="FechaDocumento" ColumnName="FechaDocumento" />
+          <ScalarProperty Name="EstadoDocumento" ColumnName="EstadoDocumento" />
+          <ScalarProperty Name="MotivoAnulacion" ColumnName="MotivoAnulacion" />
+          <ScalarProperty Name="DescripcionMotivoAnulacion" ColumnName="DescripcionMotivoAnulacion" />
+          <ScalarProperty Name="MotivoNotaCreditoDebito" ColumnName="MotivoNotaCreditoDebito" />
+          <ScalarProperty Name="DescripcionMotivoNotraCreditoDebito" ColumnName="DescripcionMotivoNotraCreditoDebito" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+          <ScalarProperty Name="IdDocumentoAnulado" ColumnName="IdDocumentoAnulado" />
+          <ScalarProperty Name="IdCierreDiario" ColumnName="IdCierreDiario" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Existencia" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_Existencia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_Existencia_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+          <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+          <ScalarProperty Name="CodigoExistencia" ColumnName="CodigoExistencia" />
+          <ScalarProperty Name="TipoProducto" ColumnName="TipoProducto" />
+          <ScalarProperty Name="DescripcionTipoProducto" ColumnName="DescripcionTipoProducto" />
+          <ScalarProperty Name="CodigoProducto" ColumnName="CodigoProducto" />
+          <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+          <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_FacturaFormaPago" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_FacturaFormaPago">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_FacturaFormaPago_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdFacturaFormaPago" ColumnName="IdFacturaFormaPago" />
+          <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+          <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="IdMovimientoDocPromo" ColumnName="IdMovimientoDocPromo" />
+          <ScalarProperty Name="CodigoFormaPago" ColumnName="CodigoFormaPago" />
+          <ScalarProperty Name="NombreFormaPago" ColumnName="NombreFormaPago" />
+          <ScalarProperty Name="CodigoAutorizacion" ColumnName="CodigoAutorizacion" />
+          <ScalarProperty Name="CantidadPagada" ColumnName="CantidadPagada" />
+          <ScalarProperty Name="UnidadesPagadas" ColumnName="UnidadesPagadas" />
+          <ScalarProperty Name="NoDocumento" ColumnName="NoDocumento" />
+          <ScalarProperty Name="CodigoBanco" ColumnName="CodigoBanco" />
+          <ScalarProperty Name="NombreBanco" ColumnName="NombreBanco" />
+          <ScalarProperty Name="CodigoMarcaTarjeta" ColumnName="CodigoMarcaTarjeta" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="NombreMoneda" ColumnName="NombreMoneda" />
+          <ScalarProperty Name="TasaCambio" ColumnName="TasaCambio" />
+          <ScalarProperty Name="CantidadOriginal" ColumnName="CantidadOriginal" />
+          <ScalarProperty Name="IdCierreCaja" ColumnName="IdCierreCaja" />
+          <ScalarProperty Name="ConfirmaCierreCaja" ColumnName="ConfirmaCierreCaja" />
+          <ScalarProperty Name="EfectivoRecibido" ColumnName="EfectivoRecibido" />
+          <ScalarProperty Name="EfectivoVuelto" ColumnName="EfectivoVuelto" />
+          <ScalarProperty Name="EstadoDocumento" ColumnName="EstadoDocumento" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_HorarioEmpleadoSucursal" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_HorarioEmpleadoSucursal" />
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Movimiento" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_Movimiento" />
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_MovimientoCuentaXCobrar" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_MovimientoCuentaXCobrar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_MovimientoCuentaXCobrar_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoCuentaXCobrar" ColumnName="CodigoCuentaXCobrar" />
+          <ScalarProperty Name="CodigoMovimiento" ColumnName="CodigoMovimiento" />
+          <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+          <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+          <ScalarProperty Name="NumeroDocumento" ColumnName="NumeroDocumento" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="NombreLargo" ColumnName="NombreLargo" />
+          <ScalarProperty Name="Nit" ColumnName="Nit" />
+          <ScalarProperty Name="Idenficacion" ColumnName="Idenficacion" />
+          <ScalarProperty Name="FechaMovimiento" ColumnName="FechaMovimiento" />
+          <ScalarProperty Name="MontoMovimiento" ColumnName="MontoMovimiento" />
+          <ScalarProperty Name="CredigoDebito" ColumnName="CredigoDebito" />
+          <ScalarProperty Name="DescripcionMov" ColumnName="DescripcionMov" />
+          <ScalarProperty Name="EstatusMovCXC" ColumnName="EstatusMovCXC" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_PrecioProductoServicio" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_PrecioProductoServicio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_PrecioProductoServicio_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="TipoPrecio" ColumnName="TipoPrecio" />
+          <ScalarProperty Name="DescripcionTipoPrecio" ColumnName="DescripcionTipoPrecio" />
+          <ScalarProperty Name="CodigoPrecioProductoServicio" ColumnName="CodigoPrecioProductoServicio" />
+          <ScalarProperty Name="CodigoProductoServicio" ColumnName="CodigoProductoServicio" />
+          <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+          <ScalarProperty Name="DescripcionProducto" ColumnName="DescripcionProducto" />
+          <ScalarProperty Name="FechaVigencia" ColumnName="FechaVigencia" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="PrecioMaximo" ColumnName="PrecioMaximo" />
+          <ScalarProperty Name="TimeStamp_Producto" ColumnName="TimeStamp_Producto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Producto" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_Producto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_Producto_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="TipoProducto" ColumnName="TipoProducto" />
+          <ScalarProperty Name="DescripcionTipoProducto" ColumnName="DescripcionTipoProducto" />
+          <ScalarProperty Name="CodigoProducto" ColumnName="CodigoProducto" />
+          <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoBarras" ColumnName="CodigoBarras" />
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+          <ScalarProperty Name="CodigoMarca" ColumnName="CodigoMarca" />
+          <ScalarProperty Name="NombreMarca" ColumnName="NombreMarca" />
+          <ScalarProperty Name="CodigoClasificaProducto" ColumnName="CodigoClasificaProducto" />
+          <ScalarProperty Name="ClasificaProducto" ColumnName="ClasificaProducto" />
+          <ScalarProperty Name="PrecioProducto" ColumnName="PrecioProducto" />
+          <ScalarProperty Name="PrecioMaximoProducto" ColumnName="PrecioMaximoProducto" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Propina" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_Propina" />
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_SalidaEfectivoCaja" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_SalidaEfectivoCaja">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_SalidaEfectivoCaja_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdSalidaEfectivoCaja" ColumnName="IdSalidaEfectivoCaja" />
+          <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+          <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+          <ScalarProperty Name="FechaHoraSalidaEfectivo" ColumnName="FechaHoraSalidaEfectivo" />
+          <ScalarProperty Name="IdMotivoSalidaEfectivo" ColumnName="IdMotivoSalidaEfectivo" />
+          <ScalarProperty Name="DescripcionMotivo" ColumnName="DescripcionMotivo" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="DescripcionMoneda" ColumnName="DescripcionMoneda" />
+          <ScalarProperty Name="IdAutorizacion" ColumnName="IdAutorizacion" />
+          <ScalarProperty Name="IdCierreCaja" ColumnName="IdCierreCaja" />
+          <ScalarProperty Name="ConfirmaCierreCaja" ColumnName="ConfirmaCierreCaja" />
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="IdFacturaFormaPago" ColumnName="IdFacturaFormaPago" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Servicio" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_Servicio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_Servicio_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
+          <ScalarProperty Name="DescripcionTipoServicio" ColumnName="DescripcionTipoServicio" />
+          <ScalarProperty Name="CodigoServicio" ColumnName="CodigoServicio" />
+          <ScalarProperty Name="NombreServicio" ColumnName="NombreServicio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="DuracionServicio" ColumnName="DuracionServicio" />
+          <ScalarProperty Name="CodCoordinacion" ColumnName="CodCoordinacion" />
+          <ScalarProperty Name="Coordinacion" ColumnName="Coordinacion" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_Sucursal" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_Sucursal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_Sucursal_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+          <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+          <ScalarProperty Name="Encargado" ColumnName="Encargado" />
+          <ScalarProperty Name="NombreEmpleado" ColumnName="NombreEmpleado" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_TipoProducto" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_TipoProducto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_TipoProducto_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="TipoProducto" ColumnName="TipoProducto" />
+          <ScalarProperty Name="ClasificacionTipoProducto" ColumnName="ClasificacionTipoProducto" />
+          <ScalarProperty Name="DescripcionClasificacion" ColumnName="DescripcionClasificacion" />
+          <ScalarProperty Name="NombreTipoProducto" ColumnName="NombreTipoProducto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ProductoPadre" ColumnName="ProductoPadre" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Busqueda_TipoServicio" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_TipoServicio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_TipoServicio_Result">
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
+          <ScalarProperty Name="NombreTipoServicio" ColumnName="NombreTipoServicio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ServicioPadre" ColumnName="ServicioPadre" />
+          <ScalarProperty Name="CodigoCoordinacion" ColumnName="CodigoCoordinacion" />
+          <ScalarProperty Name="NombreCoordinacion" ColumnName="NombreCoordinacion" />
+          <ScalarProperty Name="CuentaSAP" ColumnName="CuentaSAP" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ConfirmaCierreCaja" FunctionName="SSS_OPERACIONModel.Store.sp_ConfirmaCierreCaja" />
+    <FunctionImportMapping FunctionImportName="sp_ConversionMoneda" FunctionName="SSS_OPERACIONModel.Store.sp_ConversionMoneda" />
+    <FunctionImportMapping FunctionImportName="sp_CuadreFacturaFormaPago" FunctionName="SSS_OPERACIONModel.Store.sp_CuadreFacturaFormaPago" />
+    <FunctionImportMapping FunctionImportName="sp_DatosMontosFactura" FunctionName="SSS_OPERACIONModel.Store.sp_DatosMontosFactura" />
+    <FunctionImportMapping FunctionImportName="sp_GenerarCierreCaja" FunctionName="SSS_OPERACIONModel.Store.sp_GenerarCierreCaja" />
+    <FunctionImportMapping FunctionImportName="sp_GenerarCierreDiario" FunctionName="SSS_OPERACIONModel.Store.sp_GenerarCierreDiario" />
+    <FunctionImportMapping FunctionImportName="sp_Obtiene_NoFactura" FunctionName="SSS_OPERACIONModel.Store.sp_Obtiene_NoFactura" />
+    <FunctionImportMapping FunctionImportName="sp_Validaciones_FacturaFormaPago" FunctionName="SSS_OPERACIONModel.Store.sp_Validaciones_FacturaFormaPago" />
+    <EntitySetMapping Name="CuentaXPagar">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.CuentaXPagar">
+        <MappingFragment StoreEntitySet="CuentaXPagar">
+          <ScalarProperty Name="cp_timestamp" ColumnName="cp_timestamp" />
+          <ScalarProperty Name="cp_estado" ColumnName="cp_estado" />
+          <ScalarProperty Name="cp_maquinamod" ColumnName="cp_maquinamod" />
+          <ScalarProperty Name="cp_maquinaing" ColumnName="cp_maquinaing" />
+          <ScalarProperty Name="cp_usuariomod" ColumnName="cp_usuariomod" />
+          <ScalarProperty Name="cp_usuarioing" ColumnName="cp_usuarioing" />
+          <ScalarProperty Name="cp_fechamod" ColumnName="cp_fechamod" />
+          <ScalarProperty Name="cp_fechaing" ColumnName="cp_fechaing" />
+          <ScalarProperty Name="cp_estCuentaXPagar" ColumnName="cp_estCuentaXPagar" />
+          <ScalarProperty Name="cp_MontoUltMov" ColumnName="cp_MontoUltMov" />
+          <ScalarProperty Name="cp_fechaUltMov" ColumnName="cp_fechaUltMov" />
+          <ScalarProperty Name="cp_Saldo" ColumnName="cp_Saldo" />
+          <ScalarProperty Name="cp_Proveedor" ColumnName="cp_Proveedor" />
+          <ScalarProperty Name="cp_IdCuentaXPagar" ColumnName="cp_IdCuentaXPagar" />
+          <ScalarProperty Name="cp_empresa" ColumnName="cp_empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovimientoCuentaXPagar">
+      <EntityTypeMapping TypeName="SSS_OPERACIONModel.MovimientoCuentaXPagar">
+        <MappingFragment StoreEntitySet="MovimientoCuentaXPagar">
+          <ScalarProperty Name="mp_timestamp" ColumnName="mp_timestamp" />
+          <ScalarProperty Name="mp_estado" ColumnName="mp_estado" />
+          <ScalarProperty Name="mp_maquinamod" ColumnName="mp_maquinamod" />
+          <ScalarProperty Name="mp_maquinaing" ColumnName="mp_maquinaing" />
+          <ScalarProperty Name="mp_usuariomod" ColumnName="mp_usuariomod" />
+          <ScalarProperty Name="mp_usuarioing" ColumnName="mp_usuarioing" />
+          <ScalarProperty Name="mp_fechamod" ColumnName="mp_fechamod" />
+          <ScalarProperty Name="mp_fechaing" ColumnName="mp_fechaing" />
+          <ScalarProperty Name="mp_estMovCuentaXPagar" ColumnName="mp_estMovCuentaXPagar" />
+          <ScalarProperty Name="mp_Descripcion" ColumnName="mp_Descripcion" />
+          <ScalarProperty Name="mp_CreditoDebito" ColumnName="mp_CreditoDebito" />
+          <ScalarProperty Name="mp_MontoMov" ColumnName="mp_MontoMov" />
+          <ScalarProperty Name="mp_FechaMov" ColumnName="mp_FechaMov" />
+          <ScalarProperty Name="mp_Proveedor" ColumnName="mp_Proveedor" />
+          <ScalarProperty Name="mp_IdDoc" ColumnName="mp_IdDoc" />
+          <ScalarProperty Name="mp_IdSucursal" ColumnName="mp_IdSucursal" />
+          <ScalarProperty Name="mp_IdMovCuentaXPagar" ColumnName="mp_IdMovCuentaXPagar" />
+          <ScalarProperty Name="mp_IdCuentaXPagar" ColumnName="mp_IdCuentaXPagar" />
+          <ScalarProperty Name="mp_empresa" ColumnName="mp_empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

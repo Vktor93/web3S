@@ -1,0 +1,55 @@
+﻿@model WebGrupo3S.Models.Cliente
+
+@{
+    ViewBag.Title = "Clientes";
+}
+
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Esta seguro que desea dar de baja siguiente registro?</h3>
+</div>
+<div class="body" style="width:700px">
+    <dl class="form-horizontal table-bordered">
+        <dt>
+            @Html.Label("Cliente")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cl_cliente)
+        </dd>
+
+        <dt>
+            @Html.Label("Identificación")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cl_identifica)
+        </dd>
+
+        <dt>
+            @Html.Label("Nit")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cl_nit)
+        </dd>
+
+        <dt>
+            @Html.Label("Cliente")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cl_nombrelargo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="footer" style="width:700px">
+            <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "Clientes")'"><i class="glyphicon glyphicon-remove"></i>No</button>
+            <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i> Si</button>
+        </div>
+    }
+</div>

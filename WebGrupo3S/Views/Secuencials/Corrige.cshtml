@@ -1,0 +1,27 @@
+﻿@model WebGrupo3S.Models.Secuencial
+
+@{
+    ViewBag.Title = "Secuencial";
+}
+
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Corrección de secuencias</h3>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="body" style="width:700px">
+        <div class="form-horizontal table-bordered">
+            <div class="form-group">
+                @Html.Label(ViewData["mensaje"].ToString(), htmlAttributes: new { @class = "control-label col-md-6" })
+            </div>
+         </div>
+    </div>
+    <div class="footer" style="width:700px">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "Secuencials")'"><i class="glyphicon glyphicon-circle-arrow-left"></i>Retorna</button>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

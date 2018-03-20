@@ -1,0 +1,45 @@
+﻿@model WebGrupo3S.Models.perfilusuario
+
+@{
+    ViewBag.Title = "Perfil de usuario";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal table-responsive col-md-7 box-body bg-aqua-active table-bordered">
+        <h4>Actualiza información</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.pu_empresa)
+        @Html.HiddenFor(model => model.pu_IdSucursal)
+        @Html.HiddenFor(model => model.pu_CodPerfilUsuario)
+        @Html.HiddenFor(model => model.pu_timestamp)
+        @Html.HiddenFor(model => model.pu_codUsuario)
+
+        <div class="form-group">
+            @Html.Label("Perfil", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.pu_codPerfil, new SelectList(ViewBag.PerfilId, "Value", "Text"), new { style = "width: 300px; color:black" })
+                @Html.ValidationMessageFor(model => model.pu_codPerfil, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-5">
+                <input type="submit" value="Grabar" class="btn btn-info" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Retorna a Lista", "Usuarios", new {id = Model.pu_codUsuario, nom = Model.pu_NombreUsuario })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

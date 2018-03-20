@@ -1,0 +1,130 @@
+﻿@model WebGrupo3S.Models.Producto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_CodigoBarras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_CodigoBarras)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_CodigoSAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_CodigoSAP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_IdMarca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_IdMarca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_ImagenProd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_ImagenProd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pr_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pr_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

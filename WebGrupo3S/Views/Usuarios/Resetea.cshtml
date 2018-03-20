@@ -1,0 +1,81 @@
+﻿@model WebGrupo3S.Models.Usuario
+@{
+    ViewBag.Title = "Usuarios";
+}
+<div class="header">
+    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Resetea Contraseña</h3>
+</div>
+@using (Html.BeginForm())
+{
+    <div class="body">
+        <h2>@ViewData["Nombre"]</h2>
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal table-bordered">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.us_usuario)
+            @Html.HiddenFor(model => model.us_nombre)
+            @Html.HiddenFor(model => model.us_codUsuario)
+            @Html.HiddenFor(model => model.us_estUsuario)
+            @Html.HiddenFor(model => model.us_timestamp)
+            @Html.HiddenFor(model => model.us_IdEmpleado)
+
+            <div class="form-group">
+                @Html.Label("Clave temporal", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.us_password, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    @Html.ValidationMessageFor(model => model.us_password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "Usuarios")'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
+        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i> Grabar</button>
+    </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $.ajaxSetup({ cache: false });
+
+        $("a[data-modal]").on("click", function (e) {
+            // hide dropdown if any (this is used wehen invoking modal from link in bootstrap dropdown )
+            //$(e.target).closest('.btn-group').children('.dropdown-toggle').dropdown('toggle');
+
+            $('#myModalContent').load(this.href, function () {
+                $('#myModal').modal({
+                    backdrop: 'static',
+                    keyboard: false
+                }, 'show');
+                bindForm(this);
+            });
+            return false;
+        });
+    });
+
+    function bindForm(dialog) {
+        $('form', dialog).submit(function () {
+            alerts('');
+            $.ajax({
+                type: 'POST',
+                url: '/Usuarios/Index',
+                data: $(this).serialize(),
+                success: function (result) {
+                    if (result.success) {
+                        $('#myModal').modal('hide');
+                        $('#target').load(result.url); //  Load data from the server and place the returned HTML into the matched element
+                    } else {
+                        $('#myModalContent').html(result);
+                        bindForm(dialog);
+                    }
+                }
+            });
+            return false;
+        });
+    }
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
