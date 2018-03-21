@@ -13,8 +13,8 @@
                 <div>
                     @if (ViewBag.reporte == "1")
                     {
-                        <a href="@Url.Action("Report", new { id = "PDF" })">  PDF   <img width="20" height="20" src="/images/pdf.png" /></a>
-                        <a href="@Url.Action("Report", new { id = "Excel" })">  EXCEL   <img width="20" height="20" src="/images/excel.png" /></a>
+                        <a href="@Url.Action("Report", new { id = "PDF" })">  PDF   <img width="30" height="30" src="~/Images/pdf_flat.png" /></a>
+                        <a href="@Url.Action("Report", new { id = "Excel" })">  EXCEL   <img width="30" height="30" src="~/Images/Excel.png" /></a>
                     }
                 </div>
                 <table id="datos" class="table table-responsive table-hover table-bordered">
@@ -39,7 +39,7 @@
                                 <div class="pull-right">
                                     @if (ViewBag.nuevo == "1")
                                     {
-                                        <a href="@Url.Action("Create", "Clientes")"><img width="20" height="20" src="/images/add.png" /></a>
+                                        <a href="@Url.Action("Create", "Horarios")"><span class="glyphicon glyphicon-plus"></span></a>
                                     }
                                 </div>
                             </th>
