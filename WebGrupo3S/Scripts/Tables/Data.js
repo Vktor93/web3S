@@ -1,10 +1,10 @@
-﻿$(function () {
-    $('#datos').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": true,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false
-    });
-});
+﻿   
+        $('#datos').DataTable({
+            
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf'
+            ]
+        });
+    
+

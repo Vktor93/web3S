@@ -14,7 +14,16 @@
                 <div>
                     @if (ViewBag.reporte == "1")
                     {
-                        <a href="@Url.Action("Report", new { id = "PDF" })">  PDF   <img width="30" height="30" src="~/Images/pdf_flat.png" /></a>
+
+                        using (Html.BeginForm("Export", "Exportar", FormMethod.Post))
+                        {
+
+                            <input type="hidden" name="GridHtml" id="test" />
+                            <input type="submit" id="btnSubmit" value="Exportar" style="display:none;" />
+
+                        }
+
+                        <a href="#" id="pdf">  PDF   <img width="30" height="30" src="~/Images/pdf_flat.png" /></a>
                         <a href="@Url.Action("Report", new { id = "Excel" })">  EXCEL   <img width="30" height="30" src="~/Images/Excel.png" /></a>
                     }
                 </div>
@@ -91,4 +100,14 @@
 @section Scripts {
     @Scripts.Render("~/Admin/plugins/datatables/js")
     @Scripts.Render("~/Scripts/Tables/Data")
+    
+   <script>       
+        $(document).ready(function () {
+            $("#pdf").click(function () {
+                $("input[name='GridHtml']").val($(".col-sm-12").html());
+                $("#btnSubmit").click();
+            });
+        });
+    </script>
+
 }

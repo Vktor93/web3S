@@ -69,7 +69,7 @@
                     });
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    alert('Error - ' + errorThrown);
+                    console.log('Error - ' + errorThrown);
                 }
             });
 
@@ -88,7 +88,7 @@
                         error: function (ex) {
                             
                             console.log(ex);
-                            alert('Revision de opciones fallo: ' + ex);
+                            //alert('Revision de opciones fallo: ' + ex);
                         }
                     });
                     //alert(result)
