@@ -48,6 +48,25 @@ namespace WebGrupo3S
             bundles.Add(new ScriptBundle("~/bundles/respond").Include(
                         "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/table").Include(
+                    "~/Scripts/Tables/jquery.dataTables.min.js",
+                    "~/Scripts/Tables/dataTables.buttons.min.js",
+                    "~/Scripts/Tables/buttons.html5.min.js",
+                    "~/Scripts/Tables/buttons.colVis.min.js",
+                    "~/Scripts/Tables/jszip.min.js",
+                    "~/Scripts/Tables/pdfmake.min.js",
+                    "~/Scripts/Tables/vfs_fonts.js"                    
+                ));
+
+            bundles.Add(new StyleBundle("~/Content/table").Include(
+                //"~/Content/Tables/jquery.dataTables.min.css",
+                //"~/Content/Tables/jquery.dataTables_themeroller.css",
+                "~/Content/Tables/buttons.dataTables.min.css"
+                //"~/Content/Tables/responsive.dataTables.min.css"
+                //"~/Content/Tables/dataTables.bootstrap.min.css"
+
+            ));
+
         }
 
         private static void RegisterTables(BundleCollection bundles)

@@ -5,8 +5,10 @@
 @{
     ViewBag.Title = "Productos";
 }
-
+@Styles.Render("~/Content/table")
 @Styles.Render("~/Admin/plugins/datatables/css")
+<link rel="stylesheet" href="~/Content/Gstyle.css"/>
+
 <div class="row">
     <div class="col-xs-12">
         <div class="box">
@@ -15,16 +17,7 @@
                     @if (ViewBag.reporte == "1")
                     {
 
-                        using (Html.BeginForm("Export", "Exportar", FormMethod.Post))
-                        {
-
-                            <input type="hidden" name="GridHtml" id="test" />
-                            <input type="submit" id="btnSubmit" value="Exportar" style="display:none;" />
-
-                        }
-
-                        <a href="#" id="pdf">  PDF   <img width="30" height="30" src="~/Images/pdf_flat.png" /></a>
-                        <a href="@Url.Action("Report", new { id = "Excel" })">  EXCEL   <img width="30" height="30" src="~/Images/Excel.png" /></a>
+                 
                     }
                 </div>
                 <table id="datos" class="table table-responsive table-hover table-bordered">
@@ -99,15 +92,7 @@
 
 @section Scripts {
     @Scripts.Render("~/Admin/plugins/datatables/js")
-    @Scripts.Render("~/Scripts/Tables/Data")
-    
-   <script>       
-        $(document).ready(function () {
-            $("#pdf").click(function () {
-                $("input[name='GridHtml']").val($(".col-sm-12").html());
-                $("#btnSubmit").click();
-            });
-        });
-    </script>
+    @Scripts.Render("~/bundles/table")
 
+    <script src="~/Scripts/Tables/Data.js" type="text/javascript"></script>   
 }
