@@ -1,0 +1,51 @@
+﻿/* color boton pdf */
+
+.button.dt-button, div.dt-button, button.buttons-pdf {
+    border:none;
+    background: #F04B46 !important;
+    
+    box-shadow: 0 1px #902d2a !important;
+    color: #fff !important;
+}
+
+.button.dt-button, div.dt-button, button.buttons-pdf:hover {
+    color: #fff !important;
+    background-color: #c9302c !important;
+    border-color: #ac2925 !important;
+}
+
+.button.dt-button, div.dt-button, button.buttons-pdf::before{
+    font-family: FontAwesome;
+    
+}
+
+.buttons-pdf {
+    margin-bottom: 10px !important;
+}
+
+
+/* color boton excel */
+
+.button.dt-button, div.dt-button, button.buttons-excel {
+    border:none;
+    background: #00A65A !important;
+    
+    box-shadow: 0 1px #2E7D32 !important;
+    color: #fff !important;
+}
+
+.button.dt-button, div.dt-button, button.buttons-excel:hover {
+    color: #fff !important;
+    background-color: #2E7D32 !important;
+    border-color: #2E7D32 !important;
+}
+
+.button.dt-button, div.dt-button, button.buttons-excel::before{
+    font-family: FontAwesome;
+    
+}
+
+.buttons-excel {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
