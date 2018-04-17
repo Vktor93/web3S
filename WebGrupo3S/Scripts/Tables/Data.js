@@ -19,6 +19,10 @@
                 text: 'Excel'
             }
         ],
+
+        "language": {
+            "search": "Filtrar"
+        }
     });
 
 });
