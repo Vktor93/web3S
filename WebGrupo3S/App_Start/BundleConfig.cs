@@ -50,6 +50,7 @@ namespace WebGrupo3S
 
             bundles.Add(new ScriptBundle("~/bundles/table").Include(
                     "~/Scripts/Tables/jquery.dataTables.min.js",
+                    "~/Scripts/Tables/dataTables.bootstrap.min.js",
                     "~/Scripts/Tables/dataTables.buttons.min.js",
                     "~/Scripts/Tables/buttons.html5.min.js",
                     "~/Scripts/Tables/buttons.colVis.min.js",
@@ -59,11 +60,10 @@ namespace WebGrupo3S
                 ));
 
             bundles.Add(new StyleBundle("~/Content/table").Include(
-                //"~/Content/Tables/jquery.dataTables.min.css",
-                //"~/Content/Tables/jquery.dataTables_themeroller.css",
-                "~/Content/Tables/buttons.dataTables.min.css"
-                //"~/Content/Tables/responsive.dataTables.min.css"
-                //"~/Content/Tables/dataTables.bootstrap.min.css"
+                
+                "~/Content/Tables/buttons.dataTables.min.css",
+                "~/Content/Tables/responsive.dataTables.min.css",
+                "~/Content/Tables/dataTables.bootstrap.min.css"
 
             ));
 

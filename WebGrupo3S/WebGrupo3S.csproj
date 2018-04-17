@@ -1380,6 +1380,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Combobox.css" />
     <Content Include="Content\gijgo.css" />
+    <Content Include="Content\Gstyle.css" />
     <Content Include="Content\justified-nav.css" />
     <Content Include="Content\onlink.css" />
     <Content Include="Content\Tables\buttons.dataTables.min.css" />
