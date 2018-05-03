@@ -1831,6 +1831,7 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CuentasXPagars\" />
     <Folder Include="Views\Exportar\" />
     <Folder Include="Views\Shared\EditTemplates\" />
   </ItemGroup>

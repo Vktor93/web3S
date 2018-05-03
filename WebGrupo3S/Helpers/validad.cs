@@ -17,6 +17,7 @@ namespace WebGrupo3S.Helpers
         public string acc = "";
         public ConstantesP coP = new ConstantesP();
         ObjectParameter error = new ObjectParameter("error", typeof(String));
+        CompleteString complete = new CompleteString();
 
         public validad()
         {
@@ -61,8 +62,7 @@ namespace WebGrupo3S.Helpers
                 int i = 0;
                 int padre = 0;
                 PermisoSearch.permisoResults = db.sp_Busqueda_Permiso(2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), Convert.ToInt16(pe), null, null, error).ToList();
-
-                CompleteString complete = new CompleteString();                
+                
                 WriteLogMessages.WriteFile("valida", complete.Complete(10, "Validación" + "-> ejecutando db.sp_Busqueda_Permiso: ", 2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), pe, null, null, "-> R: " + validad.getResponse(error)));
                 foreach (string dat in cat)
                 {
@@ -115,7 +115,7 @@ namespace WebGrupo3S.Helpers
                         {
                             int padre = Convert.ToInt16(op.op_CodigoOpcion.ToString());
                             PermisoSearch.permisoResults = db.sp_Busqueda_Permiso(2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), Convert.ToInt16(perfil_data), null, null, error).ToList();
-                            WriteLogMessages.WriteFile("valida", "Validación" + "-> ejecutando db.sp_Busqueda_Permiso: " + string.Join(",", 2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), perfil_data, null, null, "-> R: " + validad.getResponse(error)));
+                            WriteLogMessages.WriteFile("valida", complete.Complete(10, "Validación" + "-> ejecutando db.sp_Busqueda_Permiso: ", 2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), perfil_data, null, null, "-> R: " + validad.getResponse(error)));
                             opc = db.opcion.Where(a => a.op_PadreOpcion == padre && a.op_Estado == 1).ToList();
                             foreach (opcion re in opc)
                             {

@@ -160,14 +160,14 @@
                                 {
                                     <li id="left-sidebar-menu-cc-proveedores"><a href="@Url.Action("Index", "Proveedors")" class="lintern"><i class="fa fa-circle-o"></i> Proveedores</a></li>
                                 }
-                                @if (Session["M8"].ToString() == "1")
-                                {
-                                    <li id="left-sidebar-menu-cc-cuentascobrar"><a href="@Url.Action("Index", "CXC")" class="lintern"><i class="fa fa-circle-o"></i> Cuentas por Cobrar</a></li>
-                                }
-                                @if (Session["M9"].ToString() == "1")
-                                {
+                                
+                                
+                                    <li id="left-sidebar-menu-cc-cuentascobrar"><a href="@Url.Action("Index", "CuentaXCobrars")" class="lintern"><i class="fa fa-circle-o"></i> Cuentas por Cobrar</a></li>
+                                
+                                
+                                
                                     <li id="left-sidebar-menu-cc-cuentaspagar"><a href="@Url.Action("Index", "CXP")" class="lintern"><i class="fa fa-circle-o"></i> Cuentas por Pagar</a></li>
-                                }
+                                
                             </ul>
                         </li>
                     }

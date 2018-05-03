@@ -65,7 +65,7 @@ namespace WebGrupo3S.Views
         // GET: CuentaXCobrars/Create
         public ActionResult Create()
         {
-            ViewBag.CC = new SelectList(dbP.sp_Busqueda_Cliente(1, "", Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, null, null, null, null, null, null, null, error).ToList(), "cl_cliente", "cl_nombrelargo");
+            ViewBag.CC = new SelectList(dbP.sp_Busqueda_Cliente(1, "", Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, null, null, null, null, null, null, null, error).ToList(), "Cliente", "NombreLargo");
             return View();
         }
 
