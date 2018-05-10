@@ -107,27 +107,6 @@
           <Property Name="cc_estado" Type="int" Nullable="false" />
           <Property Name="cc_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
         </EntityType>
-        <EntityType Name="CuentaXPagar">
-          <Key>
-            <PropertyRef Name="cp_empresa" />
-            <PropertyRef Name="cp_IdCuentaXPagar" />
-          </Key>
-          <Property Name="cp_empresa" Type="smallint" Nullable="false" />
-          <Property Name="cp_IdCuentaXPagar" Type="int" Nullable="false" />
-          <Property Name="cp_Proveedor" Type="int" Nullable="false" />
-          <Property Name="cp_Saldo" Type="money" Nullable="false" />
-          <Property Name="cp_fechaUltMov" Type="datetime" Nullable="false" />
-          <Property Name="cp_MontoUltMov" Type="money" Nullable="false" />
-          <Property Name="cp_estCuentaXPagar" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="cp_fechaing" Type="datetime" Nullable="false" />
-          <Property Name="cp_fechamod" Type="datetime" />
-          <Property Name="cp_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="cp_usuariomod" Type="nvarchar" MaxLength="50" />
-          <Property Name="cp_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="cp_maquinamod" Type="nvarchar" MaxLength="50" />
-          <Property Name="cp_estado" Type="int" Nullable="false" />
-          <Property Name="cp_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-        </EntityType>
         <EntityType Name="Descuento">
           <Key>
             <PropertyRef Name="ds_empresa" />
@@ -347,32 +326,6 @@
           <Property Name="mc_maquinamod" Type="nvarchar" MaxLength="50" />
           <Property Name="mc_estado" Type="int" Nullable="false" />
           <Property Name="mc_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-        </EntityType>
-        <EntityType Name="MovimientoCuentaXPagar">
-          <Key>
-            <PropertyRef Name="mp_empresa" />
-            <PropertyRef Name="mp_IdCuentaXPagar" />
-            <PropertyRef Name="mp_IdMovCuentaXPagar" />
-          </Key>
-          <Property Name="mp_empresa" Type="smallint" Nullable="false" />
-          <Property Name="mp_IdCuentaXPagar" Type="int" Nullable="false" />
-          <Property Name="mp_IdMovCuentaXPagar" Type="int" Nullable="false" />
-          <Property Name="mp_IdSucursal" Type="int" Nullable="false" />
-          <Property Name="mp_IdDoc" Type="int" Nullable="false" />
-          <Property Name="mp_Proveedor" Type="int" Nullable="false" />
-          <Property Name="mp_FechaMov" Type="datetime" Nullable="false" />
-          <Property Name="mp_MontoMov" Type="money" Nullable="false" />
-          <Property Name="mp_CreditoDebito" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="mp_Descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="mp_estMovCuentaXPagar" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="mp_fechaing" Type="datetime" Nullable="false" />
-          <Property Name="mp_fechamod" Type="datetime" />
-          <Property Name="mp_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="mp_usuariomod" Type="nvarchar" MaxLength="50" />
-          <Property Name="mp_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="mp_maquinamod" Type="nvarchar" MaxLength="50" />
-          <Property Name="mp_estado" Type="int" Nullable="false" />
-          <Property Name="mp_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
         </EntityType>
         <EntityType Name="PrecioProductoServicio">
           <Key>
@@ -640,6 +593,19 @@
           <Parameter Name="cc_timestamp" Type="timestamp" Mode="InOut" />
           <Parameter Name="error" Type="nvarchar" Mode="InOut" />
         </Function>
+        <Function Name="sp_ABC_CuentaXPagar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cp_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="cp_opcion" Type="char" Mode="In" />
+          <Parameter Name="cp_IdCuentaXPagar" Type="int" Mode="InOut" />
+          <Parameter Name="cp_Proveedor" Type="int" Mode="In" />
+          <Parameter Name="cp_Saldo" Type="money" Mode="In" />
+          <Parameter Name="cp_fechaUltMov" Type="datetime" Mode="In" />
+          <Parameter Name="cp_MontoUltMov" Type="money" Mode="In" />
+          <Parameter Name="cp_estCuentaXPagar" Type="char" Mode="In" />
+          <Parameter Name="cp_usuario" Type="varchar" Mode="In" />
+          <Parameter Name="cp_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
         <Function Name="sp_ABC_Descuento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ds_empresa" Type="smallint" Mode="In" />
           <Parameter Name="ds_opcion" Type="char" Mode="In" />
@@ -777,6 +743,23 @@
           <Parameter Name="mc_estMovCuentaXCobrar" Type="char" Mode="In" />
           <Parameter Name="mc_usuario" Type="varchar" Mode="In" />
           <Parameter Name="mc_timestamp" Type="timestamp" Mode="InOut" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_ABC_MovimientoCuentaXPagar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mp_empresa" Type="smallint" Mode="In" />
+          <Parameter Name="mp_opcion" Type="char" Mode="In" />
+          <Parameter Name="mp_IdCuentaXPagar" Type="int" Mode="InOut" />
+          <Parameter Name="mp_IdMovCuentaXPagar" Type="int" Mode="InOut" />
+          <Parameter Name="mp_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="mp_IdDoc" Type="int" Mode="In" />
+          <Parameter Name="mp_Proveedor" Type="int" Mode="In" />
+          <Parameter Name="mp_FechaMov" Type="datetime" Mode="In" />
+          <Parameter Name="mp_MontoMov" Type="money" Mode="In" />
+          <Parameter Name="mp_CreditoDebito" Type="char" Mode="In" />
+          <Parameter Name="mp_Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="mp_estMovCuentaXPagar" Type="char" Mode="In" />
+          <Parameter Name="mp_usuario" Type="varchar" Mode="In" />
+          <Parameter Name="mp_timestamp" Type="timestamp" Mode="InOut" />
           <Parameter Name="error" Type="nvarchar" Mode="InOut" />
         </Function>
         <Function Name="sp_ABC_PrecioProductoServicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -997,6 +980,18 @@
           <Parameter Name="cc_estCuentaXCobrar" Type="char" Mode="In" />
           <Parameter Name="error" Type="nvarchar" Mode="InOut" />
         </Function>
+        <Function Name="sp_Busqueda_CuentaXPagar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="cp_empresa" Type="int" Mode="In" />
+          <Parameter Name="cp_IdCuentaXPagar" Type="int" Mode="In" />
+          <Parameter Name="cp_Proveedor" Type="int" Mode="In" />
+          <Parameter Name="cp_Saldo" Type="money" Mode="In" />
+          <Parameter Name="cp_FechaUltMov" Type="datetime" Mode="In" />
+          <Parameter Name="cp_MontoUltMov" Type="money" Mode="In" />
+          <Parameter Name="cp_estCuentaXPagar" Type="char" Mode="In" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
         <Function Name="sp_Busqueda_Descuento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
           <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
@@ -1124,6 +1119,22 @@
           <Parameter Name="mc_CreditoDebito" Type="char" Mode="In" />
           <Parameter Name="mc_Descripcion" Type="varchar" Mode="In" />
           <Parameter Name="mc_estMovCuentaXCobrar" Type="char" Mode="In" />
+          <Parameter Name="error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Busqueda_MovimientoCuentaXPagar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+          <Parameter Name="busqueda" Type="nvarchar" Mode="In" />
+          <Parameter Name="mp_empresa" Type="int" Mode="In" />
+          <Parameter Name="mp_IdCuentaXPagar" Type="int" Mode="In" />
+          <Parameter Name="mp_IdMovCuentaXPagar" Type="int" Mode="In" />
+          <Parameter Name="mp_IdSucursal" Type="int" Mode="In" />
+          <Parameter Name="mp_IdDoc" Type="int" Mode="In" />
+          <Parameter Name="mp_Proveedor" Type="int" Mode="In" />
+          <Parameter Name="mp_FechaMov" Type="datetime" Mode="In" />
+          <Parameter Name="mp_MontoMov" Type="money" Mode="In" />
+          <Parameter Name="mp_CreditoDebito" Type="char" Mode="In" />
+          <Parameter Name="mp_Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="mp_estMovCuentaXPagar" Type="char" Mode="In" />
           <Parameter Name="error" Type="nvarchar" Mode="InOut" />
         </Function>
         <Function Name="sp_Busqueda_PrecioProductoServicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -1320,7 +1331,6 @@
           <EntitySet Name="CierreCaja" EntityType="Self.CierreCaja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CierreDiario" EntityType="Self.CierreDiario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CuentaXCobrar" EntityType="Self.CuentaXCobrar" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CuentaXPagar" EntityType="Self.CuentaXPagar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Descuento" EntityType="Self.Descuento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DetalleCierreCaja" EntityType="Self.DetalleCierreCaja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
@@ -1329,7 +1339,6 @@
           <EntitySet Name="HorarioSucursal" EntityType="Self.HorarioSucursal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movimiento" EntityType="Self.Movimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MovimientoCuentaXCobrar" EntityType="Self.MovimientoCuentaXCobrar" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MovimientoCuentaXPagar" EntityType="Self.MovimientoCuentaXPagar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrecioProductoServicio" EntityType="Self.PrecioProductoServicio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Propina" EntityType="Self.Propina" Schema="dbo" store:Type="Tables" />
@@ -2631,6 +2640,64 @@
           </FunctionImport>
           <EntitySet Name="CuentaXPagar" EntityType="SSS_OPERACIONModel.CuentaXPagar" />
           <EntitySet Name="MovimientoCuentaXPagar" EntityType="SSS_OPERACIONModel.MovimientoCuentaXPagar" />
+          <FunctionImport Name="sp_ABC_CuentaXPagar">
+            <Parameter Name="cp_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="cp_opcion" Mode="In" Type="String" />
+            <Parameter Name="cp_IdCuentaXPagar" Mode="InOut" Type="Int32" />
+            <Parameter Name="cp_Proveedor" Mode="In" Type="Int32" />
+            <Parameter Name="cp_Saldo" Mode="In" Type="Decimal" />
+            <Parameter Name="cp_fechaUltMov" Mode="In" Type="DateTime" />
+            <Parameter Name="cp_MontoUltMov" Mode="In" Type="Decimal" />
+            <Parameter Name="cp_estCuentaXPagar" Mode="In" Type="String" />
+            <Parameter Name="cp_usuario" Mode="In" Type="String" />
+            <Parameter Name="cp_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ABC_MovimientoCuentaXPagar">
+            <Parameter Name="mp_empresa" Mode="In" Type="Int16" />
+            <Parameter Name="mp_opcion" Mode="In" Type="String" />
+            <Parameter Name="mp_IdCuentaXPagar" Mode="InOut" Type="Int32" />
+            <Parameter Name="mp_IdMovCuentaXPagar" Mode="InOut" Type="Int32" />
+            <Parameter Name="mp_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="mp_IdDoc" Mode="In" Type="Int32" />
+            <Parameter Name="mp_Proveedor" Mode="In" Type="Int32" />
+            <Parameter Name="mp_FechaMov" Mode="In" Type="DateTime" />
+            <Parameter Name="mp_MontoMov" Mode="In" Type="Decimal" />
+            <Parameter Name="mp_CreditoDebito" Mode="In" Type="String" />
+            <Parameter Name="mp_Descripcion" Mode="In" Type="String" />
+            <Parameter Name="mp_estMovCuentaXPagar" Mode="In" Type="String" />
+            <Parameter Name="mp_usuario" Mode="In" Type="String" />
+            <Parameter Name="mp_timestamp" Mode="InOut" Type="Binary" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_CuentaXPagar">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="cp_empresa" Mode="In" Type="Int32" />
+            <Parameter Name="cp_IdCuentaXPagar" Mode="In" Type="Int32" />
+            <Parameter Name="cp_Proveedor" Mode="In" Type="Int32" />
+            <Parameter Name="cp_Saldo" Mode="In" Type="Decimal" />
+            <Parameter Name="cp_FechaUltMov" Mode="In" Type="DateTime" />
+            <Parameter Name="cp_MontoUltMov" Mode="In" Type="Decimal" />
+            <Parameter Name="cp_estCuentaXPagar" Mode="In" Type="String" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Busqueda_MovimientoCuentaXPagar">
+            <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+            <Parameter Name="busqueda" Mode="In" Type="String" />
+            <Parameter Name="mp_empresa" Mode="In" Type="Int32" />
+            <Parameter Name="mp_IdCuentaXPagar" Mode="In" Type="Int32" />
+            <Parameter Name="mp_IdMovCuentaXPagar" Mode="In" Type="Int32" />
+            <Parameter Name="mp_IdSucursal" Mode="In" Type="Int32" />
+            <Parameter Name="mp_IdDoc" Mode="In" Type="Int32" />
+            <Parameter Name="mp_Proveedor" Mode="In" Type="Int32" />
+            <Parameter Name="mp_FechaMov" Mode="In" Type="DateTime" />
+            <Parameter Name="mp_MontoMov" Mode="In" Type="Decimal" />
+            <Parameter Name="mp_CreditoDebito" Mode="In" Type="String" />
+            <Parameter Name="mp_Descripcion" Mode="In" Type="String" />
+            <Parameter Name="mp_estMovCuentaXPagar" Mode="In" Type="String" />
+            <Parameter Name="error" Mode="InOut" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_Busqueda_ArqueoCaja_Result">
           <Property Type="Int16" Name="Empresa" Nullable="false" />
@@ -3857,53 +3924,11 @@
           <FunctionImportMapping FunctionImportName="sp_GenerarCierreDiario" FunctionName="SSS_OPERACIONModel.Store.sp_GenerarCierreDiario" />
           <FunctionImportMapping FunctionImportName="sp_Obtiene_NoFactura" FunctionName="SSS_OPERACIONModel.Store.sp_Obtiene_NoFactura" />
           <FunctionImportMapping FunctionImportName="sp_Validaciones_FacturaFormaPago" FunctionName="SSS_OPERACIONModel.Store.sp_Validaciones_FacturaFormaPago" />
-          <EntitySetMapping Name="CuentaXPagar">
-            <EntityTypeMapping TypeName="SSS_OPERACIONModel.CuentaXPagar">
-              <MappingFragment StoreEntitySet="CuentaXPagar">
-                <ScalarProperty Name="cp_timestamp" ColumnName="cp_timestamp" />
-                <ScalarProperty Name="cp_estado" ColumnName="cp_estado" />
-                <ScalarProperty Name="cp_maquinamod" ColumnName="cp_maquinamod" />
-                <ScalarProperty Name="cp_maquinaing" ColumnName="cp_maquinaing" />
-                <ScalarProperty Name="cp_usuariomod" ColumnName="cp_usuariomod" />
-                <ScalarProperty Name="cp_usuarioing" ColumnName="cp_usuarioing" />
-                <ScalarProperty Name="cp_fechamod" ColumnName="cp_fechamod" />
-                <ScalarProperty Name="cp_fechaing" ColumnName="cp_fechaing" />
-                <ScalarProperty Name="cp_estCuentaXPagar" ColumnName="cp_estCuentaXPagar" />
-                <ScalarProperty Name="cp_MontoUltMov" ColumnName="cp_MontoUltMov" />
-                <ScalarProperty Name="cp_fechaUltMov" ColumnName="cp_fechaUltMov" />
-                <ScalarProperty Name="cp_Saldo" ColumnName="cp_Saldo" />
-                <ScalarProperty Name="cp_Proveedor" ColumnName="cp_Proveedor" />
-                <ScalarProperty Name="cp_IdCuentaXPagar" ColumnName="cp_IdCuentaXPagar" />
-                <ScalarProperty Name="cp_empresa" ColumnName="cp_empresa" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MovimientoCuentaXPagar">
-            <EntityTypeMapping TypeName="SSS_OPERACIONModel.MovimientoCuentaXPagar">
-              <MappingFragment StoreEntitySet="MovimientoCuentaXPagar">
-                <ScalarProperty Name="mp_timestamp" ColumnName="mp_timestamp" />
-                <ScalarProperty Name="mp_estado" ColumnName="mp_estado" />
-                <ScalarProperty Name="mp_maquinamod" ColumnName="mp_maquinamod" />
-                <ScalarProperty Name="mp_maquinaing" ColumnName="mp_maquinaing" />
-                <ScalarProperty Name="mp_usuariomod" ColumnName="mp_usuariomod" />
-                <ScalarProperty Name="mp_usuarioing" ColumnName="mp_usuarioing" />
-                <ScalarProperty Name="mp_fechamod" ColumnName="mp_fechamod" />
-                <ScalarProperty Name="mp_fechaing" ColumnName="mp_fechaing" />
-                <ScalarProperty Name="mp_estMovCuentaXPagar" ColumnName="mp_estMovCuentaXPagar" />
-                <ScalarProperty Name="mp_Descripcion" ColumnName="mp_Descripcion" />
-                <ScalarProperty Name="mp_CreditoDebito" ColumnName="mp_CreditoDebito" />
-                <ScalarProperty Name="mp_MontoMov" ColumnName="mp_MontoMov" />
-                <ScalarProperty Name="mp_FechaMov" ColumnName="mp_FechaMov" />
-                <ScalarProperty Name="mp_Proveedor" ColumnName="mp_Proveedor" />
-                <ScalarProperty Name="mp_IdDoc" ColumnName="mp_IdDoc" />
-                <ScalarProperty Name="mp_IdSucursal" ColumnName="mp_IdSucursal" />
-                <ScalarProperty Name="mp_IdMovCuentaXPagar" ColumnName="mp_IdMovCuentaXPagar" />
-                <ScalarProperty Name="mp_IdCuentaXPagar" ColumnName="mp_IdCuentaXPagar" />
-                <ScalarProperty Name="mp_empresa" ColumnName="mp_empresa" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="sp_ABC_CuentaXPagar" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_CuentaXPagar" />
+          <FunctionImportMapping FunctionImportName="sp_ABC_MovimientoCuentaXPagar" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_MovimientoCuentaXPagar" />
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_CuentaXPagar" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_CuentaXPagar" />
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_MovimientoCuentaXPagar" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_MovimientoCuentaXPagar" />
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -3917,7 +3942,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />

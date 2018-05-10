@@ -1287,6 +1287,64 @@
     </FunctionImport>
     <EntitySet Name="CuentaXPagar" EntityType="SSS_OPERACIONModel.CuentaXPagar" />
     <EntitySet Name="MovimientoCuentaXPagar" EntityType="SSS_OPERACIONModel.MovimientoCuentaXPagar" />
+    <FunctionImport Name="sp_ABC_CuentaXPagar">
+      <Parameter Name="cp_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="cp_opcion" Mode="In" Type="String" />
+      <Parameter Name="cp_IdCuentaXPagar" Mode="InOut" Type="Int32" />
+      <Parameter Name="cp_Proveedor" Mode="In" Type="Int32" />
+      <Parameter Name="cp_Saldo" Mode="In" Type="Decimal" />
+      <Parameter Name="cp_fechaUltMov" Mode="In" Type="DateTime" />
+      <Parameter Name="cp_MontoUltMov" Mode="In" Type="Decimal" />
+      <Parameter Name="cp_estCuentaXPagar" Mode="In" Type="String" />
+      <Parameter Name="cp_usuario" Mode="In" Type="String" />
+      <Parameter Name="cp_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ABC_MovimientoCuentaXPagar">
+      <Parameter Name="mp_empresa" Mode="In" Type="Int16" />
+      <Parameter Name="mp_opcion" Mode="In" Type="String" />
+      <Parameter Name="mp_IdCuentaXPagar" Mode="InOut" Type="Int32" />
+      <Parameter Name="mp_IdMovCuentaXPagar" Mode="InOut" Type="Int32" />
+      <Parameter Name="mp_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="mp_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="mp_Proveedor" Mode="In" Type="Int32" />
+      <Parameter Name="mp_FechaMov" Mode="In" Type="DateTime" />
+      <Parameter Name="mp_MontoMov" Mode="In" Type="Decimal" />
+      <Parameter Name="mp_CreditoDebito" Mode="In" Type="String" />
+      <Parameter Name="mp_Descripcion" Mode="In" Type="String" />
+      <Parameter Name="mp_estMovCuentaXPagar" Mode="In" Type="String" />
+      <Parameter Name="mp_usuario" Mode="In" Type="String" />
+      <Parameter Name="mp_timestamp" Mode="InOut" Type="Binary" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_CuentaXPagar">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="cp_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="cp_IdCuentaXPagar" Mode="In" Type="Int32" />
+      <Parameter Name="cp_Proveedor" Mode="In" Type="Int32" />
+      <Parameter Name="cp_Saldo" Mode="In" Type="Decimal" />
+      <Parameter Name="cp_FechaUltMov" Mode="In" Type="DateTime" />
+      <Parameter Name="cp_MontoUltMov" Mode="In" Type="Decimal" />
+      <Parameter Name="cp_estCuentaXPagar" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Busqueda_MovimientoCuentaXPagar">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="busqueda" Mode="In" Type="String" />
+      <Parameter Name="mp_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="mp_IdCuentaXPagar" Mode="In" Type="Int32" />
+      <Parameter Name="mp_IdMovCuentaXPagar" Mode="In" Type="Int32" />
+      <Parameter Name="mp_IdSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="mp_IdDoc" Mode="In" Type="Int32" />
+      <Parameter Name="mp_Proveedor" Mode="In" Type="Int32" />
+      <Parameter Name="mp_FechaMov" Mode="In" Type="DateTime" />
+      <Parameter Name="mp_MontoMov" Mode="In" Type="Decimal" />
+      <Parameter Name="mp_CreditoDebito" Mode="In" Type="String" />
+      <Parameter Name="mp_Descripcion" Mode="In" Type="String" />
+      <Parameter Name="mp_estMovCuentaXPagar" Mode="In" Type="String" />
+      <Parameter Name="error" Mode="InOut" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_Busqueda_ArqueoCaja_Result">
     <Property Type="Int16" Name="Empresa" Nullable="false" />

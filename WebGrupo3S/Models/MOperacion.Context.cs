@@ -193,7 +193,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CierreCaja", cj_empresaParameter, cj_opcionParameter, cj_IdCierreCaja, cj_TerminalParameter, cj_IdSucursalParameter, cj_MonedaParameter, cj_SaldoAnteriorParameter, cj_EntradasEfectivoParameter, cj_SalidasEfectivoParameter, cj_EfectivoTeoricoParameter, cj_EfectivoFisicoParameter, cj_AjusteEfectivoParameter, cj_ChequeTeoricoParameter, cj_ChequeFisicoParameter, cj_AjusteChequeParameter, cj_TarjetaTeoricoParameter, cj_TarjetaFisicoParameter, cj_AjusteTarjetaParameter, cj_DescuadreParameter, cj_RetiroEfectivoAdminParameter, cj_SaldoActualParameter, cj_estCierreCajaParameter, cj_TotalVentaParameter, cj_TotalPropinaParameter, cj_usuarioParameter, cj_timestamp, error);
         }
     
-        public virtual int sp_ABC_CierreDiario(Nullable<short> cd_empresa, string cd_opcion, Nullable<int> cd_IdSucursal, ObjectParameter cd_IdCierreDiario, Nullable<System.DateTime> cd_FechaCierreDiario, string cd_estCierreDiario, string cd_usuario, string cd_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_CierreDiario(Nullable<short> cd_empresa, string cd_opcion, Nullable<int> cd_IdSucursal, ObjectParameter cd_IdCierreDiario, Nullable<System.DateTime> cd_FechaCierreDiario, string cd_estCierreDiario, string cd_usuario, ObjectParameter cd_timestamp, ObjectParameter error)
         {
             var cd_empresaParameter = cd_empresa.HasValue ?
                 new ObjectParameter("cd_empresa", cd_empresa) :
@@ -218,10 +218,8 @@ namespace WebGrupo3S.Models
             var cd_usuarioParameter = cd_usuario != null ?
                 new ObjectParameter("cd_usuario", cd_usuario) :
                 new ObjectParameter("cd_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("cd_timestamp", Convert.FromBase64String(cd_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CierreDiario", cd_empresaParameter, cd_opcionParameter, cd_IdSucursalParameter, cd_IdCierreDiario, cd_FechaCierreDiarioParameter, cd_estCierreDiarioParameter, cd_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CierreDiario", cd_empresaParameter, cd_opcionParameter, cd_IdSucursalParameter, cd_IdCierreDiario, cd_FechaCierreDiarioParameter, cd_estCierreDiarioParameter, cd_usuarioParameter, cd_timestamp, error);
         }
     
         public virtual int sp_ABC_CuentaXCobrar(Nullable<short> cc_empresa, string cc_opcion, ObjectParameter cc_IdCuentaXCobrar, Nullable<int> cc_Cliente, Nullable<decimal> cc_Saldo, Nullable<System.DateTime> cc_fechaUltMov, Nullable<decimal> cc_MontoUltMov, string cc_estCuentaXCobrar, string cc_usuario, string cc_timestamp, ObjectParameter error)
@@ -263,7 +261,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CuentaXCobrar", cc_empresaParameter, cc_opcionParameter, cc_IdCuentaXCobrar, cc_ClienteParameter, cc_SaldoParameter, cc_fechaUltMovParameter, cc_MontoUltMovParameter, cc_estCuentaXCobrarParameter, cc_usuarioParameter, ts, error);
         }
     
-        public virtual int sp_ABC_Descuento(Nullable<short> ds_empresa, string ds_opcion, ObjectParameter ds_IdDescuento, Nullable<int> ds_IdSucursal, string ds_TipoDescuento, string ds_Descripcion, Nullable<int> ds_Porcentaje, Nullable<decimal> ds_Cantidad, Nullable<int> ds_IdDoc, Nullable<int> ds_IdMov, Nullable<int> ds_IdAutorizacion, Nullable<int> ds_IdMovDescuento, string ds_Comentario, string ds_usuario, string ds_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_Descuento(Nullable<short> ds_empresa, string ds_opcion, ObjectParameter ds_IdDescuento, Nullable<int> ds_IdSucursal, string ds_TipoDescuento, string ds_Descripcion, Nullable<int> ds_Porcentaje, Nullable<decimal> ds_Cantidad, Nullable<int> ds_IdDoc, Nullable<int> ds_IdMov, Nullable<int> ds_IdAutorizacion, Nullable<int> ds_IdMovDescuento, string ds_Comentario, string ds_usuario, ObjectParameter ds_timestamp, ObjectParameter error)
         {
             var ds_empresaParameter = ds_empresa.HasValue ?
                 new ObjectParameter("ds_empresa", ds_empresa) :
@@ -316,10 +314,8 @@ namespace WebGrupo3S.Models
             var ds_usuarioParameter = ds_usuario != null ?
                 new ObjectParameter("ds_usuario", ds_usuario) :
                 new ObjectParameter("ds_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("ds_timestamp", Convert.FromBase64String(ds_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Descuento", ds_empresaParameter, ds_opcionParameter, ds_IdDescuento, ds_IdSucursalParameter, ds_TipoDescuentoParameter, ds_DescripcionParameter, ds_PorcentajeParameter, ds_CantidadParameter, ds_IdDocParameter, ds_IdMovParameter, ds_IdAutorizacionParameter, ds_IdMovDescuentoParameter, ds_ComentarioParameter, ds_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Descuento", ds_empresaParameter, ds_opcionParameter, ds_IdDescuento, ds_IdSucursalParameter, ds_TipoDescuentoParameter, ds_DescripcionParameter, ds_PorcentajeParameter, ds_CantidadParameter, ds_IdDocParameter, ds_IdMovParameter, ds_IdAutorizacionParameter, ds_IdMovDescuentoParameter, ds_ComentarioParameter, ds_usuarioParameter, ds_timestamp, error);
         }
     
         public virtual int sp_ABC_DetalleCierreCaja(Nullable<short> dj_empresa, string dj_opcion, Nullable<int> dj_IdCierreCaja, ObjectParameter dj_IdDetalleCierreCaja, string dj_IdFormaPago, Nullable<decimal> dj_Monto, string dj_usuario, ObjectParameter dj_timestamp, ObjectParameter error)
@@ -351,7 +347,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_DetalleCierreCaja", dj_empresaParameter, dj_opcionParameter, dj_IdCierreCajaParameter, dj_IdDetalleCierreCaja, dj_IdFormaPagoParameter, dj_MontoParameter, dj_usuarioParameter, dj_timestamp, error);
         }
     
-        public virtual int sp_ABC_Documento(Nullable<short> dm_empresa, string dm_opcion, Nullable<int> dm_IdSucursal, ObjectParameter dm_IdDoc, string dm_tipoDocumento, string dm_TipoAsociado, Nullable<int> dm_asociado, string dm_NombreAsociado, string dm_DireccionAsociado, string dm_Nit, Nullable<decimal> dm_subtotal, Nullable<decimal> dm_descuento, Nullable<decimal> dm_total, string dm_SerieDoc, string dm_NoDocumento, Nullable<System.DateTime> dm_fechaDoc, string dm_estDocumento, string dm_Terminal, string dm_Descripcion, string dm_MotivoAnulacion, string dm_MotivoNCND, string dm_Comentario, string cc_estCuentaXCobrar, Nullable<int> dm_IdDocAnulado, Nullable<int> dm_IdCierreDiario, string dm_usuario, string dm_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_Documento(Nullable<short> dm_empresa, string dm_opcion, Nullable<int> dm_IdSucursal, ObjectParameter dm_IdDoc, string dm_tipoDocumento, string dm_TipoAsociado, Nullable<int> dm_asociado, string dm_NombreAsociado, string dm_DireccionAsociado, string dm_Nit, Nullable<decimal> dm_subtotal, Nullable<decimal> dm_descuento, Nullable<decimal> dm_total, string dm_SerieDoc, string dm_NoDocumento, Nullable<System.DateTime> dm_fechaDoc, string dm_estDocumento, string dm_Terminal, string dm_Descripcion, string dm_MotivoAnulacion, string dm_MotivoNCND, string dm_Comentario, string cc_estCuentaXCobrar, Nullable<int> dm_IdDocAnulado, Nullable<int> dm_IdCierreDiario, string dm_usuario, ObjectParameter dm_timestamp, ObjectParameter error)
         {
             var dm_empresaParameter = dm_empresa.HasValue ?
                 new ObjectParameter("dm_empresa", dm_empresa) :
@@ -452,13 +448,11 @@ namespace WebGrupo3S.Models
             var dm_usuarioParameter = dm_usuario != null ?
                 new ObjectParameter("dm_usuario", dm_usuario) :
                 new ObjectParameter("dm_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("dm_timestamp", Convert.FromBase64String(dm_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Documento", dm_empresaParameter, dm_opcionParameter, dm_IdSucursalParameter, dm_IdDoc, dm_tipoDocumentoParameter, dm_TipoAsociadoParameter, dm_asociadoParameter, dm_NombreAsociadoParameter, dm_DireccionAsociadoParameter, dm_NitParameter, dm_subtotalParameter, dm_descuentoParameter, dm_totalParameter, dm_SerieDocParameter, dm_NoDocumentoParameter, dm_fechaDocParameter, dm_estDocumentoParameter, dm_TerminalParameter, dm_DescripcionParameter, dm_MotivoAnulacionParameter, dm_MotivoNCNDParameter, dm_ComentarioParameter, cc_estCuentaXCobrarParameter, dm_IdDocAnuladoParameter, dm_IdCierreDiarioParameter, dm_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Documento", dm_empresaParameter, dm_opcionParameter, dm_IdSucursalParameter, dm_IdDoc, dm_tipoDocumentoParameter, dm_TipoAsociadoParameter, dm_asociadoParameter, dm_NombreAsociadoParameter, dm_DireccionAsociadoParameter, dm_NitParameter, dm_subtotalParameter, dm_descuentoParameter, dm_totalParameter, dm_SerieDocParameter, dm_NoDocumentoParameter, dm_fechaDocParameter, dm_estDocumentoParameter, dm_TerminalParameter, dm_DescripcionParameter, dm_MotivoAnulacionParameter, dm_MotivoNCNDParameter, dm_ComentarioParameter, cc_estCuentaXCobrarParameter, dm_IdDocAnuladoParameter, dm_IdCierreDiarioParameter, dm_usuarioParameter, dm_timestamp, error);
         }
     
-        public virtual int sp_ABC_Existencia(Nullable<short> ex_empresa, string ex_opcion, Nullable<int> ex_IdSucursal, ObjectParameter ex_IdExistencia, Nullable<int> ex_TipoProducto, Nullable<int> ex_IdProd, Nullable<int> ex_Cantidad, Nullable<decimal> ex_precioUnitario, Nullable<System.DateTime> ex_FechaCaducidad, string ex_usuario, string ex_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_Existencia(Nullable<short> ex_empresa, string ex_opcion, Nullable<int> ex_IdSucursal, ObjectParameter ex_IdExistencia, Nullable<int> ex_TipoProducto, Nullable<int> ex_IdProd, Nullable<int> ex_Cantidad, Nullable<decimal> ex_precioUnitario, Nullable<System.DateTime> ex_FechaCaducidad, string ex_usuario, ObjectParameter ex_timestamp, ObjectParameter error)
         {
             var ex_empresaParameter = ex_empresa.HasValue ?
                 new ObjectParameter("ex_empresa", ex_empresa) :
@@ -495,13 +489,11 @@ namespace WebGrupo3S.Models
             var ex_usuarioParameter = ex_usuario != null ?
                 new ObjectParameter("ex_usuario", ex_usuario) :
                 new ObjectParameter("ex_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("ex_timestamp", Convert.FromBase64String(ex_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Existencia", ex_empresaParameter, ex_opcionParameter, ex_IdSucursalParameter, ex_IdExistencia, ex_TipoProductoParameter, ex_IdProdParameter, ex_CantidadParameter, ex_precioUnitarioParameter, ex_FechaCaducidadParameter, ex_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Existencia", ex_empresaParameter, ex_opcionParameter, ex_IdSucursalParameter, ex_IdExistencia, ex_TipoProductoParameter, ex_IdProdParameter, ex_CantidadParameter, ex_precioUnitarioParameter, ex_FechaCaducidadParameter, ex_usuarioParameter, ex_timestamp, error);
         }
     
-        public virtual int sp_ABC_FacturaFormaPago(Nullable<short> fp_empresa, string fp_opcion, ObjectParameter fp_IdFacturaFormaPago, Nullable<int> fp_IdSucursal, Nullable<int> fp_IdDoc, ObjectParameter fp_IdMov, string fp_IdFormaPago, Nullable<int> fp_IdAutorizacion, Nullable<decimal> fp_Cantidad, Nullable<decimal> fp_efectivoRecibido, Nullable<decimal> fp_efectivoVuelto, Nullable<int> fp_Unidades, Nullable<long> fp_NoDocumento, string fp_IdBanco, string fp_Comentario, string fp_Moneda, string fp_IdMarcaTarjeta, Nullable<int> fp_IdOrdenServicio, Nullable<int> fp_IdDetalleOrdenServicio, Nullable<int> fp_IdServicio, Nullable<int> fp_IdProducto, string fp_TipoDocumentoPromo, Nullable<int> fp_IdCierreCaja, Nullable<int> fp_ConfirmaCierreCaja, string fp_usuario, string fp_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_FacturaFormaPago(Nullable<short> fp_empresa, string fp_opcion, ObjectParameter fp_IdFacturaFormaPago, Nullable<int> fp_IdSucursal, Nullable<int> fp_IdDoc, ObjectParameter fp_IdMov, string fp_IdFormaPago, Nullable<int> fp_IdAutorizacion, Nullable<decimal> fp_Cantidad, Nullable<decimal> fp_efectivoRecibido, Nullable<decimal> fp_efectivoVuelto, Nullable<int> fp_Unidades, Nullable<long> fp_NoDocumento, string fp_IdBanco, string fp_Comentario, string fp_Moneda, string fp_IdMarcaTarjeta, Nullable<int> fp_IdOrdenServicio, Nullable<int> fp_IdDetalleOrdenServicio, Nullable<int> fp_IdServicio, Nullable<int> fp_IdProducto, string fp_TipoDocumentoPromo, Nullable<int> fp_IdCierreCaja, Nullable<int> fp_ConfirmaCierreCaja, string fp_usuario, ObjectParameter fp_timestamp, ObjectParameter error)
         {
             var fp_empresaParameter = fp_empresa.HasValue ?
                 new ObjectParameter("fp_empresa", fp_empresa) :
@@ -594,13 +586,11 @@ namespace WebGrupo3S.Models
             var fp_usuarioParameter = fp_usuario != null ?
                 new ObjectParameter("fp_usuario", fp_usuario) :
                 new ObjectParameter("fp_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("fp_timestamp", Convert.FromBase64String(fp_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_FacturaFormaPago", fp_empresaParameter, fp_opcionParameter, fp_IdFacturaFormaPago, fp_IdSucursalParameter, fp_IdDocParameter, fp_IdMov, fp_IdFormaPagoParameter, fp_IdAutorizacionParameter, fp_CantidadParameter, fp_efectivoRecibidoParameter, fp_efectivoVueltoParameter, fp_UnidadesParameter, fp_NoDocumentoParameter, fp_IdBancoParameter, fp_ComentarioParameter, fp_MonedaParameter, fp_IdMarcaTarjetaParameter, fp_IdOrdenServicioParameter, fp_IdDetalleOrdenServicioParameter, fp_IdServicioParameter, fp_IdProductoParameter, fp_TipoDocumentoPromoParameter, fp_IdCierreCajaParameter, fp_ConfirmaCierreCajaParameter, fp_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_FacturaFormaPago", fp_empresaParameter, fp_opcionParameter, fp_IdFacturaFormaPago, fp_IdSucursalParameter, fp_IdDocParameter, fp_IdMov, fp_IdFormaPagoParameter, fp_IdAutorizacionParameter, fp_CantidadParameter, fp_efectivoRecibidoParameter, fp_efectivoVueltoParameter, fp_UnidadesParameter, fp_NoDocumentoParameter, fp_IdBancoParameter, fp_ComentarioParameter, fp_MonedaParameter, fp_IdMarcaTarjetaParameter, fp_IdOrdenServicioParameter, fp_IdDetalleOrdenServicioParameter, fp_IdServicioParameter, fp_IdProductoParameter, fp_TipoDocumentoPromoParameter, fp_IdCierreCajaParameter, fp_ConfirmaCierreCajaParameter, fp_usuarioParameter, fp_timestamp, error);
         }
     
-        public virtual int sp_ABC_Movimiento(Nullable<short> mv_empresa, string mv_opcion, Nullable<int> mv_IdSucursal, ObjectParameter mv_IdMov, string mv_ProdServ, Nullable<int> mv_IdProdServ, Nullable<int> mv_Cantidad, Nullable<decimal> mv_ValorMov, string mv_TipoMovimiento, Nullable<System.DateTime> mv_FechaMov, Nullable<int> mv_IdDoc, Nullable<int> mv_IdOrdenServicio, Nullable<int> mv_IdDetalleOrdenServicio, Nullable<int> mv_IdAutorizacion, string mv_usuario, string mv_timestamp, ObjectParameter error, Nullable<int> mv_IdEmpleado)
+        public virtual int sp_ABC_Movimiento(Nullable<short> mv_empresa, string mv_opcion, Nullable<int> mv_IdSucursal, ObjectParameter mv_IdMov, string mv_ProdServ, Nullable<int> mv_IdProdServ, Nullable<int> mv_Cantidad, Nullable<decimal> mv_ValorMov, string mv_TipoMovimiento, Nullable<System.DateTime> mv_FechaMov, Nullable<int> mv_IdDoc, Nullable<int> mv_IdOrdenServicio, Nullable<int> mv_IdDetalleOrdenServicio, Nullable<int> mv_IdAutorizacion, string mv_usuario, ObjectParameter mv_timestamp, ObjectParameter error, Nullable<int> mv_IdEmpleado)
         {
             var mv_empresaParameter = mv_empresa.HasValue ?
                 new ObjectParameter("mv_empresa", mv_empresa) :
@@ -661,13 +651,11 @@ namespace WebGrupo3S.Models
             var mv_IdEmpleadoParameter = mv_IdEmpleado.HasValue ?
                 new ObjectParameter("mv_IdEmpleado", mv_IdEmpleado) :
                 new ObjectParameter("mv_IdEmpleado", typeof(int));
-
-            ObjectParameter ts = new ObjectParameter("mv_timestamp", Convert.FromBase64String(mv_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Movimiento", mv_empresaParameter, mv_opcionParameter, mv_IdSucursalParameter, mv_IdMov, mv_ProdServParameter, mv_IdProdServParameter, mv_CantidadParameter, mv_ValorMovParameter, mv_TipoMovimientoParameter, mv_FechaMovParameter, mv_IdDocParameter, mv_IdOrdenServicioParameter, mv_IdDetalleOrdenServicioParameter, mv_IdAutorizacionParameter, mv_usuarioParameter, ts, error, mv_IdEmpleadoParameter);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Movimiento", mv_empresaParameter, mv_opcionParameter, mv_IdSucursalParameter, mv_IdMov, mv_ProdServParameter, mv_IdProdServParameter, mv_CantidadParameter, mv_ValorMovParameter, mv_TipoMovimientoParameter, mv_FechaMovParameter, mv_IdDocParameter, mv_IdOrdenServicioParameter, mv_IdDetalleOrdenServicioParameter, mv_IdAutorizacionParameter, mv_usuarioParameter, mv_timestamp, error, mv_IdEmpleadoParameter);
         }
     
-        public virtual int sp_ABC_MovimientoCuentaXCobrar(Nullable<short> mc_empresa, string mc_opcion, ObjectParameter mc_IdCuentaXCobrar, ObjectParameter mc_IdMovCuentaXCobrar, Nullable<int> mc_IdSucursal, Nullable<int> mc_IdDoc, Nullable<int> mc_Cliente, Nullable<System.DateTime> mc_FechaMov, Nullable<decimal> mc_MontoMov, string mc_CreditoDebito, string mc_Descripcion, string mc_estMovCuentaXCobrar, string mc_usuario, string mc_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_MovimientoCuentaXCobrar(Nullable<short> mc_empresa, string mc_opcion, ObjectParameter mc_IdCuentaXCobrar, ObjectParameter mc_IdMovCuentaXCobrar, Nullable<int> mc_IdSucursal, Nullable<int> mc_IdDoc, Nullable<int> mc_Cliente, Nullable<System.DateTime> mc_FechaMov, Nullable<decimal> mc_MontoMov, string mc_CreditoDebito, string mc_Descripcion, string mc_estMovCuentaXCobrar, string mc_usuario, ObjectParameter mc_timestamp, ObjectParameter error)
         {
             var mc_empresaParameter = mc_empresa.HasValue ?
                 new ObjectParameter("mc_empresa", mc_empresa) :
@@ -712,13 +700,11 @@ namespace WebGrupo3S.Models
             var mc_usuarioParameter = mc_usuario != null ?
                 new ObjectParameter("mc_usuario", mc_usuario) :
                 new ObjectParameter("mc_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("mc_timestamp", Convert.FromBase64String(mc_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_MovimientoCuentaXCobrar", mc_empresaParameter, mc_opcionParameter, mc_IdCuentaXCobrar, mc_IdMovCuentaXCobrar, mc_IdSucursalParameter, mc_IdDocParameter, mc_ClienteParameter, mc_FechaMovParameter, mc_MontoMovParameter, mc_CreditoDebitoParameter, mc_DescripcionParameter, mc_estMovCuentaXCobrarParameter, mc_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_MovimientoCuentaXCobrar", mc_empresaParameter, mc_opcionParameter, mc_IdCuentaXCobrar, mc_IdMovCuentaXCobrar, mc_IdSucursalParameter, mc_IdDocParameter, mc_ClienteParameter, mc_FechaMovParameter, mc_MontoMovParameter, mc_CreditoDebitoParameter, mc_DescripcionParameter, mc_estMovCuentaXCobrarParameter, mc_usuarioParameter, mc_timestamp, error);
         }
     
-        public virtual int sp_ABC_PrecioProductoServicio(Nullable<short> pp_empresa, string pp_opcion, string pp_TipoPrecio, ObjectParameter pp_IdPrecProdServ, Nullable<int> pp_IdProdServ, Nullable<decimal> pp_precio, Nullable<decimal> pp_precioMaximo, string pp_usuario, string pp_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_PrecioProductoServicio(Nullable<short> pp_empresa, string pp_opcion, string pp_TipoPrecio, ObjectParameter pp_IdPrecProdServ, Nullable<int> pp_IdProdServ, Nullable<decimal> pp_precio, Nullable<decimal> pp_precioMaximo, string pp_usuario, ObjectParameter pp_timestamp, ObjectParameter error)
         {
             var pp_empresaParameter = pp_empresa.HasValue ?
                 new ObjectParameter("pp_empresa", pp_empresa) :
@@ -747,10 +733,8 @@ namespace WebGrupo3S.Models
             var pp_usuarioParameter = pp_usuario != null ?
                 new ObjectParameter("pp_usuario", pp_usuario) :
                 new ObjectParameter("pp_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("pp_timestamp", Convert.FromBase64String(pp_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_PrecioProductoServicio", pp_empresaParameter, pp_opcionParameter, pp_TipoPrecioParameter, pp_IdPrecProdServ, pp_IdProdServParameter, pp_precioParameter, pp_precioMaximoParameter, pp_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_PrecioProductoServicio", pp_empresaParameter, pp_opcionParameter, pp_TipoPrecioParameter, pp_IdPrecProdServ, pp_IdProdServParameter, pp_precioParameter, pp_precioMaximoParameter, pp_usuarioParameter, pp_timestamp, error);
         }
     
         public virtual int sp_ABC_Producto(Nullable<short> pr_empresa, string pr_opcion, Nullable<int> pr_TipoProducto, ObjectParameter pr_IdProd, string pr_nombre, string pr_descripcion, string pr_CodigoBarras, string pr_CodigoSAP, string pr_IdMarca, byte[] pr_ImagenProd, string pr_usuario, string pr_timestamp, ObjectParameter error)
@@ -800,7 +784,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Producto", pr_empresaParameter, pr_opcionParameter, pr_TipoProductoParameter, pr_IdProd, pr_nombreParameter, pr_descripcionParameter, pr_CodigoBarrasParameter, pr_CodigoSAPParameter, pr_IdMarcaParameter, pr_ImagenProdParameter, pr_usuarioParameter, ts, error);
         }
     
-        public virtual int sp_ABC_Propina(Nullable<short> pn_empresa, string pn_opcion, Nullable<int> pn_IdSucursal, ObjectParameter pn_IdPropina, Nullable<int> pn_IdOrdenPago, Nullable<int> pn_IdOrdenServicio, Nullable<int> pn_IdDetalleOrdenServicio, Nullable<decimal> pn_Cantidad, string pn_usuario, string pn_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_Propina(Nullable<short> pn_empresa, string pn_opcion, Nullable<int> pn_IdSucursal, ObjectParameter pn_IdPropina, Nullable<int> pn_IdOrdenPago, Nullable<int> pn_IdOrdenServicio, Nullable<int> pn_IdDetalleOrdenServicio, Nullable<decimal> pn_Cantidad, string pn_usuario, ObjectParameter pn_timestamp, ObjectParameter error)
         {
             var pn_empresaParameter = pn_empresa.HasValue ?
                 new ObjectParameter("pn_empresa", pn_empresa) :
@@ -833,13 +817,11 @@ namespace WebGrupo3S.Models
             var pn_usuarioParameter = pn_usuario != null ?
                 new ObjectParameter("pn_usuario", pn_usuario) :
                 new ObjectParameter("pn_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("pn_timestamp", Convert.FromBase64String(pn_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Propina", pn_empresaParameter, pn_opcionParameter, pn_IdSucursalParameter, pn_IdPropina, pn_IdOrdenPagoParameter, pn_IdOrdenServicioParameter, pn_IdDetalleOrdenServicioParameter, pn_CantidadParameter, pn_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Propina", pn_empresaParameter, pn_opcionParameter, pn_IdSucursalParameter, pn_IdPropina, pn_IdOrdenPagoParameter, pn_IdOrdenServicioParameter, pn_IdDetalleOrdenServicioParameter, pn_CantidadParameter, pn_usuarioParameter, pn_timestamp, error);
         }
     
-        public virtual int sp_ABC_SalidaEfectivoCaja(Nullable<short> sc_empresa, string sc_opcion, ObjectParameter sc_IdSalidaEfectivo, Nullable<int> sc_IdSucursal, string sc_Moneda, string sc_MotivoSalidaEfectivo, Nullable<decimal> sc_Monto, Nullable<int> sc_IdAutorizacion, Nullable<int> sc_IdCierreCaja, Nullable<int> sc_ConfirmaCierreCaja, Nullable<int> sc_IdDoc, Nullable<int> sc_IdFacturaFormaPago, string sc_usuario, string sc_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_SalidaEfectivoCaja(Nullable<short> sc_empresa, string sc_opcion, ObjectParameter sc_IdSalidaEfectivo, Nullable<int> sc_IdSucursal, string sc_Moneda, string sc_MotivoSalidaEfectivo, Nullable<decimal> sc_Monto, Nullable<int> sc_IdAutorizacion, Nullable<int> sc_IdCierreCaja, Nullable<int> sc_ConfirmaCierreCaja, Nullable<int> sc_IdDoc, Nullable<int> sc_IdFacturaFormaPago, string sc_usuario, ObjectParameter sc_timestamp, ObjectParameter error)
         {
             var sc_empresaParameter = sc_empresa.HasValue ?
                 new ObjectParameter("sc_empresa", sc_empresa) :
@@ -888,13 +870,11 @@ namespace WebGrupo3S.Models
             var sc_usuarioParameter = sc_usuario != null ?
                 new ObjectParameter("sc_usuario", sc_usuario) :
                 new ObjectParameter("sc_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("sc_timestamp", Convert.FromBase64String(sc_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_SalidaEfectivoCaja", sc_empresaParameter, sc_opcionParameter, sc_IdSalidaEfectivo, sc_IdSucursalParameter, sc_MonedaParameter, sc_MotivoSalidaEfectivoParameter, sc_MontoParameter, sc_IdAutorizacionParameter, sc_IdCierreCajaParameter, sc_ConfirmaCierreCajaParameter, sc_IdDocParameter, sc_IdFacturaFormaPagoParameter, sc_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_SalidaEfectivoCaja", sc_empresaParameter, sc_opcionParameter, sc_IdSalidaEfectivo, sc_IdSucursalParameter, sc_MonedaParameter, sc_MotivoSalidaEfectivoParameter, sc_MontoParameter, sc_IdAutorizacionParameter, sc_IdCierreCajaParameter, sc_ConfirmaCierreCajaParameter, sc_IdDocParameter, sc_IdFacturaFormaPagoParameter, sc_usuarioParameter, sc_timestamp, error);
         }
     
-        public virtual int sp_ABC_SerieFactura(Nullable<short> sf_empresa, string sf_opcion, Nullable<int> sf_IdSucursal, ObjectParameter sf_IdSerieFactura, string sf_Terminal, string sf_TipoCorrelativo, string sf_Serie, Nullable<int> sf_RangoInicio, Nullable<int> sf_RangoFinal, Nullable<int> sf_NoFactura, string sf_estRegistro, string sf_usuario, string sf_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_SerieFactura(Nullable<short> sf_empresa, string sf_opcion, Nullable<int> sf_IdSucursal, ObjectParameter sf_IdSerieFactura, string sf_Terminal, string sf_TipoCorrelativo, string sf_Serie, Nullable<int> sf_RangoInicio, Nullable<int> sf_RangoFinal, Nullable<int> sf_NoFactura, string sf_estRegistro, string sf_usuario, ObjectParameter sf_timestamp, ObjectParameter error)
         {
             var sf_empresaParameter = sf_empresa.HasValue ?
                 new ObjectParameter("sf_empresa", sf_empresa) :
@@ -939,10 +919,8 @@ namespace WebGrupo3S.Models
             var sf_usuarioParameter = sf_usuario != null ?
                 new ObjectParameter("sf_usuario", sf_usuario) :
                 new ObjectParameter("sf_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("sf_timestamp", Convert.FromBase64String(sf_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_SerieFactura", sf_empresaParameter, sf_opcionParameter, sf_IdSucursalParameter, sf_IdSerieFactura, sf_TerminalParameter, sf_TipoCorrelativoParameter, sf_SerieParameter, sf_RangoInicioParameter, sf_RangoFinalParameter, sf_NoFacturaParameter, sf_estRegistroParameter, sf_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_SerieFactura", sf_empresaParameter, sf_opcionParameter, sf_IdSucursalParameter, sf_IdSerieFactura, sf_TerminalParameter, sf_TipoCorrelativoParameter, sf_SerieParameter, sf_RangoInicioParameter, sf_RangoFinalParameter, sf_NoFacturaParameter, sf_estRegistroParameter, sf_usuarioParameter, sf_timestamp, error);
         }
     
         public virtual int sp_ABC_Servicio(Nullable<short> sv_empresa, string sv_opcion, Nullable<int> sv_TipoServicio, ObjectParameter sv_IdServicio, string sv_nombre, string sv_descripcion, Nullable<int> sv_duracionServicio, string sv_usuario, string sv_timestamp, ObjectParameter error)
@@ -977,7 +955,7 @@ namespace WebGrupo3S.Models
 
             ObjectParameter ts = new ObjectParameter("sv_timestamp", Convert.FromBase64String(sv_timestamp));
 
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Servicio", sv_empresaParameter, sv_opcionParameter, sv_TipoServicioParameter, sv_IdServicio, sv_nombreParameter, sv_descripcionParameter, sv_duracionServicioParameter, sv_usuarioParameter,  ts, error);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Servicio", sv_empresaParameter, sv_opcionParameter, sv_TipoServicioParameter, sv_IdServicio, sv_nombreParameter, sv_descripcionParameter, sv_duracionServicioParameter, sv_usuarioParameter, ts, error);
         }
     
         public virtual int sp_ABC_Sucursal(Nullable<short> su_empresa, string su_opcion, ObjectParameter su_IdSucursal, string su_Nombre, Nullable<int> su_IdEncargado, string su_Direccion, string su_Telefono, string su_usuario, string su_timestamp, ObjectParameter error)
@@ -2414,6 +2392,190 @@ namespace WebGrupo3S.Models
                 new ObjectParameter("fp_usuario", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Validaciones_FacturaFormaPago", fp_empresaParameter, fp_IdSucursalParameter, fp_IdDoc, fp_IdFormaPago, fp_IdAutorizacionParameter, fp_CantidadParameter, fp_UnidadesParameter, fp_NoDocumentoParameter, fp_IdBancoParameter, fp_ComentarioParameter, fp_IdMarcaTarjetaParameter, fp_IdOrdenServicioParameter, fp_IdDetalleOrdenServicioParameter, fp_IdServicioParameter, fp_IdProductoParameter, fp_TipoDocumentoPromoParameter, fp_usuarioParameter, fp_timestamp, error);
+        }
+    
+        public virtual int sp_ABC_CuentaXPagar(Nullable<short> cp_empresa, string cp_opcion, ObjectParameter cp_IdCuentaXPagar, Nullable<int> cp_Proveedor, Nullable<decimal> cp_Saldo, Nullable<System.DateTime> cp_fechaUltMov, Nullable<decimal> cp_MontoUltMov, string cp_estCuentaXPagar, string cp_usuario, ObjectParameter cp_timestamp, ObjectParameter error)
+        {
+            var cp_empresaParameter = cp_empresa.HasValue ?
+                new ObjectParameter("cp_empresa", cp_empresa) :
+                new ObjectParameter("cp_empresa", typeof(short));
+    
+            var cp_opcionParameter = cp_opcion != null ?
+                new ObjectParameter("cp_opcion", cp_opcion) :
+                new ObjectParameter("cp_opcion", typeof(string));
+    
+            var cp_ProveedorParameter = cp_Proveedor.HasValue ?
+                new ObjectParameter("cp_Proveedor", cp_Proveedor) :
+                new ObjectParameter("cp_Proveedor", typeof(int));
+    
+            var cp_SaldoParameter = cp_Saldo.HasValue ?
+                new ObjectParameter("cp_Saldo", cp_Saldo) :
+                new ObjectParameter("cp_Saldo", typeof(decimal));
+    
+            var cp_fechaUltMovParameter = cp_fechaUltMov.HasValue ?
+                new ObjectParameter("cp_fechaUltMov", cp_fechaUltMov) :
+                new ObjectParameter("cp_fechaUltMov", typeof(System.DateTime));
+    
+            var cp_MontoUltMovParameter = cp_MontoUltMov.HasValue ?
+                new ObjectParameter("cp_MontoUltMov", cp_MontoUltMov) :
+                new ObjectParameter("cp_MontoUltMov", typeof(decimal));
+    
+            var cp_estCuentaXPagarParameter = cp_estCuentaXPagar != null ?
+                new ObjectParameter("cp_estCuentaXPagar", cp_estCuentaXPagar) :
+                new ObjectParameter("cp_estCuentaXPagar", typeof(string));
+    
+            var cp_usuarioParameter = cp_usuario != null ?
+                new ObjectParameter("cp_usuario", cp_usuario) :
+                new ObjectParameter("cp_usuario", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CuentaXPagar", cp_empresaParameter, cp_opcionParameter, cp_IdCuentaXPagar, cp_ProveedorParameter, cp_SaldoParameter, cp_fechaUltMovParameter, cp_MontoUltMovParameter, cp_estCuentaXPagarParameter, cp_usuarioParameter, cp_timestamp, error);
+        }
+    
+        public virtual int sp_ABC_MovimientoCuentaXPagar(Nullable<short> mp_empresa, string mp_opcion, ObjectParameter mp_IdCuentaXPagar, ObjectParameter mp_IdMovCuentaXPagar, Nullable<int> mp_IdSucursal, Nullable<int> mp_IdDoc, Nullable<int> mp_Proveedor, Nullable<System.DateTime> mp_FechaMov, Nullable<decimal> mp_MontoMov, string mp_CreditoDebito, string mp_Descripcion, string mp_estMovCuentaXPagar, string mp_usuario, ObjectParameter mp_timestamp, ObjectParameter error)
+        {
+            var mp_empresaParameter = mp_empresa.HasValue ?
+                new ObjectParameter("mp_empresa", mp_empresa) :
+                new ObjectParameter("mp_empresa", typeof(short));
+    
+            var mp_opcionParameter = mp_opcion != null ?
+                new ObjectParameter("mp_opcion", mp_opcion) :
+                new ObjectParameter("mp_opcion", typeof(string));
+    
+            var mp_IdSucursalParameter = mp_IdSucursal.HasValue ?
+                new ObjectParameter("mp_IdSucursal", mp_IdSucursal) :
+                new ObjectParameter("mp_IdSucursal", typeof(int));
+    
+            var mp_IdDocParameter = mp_IdDoc.HasValue ?
+                new ObjectParameter("mp_IdDoc", mp_IdDoc) :
+                new ObjectParameter("mp_IdDoc", typeof(int));
+    
+            var mp_ProveedorParameter = mp_Proveedor.HasValue ?
+                new ObjectParameter("mp_Proveedor", mp_Proveedor) :
+                new ObjectParameter("mp_Proveedor", typeof(int));
+    
+            var mp_FechaMovParameter = mp_FechaMov.HasValue ?
+                new ObjectParameter("mp_FechaMov", mp_FechaMov) :
+                new ObjectParameter("mp_FechaMov", typeof(System.DateTime));
+    
+            var mp_MontoMovParameter = mp_MontoMov.HasValue ?
+                new ObjectParameter("mp_MontoMov", mp_MontoMov) :
+                new ObjectParameter("mp_MontoMov", typeof(decimal));
+    
+            var mp_CreditoDebitoParameter = mp_CreditoDebito != null ?
+                new ObjectParameter("mp_CreditoDebito", mp_CreditoDebito) :
+                new ObjectParameter("mp_CreditoDebito", typeof(string));
+    
+            var mp_DescripcionParameter = mp_Descripcion != null ?
+                new ObjectParameter("mp_Descripcion", mp_Descripcion) :
+                new ObjectParameter("mp_Descripcion", typeof(string));
+    
+            var mp_estMovCuentaXPagarParameter = mp_estMovCuentaXPagar != null ?
+                new ObjectParameter("mp_estMovCuentaXPagar", mp_estMovCuentaXPagar) :
+                new ObjectParameter("mp_estMovCuentaXPagar", typeof(string));
+    
+            var mp_usuarioParameter = mp_usuario != null ?
+                new ObjectParameter("mp_usuario", mp_usuario) :
+                new ObjectParameter("mp_usuario", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_MovimientoCuentaXPagar", mp_empresaParameter, mp_opcionParameter, mp_IdCuentaXPagar, mp_IdMovCuentaXPagar, mp_IdSucursalParameter, mp_IdDocParameter, mp_ProveedorParameter, mp_FechaMovParameter, mp_MontoMovParameter, mp_CreditoDebitoParameter, mp_DescripcionParameter, mp_estMovCuentaXPagarParameter, mp_usuarioParameter, mp_timestamp, error);
+        }
+    
+        public virtual int sp_Busqueda_CuentaXPagar(Nullable<int> tipoBusqueda, string busqueda, Nullable<int> cp_empresa, Nullable<int> cp_IdCuentaXPagar, Nullable<int> cp_Proveedor, Nullable<decimal> cp_Saldo, Nullable<System.DateTime> cp_FechaUltMov, Nullable<decimal> cp_MontoUltMov, string cp_estCuentaXPagar, ObjectParameter error)
+        {
+            var tipoBusquedaParameter = tipoBusqueda.HasValue ?
+                new ObjectParameter("TipoBusqueda", tipoBusqueda) :
+                new ObjectParameter("TipoBusqueda", typeof(int));
+    
+            var busquedaParameter = busqueda != null ?
+                new ObjectParameter("busqueda", busqueda) :
+                new ObjectParameter("busqueda", typeof(string));
+    
+            var cp_empresaParameter = cp_empresa.HasValue ?
+                new ObjectParameter("cp_empresa", cp_empresa) :
+                new ObjectParameter("cp_empresa", typeof(int));
+    
+            var cp_IdCuentaXPagarParameter = cp_IdCuentaXPagar.HasValue ?
+                new ObjectParameter("cp_IdCuentaXPagar", cp_IdCuentaXPagar) :
+                new ObjectParameter("cp_IdCuentaXPagar", typeof(int));
+    
+            var cp_ProveedorParameter = cp_Proveedor.HasValue ?
+                new ObjectParameter("cp_Proveedor", cp_Proveedor) :
+                new ObjectParameter("cp_Proveedor", typeof(int));
+    
+            var cp_SaldoParameter = cp_Saldo.HasValue ?
+                new ObjectParameter("cp_Saldo", cp_Saldo) :
+                new ObjectParameter("cp_Saldo", typeof(decimal));
+    
+            var cp_FechaUltMovParameter = cp_FechaUltMov.HasValue ?
+                new ObjectParameter("cp_FechaUltMov", cp_FechaUltMov) :
+                new ObjectParameter("cp_FechaUltMov", typeof(System.DateTime));
+    
+            var cp_MontoUltMovParameter = cp_MontoUltMov.HasValue ?
+                new ObjectParameter("cp_MontoUltMov", cp_MontoUltMov) :
+                new ObjectParameter("cp_MontoUltMov", typeof(decimal));
+    
+            var cp_estCuentaXPagarParameter = cp_estCuentaXPagar != null ?
+                new ObjectParameter("cp_estCuentaXPagar", cp_estCuentaXPagar) :
+                new ObjectParameter("cp_estCuentaXPagar", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Busqueda_CuentaXPagar", tipoBusquedaParameter, busquedaParameter, cp_empresaParameter, cp_IdCuentaXPagarParameter, cp_ProveedorParameter, cp_SaldoParameter, cp_FechaUltMovParameter, cp_MontoUltMovParameter, cp_estCuentaXPagarParameter, error);
+        }
+    
+        public virtual int sp_Busqueda_MovimientoCuentaXPagar(Nullable<int> tipoBusqueda, string busqueda, Nullable<int> mp_empresa, Nullable<int> mp_IdCuentaXPagar, Nullable<int> mp_IdMovCuentaXPagar, Nullable<int> mp_IdSucursal, Nullable<int> mp_IdDoc, Nullable<int> mp_Proveedor, Nullable<System.DateTime> mp_FechaMov, Nullable<decimal> mp_MontoMov, string mp_CreditoDebito, string mp_Descripcion, string mp_estMovCuentaXPagar, ObjectParameter error)
+        {
+            var tipoBusquedaParameter = tipoBusqueda.HasValue ?
+                new ObjectParameter("TipoBusqueda", tipoBusqueda) :
+                new ObjectParameter("TipoBusqueda", typeof(int));
+    
+            var busquedaParameter = busqueda != null ?
+                new ObjectParameter("busqueda", busqueda) :
+                new ObjectParameter("busqueda", typeof(string));
+    
+            var mp_empresaParameter = mp_empresa.HasValue ?
+                new ObjectParameter("mp_empresa", mp_empresa) :
+                new ObjectParameter("mp_empresa", typeof(int));
+    
+            var mp_IdCuentaXPagarParameter = mp_IdCuentaXPagar.HasValue ?
+                new ObjectParameter("mp_IdCuentaXPagar", mp_IdCuentaXPagar) :
+                new ObjectParameter("mp_IdCuentaXPagar", typeof(int));
+    
+            var mp_IdMovCuentaXPagarParameter = mp_IdMovCuentaXPagar.HasValue ?
+                new ObjectParameter("mp_IdMovCuentaXPagar", mp_IdMovCuentaXPagar) :
+                new ObjectParameter("mp_IdMovCuentaXPagar", typeof(int));
+    
+            var mp_IdSucursalParameter = mp_IdSucursal.HasValue ?
+                new ObjectParameter("mp_IdSucursal", mp_IdSucursal) :
+                new ObjectParameter("mp_IdSucursal", typeof(int));
+    
+            var mp_IdDocParameter = mp_IdDoc.HasValue ?
+                new ObjectParameter("mp_IdDoc", mp_IdDoc) :
+                new ObjectParameter("mp_IdDoc", typeof(int));
+    
+            var mp_ProveedorParameter = mp_Proveedor.HasValue ?
+                new ObjectParameter("mp_Proveedor", mp_Proveedor) :
+                new ObjectParameter("mp_Proveedor", typeof(int));
+    
+            var mp_FechaMovParameter = mp_FechaMov.HasValue ?
+                new ObjectParameter("mp_FechaMov", mp_FechaMov) :
+                new ObjectParameter("mp_FechaMov", typeof(System.DateTime));
+    
+            var mp_MontoMovParameter = mp_MontoMov.HasValue ?
+                new ObjectParameter("mp_MontoMov", mp_MontoMov) :
+                new ObjectParameter("mp_MontoMov", typeof(decimal));
+    
+            var mp_CreditoDebitoParameter = mp_CreditoDebito != null ?
+                new ObjectParameter("mp_CreditoDebito", mp_CreditoDebito) :
+                new ObjectParameter("mp_CreditoDebito", typeof(string));
+    
+            var mp_DescripcionParameter = mp_Descripcion != null ?
+                new ObjectParameter("mp_Descripcion", mp_Descripcion) :
+                new ObjectParameter("mp_Descripcion", typeof(string));
+    
+            var mp_estMovCuentaXPagarParameter = mp_estMovCuentaXPagar != null ?
+                new ObjectParameter("mp_estMovCuentaXPagar", mp_estMovCuentaXPagar) :
+                new ObjectParameter("mp_estMovCuentaXPagar", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Busqueda_MovimientoCuentaXPagar", tipoBusquedaParameter, busquedaParameter, mp_empresaParameter, mp_IdCuentaXPagarParameter, mp_IdMovCuentaXPagarParameter, mp_IdSucursalParameter, mp_IdDocParameter, mp_ProveedorParameter, mp_FechaMovParameter, mp_MontoMovParameter, mp_CreditoDebitoParameter, mp_DescripcionParameter, mp_estMovCuentaXPagarParameter, error);
         }
     }
 }

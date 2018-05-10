@@ -11,15 +11,12 @@ namespace WebGrupo3S.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Sucursal
     {
         public short su_empresa { get; set; }
         public int su_IdSucursal { get; set; }
-        [Required(ErrorMessage = "Nombre es requerido")]
         public string su_Nombre { get; set; }
-        [Required(ErrorMessage = "Encargado es requerido")]
         public int su_Encargado { get; set; }
         public string su_Direccion { get; set; }
         public string su_Telefono { get; set; }
