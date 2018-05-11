@@ -200,6 +200,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BitacorasController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
+    <Compile Include="Controllers\CuentaXPagarsController.cs" />
     <Compile Include="Controllers\EmpleadoesController.cs" />
     <Compile Include="Controllers\ExportarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1832,6 +1833,7 @@
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\CuentasXPagars\" />
+    <Folder Include="Views\CuentaXPagars\" />
     <Folder Include="Views\Exportar\" />
     <Folder Include="Views\Shared\EditTemplates\" />
   </ItemGroup>

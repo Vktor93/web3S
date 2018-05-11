@@ -222,7 +222,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CierreDiario", cd_empresaParameter, cd_opcionParameter, cd_IdSucursalParameter, cd_IdCierreDiario, cd_FechaCierreDiarioParameter, cd_estCierreDiarioParameter, cd_usuarioParameter, cd_timestamp, error);
         }
     
-        public virtual int sp_ABC_CuentaXCobrar(Nullable<short> cc_empresa, string cc_opcion, ObjectParameter cc_IdCuentaXCobrar, Nullable<int> cc_Cliente, Nullable<decimal> cc_Saldo, Nullable<System.DateTime> cc_fechaUltMov, Nullable<decimal> cc_MontoUltMov, string cc_estCuentaXCobrar, string cc_usuario, string cc_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_CuentaXCobrar(Nullable<short> cc_empresa, string cc_opcion, ObjectParameter cc_IdCuentaXCobrar, Nullable<int> cc_Cliente, Nullable<decimal> cc_Saldo, Nullable<System.DateTime> cc_fechaUltMov, Nullable<decimal> cc_MontoUltMov, string cc_estCuentaXCobrar, string cc_usuario, ObjectParameter cc_timestamp, ObjectParameter error)
         {
             var cc_empresaParameter = cc_empresa.HasValue ?
                 new ObjectParameter("cc_empresa", cc_empresa) :
@@ -255,10 +255,8 @@ namespace WebGrupo3S.Models
             var cc_usuarioParameter = cc_usuario != null ?
                 new ObjectParameter("cc_usuario", cc_usuario) :
                 new ObjectParameter("cc_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("cc_timestamp", Convert.FromBase64String(cc_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CuentaXCobrar", cc_empresaParameter, cc_opcionParameter, cc_IdCuentaXCobrar, cc_ClienteParameter, cc_SaldoParameter, cc_fechaUltMovParameter, cc_MontoUltMovParameter, cc_estCuentaXCobrarParameter, cc_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CuentaXCobrar", cc_empresaParameter, cc_opcionParameter, cc_IdCuentaXCobrar, cc_ClienteParameter, cc_SaldoParameter, cc_fechaUltMovParameter, cc_MontoUltMovParameter, cc_estCuentaXCobrarParameter, cc_usuarioParameter, cc_timestamp, error);
         }
     
         public virtual int sp_ABC_Descuento(Nullable<short> ds_empresa, string ds_opcion, ObjectParameter ds_IdDescuento, Nullable<int> ds_IdSucursal, string ds_TipoDescuento, string ds_Descripcion, Nullable<int> ds_Porcentaje, Nullable<decimal> ds_Cantidad, Nullable<int> ds_IdDoc, Nullable<int> ds_IdMov, Nullable<int> ds_IdAutorizacion, Nullable<int> ds_IdMovDescuento, string ds_Comentario, string ds_usuario, ObjectParameter ds_timestamp, ObjectParameter error)
@@ -737,7 +735,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_PrecioProductoServicio", pp_empresaParameter, pp_opcionParameter, pp_TipoPrecioParameter, pp_IdPrecProdServ, pp_IdProdServParameter, pp_precioParameter, pp_precioMaximoParameter, pp_usuarioParameter, pp_timestamp, error);
         }
     
-        public virtual int sp_ABC_Producto(Nullable<short> pr_empresa, string pr_opcion, Nullable<int> pr_TipoProducto, ObjectParameter pr_IdProd, string pr_nombre, string pr_descripcion, string pr_CodigoBarras, string pr_CodigoSAP, string pr_IdMarca, byte[] pr_ImagenProd, string pr_usuario, string pr_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_Producto(Nullable<short> pr_empresa, string pr_opcion, Nullable<int> pr_TipoProducto, ObjectParameter pr_IdProd, string pr_nombre, string pr_descripcion, string pr_CodigoBarras, string pr_CodigoSAP, string pr_IdMarca, byte[] pr_ImagenProd, string pr_usuario, ObjectParameter pr_timestamp, ObjectParameter error)
         {
             var pr_empresaParameter = pr_empresa.HasValue ?
                 new ObjectParameter("pr_empresa", pr_empresa) :
@@ -778,10 +776,8 @@ namespace WebGrupo3S.Models
             var pr_usuarioParameter = pr_usuario != null ?
                 new ObjectParameter("pr_usuario", pr_usuario) :
                 new ObjectParameter("pr_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("pr_timestamp", Convert.FromBase64String(pr_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Producto", pr_empresaParameter, pr_opcionParameter, pr_TipoProductoParameter, pr_IdProd, pr_nombreParameter, pr_descripcionParameter, pr_CodigoBarrasParameter, pr_CodigoSAPParameter, pr_IdMarcaParameter, pr_ImagenProdParameter, pr_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Producto", pr_empresaParameter, pr_opcionParameter, pr_TipoProductoParameter, pr_IdProd, pr_nombreParameter, pr_descripcionParameter, pr_CodigoBarrasParameter, pr_CodigoSAPParameter, pr_IdMarcaParameter, pr_ImagenProdParameter, pr_usuarioParameter, pr_timestamp, error);
         }
     
         public virtual int sp_ABC_Propina(Nullable<short> pn_empresa, string pn_opcion, Nullable<int> pn_IdSucursal, ObjectParameter pn_IdPropina, Nullable<int> pn_IdOrdenPago, Nullable<int> pn_IdOrdenServicio, Nullable<int> pn_IdDetalleOrdenServicio, Nullable<decimal> pn_Cantidad, string pn_usuario, ObjectParameter pn_timestamp, ObjectParameter error)
@@ -923,7 +919,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_SerieFactura", sf_empresaParameter, sf_opcionParameter, sf_IdSucursalParameter, sf_IdSerieFactura, sf_TerminalParameter, sf_TipoCorrelativoParameter, sf_SerieParameter, sf_RangoInicioParameter, sf_RangoFinalParameter, sf_NoFacturaParameter, sf_estRegistroParameter, sf_usuarioParameter, sf_timestamp, error);
         }
     
-        public virtual int sp_ABC_Servicio(Nullable<short> sv_empresa, string sv_opcion, Nullable<int> sv_TipoServicio, ObjectParameter sv_IdServicio, string sv_nombre, string sv_descripcion, Nullable<int> sv_duracionServicio, string sv_usuario, string sv_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_Servicio(Nullable<short> sv_empresa, string sv_opcion, Nullable<int> sv_TipoServicio, ObjectParameter sv_IdServicio, string sv_nombre, string sv_descripcion, Nullable<int> sv_duracionServicio, string sv_usuario, ObjectParameter sv_timestamp, ObjectParameter error)
         {
             var sv_empresaParameter = sv_empresa.HasValue ?
                 new ObjectParameter("sv_empresa", sv_empresa) :
@@ -952,13 +948,11 @@ namespace WebGrupo3S.Models
             var sv_usuarioParameter = sv_usuario != null ?
                 new ObjectParameter("sv_usuario", sv_usuario) :
                 new ObjectParameter("sv_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("sv_timestamp", Convert.FromBase64String(sv_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Servicio", sv_empresaParameter, sv_opcionParameter, sv_TipoServicioParameter, sv_IdServicio, sv_nombreParameter, sv_descripcionParameter, sv_duracionServicioParameter, sv_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Servicio", sv_empresaParameter, sv_opcionParameter, sv_TipoServicioParameter, sv_IdServicio, sv_nombreParameter, sv_descripcionParameter, sv_duracionServicioParameter, sv_usuarioParameter, sv_timestamp, error);
         }
     
-        public virtual int sp_ABC_Sucursal(Nullable<short> su_empresa, string su_opcion, ObjectParameter su_IdSucursal, string su_Nombre, Nullable<int> su_IdEncargado, string su_Direccion, string su_Telefono, string su_usuario, string su_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_Sucursal(Nullable<short> su_empresa, string su_opcion, ObjectParameter su_IdSucursal, string su_Nombre, Nullable<int> su_IdEncargado, string su_Direccion, string su_Telefono, string su_usuario, ObjectParameter su_timestamp, ObjectParameter error)
         {
             var su_empresaParameter = su_empresa.HasValue ?
                 new ObjectParameter("su_empresa", su_empresa) :
@@ -987,13 +981,11 @@ namespace WebGrupo3S.Models
             var su_usuarioParameter = su_usuario != null ?
                 new ObjectParameter("su_usuario", su_usuario) :
                 new ObjectParameter("su_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("su_timestamp", Convert.FromBase64String(su_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Sucursal", su_empresaParameter, su_opcionParameter, su_IdSucursal, su_NombreParameter, su_IdEncargadoParameter, su_DireccionParameter, su_TelefonoParameter, su_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Sucursal", su_empresaParameter, su_opcionParameter, su_IdSucursal, su_NombreParameter, su_IdEncargadoParameter, su_DireccionParameter, su_TelefonoParameter, su_usuarioParameter, su_timestamp, error);
         }
     
-        public virtual int sp_ABC_TipoProducto(Nullable<short> tp_empresa, string tp_opcion, ObjectParameter tp_IdTipoProducto, string tp_ClasificacionTP, string tp_nombre, string tp_descripcion, Nullable<int> tp_padre, string tp_usuario, string tp_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_TipoProducto(Nullable<short> tp_empresa, string tp_opcion, ObjectParameter tp_IdTipoProducto, string tp_ClasificacionTP, string tp_nombre, string tp_descripcion, Nullable<int> tp_padre, string tp_usuario, ObjectParameter tp_timestamp, ObjectParameter error)
         {
             var tp_empresaParameter = tp_empresa.HasValue ?
                 new ObjectParameter("tp_empresa", tp_empresa) :
@@ -1022,13 +1014,11 @@ namespace WebGrupo3S.Models
             var tp_usuarioParameter = tp_usuario != null ?
                 new ObjectParameter("tp_usuario", tp_usuario) :
                 new ObjectParameter("tp_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("tp_timestamp", Convert.FromBase64String(tp_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_TipoProducto", tp_empresaParameter, tp_opcionParameter, tp_IdTipoProducto, tp_ClasificacionTPParameter, tp_nombreParameter, tp_descripcionParameter, tp_padreParameter, tp_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_TipoProducto", tp_empresaParameter, tp_opcionParameter, tp_IdTipoProducto, tp_ClasificacionTPParameter, tp_nombreParameter, tp_descripcionParameter, tp_padreParameter, tp_usuarioParameter, tp_timestamp, error);
         }
     
-        public virtual int sp_ABC_TipoServicio(Nullable<short> ts_empresa, string ts_opcion, ObjectParameter ts_IdTipoServ, string ts_nombre, string ts_descripcion, Nullable<int> ts_padre, string ts_Coordinacion, string ts_CuentaSAP, string ts_usuario, string ts_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_TipoServicio(Nullable<short> ts_empresa, string ts_opcion, ObjectParameter ts_IdTipoServ, string ts_nombre, string ts_descripcion, Nullable<int> ts_padre, string ts_Coordinacion, string ts_CuentaSAP, string ts_usuario, ObjectParameter ts_timestamp, ObjectParameter error)
         {
             var ts_empresaParameter = ts_empresa.HasValue ?
                 new ObjectParameter("ts_empresa", ts_empresa) :
@@ -1061,10 +1051,8 @@ namespace WebGrupo3S.Models
             var ts_usuarioParameter = ts_usuario != null ?
                 new ObjectParameter("ts_usuario", ts_usuario) :
                 new ObjectParameter("ts_usuario", typeof(string));
-
-            ObjectParameter ts = new ObjectParameter("ts_timestamp", Convert.FromBase64String(ts_timestamp));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_TipoServicio", ts_empresaParameter, ts_opcionParameter, ts_IdTipoServ, ts_nombreParameter, ts_descripcionParameter, ts_padreParameter, ts_CoordinacionParameter, ts_CuentaSAPParameter, ts_usuarioParameter, ts, error);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_TipoServicio", ts_empresaParameter, ts_opcionParameter, ts_IdTipoServ, ts_nombreParameter, ts_descripcionParameter, ts_padreParameter, ts_CoordinacionParameter, ts_CuentaSAPParameter, ts_usuarioParameter, ts_timestamp, error);
         }
     
         public virtual int sp_AlertaCumpleanios(Nullable<short> cl_empresa, Nullable<int> cl_Cliente, ObjectParameter alerta, ObjectParameter error)
