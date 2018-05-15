@@ -261,8 +261,8 @@
     <Property Name="us_estado" Type="int" Nullable="false" />
     <Property Name="us_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'sss_Personas.dbo.vw_UltimosTelefonos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SSS_PERSONAS.dbo.vw_UltimosTelefonos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vw_UltimosTelefonos">
     <Key>
       <PropertyRef Name="Empresa" />
@@ -605,7 +605,6 @@ warning 6002: The table/view 'sss_Personas.dbo.vw_UltimosTelefonos' does not hav
     <Parameter Name="lg_empresa" Type="smallint" Mode="In" />
     <Parameter Name="lg_usuario" Type="varchar" Mode="In" />
     <Parameter Name="lg_password" Type="varchar" Mode="In" />
-    <Parameter Name="lg_NombreUsuario" Type="nvarchar" Mode="InOut" />
     <Parameter Name="error" Type="nvarchar" Mode="InOut" />
   </Function>
   <Function Name="sp_RegistrosNuevos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">

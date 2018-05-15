@@ -424,6 +424,9 @@
     <Compile Include="Models\sp_Busqueda_CuentaXCobrar_Result.cs">
       <DependentUpon>MOperacion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_Busqueda_CuentaXPagar_Result.cs">
+      <DependentUpon>MOperacion.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_Busqueda_Descuento_Result.cs">
       <DependentUpon>MOperacion.tt</DependentUpon>
     </Compile>
@@ -464,6 +467,9 @@
       <DependentUpon>MComplementos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_Busqueda_MovimientoCuentaXCobrar_Result.cs">
+      <DependentUpon>MOperacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_Busqueda_MovimientoCuentaXPagar_Result.cs">
       <DependentUpon>MOperacion.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_busqueda_movimiento_result.cs" />

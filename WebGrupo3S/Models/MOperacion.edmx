@@ -107,6 +107,27 @@
           <Property Name="cc_estado" Type="int" Nullable="false" />
           <Property Name="cc_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
         </EntityType>
+        <EntityType Name="CuentaXPagar">
+          <Key>
+            <PropertyRef Name="cp_empresa" />
+            <PropertyRef Name="cp_IdCuentaXPagar" />
+          </Key>
+          <Property Name="cp_empresa" Type="smallint" Nullable="false" />
+          <Property Name="cp_IdCuentaXPagar" Type="int" Nullable="false" />
+          <Property Name="cp_Proveedor" Type="int" Nullable="false" />
+          <Property Name="cp_Saldo" Type="money" Nullable="false" />
+          <Property Name="cp_fechaUltMov" Type="datetime" Nullable="false" />
+          <Property Name="cp_MontoUltMov" Type="money" Nullable="false" />
+          <Property Name="cp_estCuentaXPagar" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="cp_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="cp_fechamod" Type="datetime" />
+          <Property Name="cp_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cp_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="cp_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cp_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="cp_estado" Type="int" Nullable="false" />
+          <Property Name="cp_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
         <EntityType Name="Descuento">
           <Key>
             <PropertyRef Name="ds_empresa" />
@@ -326,6 +347,32 @@
           <Property Name="mc_maquinamod" Type="nvarchar" MaxLength="50" />
           <Property Name="mc_estado" Type="int" Nullable="false" />
           <Property Name="mc_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MovimientoCuentaXPagar">
+          <Key>
+            <PropertyRef Name="mp_empresa" />
+            <PropertyRef Name="mp_IdCuentaXPagar" />
+            <PropertyRef Name="mp_IdMovCuentaXPagar" />
+          </Key>
+          <Property Name="mp_empresa" Type="smallint" Nullable="false" />
+          <Property Name="mp_IdCuentaXPagar" Type="int" Nullable="false" />
+          <Property Name="mp_IdMovCuentaXPagar" Type="int" Nullable="false" />
+          <Property Name="mp_IdSucursal" Type="int" Nullable="false" />
+          <Property Name="mp_IdDoc" Type="int" Nullable="false" />
+          <Property Name="mp_Proveedor" Type="int" Nullable="false" />
+          <Property Name="mp_FechaMov" Type="datetime" Nullable="false" />
+          <Property Name="mp_MontoMov" Type="money" Nullable="false" />
+          <Property Name="mp_CreditoDebito" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="mp_Descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="mp_estMovCuentaXPagar" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="mp_fechaing" Type="datetime" Nullable="false" />
+          <Property Name="mp_fechamod" Type="datetime" />
+          <Property Name="mp_usuarioing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mp_usuariomod" Type="nvarchar" MaxLength="50" />
+          <Property Name="mp_maquinaing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mp_maquinamod" Type="nvarchar" MaxLength="50" />
+          <Property Name="mp_estado" Type="int" Nullable="false" />
+          <Property Name="mp_timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
         </EntityType>
         <EntityType Name="PrecioProductoServicio">
           <Key>
@@ -1331,6 +1378,7 @@
           <EntitySet Name="CierreCaja" EntityType="Self.CierreCaja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CierreDiario" EntityType="Self.CierreDiario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CuentaXCobrar" EntityType="Self.CuentaXCobrar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CuentaXPagar" EntityType="Self.CuentaXPagar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Descuento" EntityType="Self.Descuento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DetalleCierreCaja" EntityType="Self.DetalleCierreCaja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
@@ -1339,6 +1387,7 @@
           <EntitySet Name="HorarioSucursal" EntityType="Self.HorarioSucursal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movimiento" EntityType="Self.Movimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MovimientoCuentaXCobrar" EntityType="Self.MovimientoCuentaXCobrar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MovimientoCuentaXPagar" EntityType="Self.MovimientoCuentaXPagar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrecioProductoServicio" EntityType="Self.PrecioProductoServicio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Propina" EntityType="Self.Propina" Schema="dbo" store:Type="Tables" />
@@ -2638,8 +2687,6 @@
             <Parameter Name="fp_timestamp" Mode="InOut" Type="Binary" />
             <Parameter Name="error" Mode="InOut" Type="String" />
           </FunctionImport>
-          <EntitySet Name="CuentaXPagar" EntityType="SSS_OPERACIONModel.CuentaXPagar" />
-          <EntitySet Name="MovimientoCuentaXPagar" EntityType="SSS_OPERACIONModel.MovimientoCuentaXPagar" />
           <FunctionImport Name="sp_ABC_CuentaXPagar">
             <Parameter Name="cp_empresa" Mode="In" Type="Int16" />
             <Parameter Name="cp_opcion" Mode="In" Type="String" />
@@ -2670,7 +2717,7 @@
             <Parameter Name="mp_timestamp" Mode="InOut" Type="Binary" />
             <Parameter Name="error" Mode="InOut" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_Busqueda_CuentaXPagar">
+          <FunctionImport Name="sp_Busqueda_CuentaXPagar" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_CuentaXPagar_Result)">
             <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
             <Parameter Name="busqueda" Mode="In" Type="String" />
             <Parameter Name="cp_empresa" Mode="In" Type="Int32" />
@@ -2682,7 +2729,7 @@
             <Parameter Name="cp_estCuentaXPagar" Mode="In" Type="String" />
             <Parameter Name="error" Mode="InOut" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_Busqueda_MovimientoCuentaXPagar">
+          <FunctionImport Name="sp_Busqueda_MovimientoCuentaXPagar" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_MovimientoCuentaXPagar_Result)">
             <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
             <Parameter Name="busqueda" Mode="In" Type="String" />
             <Parameter Name="mp_empresa" Mode="In" Type="Int32" />
@@ -2698,6 +2745,8 @@
             <Parameter Name="mp_estMovCuentaXPagar" Mode="In" Type="String" />
             <Parameter Name="error" Mode="InOut" Type="String" />
           </FunctionImport>
+          <EntitySet Name="CuentaXPagars" EntityType="SSS_OPERACIONModel.CuentaXPagar" />
+          <EntitySet Name="MovimientoCuentaXPagars" EntityType="SSS_OPERACIONModel.MovimientoCuentaXPagar" />
         </EntityContainer>
         <ComplexType Name="sp_Busqueda_ArqueoCaja_Result">
           <Property Type="Int16" Name="Empresa" Nullable="false" />
@@ -3029,6 +3078,37 @@
           <Property Name="mp_estado" Type="Int32" Nullable="false" />
           <Property Name="mp_timestamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
+        <ComplexType Name="sp_Busqueda_CuentaXPagar_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="CodigoCuentaXPagar" Nullable="false" />
+          <Property Type="Int32" Name="Proveedor" Nullable="false" />
+          <Property Type="String" Name="PrimerNombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SegundoNombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Nit" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Saldo" Nullable="false" Precision="19" />
+          <Property Type="DateTime" Name="FechaDocumento" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" />
+          <Property Type="String" Name="EstatusCXP" Nullable="false" MaxLength="10" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="sp_Busqueda_MovimientoCuentaXPagar_Result">
+          <Property Type="Int16" Name="Empresa" Nullable="false" />
+          <Property Type="Int32" Name="CodigoCuentaXPagar" Nullable="false" />
+          <Property Type="Int32" Name="CodigoMovimiento" Nullable="false" />
+          <Property Type="Int32" Name="CodigoSucursal" Nullable="false" />
+          <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="NumeroDocumento" Nullable="false" />
+          <Property Type="Int32" Name="Proveedor" Nullable="false" />
+          <Property Type="String" Name="PrimerNombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SegundoNombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Nit" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="FechaMovimiento" Nullable="false" Precision="23" />
+          <Property Type="Decimal" Name="MontoMovimiento" Nullable="false" Precision="19" />
+          <Property Type="String" Name="CredigoDebito" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="DescripcionMov" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="EstatusMovCXP" Nullable="false" MaxLength="10" />
+          <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3926,8 +4006,91 @@
           <FunctionImportMapping FunctionImportName="sp_Validaciones_FacturaFormaPago" FunctionName="SSS_OPERACIONModel.Store.sp_Validaciones_FacturaFormaPago" />
           <FunctionImportMapping FunctionImportName="sp_ABC_CuentaXPagar" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_CuentaXPagar" />
           <FunctionImportMapping FunctionImportName="sp_ABC_MovimientoCuentaXPagar" FunctionName="SSS_OPERACIONModel.Store.sp_ABC_MovimientoCuentaXPagar" />
-          <FunctionImportMapping FunctionImportName="sp_Busqueda_CuentaXPagar" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_CuentaXPagar" />
-          <FunctionImportMapping FunctionImportName="sp_Busqueda_MovimientoCuentaXPagar" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_MovimientoCuentaXPagar" />
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_CuentaXPagar" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_CuentaXPagar" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_CuentaXPagar_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CodigoCuentaXPagar" ColumnName="CodigoCuentaXPagar" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="PrimerNombre" ColumnName="PrimerNombre" />
+                <ScalarProperty Name="SegundoNombre" ColumnName="SegundoNombre" />
+                <ScalarProperty Name="Nit" ColumnName="Nit" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+                <ScalarProperty Name="FechaDocumento" ColumnName="FechaDocumento" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="EstatusCXP" ColumnName="EstatusCXP" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Busqueda_MovimientoCuentaXPagar" FunctionName="SSS_OPERACIONModel.Store.sp_Busqueda_MovimientoCuentaXPagar" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSS_OPERACIONModel.sp_Busqueda_MovimientoCuentaXPagar_Result">
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CodigoCuentaXPagar" ColumnName="CodigoCuentaXPagar" />
+                <ScalarProperty Name="CodigoMovimiento" ColumnName="CodigoMovimiento" />
+                <ScalarProperty Name="CodigoSucursal" ColumnName="CodigoSucursal" />
+                <ScalarProperty Name="NombreSucursal" ColumnName="NombreSucursal" />
+                <ScalarProperty Name="NumeroDocumento" ColumnName="NumeroDocumento" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="PrimerNombre" ColumnName="PrimerNombre" />
+                <ScalarProperty Name="SegundoNombre" ColumnName="SegundoNombre" />
+                <ScalarProperty Name="Nit" ColumnName="Nit" />
+                <ScalarProperty Name="FechaMovimiento" ColumnName="FechaMovimiento" />
+                <ScalarProperty Name="MontoMovimiento" ColumnName="MontoMovimiento" />
+                <ScalarProperty Name="CredigoDebito" ColumnName="CredigoDebito" />
+                <ScalarProperty Name="DescripcionMov" ColumnName="DescripcionMov" />
+                <ScalarProperty Name="EstatusMovCXP" ColumnName="EstatusMovCXP" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="CuentaXPagars">
+            <EntityTypeMapping TypeName="SSS_OPERACIONModel.CuentaXPagar">
+              <MappingFragment StoreEntitySet="CuentaXPagar">
+                <ScalarProperty Name="cp_timestamp" ColumnName="cp_timestamp" />
+                <ScalarProperty Name="cp_estado" ColumnName="cp_estado" />
+                <ScalarProperty Name="cp_maquinamod" ColumnName="cp_maquinamod" />
+                <ScalarProperty Name="cp_maquinaing" ColumnName="cp_maquinaing" />
+                <ScalarProperty Name="cp_usuariomod" ColumnName="cp_usuariomod" />
+                <ScalarProperty Name="cp_usuarioing" ColumnName="cp_usuarioing" />
+                <ScalarProperty Name="cp_fechamod" ColumnName="cp_fechamod" />
+                <ScalarProperty Name="cp_fechaing" ColumnName="cp_fechaing" />
+                <ScalarProperty Name="cp_estCuentaXPagar" ColumnName="cp_estCuentaXPagar" />
+                <ScalarProperty Name="cp_MontoUltMov" ColumnName="cp_MontoUltMov" />
+                <ScalarProperty Name="cp_fechaUltMov" ColumnName="cp_fechaUltMov" />
+                <ScalarProperty Name="cp_Saldo" ColumnName="cp_Saldo" />
+                <ScalarProperty Name="cp_Proveedor" ColumnName="cp_Proveedor" />
+                <ScalarProperty Name="cp_IdCuentaXPagar" ColumnName="cp_IdCuentaXPagar" />
+                <ScalarProperty Name="cp_empresa" ColumnName="cp_empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovimientoCuentaXPagars">
+            <EntityTypeMapping TypeName="SSS_OPERACIONModel.MovimientoCuentaXPagar">
+              <MappingFragment StoreEntitySet="MovimientoCuentaXPagar">
+                <ScalarProperty Name="mp_timestamp" ColumnName="mp_timestamp" />
+                <ScalarProperty Name="mp_estado" ColumnName="mp_estado" />
+                <ScalarProperty Name="mp_maquinamod" ColumnName="mp_maquinamod" />
+                <ScalarProperty Name="mp_maquinaing" ColumnName="mp_maquinaing" />
+                <ScalarProperty Name="mp_usuariomod" ColumnName="mp_usuariomod" />
+                <ScalarProperty Name="mp_usuarioing" ColumnName="mp_usuarioing" />
+                <ScalarProperty Name="mp_fechamod" ColumnName="mp_fechamod" />
+                <ScalarProperty Name="mp_fechaing" ColumnName="mp_fechaing" />
+                <ScalarProperty Name="mp_estMovCuentaXPagar" ColumnName="mp_estMovCuentaXPagar" />
+                <ScalarProperty Name="mp_Descripcion" ColumnName="mp_Descripcion" />
+                <ScalarProperty Name="mp_CreditoDebito" ColumnName="mp_CreditoDebito" />
+                <ScalarProperty Name="mp_MontoMov" ColumnName="mp_MontoMov" />
+                <ScalarProperty Name="mp_FechaMov" ColumnName="mp_FechaMov" />
+                <ScalarProperty Name="mp_Proveedor" ColumnName="mp_Proveedor" />
+                <ScalarProperty Name="mp_IdDoc" ColumnName="mp_IdDoc" />
+                <ScalarProperty Name="mp_IdSucursal" ColumnName="mp_IdSucursal" />
+                <ScalarProperty Name="mp_IdMovCuentaXPagar" ColumnName="mp_IdMovCuentaXPagar" />
+                <ScalarProperty Name="mp_IdCuentaXPagar" ColumnName="mp_IdCuentaXPagar" />
+                <ScalarProperty Name="mp_empresa" ColumnName="mp_empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

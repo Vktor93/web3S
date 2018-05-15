@@ -1285,8 +1285,6 @@
       <Parameter Name="fp_timestamp" Mode="InOut" Type="Binary" />
       <Parameter Name="error" Mode="InOut" Type="String" />
     </FunctionImport>
-    <EntitySet Name="CuentaXPagar" EntityType="SSS_OPERACIONModel.CuentaXPagar" />
-    <EntitySet Name="MovimientoCuentaXPagar" EntityType="SSS_OPERACIONModel.MovimientoCuentaXPagar" />
     <FunctionImport Name="sp_ABC_CuentaXPagar">
       <Parameter Name="cp_empresa" Mode="In" Type="Int16" />
       <Parameter Name="cp_opcion" Mode="In" Type="String" />
@@ -1317,7 +1315,7 @@
       <Parameter Name="mp_timestamp" Mode="InOut" Type="Binary" />
       <Parameter Name="error" Mode="InOut" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="sp_Busqueda_CuentaXPagar">
+    <FunctionImport Name="sp_Busqueda_CuentaXPagar" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_CuentaXPagar_Result)">
       <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
       <Parameter Name="busqueda" Mode="In" Type="String" />
       <Parameter Name="cp_empresa" Mode="In" Type="Int32" />
@@ -1329,7 +1327,7 @@
       <Parameter Name="cp_estCuentaXPagar" Mode="In" Type="String" />
       <Parameter Name="error" Mode="InOut" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="sp_Busqueda_MovimientoCuentaXPagar">
+    <FunctionImport Name="sp_Busqueda_MovimientoCuentaXPagar" ReturnType="Collection(SSS_OPERACIONModel.sp_Busqueda_MovimientoCuentaXPagar_Result)">
       <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
       <Parameter Name="busqueda" Mode="In" Type="String" />
       <Parameter Name="mp_empresa" Mode="In" Type="Int32" />
@@ -1345,6 +1343,8 @@
       <Parameter Name="mp_estMovCuentaXPagar" Mode="In" Type="String" />
       <Parameter Name="error" Mode="InOut" Type="String" />
     </FunctionImport>
+    <EntitySet Name="CuentaXPagars" EntityType="SSS_OPERACIONModel.CuentaXPagar" />
+    <EntitySet Name="MovimientoCuentaXPagars" EntityType="SSS_OPERACIONModel.MovimientoCuentaXPagar" />
   </EntityContainer>
   <ComplexType Name="sp_Busqueda_ArqueoCaja_Result">
     <Property Type="Int16" Name="Empresa" Nullable="false" />
@@ -1676,4 +1676,35 @@
     <Property Name="mp_estado" Type="Int32" Nullable="false" />
     <Property Name="mp_timestamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
   </EntityType>
+  <ComplexType Name="sp_Busqueda_CuentaXPagar_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodigoCuentaXPagar" Nullable="false" />
+    <Property Type="Int32" Name="Proveedor" Nullable="false" />
+    <Property Type="String" Name="PrimerNombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SegundoNombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Nit" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Saldo" Nullable="false" Precision="19" />
+    <Property Type="DateTime" Name="FechaDocumento" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" />
+    <Property Type="String" Name="EstatusCXP" Nullable="false" MaxLength="10" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="sp_Busqueda_MovimientoCuentaXPagar_Result">
+    <Property Type="Int16" Name="Empresa" Nullable="false" />
+    <Property Type="Int32" Name="CodigoCuentaXPagar" Nullable="false" />
+    <Property Type="Int32" Name="CodigoMovimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSucursal" Nullable="false" />
+    <Property Type="String" Name="NombreSucursal" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="NumeroDocumento" Nullable="false" />
+    <Property Type="Int32" Name="Proveedor" Nullable="false" />
+    <Property Type="String" Name="PrimerNombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SegundoNombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Nit" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaMovimiento" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="MontoMovimiento" Nullable="false" Precision="19" />
+    <Property Type="String" Name="CredigoDebito" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="DescripcionMov" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="EstatusMovCXP" Nullable="false" MaxLength="10" />
+    <Property Type="Binary" Name="TimeStamp" Nullable="false" MaxLength="8" />
+  </ComplexType>
 </Schema>

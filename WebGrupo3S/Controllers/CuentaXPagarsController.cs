@@ -56,7 +56,7 @@ namespace WebGrupo3S.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CuentaXPagar cuentaXPagar = db.CuentaXPagar.Find(id);
+            CuentaXPagar cuentaXPagar = db.CuentaXPagars.Find(id);
             if (cuentaXPagar == null)
             {
                 return HttpNotFound();

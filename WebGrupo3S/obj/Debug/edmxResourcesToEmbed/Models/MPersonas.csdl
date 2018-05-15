@@ -611,7 +611,6 @@
       <Parameter Name="lg_empresa" Mode="In" Type="Int16" />
       <Parameter Name="lg_usuario" Mode="In" Type="String" />
       <Parameter Name="lg_password" Mode="In" Type="String" />
-      <Parameter Name="lg_NombreUsuario" Mode="InOut" Type="String" />
       <Parameter Name="error" Mode="InOut" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_RegistrosNuevos">
