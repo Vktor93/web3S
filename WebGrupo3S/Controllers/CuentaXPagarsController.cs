@@ -76,17 +76,17 @@ namespace WebGrupo3S.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cc_empresa,cc_IdCuentaXCobrar,cc_Cliente,cc_Saldo,cc_fechaUltMov,cc_MontoUltMov,cc_estCuentaXCobrar,cc_fechaing,cc_fechamod,cc_usuarioing,cc_usuariomod,cc_maquinaing,cc_maquinamod,cc_estado,cc_timestamp")] CuentaXPagar cuentaxpagar)
+        public ActionResult Create([Bind(Include = "cp_empresa,cp_IdCuentaXCobrar,cp_Proveedor,cp_Saldo,cp_fechaUltMov,cp_MontoUltMov,cp_estCuentaXPagar,cp_fechaing,cp_fechamod,cp_usuarioing,cp_usuariomod,cp_maquinaing,cp_maquinamod,cp_estado,cp_timestamp")] CuentaXPagar cuentaxpagar)
         {
             try
             {
-                myDat = "Crear nuevo registro cuentas x cobrar / sp_ABC_CuentaXCobrar";
+                myDat = "Crear nuevo registro cuentas x pagar / sp_ABC_CuentaXPagar";
                 if (ModelState.IsValid)
                 {
                     cuentaxpagar.cp_usuarioing = Session["UserName"].ToString();
                     int result = db.sp_ABC_CuentaXPagar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, cuentaxpagar.cp_Proveedor, cuentaxpagar.cp_Saldo, null, null, null, cuentaxpagar.cp_usuarioing, tsp, error);
 
-                    WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxpagar.cp_Proveedor, cuentaxpagar.cp_Saldo, null, null, null, cuentaxpagar.cp_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+                    WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXPagar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxpagar.cp_Proveedor, cuentaxpagar.cp_Saldo, null, null, null, cuentaxpagar.cp_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
 
                     if (error.Value.ToString() == "")
                     {
@@ -118,8 +118,8 @@ namespace WebGrupo3S.Controllers
 
             try
             {
-                myDat = "Actualizar cuenta por cobrar: " + id.ToString() + " / sp_Busqueda_Cliente";
-                ViewBag.CC = new SelectList(dbP.sp_Busqueda_Proveedor(1, "", Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, error).ToList(), "cl_cliente", "cl_nombrelargo");
+                myDat = "Actualizar cuenta por pagar: " + id.ToString() + " / sp_Busqueda_Proveedor";
+                ViewBag.CC = new SelectList(dbP.sp_Busqueda_Proveedor(1, "", Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, error).ToList(), "pv_proveedor", "pv_nombre1");
                 dato = db.CuentaXPagars.Where(a => a.cp_IdCuentaXPagar == id).First();
                 if (dato == null)
                 {
@@ -128,7 +128,7 @@ namespace WebGrupo3S.Controllers
             }
             catch (Exception ex)
             {
-                //                return View("Error", new HandleErrorInfo(ex, myModulo, "Actualizar cuenta por cobrar"));
+                //                return View("Error", new HandleErrorInfo(ex, myModulo, "Actualizar cuenta por pagar"));
                 return RedirectToAction("miError", "Account", new { message = ex.Message, error = ex.ToString().Left(2048), inner = (ex.InnerException != null) ? ex.InnerException.Message.ToString().Left(2048) : "", modulo = myModulo, opcion = "Actualizar", myDat });
             }
             return View(dato);
@@ -139,7 +139,7 @@ namespace WebGrupo3S.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cc_empresa,cc_IdCuentaXCobrar,cc_Cliente,cc_Saldo,cc_fechaUltMov,cc_MontoUltMov,cc_estCuentaXCobrar,cc_fechaing,cc_fechamod,cc_usuarioing,cc_usuariomod,cc_maquinaing,cc_maquinamod,cc_estado,cc_timestamp")] CuentaXPagar cuentaxpagar)
+        public ActionResult Edit([Bind(Include = "cp_empresa,cp_IdCuentaXPagar,cp_Proveedor,cp_Saldo,cp_fechaUltMov,cp_MontoUltMov,cp_estCuentaXPagar,cp_fechaing,cp_fechamod,cp_usuarioing,cp_usuariomod,cp_maquinaing,cp_maquinamod,cp_estado,cp_timestamp")] CuentaXPagar cuentaxpagar)
         {
             try
             {
@@ -148,7 +148,7 @@ namespace WebGrupo3S.Controllers
                 codigo.Value = cuentaxpagar.cp_IdCuentaXPagar;
                 int result = db.sp_ABC_CuentaXPagar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo, cuentaxpagar.cp_Proveedor, cuentaxpagar.cp_Saldo, null, null, null, cuentaxpagar.cp_usuarioing, tsp, error);
 
-                WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo.Value, cuentaxpagar.cp_Proveedor, cuentaxpagar.cp_Saldo, null, null, null, cuentaxpagar.cp_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+                WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXPagar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo.Value, cuentaxpagar.cp_Proveedor, cuentaxpagar.cp_Saldo, null, null, null, cuentaxpagar.cp_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
                 if (error.Value.ToString() == "")
                 {
                     db.SaveChanges();
@@ -177,7 +177,7 @@ namespace WebGrupo3S.Controllers
 
             try
             {
-                myDat = "Dar de baja a cuenta por cobrar: " + id.ToString();
+                myDat = "Dar de baja a cuenta por pagar: " + id.ToString();
                 dato = db.CuentaXPagars.Where(a => a.cp_IdCuentaXPagar == id).First();
                 if (dato == null)
                 {
@@ -186,7 +186,7 @@ namespace WebGrupo3S.Controllers
             }
             catch (Exception ex)
             {
-                //                return View("Error", new HandleErrorInfo(ex, myModulo, "Da de baja a cuenta por cobrar"));
+                //                return View("Error", new HandleErrorInfo(ex, myModulo, "Da de baja a cuenta por pagar"));
                 return RedirectToAction("miError", "Account", new { message = ex.Message, error = ex.ToString().Left(2048), inner = (ex.InnerException != null) ? ex.InnerException.Message.ToString().Left(2048) : "", modulo = myModulo, opcion = "Debaja", myDat });
             }
             return View(dato);
@@ -200,13 +200,13 @@ namespace WebGrupo3S.Controllers
             CuentaXPagar dato = new CuentaXPagar();
             try
             {
-                myDat = "Confirma dar de baja cuenta por cobrar: " + id.ToString() + " / sp_ABC_CuentaXCobrar";
+                myDat = "Confirma dar de baja cuenta por pagar: " + id.ToString() + " / sp_ABC_CuentaXPagar";
                 dato = db.CuentaXPagars.Where(a => a.cp_IdCuentaXPagar == id).First();
                 tsp = Convert.ToBase64String(dato.cp_timestamp as byte[]);
                 dato.cp_usuarioing = Session["UserName"].ToString();
                 codigo.Value = id;
                 int result = db.sp_ABC_CuentaXPagar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('B'), codigo, null, null, null, null, null, dato.cp_usuarioing, tsp, error);
-                WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('B'), codigo.Value, null, null, null, null, null, dato.cp_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+                WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXPagar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('B'), codigo.Value, null, null, null, null, null, dato.cp_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
                 if (error.Value.ToString() == "")
                 {
                     db.SaveChanges();
