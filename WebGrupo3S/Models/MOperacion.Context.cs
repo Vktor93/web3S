@@ -2392,7 +2392,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Validaciones_FacturaFormaPago", fp_empresaParameter, fp_IdSucursalParameter, fp_IdDoc, fp_IdFormaPago, fp_IdAutorizacionParameter, fp_CantidadParameter, fp_UnidadesParameter, fp_NoDocumentoParameter, fp_IdBancoParameter, fp_ComentarioParameter, fp_IdMarcaTarjetaParameter, fp_IdOrdenServicioParameter, fp_IdDetalleOrdenServicioParameter, fp_IdServicioParameter, fp_IdProductoParameter, fp_TipoDocumentoPromoParameter, fp_usuarioParameter, fp_timestamp, error);
         }
     
-        public virtual int sp_ABC_CuentaXPagar(Nullable<short> cp_empresa, string cp_opcion, ObjectParameter cp_IdCuentaXPagar, Nullable<int> cp_Proveedor, Nullable<decimal> cp_Saldo, Nullable<System.DateTime> cp_fechaUltMov, Nullable<decimal> cp_MontoUltMov, string cp_estCuentaXPagar, string cp_usuario, ObjectParameter cp_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_CuentaXPagar(Nullable<short> cp_empresa, string cp_opcion, ObjectParameter cp_IdCuentaXPagar, Nullable<int> cp_Proveedor, Nullable<decimal> cp_Saldo, Nullable<System.DateTime> cp_fechaUltMov, Nullable<decimal> cp_MontoUltMov, string cp_estCuentaXPagar, string cp_usuario, string cp_timestamp, ObjectParameter error)
         {
             var cp_empresaParameter = cp_empresa.HasValue ?
                 new ObjectParameter("cp_empresa", cp_empresa) :
@@ -2425,8 +2425,10 @@ namespace WebGrupo3S.Models
             var cp_usuarioParameter = cp_usuario != null ?
                 new ObjectParameter("cp_usuario", cp_usuario) :
                 new ObjectParameter("cp_usuario", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CuentaXPagar", cp_empresaParameter, cp_opcionParameter, cp_IdCuentaXPagar, cp_ProveedorParameter, cp_SaldoParameter, cp_fechaUltMovParameter, cp_MontoUltMovParameter, cp_estCuentaXPagarParameter, cp_usuarioParameter, cp_timestamp, error);
+
+            ObjectParameter ts = new ObjectParameter("tp_timestamp", Convert.FromBase64String(cp_timestamp));
+
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CuentaXPagar", cp_empresaParameter, cp_opcionParameter, cp_IdCuentaXPagar, cp_ProveedorParameter, cp_SaldoParameter, cp_fechaUltMovParameter, cp_MontoUltMovParameter, cp_estCuentaXPagarParameter, cp_usuarioParameter, ts, error);
         }
     
         public virtual int sp_ABC_MovimientoCuentaXPagar(Nullable<short> mp_empresa, string mp_opcion, ObjectParameter mp_IdCuentaXPagar, ObjectParameter mp_IdMovCuentaXPagar, Nullable<int> mp_IdSucursal, Nullable<int> mp_IdDoc, Nullable<int> mp_Proveedor, Nullable<System.DateTime> mp_FechaMov, Nullable<decimal> mp_MontoMov, string mp_CreditoDebito, string mp_Descripcion, string mp_estMovCuentaXPagar, string mp_usuario, ObjectParameter mp_timestamp, ObjectParameter error)
