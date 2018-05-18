@@ -1028,7 +1028,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_TipoProducto", tp_empresaParameter, tp_opcionParameter, tp_IdTipoProducto, tp_ClasificacionTPParameter, tp_nombreParameter, tp_descripcionParameter, tp_padreParameter, tp_usuarioParameter, ts, error);
         }
     
-        public virtual int sp_ABC_TipoServicio(Nullable<short> ts_empresa, string ts_opcion, ObjectParameter ts_IdTipoServ, string ts_nombre, string ts_descripcion, Nullable<int> ts_padre, string ts_Coordinacion, string ts_CuentaSAP, string ts_usuario, ObjectParameter ts_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_TipoServicio(Nullable<short> ts_empresa, string ts_opcion, ObjectParameter ts_IdTipoServ, string ts_nombre, string ts_descripcion, Nullable<int> ts_padre, string ts_Coordinacion, string ts_CuentaSAP, string ts_usuario, string ts_timestamp, ObjectParameter error)
         {
             var ts_empresaParameter = ts_empresa.HasValue ?
                 new ObjectParameter("ts_empresa", ts_empresa) :
@@ -1061,8 +1061,10 @@ namespace WebGrupo3S.Models
             var ts_usuarioParameter = ts_usuario != null ?
                 new ObjectParameter("ts_usuario", ts_usuario) :
                 new ObjectParameter("ts_usuario", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_TipoServicio", ts_empresaParameter, ts_opcionParameter, ts_IdTipoServ, ts_nombreParameter, ts_descripcionParameter, ts_padreParameter, ts_CoordinacionParameter, ts_CuentaSAPParameter, ts_usuarioParameter, ts_timestamp, error);
+
+            ObjectParameter ts = new ObjectParameter("tp_timestamp", Convert.FromBase64String(ts_timestamp));
+
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_TipoServicio", ts_empresaParameter, ts_opcionParameter, ts_IdTipoServ, ts_nombreParameter, ts_descripcionParameter, ts_padreParameter, ts_CoordinacionParameter, ts_CuentaSAPParameter, ts_usuarioParameter, ts, error);
         }
     
         public virtual int sp_AlertaCumpleanios(Nullable<short> cl_empresa, Nullable<int> cl_Cliente, ObjectParameter alerta, ObjectParameter error)

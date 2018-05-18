@@ -1834,12 +1834,11 @@
     <Content Include="Views\opcions\PEdit.cshtml" />
     <Content Include="Views\opcions\Popcion.cshtml" />
     <Content Include="Views\perfils\TPermisos.cshtml" />
+    <Content Include="Views\CuentasXPagars\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CuentasXPagars\" />
-    <Folder Include="Views\CuentaXPagars\" />
     <Folder Include="Views\Exportar\" />
     <Folder Include="Views\Shared\EditTemplates\" />
   </ItemGroup>

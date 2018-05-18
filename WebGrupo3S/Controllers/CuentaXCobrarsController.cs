@@ -82,10 +82,8 @@ namespace WebGrupo3S.Views
                 if (ModelState.IsValid)
                 {
                     cuentaxcobrar.cc_usuarioing = Session["UserName"].ToString();
-                    int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, cuentaxcobrar.cc_Cliente,
-                                                   cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, error);
-                    WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente,
-                                                   cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+                    int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, error);
+                    WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
                     if (error.Value.ToString() == "")
                     {
                         db.SaveChanges();
@@ -144,10 +142,8 @@ namespace WebGrupo3S.Views
                 myDat = "Actualizar datos / sp_ABC_CuentaXCobrar";
                 tsp = Convert.ToBase64String(cuentaxcobrar.cc_timestamp as byte[]);
                 codigo.Value = cuentaxcobrar.cc_IdCuentaXCobrar;
-                int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo, cuentaxcobrar.cc_Cliente,
-                                                   cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, error);
-                WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo.Value, cuentaxcobrar.cc_Cliente,
-                                                   cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+                int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, error);
+                WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
                 if (error.Value.ToString() == "")
                 {
                     db.SaveChanges();
@@ -205,6 +201,7 @@ namespace WebGrupo3S.Views
                 dato.cc_usuarioing = Session["UserName"].ToString();
                 codigo.Value = id;
                 int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('B'), codigo,null, null, null, null, null, dato.cc_usuarioing, tsp, error);
+
                 WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('B'), codigo.Value, null, null, null, null, null, dato.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
                 if (error.Value.ToString() == "")
                 {
