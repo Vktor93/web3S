@@ -48,13 +48,13 @@ namespace WebGrupo3S.Views
 
 
         // GET: CuentaXCobrars/Details/5
-        public ActionResult Details(short? id)
+        public ActionResult Details(int? id ,short? ids)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CuentaXCobrar cuentaXCobrar = db.CuentaXCobrar.Find(id);
+            CuentaXCobrar cuentaXCobrar = db.CuentaXCobrar.Find(id, ids);
             if (cuentaXCobrar == null)
             {
                 return HttpNotFound();
@@ -82,7 +82,9 @@ namespace WebGrupo3S.Views
                 if (ModelState.IsValid)
                 {
                     cuentaxcobrar.cc_usuarioing = Session["UserName"].ToString();
-                    int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, error);
+                    cuentaxcobrar.cc_fechaUltMov = DateTime.Now;
+                    //cuentaxcobrar.cc_fechaUltMov = cuentaxcobrar.cc_fechaUltMov == null ? cuentaxcobrar.cc_fechaUltMov = date : cuentaxcobrar.cc_fechaUltMov;
+                    int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, cuentaxcobrar.cc_fechaUltMov, 0, "1", cuentaxcobrar.cc_usuarioing, tsp, error);
                     WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
                     if (error.Value.ToString() == "")
                     {

@@ -1835,6 +1835,10 @@
     <Content Include="Views\opcions\Popcion.cshtml" />
     <Content Include="Views\perfils\TPermisos.cshtml" />
     <Content Include="Views\CuentasXPagars\Index.cshtml" />
+    <Content Include="Views\CuentasXPagars\Details.cshtml" />
+    <Content Include="Views\CuentasXPagars\Create.cshtml" />
+    <Content Include="Views\CuentasXPagars\Edit.cshtml" />
+    <Content Include="Views\CuentasXPagars\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
