@@ -50,13 +50,13 @@ namespace WebGrupo3S.Controllers
 
 
         // GET: cuentaXPagars/Details/5
-        public ActionResult Details(short? id)
+        public ActionResult Details(int? id, short? ids)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CuentaXPagar cuentaXPagar = db.CuentaXPagars.Find(id);
+            CuentaXPagar cuentaXPagar = db.CuentaXPagars.Find(id, ids);
             if (cuentaXPagar == null)
             {
                 return HttpNotFound();
@@ -67,7 +67,7 @@ namespace WebGrupo3S.Controllers
         // GET: cuentaXPagars/Create
         public ActionResult Create()
         {
-            ViewBag.CP = new SelectList(dbP.sp_Busqueda_Proveedor(1, "", Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, error).ToList(), "pv_proveedor", "pv_nombrelargo");
+            ViewBag.CP = new SelectList(dbP.sp_Busqueda_Proveedor(1, "", Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, error).ToList(), "Proveedor", "Nombre1");
             return View();
         }
 
@@ -76,7 +76,7 @@ namespace WebGrupo3S.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cp_empresa,cp_IdCuentaXCobrar,cp_Proveedor,cp_Saldo,cp_fechaUltMov,cp_MontoUltMov,cp_estCuentaXPagar,cp_fechaing,cp_fechamod,cp_usuarioing,cp_usuariomod,cp_maquinaing,cp_maquinamod,cp_estado,cp_timestamp")] CuentaXPagar cuentaxpagar)
+        public ActionResult Create([Bind(Include = "cp_empresa,cp_IdCuentaXPagar,cp_Proveedor,cp_Saldo,cp_fechaUltMov,cp_MontoUltMov,cp_estCuentaXPagar,cp_fechaing,cp_fechamod,cp_usuarioing,cp_usuariomod,cp_maquinaing,cp_maquinamod,cp_estado,cp_timestamp")] CuentaXPagar cuentaxpagar)
         {
             try
             {
@@ -84,7 +84,8 @@ namespace WebGrupo3S.Controllers
                 if (ModelState.IsValid)
                 {
                     cuentaxpagar.cp_usuarioing = Session["UserName"].ToString();
-                    int result = db.sp_ABC_CuentaXPagar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, cuentaxpagar.cp_Proveedor, cuentaxpagar.cp_Saldo, null, null, null, cuentaxpagar.cp_usuarioing, tsp, error);
+                    cuentaxpagar.cp_fechaUltMov = DateTime.Now;
+                    int result = db.sp_ABC_CuentaXPagar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, cuentaxpagar.cp_Proveedor, cuentaxpagar.cp_Saldo,cuentaxpagar.cp_fechaUltMov, 0,"1", cuentaxpagar.cp_usuarioing, tsp, error);
 
                     WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXPagar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxpagar.cp_Proveedor, cuentaxpagar.cp_Saldo, null, null, null, cuentaxpagar.cp_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
 
