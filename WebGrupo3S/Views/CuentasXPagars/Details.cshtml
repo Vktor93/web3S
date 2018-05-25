@@ -1,7 +1,114 @@
-﻿
+﻿@model WebGrupo3S.Models.CuentaXPagar
+
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalle";
 }
 
-<h2>Details</h2>
+<h2>Detalle Cuenta por Pagar</h2>
 
+<div>
+    <h4>Cuenta por Pagar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Proveedor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_Proveedor)
+        </dd>
+
+        <dt>
+            Saldo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_Saldo)
+        </dd>
+
+        <dt>
+            Fecha Ultimo Mov.
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_fechaUltMov)
+        </dd>
+
+        <dt>
+            Monto Ultimo Mov.
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_MontoUltMov)
+        </dd>
+
+        <dt>
+            Estado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_estCuentaXPagar)
+        </dd>
+
+        <dt>
+            Fecha Ingreso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_fechaing)
+        </dd>
+
+        <dt>
+            Fecha Modificación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_fechamod)
+        </dd>
+
+        <dt>
+            Usuario Ingreso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_usuarioing)
+        </dd>
+
+        <dt>
+            Usuario Modificación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_usuariomod)
+        </dd>
+
+        <dt>
+            Máquina Ingreso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_maquinaing)
+        </dd>
+
+        <dt>
+            Máquina Modificación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_maquinamod)
+        </dd>
+
+        <dt>
+            Marca Temporal
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.cp_IdCuentaXPagar }) |
+    @Html.ActionLink("Regresar a Lista", "Index")
+</p>
