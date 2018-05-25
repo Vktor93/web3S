@@ -82,8 +82,7 @@ namespace WebGrupo3S.Views
                 if (ModelState.IsValid)
                 {
                     cuentaxcobrar.cc_usuarioing = Session["UserName"].ToString();
-                    cuentaxcobrar.cc_fechaUltMov = DateTime.Now;
-                    //cuentaxcobrar.cc_fechaUltMov = cuentaxcobrar.cc_fechaUltMov == null ? cuentaxcobrar.cc_fechaUltMov = date : cuentaxcobrar.cc_fechaUltMov;
+                    cuentaxcobrar.cc_fechaUltMov = DateTime.Now;                    
                     int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, cuentaxcobrar.cc_fechaUltMov, 0, "1", cuentaxcobrar.cc_usuarioing, tsp, error);
                     WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
                     if (error.Value.ToString() == "")
@@ -164,7 +163,7 @@ namespace WebGrupo3S.Views
         }
 
         // GET: CuentaXCobrars/Delete/5
-        public ActionResult Delete(short? id)
+        public ActionResult Delete(int? id)
         {
             CuentaXCobrar dato = new CuentaXCobrar();
             if (id == null)
@@ -192,7 +191,7 @@ namespace WebGrupo3S.Views
         // POST: CuentaXCobrars/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(short id)
+        public ActionResult DeleteConfirmed(int id)
         {
             CuentaXCobrar dato = new CuentaXCobrar();
             try
