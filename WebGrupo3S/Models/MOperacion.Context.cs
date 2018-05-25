@@ -2428,7 +2428,7 @@ namespace WebGrupo3S.Models
                 new ObjectParameter("cp_usuario", cp_usuario) :
                 new ObjectParameter("cp_usuario", typeof(string));
 
-            ObjectParameter ts = new ObjectParameter("tp_timestamp", Convert.FromBase64String(cp_timestamp));
+            ObjectParameter ts = new ObjectParameter("cp_timestamp", Convert.FromBase64String(cp_timestamp));
 
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CuentaXPagar", cp_empresaParameter, cp_opcionParameter, cp_IdCuentaXPagar, cp_ProveedorParameter, cp_SaldoParameter, cp_fechaUltMovParameter, cp_MontoUltMovParameter, cp_estCuentaXPagarParameter, cp_usuarioParameter, ts, error);
         }
