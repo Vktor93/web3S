@@ -1,10 +1,10 @@
 ﻿@model WebGrupo3S.Models.CuentaXCobrar
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar";
 }
 
-<h2>Edit</h2>
+<h2>Editar</h2>
 
 
 @using (Html.BeginForm())
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>CuentaXCobrar</h4>
+        <h4>Cuenta por Cobrar</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.cc_empresa)
@@ -20,7 +20,7 @@
         @Html.HiddenFor(model => model.cc_IdCuentaXCobrar)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_Cliente, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_Cliente", "Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_Cliente, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_Cliente, "", new { @class = "text-danger" })
@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_Saldo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_Saldo", "Saldo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_Saldo, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_Saldo, "", new { @class = "text-danger" })
@@ -36,7 +36,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_fechaUltMov, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_fechaUltMov", "Fecha Ultimo Mov.", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_fechaUltMov, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_fechaUltMov, "", new { @class = "text-danger" })
@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_MontoUltMov, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_MontoUltMov", "Monto Ultimo Mov.", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_MontoUltMov, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_MontoUltMov, "", new { @class = "text-danger" })
@@ -52,7 +52,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_estCuentaXCobrar, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_estCuentaXCobrar", "Estado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_estCuentaXCobrar, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_estCuentaXCobrar, "", new { @class = "text-danger" })
@@ -60,7 +60,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_fechaing, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_fechaing", "Fecha Ingreso", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_fechaing, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_fechaing, "", new { @class = "text-danger" })
@@ -68,7 +68,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_fechamod, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_fechamod", "Fecha Modificación", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_fechamod, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_fechamod, "", new { @class = "text-danger" })
@@ -76,7 +76,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_usuarioing, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_usuarioing", "Usuario Ingreso", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_usuarioing, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_usuarioing, "", new { @class = "text-danger" })
@@ -84,7 +84,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_usuariomod, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_usuariomod", "Usuario Modificación", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_usuariomod, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_usuariomod, "", new { @class = "text-danger" })
@@ -92,7 +92,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_maquinaing, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_maquinaing", "Máquina Ingreso", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_maquinaing, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_maquinaing, "", new { @class = "text-danger" })
@@ -100,7 +100,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_maquinamod, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_maquinamod", "Máquina Modificación", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_maquinamod, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_maquinamod, "", new { @class = "text-danger" })
@@ -108,15 +108,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cc_estado, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.cc_estado, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.cc_estado, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.cc_timestamp, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("cc_timestamp", "Marca Temporal", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cc_timestamp, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cc_timestamp, "", new { @class = "text-danger" })
@@ -132,7 +124,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar a la Lista", "Index")
 </div>
 
 @section Scripts {

@@ -1,25 +1,25 @@
 ﻿@model WebGrupo3S.Models.CuentaXCobrar
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalle";
 }
 
-<h2>Details</h2>
+<h2>Detalle Cuenta por Cobrar</h2>
 
 <div>
-    <h4>CuentaXCobrar</h4>
+    <h4>Cuenta por Cobrar</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.cc_Cliente)
+            Cliente
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.cc_Cliente)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.cc_Saldo)
+        <dt>            
+            Saldo
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cc_fechaUltMov)
+            Fecha Ultimo Mov.
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cc_MontoUltMov)
+            Monto Ultimo Mov.
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cc_estCuentaXCobrar)
+            Estado
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cc_fechaing)
+            Fecha Ingreso
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cc_fechamod)
+            Fecha Modificación
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cc_usuarioing)
+            Usuario Ingreso
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cc_usuariomod)
+            Usuario Modificación
         </dt>
 
         <dd>
@@ -83,7 +83,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cc_maquinaing)
+            Máquina Ingreso
         </dt>
 
         <dd>
@@ -91,7 +91,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cc_maquinamod)
+            Máquina Modificación
         </dt>
 
         <dd>
@@ -99,15 +99,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cc_estado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cc_estado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.cc_timestamp)
+            Marca Temporal
         </dt>
 
         <dd>
@@ -117,6 +109,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.cc_IdCuentaXCobrar  }) |
+    @Html.ActionLink("Regresar a Lista", "Index")
 </p>
