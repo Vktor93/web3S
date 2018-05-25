@@ -63,7 +63,7 @@
                                 <td>
                                     @Html.ActionLink("Edita", "Edit", new { id = item.CodigoCuentaXPagar }, new { @class = "btn btn-primary btn-xs" })
                                     @Html.ActionLink("de Baja", "Delete", new { id = item.CodigoCuentaXPagar }, new { @class = "btn btn-info btn-xs" })
-                                    @Html.ActionLink("Detalle", "Details", new { id = item.CodigoCuentaXPagar }, new { @class = "btn btn-primary btn-xs" })
+                                    @Html.ActionLink("Detalle", "Details", new { id = item.CodigoCuentaXPagar, ids = item.Empresa }, new { @class = "btn btn-primary btn-xs" })
                                 </td>
                             </tr>
                         }
