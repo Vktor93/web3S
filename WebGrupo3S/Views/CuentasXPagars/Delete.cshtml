@@ -1,7 +1,129 @@
-﻿
+﻿@model WebGrupo3S.Models.CuentaXPagar
+
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "De Baja";
 }
 
-<h2>Delete</h2>
+<h2>Dar de Baja</h2>
 
+<h3>¿Seguro que deseas dar de baja este registro?</h3>
+<div>
+    <h4>Cuenta por pagar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_Proveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_Proveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_Saldo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_Saldo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_fechaUltMov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_fechaUltMov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_MontoUltMov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_MontoUltMov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_estCuentaXPagar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_estCuentaXPagar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cp_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cp_timestamp)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la Lista", "Index")
+        </div>
+    }
+</div>
