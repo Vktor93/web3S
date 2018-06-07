@@ -535,3 +535,9 @@ C:\Users\Viktor\isonet\web3S\WebGrupo3S\obj\Debug\WebGrupo3S.pdb
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\itextsharp.dll
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\itextsharp.xmlworker.dll
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\itextsharp.xml
+C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\System.Net.Http.Formatting.dll
+C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\System.Web.Http.dll
+C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\System.Web.Http.WebHost.dll
+C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\System.Net.Http.Formatting.xml
+C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\System.Web.Http.xml
+C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\System.Web.Http.WebHost.xml
