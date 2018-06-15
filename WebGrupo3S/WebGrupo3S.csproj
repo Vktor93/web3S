@@ -211,7 +211,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="ConstantesP.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApiClienteController.cs" />
     <Compile Include="Controllers\ApiPerfilController.cs" />
+    <Compile Include="Controllers\ApiPerfilUsuarioController.cs" />
+    <Compile Include="Controllers\ApiUsuarioController.cs" />
     <Compile Include="Controllers\BitacorasController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\CuentaXPagarsController.cs" />
