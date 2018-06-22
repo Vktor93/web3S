@@ -88,7 +88,7 @@ namespace WebGrupo3S.Controllers
             }
             catch (DbUpdateException)
             {
-                if (perfilExists(perfil.pf_empresa))
+                if (perfilExists(perfil.pf_codPerfil))
                 {
                     return Conflict();
                 }
@@ -98,7 +98,7 @@ namespace WebGrupo3S.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = perfil.pf_empresa }, perfil);
+            return CreatedAtRoute("DefaultApi", new { id = perfil.pf_codPerfil }, perfil);
         }
 
         // DELETE: api/ApiPerfil/5
