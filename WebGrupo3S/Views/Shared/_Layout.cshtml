@@ -227,8 +227,8 @@
                             </ul>
                         </li>
                     }
-                    @if (Session["M23"].ToString() == "1" || Session["M24"].ToString() == "1" || Session["M25"].ToString() == "1" || Session["M26"].ToString() == "1")
-                    {
+
+                    
                         <li id="left-sidebar-menu-caja" class="treeview cli">
                             <a href="#">
                                 <i class="fa fa-calendar-check-o"></i> <span>Punto de Venta</span> <i class="fa fa-angle-left pull-right"></i>
@@ -242,17 +242,15 @@
                                 {
                                     <li id="left-sidebar-menu-punto-documentos"><a href="@Url.Action("Index", "Documentoes")" class="lintern"><i class="fa fa-circle-o"></i> Facturación</a></li>
                                 }
-                                @if (Session["M25"].ToString() == "1")
-                                {
-                                    <li id="left-sidebar-menu-punto-cierrecaja"><a href="@Url.Action("Index", "cierrecaja")" class="lintern"><i class="fa fa-circle-o"></i> Cierre de Caja</a></li>
-                                }
-                                @if (Session["M26"].ToString() == "1")
-                                {
-                                    <li id="left-sidebar-menu-punto-cierrediario"><a href="@Url.Action("Index", "cierrediario")" class="lintern"><i class="fa fa-circle-o"></i> Cierre Diario</a></li>
-                                }
+
+                                <li id="left-sidebar-menu-punto-cierrecaja"><a href="@Url.Action("Index", "cierrecaja")" class="lintern"><i class="fa fa-circle-o"></i> Cierre de Caja</a></li>
+
+
+                                <li id="left-sidebar-menu-punto-cierrediario"><a href="@Url.Action("Index", "cierrediario")" class="lintern"><i class="fa fa-circle-o"></i> Cierre Diario</a></li>
+
                             </ul>
                         </li>
-                    }
+                    
                     
                     <!-- Settings menu-->
                     <li class="treeview cli">
