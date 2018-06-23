@@ -1,0 +1,122 @@
+﻿@model WebGrupo3S.Models.ArqueoCaja
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ArqueoCaja</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_Moneda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_Moneda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_PresentacionMoneda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_PresentacionMoneda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_Denominacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_Denominacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_MontoTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_MontoTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aq_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aq_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

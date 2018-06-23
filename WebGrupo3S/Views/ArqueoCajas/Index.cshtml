@@ -1,0 +1,105 @@
+﻿@model IEnumerable<WebGrupo3S.Models.ArqueoCaja>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_Moneda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_PresentacionMoneda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_Denominacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_Cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_MontoTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_fechaing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_fechamod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_usuarioing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_usuariomod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_maquinaing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_maquinamod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aq_timestamp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_Moneda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_PresentacionMoneda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_Denominacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_Cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_MontoTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_fechaing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_fechamod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_usuarioing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_usuariomod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_maquinaing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_maquinamod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aq_timestamp)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
