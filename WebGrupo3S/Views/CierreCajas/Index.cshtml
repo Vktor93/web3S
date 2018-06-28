@@ -1,0 +1,207 @@
+﻿@model IEnumerable<WebGrupo3S.Models.CierreCaja>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_Terminal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_IdSucursal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_FechaHoraCierre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_Moneda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_SaldoAnterior)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_EntradasEfectivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_SalidasEfectivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_EfectivoTeorico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_EfectivoFisico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_AjusteEfectivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_ChequeTeorico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_ChequeFisico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_AjusteCheque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_TarjetaTeorico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_TarjetaFisico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_AjusteTarjeta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_Descuadre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_RetiroEfectivoAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_SaldoActual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_estCierreCaja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_TotalVenta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_TotalPropina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_fechaing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_fechamod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_usuarioing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_usuariomod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_maquinaing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_maquinamod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cj_timestamp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_Terminal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_IdSucursal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_FechaHoraCierre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_Moneda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_SaldoAnterior)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_EntradasEfectivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_SalidasEfectivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_EfectivoTeorico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_EfectivoFisico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_AjusteEfectivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_ChequeTeorico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_ChequeFisico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_AjusteCheque)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_TarjetaTeorico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_TarjetaFisico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_AjusteTarjeta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_Descuadre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_RetiroEfectivoAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_SaldoActual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_estCierreCaja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_TotalVenta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_TotalPropina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_fechaing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_fechamod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_usuarioing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_usuariomod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_maquinaing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_maquinamod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cj_timestamp)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

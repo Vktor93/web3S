@@ -1,0 +1,258 @@
+﻿@model WebGrupo3S.Models.CierreCaja
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CierreCaja</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_Terminal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_Terminal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_IdSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_IdSucursal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_FechaHoraCierre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_FechaHoraCierre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_Moneda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_Moneda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_SaldoAnterior)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_SaldoAnterior)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_EntradasEfectivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_EntradasEfectivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_SalidasEfectivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_SalidasEfectivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_EfectivoTeorico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_EfectivoTeorico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_EfectivoFisico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_EfectivoFisico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_AjusteEfectivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_AjusteEfectivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_ChequeTeorico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_ChequeTeorico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_ChequeFisico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_ChequeFisico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_AjusteCheque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_AjusteCheque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_TarjetaTeorico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_TarjetaTeorico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_TarjetaFisico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_TarjetaFisico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_AjusteTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_AjusteTarjeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_Descuadre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_Descuadre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_RetiroEfectivoAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_RetiroEfectivoAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_SaldoActual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_SaldoActual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_estCierreCaja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_estCierreCaja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_TotalVenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_TotalVenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_TotalPropina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_TotalPropina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cj_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cj_timestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
