@@ -7,17 +7,43 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebGrupo3S.Models;
+using System.Data.Entity.Core.Objects;
+using WebGrupo3S.Helpers;
 
 namespace WebGrupo3S.Controllers
 {
     public class ArqueoCajasController : Controller
     {
         private SSS_OPERACIONEntities db = new SSS_OPERACIONEntities();
+        private string myModulo = "Arqueo Caja";
+        private string myDat = "";
+        public ConstantesP coP = new ConstantesP();
+        public String tsp = "";
+        ObjectParameter error = new ObjectParameter("error", typeof(String));
+        ObjectParameter codigo = new ObjectParameter("aq_IdArqueoCaja", typeof(int));
+
+        CompleteString complete = new CompleteString();
+
+        public class DatosSearchResultModel
+        {
+            public IEnumerable<sp_Busqueda_ArqueoCaja_Result> DatosResults { get; set; }
+        }
 
         // GET: ArqueoCajas
         public ActionResult Index()
         {
-            return View(db.ArqueoCaja.ToList());
+            var DatosSearch = new DatosSearchResultModel();
+
+            try
+            {
+                myDat = "Busqueda / sp_Busqueda_CierreCaja";
+                DatosSearch.DatosResults = db.sp_Busqueda_ArqueoCaja(1, "",Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, null, null, error).ToList();
+            }
+            catch (Exception ex) {
+                return RedirectToAction("miError", "Account", new { message = ex.Message, error = ex.ToString().Left(2048), inner = (ex.InnerException != null) ? ex.InnerException.Message.ToString().Left(2048) : "", myModulo, opcion = "Lista", myDat });
+            }
+
+            return View(DatosSearch.DatosResults.ToList());
         }
 
         // GET: ArqueoCajas/Details/5

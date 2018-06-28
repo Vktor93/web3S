@@ -228,8 +228,10 @@
     <Compile Include="Controllers\ApiServicioController.cs" />
     <Compile Include="Controllers\ApiSucursalController.cs" />
     <Compile Include="Controllers\ApiUsuarioController.cs" />
+    <Compile Include="Controllers\ArqueoCajasController.cs" />
     <Compile Include="Controllers\BitacorasController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
+    <Compile Include="Controllers\CierreCajasController.cs" />
     <Compile Include="Controllers\CuentaXPagarsController.cs" />
     <Compile Include="Controllers\EmpleadoesController.cs" />
     <Compile Include="Controllers\ExportarController.cs" />
@@ -1869,6 +1871,16 @@
     <Content Include="Views\CuentasXPagars\Create.cshtml" />
     <Content Include="Views\CuentasXPagars\Edit.cshtml" />
     <Content Include="Views\CuentasXPagars\Delete.cshtml" />
+    <Content Include="Views\ArqueoCajas\Create.cshtml" />
+    <Content Include="Views\ArqueoCajas\Delete.cshtml" />
+    <Content Include="Views\ArqueoCajas\Details.cshtml" />
+    <Content Include="Views\ArqueoCajas\Edit.cshtml" />
+    <Content Include="Views\ArqueoCajas\Index.cshtml" />
+    <Content Include="Views\CierreCajas\Create.cshtml" />
+    <Content Include="Views\CierreCajas\Delete.cshtml" />
+    <Content Include="Views\CierreCajas\Details.cshtml" />
+    <Content Include="Views\CierreCajas\Edit.cshtml" />
+    <Content Include="Views\CierreCajas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
