@@ -7,12 +7,26 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebGrupo3S.Models;
+using System.Data.Entity.Core.Objects;
+using WebGrupo3S.Helpers;
 
 namespace WebGrupo3S.Controllers
 {
     public class CierreCajasController : Controller
     {
         private SSS_OPERACIONEntities db = new SSS_OPERACIONEntities();
+        private SSS_PERSONASEntities dbP = new SSS_PERSONASEntities();
+        private string myModulo = "Cierra de Caja";
+        private string myDat = "";
+        public ConstantesP coP = new ConstantesP();
+        public String tsp = "";
+        ObjectParameter error = new ObjectParameter("error", typeof(String));
+        ObjectParameter codigo = new ObjectParameter("cj_IdCierreCaja", typeof(int));
+
+        public class DatosSearchResultModel
+        {
+            public IEnumerable<sp_Busqueda_CierreCaja_Result> DatosResults { get; set; }
+        }
 
         // GET: CierreCajas
         public ActionResult Index()
