@@ -235,6 +235,7 @@
     <Compile Include="Controllers\CuentaXPagarsController.cs" />
     <Compile Include="Controllers\EmpleadoesController.cs" />
     <Compile Include="Controllers\ExportarController.cs" />
+    <Compile Include="Controllers\FacturasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HorariosController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -1881,6 +1882,7 @@
     <Content Include="Views\CierreCajas\Details.cshtml" />
     <Content Include="Views\CierreCajas\Edit.cshtml" />
     <Content Include="Views\CierreCajas\Index.cshtml" />
+    <Content Include="Views\Facturas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
