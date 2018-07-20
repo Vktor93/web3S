@@ -1421,8 +1421,10 @@
     <Content Include="Content\Combobox.css" />
     <Content Include="Content\gijgo.css" />
     <Content Include="Content\Gstyle.css" />
+    <Content Include="Content\jquery.bootstrap-touchspin.min.css" />
     <Content Include="Content\justified-nav.css" />
     <Content Include="Content\onlink.css" />
+    <Content Include="Content\select2.min.css" />
     <Content Include="Content\Tables\buttons.dataTables.min.css" />
     <Content Include="Content\Tables\dataTables.bootstrap.min.css" />
     <Content Include="Content\Tables\jquery.dataTables.min.css" />
@@ -1604,6 +1606,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.bootstrap-touchspin.min.js" />
     <Content Include="Scripts\jquery.combobox.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -1616,6 +1619,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\Tables\buttons.colVis.min.js" />
     <Content Include="Scripts\Tables\buttons.html5.min.js" />
     <Content Include="Scripts\Tables\buttons.print.min.js" />
@@ -1883,6 +1887,7 @@
     <Content Include="Views\CierreCajas\Edit.cshtml" />
     <Content Include="Views\CierreCajas\Index.cshtml" />
     <Content Include="Views\Facturas\Index.cshtml" />
+    <Content Include="Views\Documentoes\BodyDoc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

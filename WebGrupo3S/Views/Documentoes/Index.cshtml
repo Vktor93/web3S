@@ -26,7 +26,7 @@
                                 <span class="input-group-addon">
                                     Tipo de Documento
                                 </span>
-                                @Html.DropDownList("Tdocumento", new SelectList(ViewBag.TD, "Value", "Text"), new { @class = "form-control" })
+                                @Html.DropDownList("Tdocumento", new SelectList(ViewBag.TD, "Value", "Text"), new { @class = "form-control seleccionar" })
                             </div>                                                                                                                   
                         </div>
                     </div>
@@ -115,9 +115,20 @@
     @Scripts.Render("~/Admin/plugins/datatables/js")
     @Scripts.Render("~/Scripts/Tables/Data")
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".seleccionar").select2({
+                language: {
+                    noResults: function () {
+                        return "No hay resultado";
+                    }
+                }
+            });
+
+        });
+    </script>
 }
 
-<script>
-
-</script>
 

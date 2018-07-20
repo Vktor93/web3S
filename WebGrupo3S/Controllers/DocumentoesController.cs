@@ -28,6 +28,14 @@ namespace WebGrupo3S.Views
             public IEnumerable<sp_Busqueda_Documento_Result> DatosResults { get; set; }
         }
 
+        //POST: Carga Cuerpo de Documento 
+        [HttpPost]       
+        public ActionResult CargaDoc()
+        {
+
+            return PartialView("BodyDoc");
+        }
+
         // GET: Documentoes
         public ActionResult Index()
         {
@@ -164,5 +172,6 @@ namespace WebGrupo3S.Views
             }
             base.Dispose(disposing);
         }
+       
     }
 }

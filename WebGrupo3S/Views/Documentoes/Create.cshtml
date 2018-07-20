@@ -1,253 +1,119 @@
 ﻿@model WebGrupo3S.Models.Documento
 
-<div class="box box-body">
-
-</div>
 
 <div class="panel box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Crear Documento</h3>
     </div>
-    <div class="panel-body">        
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-        <div class="row">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="col-sm-12">
-                <div class="col-sm-3">
-                    <div class="form-group">
-                        <label>Empresa</label>
-                        @Html.EditorFor(model => model.dm_empresa, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.dm_empresa, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label>Sucursal</label>
-                        @Html.EditorFor(model => model.dm_IdSucursal, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.dm_IdSucursal, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="form-group">
-                        <label>Mes</label>
-                        <select id="mes" class="form-control" name="mes" required>
-                            <option value="0">Seleccionar</option>
-                            <option value="1">Enero</option>
-                            <option value="2">Febrero</option>
-                            <option value="3">Marzo</option>
-                            <option value="4">Abril</option>
-                            <option value="5">Mayo</option>
-                            <option value="6">Junio</option>
-                            <option value="7">Julio</option>
-                            <option value="8">Agosto</option>
-                            <option value="9">Septiembre</option>
-                            <option value="10">Octubre</option>
-                            <option value="11">Noviembre</option>
-                            <option value="12">Diciembre</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="form-group">
-                        <label>Año</label>
-                        <select id="anio" class="form-control" name="anio" required>
-                            <option value="0">Seleccionar</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-1">
-                    <div class="form-group">
-                        <label>&nbsp;</label>
-                        <button type="button" id="btn_ver" class="btn btn-primary btn-as-block"><i class="fa fa-arrow-circle-right"></i>Iniciar Factura</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
-
-
-
+    <div class="panel-body">
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
             <div class="row">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="col-sm-12">
-                    <div class="col-sm-2">
+                    <div class="col-sm-3">
                         <div class="form-group">
-                            <label>Id Empresa</label>
+                            <label>Empresa</label>
                             @Html.EditorFor(model => model.dm_empresa, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.dm_empresa, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="form-group">
-                            <label>Id Sucursal</label>
+                            <label>Sucursal</label>
                             @Html.EditorFor(model => model.dm_IdSucursal, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.dm_IdSucursal, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="form-group">
-                            <label>Id Documento</label>
-                            @Html.EditorFor(model => model.dm_IdDoc, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_IdDoc, "", new { @class = "text-danger" })
+                            <label for="mes">Mes</label>
+                            <select id="mes" class="form-control seleccionar" name="mes" required>
+                                <option value="0">Seleccionar</option>
+                                <option value="1">Enero</option>
+                                <option value="2">Febrero</option>
+                                <option value="3">Marzo</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Mayo</option>
+                                <option value="6">Junio</option>
+                                <option value="7">Julio</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="form-group">
-                            <label>Tipo Documento</label>
-                            @Html.EditorFor(model => model.dm_TipoDocumento, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_TipoDocumento, "", new { @class = "text-danger" })
+                            <label for="anio">Año</label>
+                            <select id="anio" class="form-control seleccionar" name="anio" required>
+                                <option value="0">Seleccionar</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-1">
                         <div class="form-group">
-                            <label>Tipo Asociado</label>
-                            @Html.EditorFor(model => model.dm_TipoAsociado, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_TipoAsociado, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label>Asociado</label>
-                            @Html.EditorFor(model => model.dm_asociado, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_asociado, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label>Nombre Asociado</label>
-                            @Html.EditorFor(model => model.dm_NombreAsociado, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_NombreAsociado, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label>Direcc. Asociado</label>
-                            @Html.EditorFor(model => model.dm_DireccionAsociado, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_DireccionAsociado, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label>Nit</label>
-                            @Html.EditorFor(model => model.dm_Nit, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_Nit, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label>Sub Total</label>
-                            @Html.EditorFor(model => model.dm_subtotal, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_subtotal, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label>Descuento</label>
-                            @Html.EditorFor(model => model.dm_descuento, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_descuento, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label>Total</label>
-                            @Html.EditorFor(model => model.dm_total, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_total, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label></label>
-                            @Html.EditorFor(model => model.dm_SerieDoc, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_SerieDoc, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label></label>
-                            @Html.EditorFor(model => model.dm_NoDocumento, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_NoDocumento, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label></label>
-                            @Html.EditorFor(model => model.dm_fechaDoc, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_fechaDoc, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label>Estado</label>
-                            @Html.EditorFor(model => model.dm_EstDocumento, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_EstDocumento, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label>Terminal</label>
-                            @Html.EditorFor(model => model.dm_Terminal, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_Terminal, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label>Motivo Anulación</label>
-                            @Html.EditorFor(model => model.dm_MotivoAnulacion, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_MotivoAnulacion, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label></label>
-                            @Html.EditorFor(model => model.dm_MotivoNCND, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.dm_MotivoNCND, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label></label>
-                            <button type="submit" id="btn-crear" class="btn btn-block btn-primary"><i class="fa fa-save"></i> Crear</button>
+                            <label>&nbsp;</label>
+                            <button type="button" id="btn_iniciar" class="btn btn-primary btn-as-block"><i class="fa fa-arrow-circle-right"></i> Iniciar Documento</button>
                         </div>
                     </div>
                 </div>
             </div>
         }
+
     </div>
 </div>
 
-<a href="@Url.Action("Index","Documentoes")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i><span> Regresar</span></a>
+<a href="@Url.Action("Index","Documentoes")" class="btn btn-warning"><i class="fa fa-arrow-circle-left"></i><span> Regresar</span></a>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#dm_IdSucursal").TouchSpin({
+                verticalbuttons: true
+            });
+
+            $(".seleccionar").select2({
+                language: {
+                    noResults: function () {
+                        return "No hay resultado";
+                    }
+                }                
+            });
+
+            //click para cargar vista de inicio de factura
+            $("#btn_iniciar").click(function (event) {
+                event.preventDefault();
+                
+                $.ajax({
+                    url: '@Url.Action("CargaDoc","Documentoes")',
+                    type: 'POST',
+                })
+                .done(function (response) {
+                    console.log(response);
+                    $(".panel-body").append(response);
+                })
+                .fail(function (response) {
+                    console.log(response);
+                    $(".panel-body").append(response);
+                });
+            });
+        });
+    </script>
 }
