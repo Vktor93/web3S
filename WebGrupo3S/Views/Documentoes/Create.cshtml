@@ -78,7 +78,7 @@
     </div>
 </div>
 
-<a href="@Url.Action("Index","Documentoes")" class="btn btn-warning"><i class="fa fa-arrow-circle-left"></i><span> Regresar</span></a>
+<a href="@Url.Action("Index","Documentoes")" class="btn btn-info"><i class="fa fa-arrow-circle-left"></i><span> Regresar</span></a>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
@@ -106,11 +106,11 @@
                     type: 'POST',
                 })
                 .done(function (response) {
-                    console.log(response);
+                    //console.log(response);
                     $(".panel-body").append(response);
                 })
                 .fail(function (response) {
-                    console.log(response);
+                    //console.log(response);
                     $(".panel-body").append(response);
                 });
             });
