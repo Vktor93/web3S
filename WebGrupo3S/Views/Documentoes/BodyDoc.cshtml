@@ -1,7 +1,161 @@
-﻿
-@{
-    ViewBag.Title = "BodyDoc";
-}
+﻿<style>
+    .btn-as-block {
+        display: block;
+    }
+</style>
+<div class="panel panel-primary" id="cuerpo-documento">
+    
+    <div class="panel-heading">
+        <h2 class="panel-title">Datos Documento</h2>
+    </div>
 
-<h2>BodyDoc</h2>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            <form id="documento-body" class="head-documento">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label>No. Documento</label>
+                                <input type="text" class="form-control" name="no_documento" readonly value="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="cantidad">Cantidad</label>
+                                <input type="text" class="form-control" name="cantidad" id="cantidad" placeholder="0" value="" />
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label>Producto</label>
+                                <select name="nom_producto" id="nom_producto" class="form-control seleccionar">
+                                    <option value="0">Seleccionar</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="precio_prod">Precio Unitario*</label>
+                                <select name="precio_prod" id="precio_prod" class="form-control seleccionar">
+                                    <option value="0">Precio</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="">Sub Total</label>
+                                <input type="text" class="form-control" id="sub_total" name="sub_total">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <button type="button" id="btn_agregar" class="btn btn-primary btn-as-block"><i class="fa fa-plus-circle" style="margin-right: 5px;"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form id="documento_body" class="head-documento">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="scrollable">
+                            <table id="creacion_documento" class="display table table-responsive table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio Unitario</th>
+                                        <th>Subtotal</th>
+                                        <th>Opción</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="total_cantidad">Total Productos</label>
+                            <input type="text" class="form-control" name="total_cantidad" id="total_cantidad">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="total_importe">Total Factura Q.</label>
+                            <input type="text" class="form-control" name="total_importe" id="total_importe">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button type="button" id="btn_guardar" class="btn btn-success btn-as-block"><i class="fa fa-download" style="margin-right: 5px;"></i>Guardar</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 pull-right">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button type="button" id="btn_cancelar" class="btn btn-warning btn-as-block"><i class="fa fa-trash" style="margin-right: 5px;"></i>Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".seleccionar").select2({
+            language: {
+                noResults: function () {
+                    return "No hay resultado";
+                }
+            }
+        });
+
+        $("#btn_agregar").click(function () {
+            $("#creacion_documento > tbody").append("<tr><td><input type='text' class='columnas' name='id_producto[]' value='' hidden='true'></td><td><input type='text' class='columnas' name='cantidad[]' value='' hidden='true'></td><td><input type='text' class='columnas' name='precio[]' value='' hidden='true'></td><td><input type='text' class='columnas' name='sub_total[]' value='' hidden='true'></td><td><button type='button' class='btn btn-danger btn-as-block btn-sm btn_borrar_linea' onclick='borrar_linea(this)'><i class='fa fa-trash' style='margin-right: 5px;''></i>Borrar</button></td></tr>");
+        });
+
+
+        $("#btn_cancelar").click(function () {
+            if($("#cuerpo-documento").length ){
+                $("#cuerpo-documento").remove();
+            }
+        });
+
+    });
+
+    function borrar_linea(btn) {
+        //var cant_prod = $(btn).closest("tr").find("td")[1].firstChild.value;
+        //var cant_sub = $(btn).closest("tr").find("td")[3].firstChild.value;
+
+        //var total = parseFloat($("#total_importe").val()) - parseFloat(cant_sub).toFixed(2);
+        //var cantidades = parseFloat($("#total_cantidad").val()) - parseFloat(cant_prod).toFixed(2);
+
+        //$("#total_importe").val(parseFloat(total).toFixed(2));
+        //$("#total_cantidad").val(parseFloat(cantidades).toFixed(2));
+
+        btn.closest("tr").remove();
+    }
+        
+</script>
