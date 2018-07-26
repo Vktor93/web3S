@@ -1,9 +1,5 @@
 ﻿@model IList<WebGrupo3S.Models.sp_Busqueda_Documento_Result>
 
-<p>
-    @Html.ActionLink("Nuevo Registro", "Create", null, new { @class = "btn btn-primary" })
-</p>
-
 @{
     ViewBag.Title = "Listado de Documentos";
 }
@@ -29,6 +25,11 @@
                                 @Html.DropDownList("Tdocumento", new SelectList(ViewBag.TD, "Value", "Text"), new { @class = "form-control seleccionar" })
                             </div>                                                                                                                   
                         </div>
+                    </div>
+                    <div class="col-sm-2 pull-right">
+                        <p>
+                            @Html.ActionLink("Nuevo Registro", "Create", null, new { @class = "btn btn-primary" })
+                        </p>
                     </div>
                 </div>
             </div>            
