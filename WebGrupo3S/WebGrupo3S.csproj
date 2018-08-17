@@ -1414,6 +1414,7 @@
     <Content Include="Admin\plugins\timepicker\css\bootstrap-timepicker.min.css" />
     <Content Include="Admin\plugins\timepicker\js\bootstrap-timepicker.js" />
     <Content Include="Admin\plugins\timepicker\js\bootstrap-timepicker.min.js" />
+    <Content Include="Content\alertify.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1595,6 +1596,7 @@
       <DependentUpon>MPlanilla.edmx</DependentUpon>
       <LastGenOutput>MPlanilla.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\alertify.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\conditional-validation.js" />
@@ -1613,12 +1615,14 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modalform.js" />
+    <Content Include="Scripts\modal_create.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\onlink.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\save_perfil.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\Tables\buttons.colVis.min.js" />
     <Content Include="Scripts\Tables\buttons.html5.min.js" />
@@ -1888,6 +1892,8 @@
     <Content Include="Views\CierreCajas\Index.cshtml" />
     <Content Include="Views\Facturas\Index.cshtml" />
     <Content Include="Views\Documentoes\BodyDoc.cshtml" />
+    <Content Include="Views\perfils\perfilView.cshtml" />
+    <Content Include="Views\perfils\updateView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
