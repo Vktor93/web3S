@@ -61,7 +61,7 @@
                                 <td id="target">
                                     @if (ViewBag.editar == "1")
                                     {
-                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Editar", "Edit", "perfils", routeValues: new { id = item.CodigoPerfil }, htmlAttributes: new { data_modal = "", data_toggle="tooltip", @class = "btn btn-primary btn-xs" })
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Editar", "Edit", "perfils", routeValues: new { id = item.CodigoPerfil }, htmlAttributes: new { data_modal = "", data_toggle="tooltip", @class = "btn btn-primary btn-xs update" })
                                     }
                                     @if (ViewBag.debaja == "1")
                                     {
