@@ -7,6 +7,7 @@ using WebGrupo3S.Models;
 using Microsoft.Reporting.WebForms;
 using System.IO;
 using WebGrupo3S.Helpers;
+using Newtonsoft.Json;
 
 namespace WebGrupo3S.Views
 {
@@ -563,6 +564,155 @@ namespace WebGrupo3S.Views
         }
 
 
+        //POST ajax, crear perfil
+        [HttpPost]
+        public JsonResult SavePerfil([Bind(Include = "pf_empresa,pf_codPerfil,pf_nomPerfil,pf_descPerfil,pf_fechaing,pf_fechamod,pf_usuarioing,pf_usuariomod,pf_maquinaing,pf_maquinamod,pf_estado,pf_timestamp")] perfil perfil) {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    myDat = "Crea perfil / sp_ABC_Perfil";
+                    perfil.pf_fechaing = System.DateTime.Now;
+                    perfil.pf_usuarioing = Session["UserName"].ToString();
+                    int result = db.sp_ABC_Perfil(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, perfil.pf_nomPerfil, perfil.pf_descPerfil, perfil.pf_usuarioing, tsp, error);
+                    WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_Perfil: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, perfil.pf_nomPerfil, perfil.pf_descPerfil,
+                        perfil.pf_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+                    if (error.Value.ToString() == "")
+                    {
+                        db.SaveChanges();
+
+                        var data = new {
+                            status = 200,
+                            message = "success",
+                        };
+                                                
+                        return Json(JsonConvert.SerializeObject(data),JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                    {
+                        var data = new
+                        {
+                            status = 305,
+                            message = "Operación Invalida, ver consola",
+                            err = error.Value.ToString()
+                        };
+
+                        return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+
+                        throw new System.InvalidOperationException(error.Value.ToString(), new Exception(""));
+                    }
+
+                        
+                }
+                catch (Exception ex)
+                {
+
+                    var data = new
+                    {
+                        status = 500,
+                        message = "Excepción encontrada, ver consola",
+                        excepcion = ex.ToString()
+                    };
+                       
+                    return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                }
+            }
+
+            var datas = new
+            {
+                status = 400,
+                message = "Datos no válidos"              
+            };
+
+            return Json(datas, JsonRequestBehavior.AllowGet);
+
+        }
+
+        //POST ajax, vista para crear perfil
+        [HttpPost]
+        public JsonResult perfilView()
+        {
+
+            string viewContent = ConvertView("perfilView");
+                        
+            return Json( new { PartialView = viewContent });
+        }
+
+        //funcion para renderizar y retornar la vista crear perfil
+        private string ConvertView(string viewName)
+        {
+            using (StringWriter writer = new StringWriter())
+            {
+                ViewEngineResult vResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+                ViewContext vContext = new ViewContext(this.ControllerContext, vResult.View, ViewData, new TempDataDictionary(), writer);
+
+                vResult.View.Render(vContext, writer);
+                return writer.ToString();
+            }
+        }
+
+        //POST ajax, vista editar perfil
+        [HttpPost]
+        public JsonResult updateView(int? id)
+        {
+
+            perfil Perfil = new perfil();
+            if (id == null)
+            {
+                throw new System.InvalidOperationException("-Error al obtener registro-", new Exception(""));
+            }
+            try
+            {
+                myDat = "Edita perfil: " + id.ToString() + " / sp_Busqueda_Perfil";
+                if (Session[myModulo].ToString().Substring(2, 1) == "1")
+                {
+                    ObjectResult resultado = db.sp_Busqueda_Perfil(2, "", Convert.ToInt16(coP.cls_empresa), id, null, null, error);
+                    WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_Busqueda_Perfil: " + string.Join(",", 2, "", Convert.ToInt16(coP.cls_empresa), id, null, null, "-> R: " + validad.getResponse(error)));
+                    foreach (sp_Busqueda_Perfil_Result re in resultado)
+                    {
+                        Perfil = CargaPerfil(re);
+                    }
+                    if (Perfil == null)
+                        throw new System.InvalidOperationException("-Error al obtener registro-", new Exception(""));
+                }
+                else
+                    throw new System.InvalidOperationException("-No tiene acceso a esta opción-", new Exception(""));
+            }
+            catch (Exception ex)
+            {
+                var data = new
+                {
+                    status = 500,
+                    message = "Excepción encontrada, ver consola",
+                    excepcion = ex.ToString()
+                };
+                return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                //return RedirectToAction("miError", "Account", new { message = ex.Message, error = ex.ToString().Left(2048), inner = (ex.InnerException != null) ? ex.InnerException.Message.ToString().Left(2048) : "", modulo = myModulo, opcion = "Edita", myDat });
+            }
+            //return View(Perfil);
+            string viewContent = ConvertViewUpdate("updateView", Perfil);
+            return Json(new { PartialView = viewContent });
+        }
+
+        //FUNCION PARA RETORNAR 
+        private string ConvertViewUpdate(string viewName, object model)
+        {
+            ViewData.Model = model;
+
+            using (StringWriter writer = new StringWriter())
+            {
+                ViewEngineResult vResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+                ViewContext vContext = new ViewContext(this.ControllerContext, vResult.View, ViewData, new TempDataDictionary(), writer);
+
+                vResult.View.Render(vContext, writer);
+                return writer.ToString();
+            }
+        }
+
+
+
+
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
