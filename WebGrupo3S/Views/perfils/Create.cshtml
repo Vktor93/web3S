@@ -1,39 +1,322 @@
 ﻿@model WebGrupo3S.Models.perfil
-@{
-    ViewBag.Title = "Perfiles";
-}
-<div class="header">
-    <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Nuevo Registro</h3>
-</div>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <div class="body" style="width:700px">
-        <div class="form-horizontal table-bordered">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-6">
-                    @Html.EditorFor(model => model.pf_nomPerfil, new { htmlAttributes = new { @class = "form-control", style = "width: 300px;background-color:white", placeholder = "", tabindex = 2 } })
-                    @Html.ValidationMessageFor(model => model.pf_nomPerfil, "", new { @class = "text-danger" })
-                </div>
-            </div>
 
-            <div class="form-group">
-                @Html.Label("Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-6">
-                    @Html.EditorFor(model => model.pf_descPerfil, new { htmlAttributes = new { @class = "form-control", style = "width: 450px", placeholder = "", tabindex = 3 } })
-                    @Html.ValidationMessageFor(model => model.pf_descPerfil, "", new { @class = "text-danger" })
+
+@*<div class="box box-success">
+        <div class="box-header with-border">
+            <h4 class="box-title" style="font-size: 1.6em !important;">Perfiles</h4>
+        </div>
+
+        <div class="box-body">
+            <div class="panel panel-primary">
+                <div class="panel-heading text-center">
+                    <h3 class="panel-title">Nuevo Registro</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Nombre</span>
+                                        <input type="text" class="form-control" value="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Descripción</span>
+                                        <input type="text" class="form-control" value="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-4 col-sm-offset-4">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <button class="btn btn-warning form-control"> <i class="fa fa-remove"></i> Cancelar</button>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <button class="btn btn-success form-control"> <i class="fa fa-check"></i> Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>*@
+
+
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h4 class="box-title" style="font-size: 1.6em !important;">Perfiles</h4>
+    </div>
+
+    <div class="box-body">
+
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">
+                        <h3 class="panel-title text-bold">Nuevo Registro</h3>
+                    </div>
+
+                    <form id="form-perfil">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+                                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-align-justify"></i></span>
+                                                <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Descripción" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <button type="button" id="btn-cancelar" class="btn btn-warning form-control"> <i class="fa fa-remove"></i> Cancelar</button>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <button type="button" id="btn-crear" class="btn btn-success form-control"> <i class="fa fa-check"></i> Crear</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
+
     </div>
-    <div class="footer" style="width:700px">
-        <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "Perfils")'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
-        <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i>Crear</button>
+</div>
+
+
+
+@*<div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title" style="font-size: 1.6em !important;">Perfiles</h4>
+        </div>
+
+        <div class="panel-body">
+            <div class="box box-success">
+                <div class="box-header with-border text-center">
+                    <h3 class="box-title">Nuevo Registro</h3>
+                </div>
+
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Nombre</span>
+                                        <input type="text" class="form-control" value="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Descripción</span>
+                                        <input type="text" class="form-control" value="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-4 col-sm-offset-4">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <button class="btn btn-warning form-control"> <i class="fa fa-remove"></i> Cancelar</button>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <button class="btn btn-success form-control"> <i class="fa fa-check"></i> Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>*@
+
+@*<div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title" style="font-size: 1.6em !important;">Perfiles</h4>
+        </div>
+
+        <div class="panel-body">
+            <div class="box box-success">
+                <div class="box-header with-border text-center">
+                    <h3 class="box-title">Nuevo Registro</h3>
+                </div>
+
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+                                        <input type="text" class="form-control" value="" placeholder="Nombre" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-align-justify"></i></span>
+                                        <input type="text" class="form-control" value="" placeholder="Descripción" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-4 col-sm-offset-4">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <button class="btn btn-warning form-control"> <i class="fa fa-remove"></i> Cancelar</button>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <button class="btn btn-success form-control"> <i class="fa fa-check"></i> Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>*@
+
+
+
+@*<div class="header">
+        <h3 class="bg-light-blue-gradient" style="color:white; width:700px; height:40px; text-align:center">Nuevo Registro</h3>
     </div>
-}
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="body" style="width:700px">
+            <div class="form-horizontal table-bordered">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.pf_nomPerfil, new { htmlAttributes = new { @class = "form-control", style = "width: 300px;background-color:white", placeholder = "", tabindex = 2 } })
+                        @Html.ValidationMessageFor(model => model.pf_nomPerfil, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.pf_descPerfil, new { htmlAttributes = new { @class = "form-control", style = "width: 450px", placeholder = "", tabindex = 3 } })
+                        @Html.ValidationMessageFor(model => model.pf_descPerfil, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" style="width:700px">
+            <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "Perfils")'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
+            <button type="submit" id="myFormSubmit" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i>Crear</button>
+        </div>
+    }*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var msg = "<h4>Exito!</h4>" +
+		      "<p>* Datos Guardados</p>";
+
+            var msg_fail = "<h4>Alerta!</h4>" +
+		      "<p>* Ha ocurrido un problema</p>";
+
+            $("#btn-crear").click(function () {
+                var perfil = new Object();
+                perfil.pf_nomPerfil = $("#nombre").val();
+                perfil.pf_descPerfil = $("#descripcion").val();
+
+                $.ajax({
+                    url: '@Url.Action("SavePerfil","perfils")',
+                    type: "POST",
+                    dataType: 'json',
+                    data: perfil
+                })
+                .done(function (response) {
+                    alertify.closeLogOnClick(true).success(msg);
+
+                    console.log(response);
+                })
+                .fail(function (response) {
+                    alertify.closeLogOnClick(true).error(msg_fail);
+
+                    console.log(response);
+                });
+            });       
+
+        });
+    </script>
 }
