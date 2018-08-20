@@ -61,17 +61,19 @@
                                 <td id="target">
                                     @if (ViewBag.editar == "1")
                                     {
-                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Editar", "Edit", "perfils", routeValues: new { id = item.CodigoPerfil }, htmlAttributes: new { data_modal = "", data_toggle="tooltip", @class = "btn btn-primary btn-xs update" })
+                                        <button type="button" class="btn btn-primary btn-xs" title="Editar" data-modal="" data-toggle="tooltip" onclick="viewUpdate(this);"><i class='glyphicon glyphicon-pencil'></i></button>
+                                        @*@Html.NoEncodeActionLink("<span class='glyphicon glyphicon-pencil'></span>", "Editar", "#", "perfils", routeValues: null, htmlAttributes: new { data_modal = "", data_toggle = "tooltip", @class = "btn btn-primary btn-xs update", @onclick = "viewUpdate(this);" })*@
                                     }
                                     @if (ViewBag.debaja == "1")
                                     {
-                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-trash'></span>", "de Baja", "Delete", "perfils", routeValues: new { id = item.CodigoPerfil }, htmlAttributes: new { data_modal = "", data_toggle="tooltip", @class = "btn btn-info btn-xs" })
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-trash'></span>", "de Baja", "Delete", "perfils", routeValues: new { id = item.CodigoPerfil }, htmlAttributes: new { data_modal = "", data_toggle = "tooltip", @class = "btn btn-info btn-xs" })
                                     }
                                     @if (ViewBag.permisos == "1")
                                     {
-                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-user'></span>", "Permisos", "Opciontree", "perfils", routeValues: new { per = item.CodigoPerfil, nom = item.DescripcionPerfil }, htmlAttributes: new {data_toggle="tooltip", @class = "btn btn-primary btn-xs" })
+                                        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-user'></span>", "Permisos", "Opciontree", "perfils", routeValues: new { per = item.CodigoPerfil, nom = item.DescripcionPerfil }, htmlAttributes: new { data_toggle = "tooltip", @class = "btn btn-primary btn-xs" })
                                     }
                                 </td>
+
                             </tr>
                         }
                     </tbody>
