@@ -566,6 +566,7 @@ namespace WebGrupo3S.Views
 
         //POST ajax, crear perfil
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public JsonResult SavePerfil([Bind(Include = "pf_empresa,pf_codPerfil,pf_nomPerfil,pf_descPerfil,pf_fechaing,pf_fechamod,pf_usuarioing,pf_usuariomod,pf_maquinaing,pf_maquinamod,pf_estado,pf_timestamp")] perfil perfil) {
             if (ModelState.IsValid)
             {
@@ -652,7 +653,7 @@ namespace WebGrupo3S.Views
         }
 
         //POST ajax, vista editar perfil
-        [HttpPost]
+        [HttpPost]        
         public JsonResult updateView(int? id)
         {
 
@@ -673,6 +674,7 @@ namespace WebGrupo3S.Views
                         Perfil = CargaPerfil(re);
                     }
                     if (Perfil == null)
+                        
                         throw new System.InvalidOperationException("-Error al obtener registro-", new Exception(""));
                 }
                 else
@@ -709,9 +711,60 @@ namespace WebGrupo3S.Views
             }
         }
 
+        //FUNCION PARA ACTUALIZAR LOS DATOS VIA AJAX
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public JsonResult updatePerfil([Bind(Include = "pf_empresa,pf_codPerfil,pf_nomPerfil,pf_descPerfil,pf_fechaing,pf_fechamod,pf_usuarioing,pf_usuariomod,pf_maquinaing,pf_maquinamod,pf_estado,pf_timestamp")] perfil perfil)
+        {
+            try
+            {
+                myDat = "Modifica perfil / sp_ABC_Perfil";
+                tsp = Convert.ToBase64String(perfil.pf_timestamp as byte[]);
+                codigo.Value = perfil.pf_codPerfil;
+                perfil.pf_usuarioing = Session["UserName"].ToString();
+                int result = db.sp_ABC_Perfil(Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo, perfil.pf_nomPerfil, perfil.pf_descPerfil, perfil.pf_usuarioing, tsp, error);
+                WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_Perfil: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo.Value, perfil.pf_nomPerfil, perfil.pf_descPerfil, perfil.pf_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+                if (error.Value.ToString() == "")
+                {
+                    db.SaveChanges();
+                    String Noregistro = codigo.Value.ToString();
 
+                    var data = new
+                    {
+                        status = 200,
+                        message = "success",
+                        registro = Noregistro,
+                    };
 
+                    return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
 
+                }
+                else {
+                    var data = new
+                    {
+                        status = 305,
+                        message = "Operación Invalida, ver consola",
+                        err = error.Value.ToString()
+                    };
+
+                    return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                    throw new System.InvalidOperationException(error.Value.ToString(), new Exception(""));
+                }
+                    
+            }
+            catch (Exception ex)
+            {
+                var data = new
+                {
+                    status = 500,
+                    message = "Excepción encontrada, ver consola",
+                    excepcion = ex.ToString()
+                };
+                return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                //return RedirectToAction("miError", "Account", new { message = ex.Message, error = ex.ToString().Left(2048), inner = (ex.InnerException != null) ? ex.InnerException.Message.ToString().Left(2048) : "", modulo = myModulo, opcion = "Edita", myDat });
+            }          
+
+        }
         
         protected override void Dispose(bool disposing)
         {
