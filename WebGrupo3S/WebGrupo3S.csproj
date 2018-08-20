@@ -1637,6 +1637,7 @@
     <Content Include="Scripts\Tables\Simple-menu.js" />
     <Content Include="Scripts\Tables\vfs_fonts.js" />
     <Content Include="Scripts\tooltip.js" />
+    <Content Include="Scripts\update_perfil.js" />
     <Content Include="Scripts\Usuarios\Usuario.js" />
     <Content Include="Scripts\Usuarios\Usuario-menu.js" />
     <Content Include="Scripts\_references.js" />
