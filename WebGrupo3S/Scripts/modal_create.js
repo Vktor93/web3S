@@ -61,20 +61,13 @@ function viewUpdate(link) {
     $("#modal_create").modal();
 }
 
-//FUNCION PARA LEVANTAR VISTA DE EDITAR PERFIL
+//FUNCION PARA LEVANTAR VISTA DE DAR DE BAJA PERFIL
 function viewDelete(link) {
                   
     var row = link.parentNode.parentNode;
     var id = parseInt(row.getElementsByTagName("td")[0].innerHTML);
     //var id = parseInt(link.closest("tr").find("td")[0].innerHTML);
     console.log(id);
-
-    //var perfil = new Object();
-
-    //perfil.pf_nomPerfil = $("#nombre").val();
-    //perfil.pf_descPerfil = $("#descripcion").val();
-
-    //console.log(perfil)
 
     $.ajax({
         url: './deleteView',
