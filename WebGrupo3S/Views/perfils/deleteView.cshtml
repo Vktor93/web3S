@@ -1,1 +1,86 @@
-﻿
+﻿@model WebGrupo3S.Models.perfil
+
+<div class="modal-dialog modal-lg" id="box-create">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dissmiss="modal" aria-label="Close" onclick="closeModal();">
+                <span aria-hidden="true" style="color:#c63e3e !important;">&times;</span>
+            </button>
+            <h4 class="modal-title" style="font-size: 1.6em !important;">Dar de Baja</h4>
+        </div>
+
+        <div class="modal-body">
+            <div class="box box-danger">
+
+                <div class="box-body">
+
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading text-center">
+                                    <h3 class="panel-title text-bold">¿Desea dar de baja el registro?</h3>
+                                </div>
+
+                                <form id="form-perfil">
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(model => model.pf_codPerfil)
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="col-sm-8 col-sm-offset-2">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+                                                            @Html.EditorFor(model => model.pf_nomPerfil, new { htmlAttributes = new { @class = "form-control", @id = "nombre", @name = "nombre" } })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="col-sm-8 col-sm-offset-2">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="fa fa-align-justify"></i></span>
+                                                            @Html.EditorFor(model => model.pf_descPerfil, new { htmlAttributes = new { @class = "form-control", @id = "descripcion", @name = "descripcion" } })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="col-sm-6 col-sm-offset-3">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <button type="button" id="btn-cancelar" class="btn btn-warning form-control" onclick="closeModal();" style="padding: 0;"> <i class="fa"></i> No</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <button type="button" id="btn-baja" class="btn btn-success form-control"><i class="fa fa-check"></i> Sí</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn pull-right" data-dissmiss="modal" style="background-color:#c63e3e; color:#ffffff !important;" onclick="closeModal();">Salir</button>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="~/Scripts/delete_perfil.js"></script>
