@@ -24,6 +24,7 @@
 //FUNCION PARA CERRAR MODAL
 function closeModal() {
     $("#modal_create").modal("hide");
+    $("#modal_create .modal-dialog").remove();
     $("#nombre").val("");
     $("#descripcion").val("");
 }
