@@ -660,6 +660,13 @@ namespace WebGrupo3S.Views
             perfil Perfil = new perfil();
             if (id == null)
             {
+                var data = new
+                {
+                    status = 500,
+                    message = "id nulo"                    
+                };
+
+                return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
                 throw new System.InvalidOperationException("-Error al obtener registro-", new Exception(""));
             }
             try
@@ -696,7 +703,7 @@ namespace WebGrupo3S.Views
             return Json(new { PartialView = viewContent });
         }
 
-        //FUNCION PARA RETORNAR 
+        //FUNCION PARA RETORNAR LA VISTA DE ACTUALIZAR PERFIL RENDERIZADA
         private string ConvertViewUpdate(string viewName, object model)
         {
             ViewData.Model = model;
@@ -765,7 +772,141 @@ namespace WebGrupo3S.Views
             }          
 
         }
-        
+
+
+        //FUNCION PARA CARGAR LA VISTA DE DAR DE BAJA PERFIL
+
+        [HttpPost]
+        public JsonResult deleteView(int? id)
+        {
+            perfil Perfil = new perfil();
+            if (id == null)
+            {
+                var data = new
+                {
+                    status = 400,
+                    message = "Datos no válidos, ver consola"                    
+                };
+                return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                //return View("Error");
+            }
+            try
+            {
+                myDat = "Dar de baja perfil: " + id.ToString() + " / sp_Busqueda_Perfil";
+                if (Session[myModulo].ToString().Substring(3, 1) == "1")
+                {
+                    ObjectResult resultado = db.sp_Busqueda_Perfil(2, "", Convert.ToInt16(coP.cls_empresa), id, null, null, error);
+                    WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_Busqueda_Perfil: " + string.Join(",", 2, "", Convert.ToInt16(coP.cls_empresa), id, null, null, "-> R: " + validad.getResponse(error)));
+                    foreach (sp_Busqueda_Perfil_Result re in resultado)
+                    {
+                        Perfil = CargaPerfil(re);
+                    }
+                }
+                else {
+                    var data = new
+                    {
+                        status = 305,
+                        message = "permisos insuficientes"
+                    };
+
+                    return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                    throw new System.InvalidOperationException("-No tiene permitido dar de baja el registro-", new Exception(""));
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                var data = new
+                {
+                    status = 500,
+                    message = "Excepción encontrada, ver consola",
+                    excepcion = ex.ToString()
+                };
+                return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                //return RedirectToAction("miError", "Account", new { message = ex.Message, error = ex.ToString().Left(2048), inner = (ex.InnerException != null) ? ex.InnerException.Message.ToString().Left(2048) : "", modulo = myModulo, opcion = "Debaja", myDat });
+            }
+            //return View(Perfil);
+
+            string viewContent = ConvertViewDelete("deleteView", Perfil);
+            return Json(new { PartialView = viewContent });
+        }
+
+        //FUNCION PARA RENDERIZAR LA VISTA PARA DAR DE BAJA EL PERFIL
+        private string ConvertViewDelete(string viewName, object model)
+        {
+            ViewData.Model = model;
+
+            using (StringWriter writer = new StringWriter())
+            {
+                ViewEngineResult vResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+                ViewContext vContext = new ViewContext(this.ControllerContext, vResult.View, ViewData, new TempDataDictionary(), writer);
+
+                vResult.View.Render(vContext, writer);
+                return writer.ToString();
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public JsonResult deletePerfil(int id)
+        {
+            perfil Perfil = new perfil();
+            try
+            {
+                myDat = "Confirma dar de baja perfil: " + id.ToString() + " / sp_Busqueda_Perfil";
+                ObjectResult resultado = db.sp_Busqueda_Perfil(2, "", Convert.ToInt16(coP.cls_empresa), id, null, null, error);
+                WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_Busqueda_Perfil: " + string.Join(",", 2, "", Convert.ToInt16(coP.cls_empresa), id, null, null, "-> R: " + validad.getResponse(error)));
+                foreach (sp_Busqueda_Perfil_Result re in resultado)
+                {
+                    Perfil = CargaPerfil(re);
+                    tsp = Convert.ToBase64String(re.TimeStamp as byte[]);
+                }
+
+                codigo.Value = Perfil.pf_codPerfil;
+                Perfil.pf_usuarioing = Session["UserName"].ToString();
+                int result = db.sp_ABC_Perfil(Convert.ToInt16(coP.cls_empresa), Convert.ToString('B'), codigo, Perfil.pf_nomPerfil, Perfil.pf_descPerfil, Perfil.pf_usuarioing, tsp, error);
+                WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_Perfil: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('B'), codigo.Value, Perfil.pf_nomPerfil, Perfil.pf_descPerfil, Perfil.pf_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+                if (error.Value.ToString() == "")
+                {
+                    db.SaveChanges();
+                    String Noregistro = codigo.Value.ToString();
+                    var data = new
+                    {
+                        status = 200,
+                        message = "success",
+                        registro = Noregistro,
+                    };
+
+                    return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                }
+                else {
+                    var data = new
+                    {
+                        status = 305,
+                        message = "Operación Invalida, ver consola",
+                        err = error.Value.ToString()
+                    };
+
+                    return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                    throw new System.InvalidOperationException(error.Value.ToString(), new Exception(""));
+                }                   
+
+            }
+            catch (Exception ex)
+            {
+                var data = new
+                {
+                    status = 500,
+                    message = "Excepción encontrada, ver consola",
+                    excepcion = ex.ToString()
+                };
+                return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                //return RedirectToAction("miError", "Account", new { message = ex.Message, error = ex.ToString().Left(2048), inner = (ex.InnerException != null) ? ex.InnerException.Message.ToString().Left(2048) : "", modulo = myModulo, opcion = "Debaja", myDat });
+            }            
+        }
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
