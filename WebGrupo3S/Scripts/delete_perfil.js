@@ -33,14 +33,17 @@
         var token = $('[name=__RequestVerificationToken]').val();
         //console.log(token);
                       
-        var id = parseInt($("#pf_codPerfil").val()),                                            
+        var perfil = {
+            id: parseInt($("#pf_codPerfil").val()),
+            __RequestVerificationToken: token
+        }
+        
 
         $.ajax({
             url: './deletePerfil',
-            type: "POST",
-            headers: { '__RequestVerificationToken': token },
+            type: "POST",            
             dataType: 'json',
-            data: {id: id}
+            data: perfil
         })
         .done(function (response) {
             var jsonObject = JSON.parse(response);
