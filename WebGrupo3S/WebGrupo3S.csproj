@@ -1641,6 +1641,10 @@
     <Content Include="Scripts\update_perfil.js" />
     <Content Include="Scripts\Usuarios\Usuario.js" />
     <Content Include="Scripts\Usuarios\Usuario-menu.js" />
+    <Content Include="Scripts\usuario\delete_usuario.js" />
+    <Content Include="Scripts\usuario\modal_create.js" />
+    <Content Include="Scripts\usuario\save_usuario.js" />
+    <Content Include="Scripts\usuario\update_usuario.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1897,6 +1901,9 @@
     <Content Include="Views\perfils\perfilView.cshtml" />
     <Content Include="Views\perfils\updateView.cshtml" />
     <Content Include="Views\perfils\deleteView.cshtml" />
+    <Content Include="Views\Usuarios\createView.cshtml" />
+    <Content Include="Views\Usuarios\updateView.cshtml" />
+    <Content Include="Views\Usuarios\deleteView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
