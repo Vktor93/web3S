@@ -759,6 +759,88 @@ namespace WebGrupo3S.Controllers
             }
         }
 
+        [HttpPost]
+        public JsonResult createView()
+        {
+            return Json("");
+
+        }
+
+        //funcion para renderizar y retornar la vista crear usuario
+        private string ConvertView(string viewName)
+        {
+            using (StringWriter writer = new StringWriter())
+            {
+                ViewEngineResult vResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+                ViewContext vContext = new ViewContext(this.ControllerContext, vResult.View, ViewData, new TempDataDictionary(), writer);
+
+                vResult.View.Render(vContext, writer);
+                return writer.ToString();
+            }
+        }
+
+        [HttpPost]
+        public JsonResult saveUsuario()
+        {
+            return Json("");
+        }
+
+        [HttpPost]
+        public JsonResult updateView(int id)
+        {
+            return Json("");
+        }
+
+        //FUNCION PARA RETORNAR LA VISTA DE ACTUALIZAR USUARIO RENDERIZADA
+        private string ConvertViewUpdate(string viewName, object model)
+        {
+            ViewData.Model = model;
+
+            using (StringWriter writer = new StringWriter())
+            {
+                ViewEngineResult vResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+                ViewContext vContext = new ViewContext(this.ControllerContext, vResult.View, ViewData, new TempDataDictionary(), writer);
+
+                vResult.View.Render(vContext, writer);
+                return writer.ToString();
+            }
+        }
+
+        [HttpPost]
+        public JsonResult updateUsuario()
+        {
+            return Json("");
+        }
+
+
+        [HttpPost]
+        public JsonResult deleteView(int id)
+        {
+            return Json("");
+        }
+
+        //FUNCION PARA RENDERIZAR LA VISTA PARA DAR DE BAJA EL USUARIO
+        private string ConvertViewDelete(string viewName, object model)
+        {
+            ViewData.Model = model;
+
+            using (StringWriter writer = new StringWriter())
+            {
+                ViewEngineResult vResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+                ViewContext vContext = new ViewContext(this.ControllerContext, vResult.View, ViewData, new TempDataDictionary(), writer);
+
+                vResult.View.Render(vContext, writer);
+                return writer.ToString();
+            }
+        }
+
+        [HttpPost]
+        public JsonResult deleteUsuario()
+        {
+            return Json("");
+        }
+        
+
 
         protected override void Dispose(bool disposing)
         {
