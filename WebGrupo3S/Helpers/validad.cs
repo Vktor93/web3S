@@ -38,7 +38,7 @@ namespace WebGrupo3S.Helpers
             //string[] perf = perfiles.Split(',');
             try
             {
-                if (lpe.Where(l => l.CodigoOpcion == opcion).Count() > 0)
+                if (lpe.Where(l => l.CodigoOpcion == opcion).Any())
                 {
                     //WriteLogMessages.WriteFile("traePermiso", "Validación" + "-> ejecutando db.sp_Busqueda_Permiso: " + string.Join(",", 2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), p, opcion, null, "-> R: " + validad.getResponse(error)));
                     intResult = 1;
@@ -61,8 +61,10 @@ namespace WebGrupo3S.Helpers
             {
                 int i = 0;
                 int padre = 0;
+
                 PermisoSearch.permisoResults = db.sp_Busqueda_Permiso(2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), Convert.ToInt16(pe), null, null, error).ToList();
-                
+                //PermisoSearch.permisoResults = db.permiso.SqlQuery("select * from permiso where pe_estado = 1 and pe_CodPerfil in (" + pe + ")").ToList();
+
                 WriteLogMessages.WriteFile("valida", complete.Complete(10, "Validación" + "-> ejecutando db.sp_Busqueda_Permiso: ", 2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), pe, null, null, "-> R: " + validad.getResponse(error)));
                 foreach (string dat in cat)
                 {

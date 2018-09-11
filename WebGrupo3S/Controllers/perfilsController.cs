@@ -214,6 +214,8 @@ namespace WebGrupo3S.Views
                     }
                 }
                 db.SaveChanges();
+                
+                //Inicio de la parte comentada
                 /*
                 foreach (string dat in opci)
                 {
@@ -271,6 +273,7 @@ namespace WebGrupo3S.Views
                     }
                 }
                 */
+                //fin de la parte comentada
             }
             catch (Exception ex)
             {

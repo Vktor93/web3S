@@ -24,7 +24,7 @@
     </div>
     <div class="footer" style="width:400px">
         <button class="btn btn-info btn-xs" type="button" onclick="location.href='@Url.Action("Index", "Perfils")'"><i class="glyphicon glyphicon-remove"></i>Cancela</button>
-        <button id="btnGetValue" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i>Grabar</button>
+        <button id="btnGetValue" type="button" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i>Grabar</button>
     </div>
 }
 
@@ -33,6 +33,13 @@
 <link href="http://code.gijgo.com/1.3.0/css/gijgo.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         $(document).ready(function () {
+            var msg = "<h4>Exito!</h4>" +
+                      "<p>* Se han modificado los permisos.</p>";
+
+            var msg_fail = "<h4>Alerta!</h4>" +
+                          "<p>* Ha ocurrido un problema,</p>" +
+                            "<p>* ver salida en consola.</p>";
+            
             var tree = "";
             $.ajax({
                 type: 'get',
@@ -42,6 +49,7 @@
                 success: function (records, textStatus, jqXHR) {
                     tree = $('#tree').tree({
                         primaryKey: 'Id',
+                        
                         dataSource: [{
                             text: 'Información de Seguridad',
                             children: [records[0], records[1]]
@@ -62,8 +70,9 @@
                             text: 'Configuración General',
                             children: [records[21], records[22], records[6], records[23]]
                         }],
-                        dragAndDrop: true,
+                        dragAndDrop: false,
                         checkboxes: true,
+                        cascadeCheck:true,
                         iconsLibrary: 'glyphicons',
                         uiLibrary: 'bootstrap'
                     });
@@ -73,27 +82,63 @@
                 }
             });
 
-            $('#btnGetValue').click(function () {
+            $('#btnGetValue').click(function (e) {
+                e.preventDefault;
                 var result = tree.getCheckedNodes();
+                var existe = 0;           
+
+                console.log(result);
+                
+                var perfil = 0, usuario = 0;
+
+                for (i = 0; i < result.length; i++) {
+
+                    if (result[i] == 26 && perfil == 0) {
+                        perfil = 1;
+                        console.log("padre encontrado");
+                    }
+                }
+            
+                if (perfil == 0) {
+
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 27 || result[i] == 28 || result[i] == 29 || result[i] == 30 || result[i] == 697) {
+                            result.push(26);
+                            console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                console.log(result);
+
+                //inicio de comentar
                 if (result == "") { alert("Please Select Node..!!") }
                 else {
                     $.ajax({
                         type: 'POST',
                         url: '@Url.Action("GetOpciones")',
                         //dataType: 'json',
-                        data: {datos: result.join()},
-                        success: function () {
+                        data: { datos: result.join() },
+                        success: function (response) {
+                            console.log("exito");
+                            alertify.closeLogOnClick(true).success(msg);
+                            console.log(response);
+                           //location.reload(true);
 
                         },
                         error: function (ex) {
-                            
+                            alertify.closeLogOnClick(true).error(msg_fail);
                             console.log(ex);
-                            //alert('Revision de opciones fallo: ' + ex);
+                            // alert('Revision de opciones fallo: ' + ex);
                         }
                     });
                     //alert(result)
                 }
                 return true;
+                //para comentar al final
+                
             });
 
             $('.rbtnnodetype').click(function (e) {
