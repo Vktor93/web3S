@@ -85,18 +85,79 @@
             $('#btnGetValue').click(function (e) {
                 e.preventDefault;
                 var result = tree.getCheckedNodes();
-                var existe = 0;           
+                //var existe = 0;           
 
-                console.log(result);
+                //console.log(result);
                 
-                var perfil = 0, usuario = 0;
+                var perfil = 0, usuario = 0, mant_horario = 0, mant_empleado = 0, nit_fact = 0, mant_client = 0, provee = 0, tip_prod = 0, prods = 0, tip_serv = 0, servicios = 0, mant_sucur = 0, opciones = 0, secuencial = 0, mant_catal = 0, bitacora = 0;
 
                 for (i = 0; i < result.length; i++) {
 
                     if (result[i] == 26 && perfil == 0) {
                         perfil = 1;
-                        console.log("padre encontrado");
+                       // console.log("padre encontrado");
                     }
+
+                    if (result[i] == 20 && usuario == 0) {
+                        usuario = 1;
+                    }
+
+                    if (result[i] == 50 && mant_horario == 0) {
+                        mant_horario = 1;
+                    }  
+
+                    if (result[i] == 587 && mant_empleado == 0) {
+                        mant_empleado = 1;
+                    }
+
+                    if (result[i] == 628 && nit_fact == 0) {
+                        nit_fact = 1;
+                    }
+
+                    if (result[i] == 112 && mant_client == 0) {
+                        mant_client =1;
+                    }
+
+                    if (result[i] == 74 && provee == 0) {
+                        provee =1;
+                    }
+
+                    if (result[i] == 98 && tip_prod == 0) {
+                        tip_prod =1;
+                    }
+
+                    if (result[i] == 99 && prods ==0) {
+                        prods = 1;
+                    }
+
+                    if (result[i] == 38 && tip_serv ==0) {
+                        tip_serv =1;
+                    }
+
+                    if (result[i] == 93 && servicios ==0) {
+                        servicios =1;
+                    }
+
+                    if (result[i] == 44 && mant_sucur ==0) {
+                        mant_sucur =1;
+                    }
+
+                    if (result[i] == 657 && opciones ==0) {
+                        opciones =1;
+                    }
+
+                    if (result[i] == 662 && secuencial ==0 ) {
+                        secuencial =1;
+                    }
+
+                    if (result[i]== 56 && mant_catal ==0) {
+                        mant_catal =1;
+                    }
+
+                    if (result[i] == 664 && bitacora==0) {
+                        bitacora =1;
+                    }                   
+
                 }
             
                 if (perfil == 0) {
@@ -105,11 +166,180 @@
 
                         if (result[i] == 27 || result[i] == 28 || result[i] == 29 || result[i] == 30 || result[i] == 697) {
                             result.push(26);
-                            console.log("padre agregado");
+                            //console.log("padre agregado");
                             break;
                         }
                     }
                 }
+
+                if (usuario == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 22 || result[i] == 23 || result[i] == 24 || result[i] == 646 || result[i] == 654 || result[i] == 696 || result[i] == 665 || result[i] == 666 || result[i] == 667) {
+                            result.push(20);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (mant_horario == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 51 || result[i] == 52 || result[i] == 53 || result[i] == 54 || result[i] == 701) {
+                            result.push(50);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (mant_empleado == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 594 || result[i] == 595 || result[i] == 596 || result[i] == 640 || result[i] == 651 || result[i] == 652 || result[i] == 653 || result[i] == 708) {
+                            result.push(587);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (nit_fact == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 629 || result[i] == 630 || result[i] == 711) {
+                            result.push(628);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+
+                if (mant_client == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 115 || result[i] == 501 || result[i] == 503 || result[i] == 507 || result[i] == 649 || result[i] == 650 || result[i] == 707) {
+                            result.push(112);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (provee == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 75 || result[i] == 76 || result[i] == 77 || result[i] == 78 || result[i] == 647 || result[i] == 648 || result[i] == 703) {
+                            result.push(74);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (tip_prod == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 632 || result[i] == 633 || result[i] == 634 || result[i] == 635 || result[i] == 705) {
+                            result.push(98);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+
+                if (prods == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 642 || result[i] == 643 || result[i] == 644 || result[i] == 645 || result[i] == 656 || result[i] == 706) {
+                            result.push(99);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (tip_serv == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 39 || result[i] == 40 || result[i] == 41 || result[i] == 42 || result[i] == 699) {
+                            result.push(38);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (servicios == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 636 || result[i] == 637 || result[i] == 638 || result[i] == 639 || result[i] == 655 || result[i] == 704) {
+                            result.push(93);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (mant_sucur == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 45 || result[i] == 46 || result[i] == 47 || result[i] == 48 || result[i] == 700) {
+                            result.push(44);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (opciones == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 658 || result[i] == 659 || result[i] == 660 || result[i] == 661 || result[i] == 712) {
+                            result.push(657);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (secuencial == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 663 || result[i] == 713) {
+                            result.push(662);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (mant_catal == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 57 || result[i] == 58 || result[i] == 59 || result[i] == 60 || result[i] == 631 || result[i] == 702) {
+                            result.push(56);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+                if (bitacora == 0) {
+                    for (i = 0; i < result.length; i++) {
+
+                        if (result[i] == 714 || result[i] == 715) {
+                            result.push(664);
+                            //console.log("padre agregado");
+                            break;
+                        }
+                    }
+                }
+
+
 
                 console.log(result);
 
@@ -124,7 +354,7 @@
                         success: function (response) {
                             console.log("exito");
                             alertify.closeLogOnClick(true).success(msg);
-                            console.log(response);
+                            //console.log(response);
                            //location.reload(true);
 
                         },
@@ -152,7 +382,7 @@
                 }
             });
 
-        });
+        });  
 
     </script>
 
