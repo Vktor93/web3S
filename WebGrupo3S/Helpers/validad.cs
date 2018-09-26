@@ -62,7 +62,18 @@ namespace WebGrupo3S.Helpers
                 int i = 0;
                 int padre = 0;
 
-                PermisoSearch.permisoResults = db.sp_Busqueda_Permiso(2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), Convert.ToInt16(pe), null, null, error).ToList();
+                string[] perf = pe.Split(',');
+                string pe_real ="";
+
+                if (perf.Length > 1)
+                {
+                    pe_real = perf[0];
+                    PermisoSearch.permisoResults = db.sp_Busqueda_Permiso(2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), Convert.ToInt16(pe_real), null, null, error).ToList();
+                }
+                else {
+                    PermisoSearch.permisoResults = db.sp_Busqueda_Permiso(2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), Convert.ToInt16(pe), null, null, error).ToList();
+                }
+                
                 //PermisoSearch.permisoResults = db.permiso.SqlQuery("select * from permiso where pe_estado = 1 and pe_CodPerfil in (" + pe + ")").ToList();
 
                 WriteLogMessages.WriteFile("valida", complete.Complete(10, "Validación" + "-> ejecutando db.sp_Busqueda_Permiso: ", 2, "", Convert.ToInt16(coP.cls_empresa), Convert.ToInt16(coP.cls_sucursal), pe, null, null, "-> R: " + validad.getResponse(error)));
