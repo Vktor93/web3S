@@ -1904,6 +1904,7 @@
     <Content Include="Views\Usuarios\createView.cshtml" />
     <Content Include="Views\Usuarios\updateView.cshtml" />
     <Content Include="Views\Usuarios\deleteView.cshtml" />
+    <Content Include="Views\CuentaXCobrars\bodyDoc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

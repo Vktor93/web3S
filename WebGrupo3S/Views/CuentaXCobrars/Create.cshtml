@@ -4,42 +4,147 @@
     ViewBag.Title = "Cuentas por cobrar";
 }
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h4 class="box-title">Cuentas por Cobrar</h4>
+    </div>
 
-    <div class="form-horizontal table-responsive col-md-8 box-body bg-aqua-active table-bordered">
-        <h4>Nuevo registro</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="box-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">
+                        <h3 class="panel-title text-bold">Nueva Cuenta por Cobrar</h3>
+                    </div>
+                    
+                    <div class="panel-body">
+                        <form id="encabezado" class="form-guardar">
 
-        <div class="form-group">
-            @Html.Label("Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-5">
-                @Html.DropDownListFor(model => model.cc_Cliente, new SelectList(ViewBag.CC, "Value", "Text"), new { style = "width: 300px; color:black" })
-                @Html.ValidationMessageFor(model => model.cc_Cliente, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Saldo", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-5">
-                @Html.EditorFor(model => model.cc_Saldo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.cc_Saldo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-6">
-                <input type="submit" value="Crear" class="btn btn-primary" />
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="col-sm-12">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Cliente</label>
+                                            @Html.DropDownList("CC", null, "Seleccionar", new { @class = "form-control seleccionar" })
+                                            @*@Html.DropDownListFor(model => model.cc_Cliente, new SelectList(ViewBag.CC, "Value", "Text"), new { @class = "form-control seleccionar" } )*@
+                                            @Html.ValidationMessageFor(model => model.cc_Cliente, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Saldo</label>
+                                            @Html.EditorFor(model => model.cc_Saldo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                            @Html.ValidationMessageFor(model => model.cc_Saldo, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <button type="button" id="btn_iniciar" class="btn btn-primary btn-as-block"><i class="fa fa-arrow-circle-right"></i> Iniciar Documento</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>                    
+                </div>
             </div>
         </div>
     </div>
-}
+</div>
+
+
+@*
 <div>
     @Html.ActionLink("Retorna a Lista", "Index")
-</div>
+</div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var msg = "<h4>Exito!</h4>" +
+             "<p>* Datos Guardados</p>";
+
+            var msg2 = "<h4>Alerta!</h4>" +
+             "<p>* Datos Incorrectos!</p>";
+
+            var msg_fail = "<h4>Alerta!</h4>" +
+		      "<p>* Ha ocurrido un problema</p>";
+
+            $(".seleccionar").select2({
+                language: {
+                    noResults: function () {
+                        return "No hay resultado";
+                    }
+                }
+            });
+
+            $("#CC").change(function () {
+
+                if($(this).val()==""){
+                    $("#cc_Saldo").val("");
+                    return false;
+                }
+
+                var id = $(this).val();
+
+                $.ajax({
+                    url: '@Url.Action("getSaldo","CuentaXCobrars")',
+                    type: 'POST',
+                    data: {id : id},
+                    dataType: 'json',
+                })
+                .done(function (response) {
+                    if (response.status == 500) {
+                        //console.log(response);
+                        let sld = 0;
+                        $("#cc_Saldo").val(parseFloat(sld).toFixed(2));
+                        return false;
+                    }
+                    //console.log(response);
+
+                    //console.log(response.cc_Saldo);
+                    $("#cc_Saldo").val(parseFloat(response.cc_Saldo).toFixed(2));
+                })
+                .fail(function (response) {
+                    console.log(response);
+                    //$(".panel-body").append(response);
+                });
+            });
+
+            //click para cargar vista de detalle cxc
+            $("#btn_iniciar").click(function (event) {
+                event.preventDefault();
+
+
+                if($("#cuerpo-doc").length){
+                    $("#cuerpo-doc").remove();
+                }
+
+                if($("#CC").val()=="" || $("#cc_Saldo").val()==""){
+                    alertify.closeLogClick(true).error(msg2);
+                    return false;
+                }
+
+
+                $.ajax({
+                    url: '@Url.Action("bodyDoc","CuentaXCobrars")',
+                    type: 'POST',
+                    dataType:'json',
+                })
+                .done(function (response) {
+                    $(".box").append(response.PartialView);
+                })
+                .fail(function (response) {
+                    console.log(response);
+                    //$(".box").append(response);
+                });
+            });
+        });
+    </script>
 }

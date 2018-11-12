@@ -5,10 +5,15 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using System.Web.Mvc;
 using WebGrupo3S.Models;
 using System.Data.Entity.Core.Objects;
 using WebGrupo3S.Helpers;
+using Newtonsoft.Json;
+using System.IO;
+using System.Collections.Specialized;
 
 namespace WebGrupo3S.Views
 {
@@ -16,6 +21,7 @@ namespace WebGrupo3S.Views
     {
         private SSS_OPERACIONEntities db = new SSS_OPERACIONEntities();
         private SSS_PERSONASEntities dbP = new SSS_PERSONASEntities();
+        private SSS_OPERACIONEntities dbO = new SSS_OPERACIONEntities();
         private string myModulo = "Cuentas por cobrar";
         private string myDat = "";
         public ConstantesP coP = new ConstantesP();
@@ -65,7 +71,9 @@ namespace WebGrupo3S.Views
         // GET: CuentaXCobrars/Create
         public ActionResult Create()
         {
+            
             ViewBag.CC = new SelectList(dbP.sp_Busqueda_Cliente(1, "", Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, null, null, null, null, null, null, null, error).ToList(), "Cliente", "NombreLargo");
+            
             return View();
         }
 
@@ -76,6 +84,7 @@ namespace WebGrupo3S.Views
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "cc_empresa,cc_IdCuentaXCobrar,cc_Cliente,cc_Saldo,cc_fechaUltMov,cc_MontoUltMov,cc_estCuentaXCobrar,cc_fechaing,cc_fechamod,cc_usuarioing,cc_usuariomod,cc_maquinaing,cc_maquinamod,cc_estado,cc_timestamp")] CuentaXCobrar cuentaxcobrar)
         {
+
             try
             {
                 myDat = "Crear nuevo registro cuentas x cobrar / sp_ABC_CuentaXCobrar";
@@ -228,6 +237,89 @@ namespace WebGrupo3S.Views
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        //funcion para renderizar y retornar la vista crear cuerpo documento
+        private string ConvertView(string viewName)
+        {
+            using (StringWriter writer = new StringWriter())
+            {
+                ViewEngineResult vResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+                ViewContext vContext = new ViewContext(this.ControllerContext, vResult.View, ViewData, new TempDataDictionary(), writer);
+
+                vResult.View.Render(vContext, writer);
+                return writer.ToString();
+            }
+        }
+
+        [HttpPost]
+        public JsonResult bodyDoc()
+        {
+            try
+            {
+                var data = new
+                {
+                    status = 200,
+                    message = "success",
+                };
+
+                int empre = Convert.ToInt16(coP.cls_empresa);
+
+                ViewBag.SUC = new SelectList(dbO.sp_Busqueda_Sucursal(1, "", empre, null, null, null, null, null, error).ToList(), "CodigoSucursal", "NombreSucursal");
+                ViewBag.DOC = new SelectList(dbO.sp_Busqueda_Documento(1, "", empre, null, null, null, "CL", null, null, null, null, null, null, null,null,null,null,null,null,null,null,error).ToList(),"CodigoDocumento","TipoDocumento");
+                string viewContent = ConvertView("bodyDoc");
+                return Json(new {PartialView = viewContent }, JsonConvert.SerializeObject(data));
+
+            }
+            catch (Exception ex) {
+                var data = new
+                {
+                    status = 500,
+                    message = "Excepción encontrada, ver consola",
+                    excepcion = ex.ToString()
+                };
+
+                return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+            }
+                        
+            //ViewBag.Ssd = new SelectList(dbP.sp_Busqueda_Cliente(1, "", Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, null, null, null, null, null, null, null, error).ToList(), "Cliente", "NombreLargo");            
+        }
+
+        public JsonResult getSaldo(int? id)
+        {
+            try
+            {
+                CuentaXCobrar dato = db.CuentaXCobrar.Where(a => a.cc_Cliente == id).First();
+                return Json(dato, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex) {
+                var data = new
+                {
+                    status = 500,
+                    message = "Excepción encontrada, ver consola",
+                    excepcion = ex.ToString()
+                };
+
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }            
+            //ObjectResult resultado =dbO.sp_Busqueda_Sucursal(1, "", Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, error);                       
+        }
+
+        [HttpPost]
+        public JsonResult saveCuenta(object sender)
+        {
+            NameValueCollection coll;
+            coll = Request.Form;
+
+            var data = new
+            {
+                status = 200,
+                message = "Excepción encontrada, ver consola",
+                test = Request.Form["SUC"],
+                test2 = Request.Form["cc_Saldo"]
+            };
+            //int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, Convert.ToInt16(Request.Form["CC"]), cuentaxcobrar.cc_Saldo, cuentaxcobrar.cc_fechaUltMov, 0, "1", cuentaxcobrar.cc_usuarioing, tsp, error);
+            return Json(data);
         }
     }
 }
