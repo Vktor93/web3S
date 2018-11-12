@@ -1,0 +1,96 @@
+﻿@model WebGrupo3S.Models.MovimientoCuentaXCobrar
+
+<div class="box box-info" id="cuerpo-doc">
+    <div class="box-header with-border">
+        <h5 class="box-title">Detalle Documento</h5>
+    </div>
+
+    <div class="box-body">
+        @Html.AntiForgeryToken()
+        <form id="head-documento" class="form-guardar">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-sm-2">
+                        <div class="form-group"></div>
+                        <label>Sucursal</label>
+                        @Html.DropDownList("SUC", null, "Seleccionar", new { @class = "form-control seleccionar" })
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group"></div>
+                        <label>Documento</label>
+                        @Html.DropDownList("DOC", null, "Seleccionar", new { @class = "form-control seleccionar" })
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label></label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label></label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label></label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-sm-2">
+                        <label>&nbsp;</label>
+                        <button type="button" id="btn_guardar_doc" class="btn btn-primary btn-as-block"><i class="fa fa-arrow-circle-right"></i> Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </form>        
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".seleccionar").select2({
+            language: {
+                noResults: function () {
+                    return "No hay resultado";
+                }
+            }
+        });
+
+        $("#btn_guardar_doc").click(function () {
+
+            var data = $(".form-guardar").serialize();
+
+            $.ajax({
+                url: '@Url.Action("saveCuenta","CuentaXCobrars")',
+                type: 'POST',
+                data: data,
+                dataType: 'json',
+            })
+               .done(function (response) {
+                   
+                   console.log(response);
+
+                   //console.log(response.cc_Saldo);
+                   
+               })
+               .fail(function (response) {
+                   console.log(response);
+                   //$(".panel-body").append(response);
+               });
+        });
+
+    });
+</script>
