@@ -10,47 +10,57 @@
         <form id="head-documento" class="form-guardar">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="col-sm-2">
-                        <div class="form-group"></div>
-                        <label>Sucursal</label>
-                        @Html.DropDownList("SUC", null, "Seleccionar", new { @class = "form-control seleccionar" })
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-group"></div>
-                        <label>Documento</label>
-                        @Html.DropDownList("DOC", null, "Seleccionar", new { @class = "form-control seleccionar" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Sucursal</label>
+                            @Html.DropDownList("SUC", null, "Seleccionar", new { @class = "form-control seleccionar" })
+                        </div>                        
                     </div>
                     <div class="col-sm-2">
                         <div class="form-group">
-                            <label></label>
+                            <label>Documento</label>
+                            <select name="DOC" class="form-control seleccionar">
+                                <option value="">Seleccionar</option>
+                                <option value="1">FC</option>
+                            </select>
+                            @*@Html.DropDownList("DOC", null, "Seleccionar", new { @class = "form-control seleccionar" })*@
                         </div>
+                       
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-3">
                         <div class="form-group">
-                            <label></label>
+                            <label>Monto Movimiento</label>
+                            <input type="text" name="MontoMov" class="form-control" id="MontoMov" value="" />
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="form-group">
-                            <label></label>
+                            <label>Credito/Debito</label>
+                            <select name="Credito" id="Credito" class="form-control seleccionar">
+                                <option value="">Seleccionar</option>
+                                <option value="C">Credito</option>
+                                <option value="D">Debito</option>
+                            </select>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label></label>
-                        </div>
-                    </div>
-                </div>
-
+                    </div>                    
+                </div>               
             </div>
 
             <div class="row">
                 <div class="col-sm-12">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Descripcion</label>
+                            <input type="text" name="Descrip" id="Descrip" class="form-control" value="" />
+                        </div>
+                    </div>
                     <div class="col-sm-2">
                         <label>&nbsp;</label>
-                        <button type="button" id="btn_guardar_doc" class="btn btn-primary btn-as-block"><i class="fa fa-arrow-circle-right"></i> Guardar</button>
+                        <button type="button" id="btn_guardar_doc" class="btn btn-primary btn-as-block form-control"><i class="fa fa-check"></i> Guardar</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>&nbsp;</label>
+                        <button type="button" id="btn_cancelar" class="btn btn-warning btn-as-block form-control"><i class="fa fa-circle"></i> Cancelar</button>
                     </div>
                 </div>
             </div>
@@ -61,6 +71,9 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
+        var msg_empty = "<h4>Alerta!</h4>" +
+		      "<p>* La cuenta tiene un saldo pendiente</p>";
+
         $(".seleccionar").select2({
             language: {
                 noResults: function () {
@@ -70,6 +83,11 @@
         });
 
         $("#btn_guardar_doc").click(function () {
+
+            if ($("#cc_Saldo").val() == ""|| $("#cc_Saldo").val() !="0.00") {
+                alertify.closeLogOnClick(true).error(msg_empty);
+                return false;
+            }
 
             var data = $(".form-guardar").serialize();
 
@@ -90,6 +108,12 @@
                    console.log(response);
                    //$(".panel-body").append(response);
                });
+        });
+
+        $("#btn_cancelar").click(function () {
+            if ($("#cuerpo-doc").length) {
+                $("#cuerpo-doc").remove();
+            }
         });
 
     });

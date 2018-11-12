@@ -23,11 +23,14 @@ namespace WebGrupo3S.Views
         private SSS_PERSONASEntities dbP = new SSS_PERSONASEntities();
         private SSS_OPERACIONEntities dbO = new SSS_OPERACIONEntities();
         private string myModulo = "Cuentas por cobrar";
+        private string myModuloMv = "Movimiento Cuentas por Cobrar";
         private string myDat = "";
         public ConstantesP coP = new ConstantesP();
         public String tsp = "";
         ObjectParameter error = new ObjectParameter("error", typeof(String));
         ObjectParameter codigo = new ObjectParameter("cc_idCuentaxCobrar", typeof(int));
+        ObjectParameter codigomv = new ObjectParameter("mc_idMovCuentaxCobrar", typeof(int));
+        ObjectParameter tsp2 = new ObjectParameter("mc_timestamp", typeof(String));
 
         public class DatosSearchResultModel
         {
@@ -92,7 +95,7 @@ namespace WebGrupo3S.Views
                 {
                     cuentaxcobrar.cc_usuarioing = Session["UserName"].ToString();
                     cuentaxcobrar.cc_fechaUltMov = DateTime.Now;                    
-                    int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, cuentaxcobrar.cc_fechaUltMov, 0, "1", cuentaxcobrar.cc_usuarioing, tsp, error);
+                    var result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, cuentaxcobrar.cc_fechaUltMov, 0, "1", cuentaxcobrar.cc_usuarioing, tsp, error);
                     WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
                     if (error.Value.ToString() == "")
                     {
@@ -152,7 +155,7 @@ namespace WebGrupo3S.Views
                 myDat = "Actualizar datos / sp_ABC_CuentaXCobrar";
                 tsp = Convert.ToBase64String(cuentaxcobrar.cc_timestamp as byte[]);
                 codigo.Value = cuentaxcobrar.cc_IdCuentaXCobrar;
-                int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, error);
+                var result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, error);
                 WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('C'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
                 if (error.Value.ToString() == "")
                 {
@@ -210,7 +213,7 @@ namespace WebGrupo3S.Views
                 tsp = Convert.ToBase64String(dato.cc_timestamp as byte[]);
                 dato.cc_usuarioing = Session["UserName"].ToString();
                 codigo.Value = id;
-                int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('B'), codigo,null, null, null, null, null, dato.cc_usuarioing, tsp, error);
+                var result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('B'), codigo,null, null, null, null, null, dato.cc_usuarioing, tsp, error);
 
                 WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('B'), codigo.Value, null, null, null, null, null, dato.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
                 if (error.Value.ToString() == "")
@@ -306,20 +309,79 @@ namespace WebGrupo3S.Views
         }
 
         [HttpPost]
-        public JsonResult saveCuenta(object sender)
+        public JsonResult saveCuenta( [Bind(Include = "cc_empresa,cc_IdCuentaXCobrar,cc_Cliente,cc_Saldo,cc_fechaUltMov,cc_MontoUltMov,cc_estCuentaXCobrar,cc_fechaing,cc_fechamod,cc_usuarioing,cc_usuariomod,cc_maquinaing,cc_maquinamod,cc_estado,cc_timestamp")] CuentaXCobrar cuentaxcobrar, [Bind(Include = "mc_empresa,mc_IdCuentaXCobrar,mc_IdMovCuentaXCobrar,mc_IdSucursal,mc_IdDoc,mc_Cliente,mc_FechaMov,mc_MontoMov,mc_CreditoDebito,mc_Descripcion,mc_estMovCuentaXCobrar,mc_fechaing,mc_fechamod,mc_usuarioing,mc_usuariomod,mc_maquinaing,mc_maquinamod,mc_estado,mc_timestamp")] MovimientoCuentaXCobrar movimientoCuentaXCobrar)
         {
-            NameValueCollection coll;
-            coll = Request.Form;
-
-            var data = new
+            //NameValueCollection coll;
+            //coll = Request.Form;
+            try
             {
-                status = 200,
-                message = "Excepción encontrada, ver consola",
-                test = Request.Form["SUC"],
-                test2 = Request.Form["cc_Saldo"]
-            };
-            //int result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, Convert.ToInt16(Request.Form["CC"]), cuentaxcobrar.cc_Saldo, cuentaxcobrar.cc_fechaUltMov, 0, "1", cuentaxcobrar.cc_usuarioing, tsp, error);
-            return Json(data);
+                 
+                myDat = "Crea Cuenta x Cobrar / sp_ABC_CuentaXCobrar";
+                cuentaxcobrar.cc_fechaing = System.DateTime.Now;
+                cuentaxcobrar.cc_usuarioing = Session["UserName"].ToString();
+                cuentaxcobrar.cc_fechaUltMov = System.DateTime.Now;
+                var result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, Convert.ToInt16(Request.Form["CC"]), Convert.ToDecimal(Request.Form["cc_saldo"]), cuentaxcobrar.cc_fechaUltMov, 0, "1", cuentaxcobrar.cc_usuarioing, tsp, error);
+                WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+                if (error.Value.ToString() == "")
+                {
+                    db.SaveChanges();                    
+                    int idCta = cuentaxcobrar.cc_IdCuentaXCobrar;
+                    myDat = "Crea Movmiento Cuenta x Cobrar / sp_ABC_MovimientoCuentaXCobrar";                    
+                    movimientoCuentaXCobrar.mc_fechaing = System.DateTime.Now;
+                    movimientoCuentaXCobrar.mc_usuarioing = Session["UserName"].ToString();
+                    movimientoCuentaXCobrar.mc_FechaMov = System.DateTime.Now;
+                    int resultM = db.sp_ABC_MovimientoCuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), idCta, codigomv, Convert.ToInt16(Request.Form["SUC"]), 1, Convert.ToInt16(Request.Form["CC"]), movimientoCuentaXCobrar.mc_FechaMov, Convert.ToDecimal(Request.Form["MontoMov"]), Convert.ToString(Request.Form["Credito"]), Convert.ToString(Request.Form["Descip"]), "1", movimientoCuentaXCobrar.mc_usuarioing,tsp2, error);
+                    WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_MovimientoCuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+
+                    if (error.Value.ToString() =="")
+                    {
+                        db.SaveChanges();
+                        var data = new
+                        {
+                            status = 200,
+                            message = "Cuenta y Movimiento, Agregada"
+                        };
+                        return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                    {
+                        var data = new
+                        {
+                            status = 305,
+                            message = "Operación Invalida, ver consola",
+                            err = error.Value.ToString()
+                        };
+
+                        return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                        throw new System.InvalidOperationException(error.Value.ToString(), new Exception(""));
+                    }
+
+                    
+                }
+                else
+                {
+                    var data = new
+                    {
+                        status = 305,
+                        message = "Operación Invalida, ver consola",
+                        err = error.Value.ToString()
+                    };
+
+                    return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+                    throw new System.InvalidOperationException(error.Value.ToString(), new Exception(""));
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                var data = new
+                {
+                    status = 500,
+                    message = "Excepción encontrada, ver consola",
+                    excepcion = ex.ToString()
+                };
+                return Json(JsonConvert.SerializeObject(data), JsonRequestBehavior.AllowGet);
+            }            
         }
     }
 }

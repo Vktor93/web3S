@@ -655,7 +655,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_Movimiento", mv_empresaParameter, mv_opcionParameter, mv_IdSucursalParameter, mv_IdMov, mv_ProdServParameter, mv_IdProdServParameter, mv_CantidadParameter, mv_ValorMovParameter, mv_TipoMovimientoParameter, mv_FechaMovParameter, mv_IdDocParameter, mv_IdOrdenServicioParameter, mv_IdDetalleOrdenServicioParameter, mv_IdAutorizacionParameter, mv_usuarioParameter, mv_timestamp, error, mv_IdEmpleadoParameter);
         }
     
-        public virtual int sp_ABC_MovimientoCuentaXCobrar(Nullable<short> mc_empresa, string mc_opcion, ObjectParameter mc_IdCuentaXCobrar, ObjectParameter mc_IdMovCuentaXCobrar, Nullable<int> mc_IdSucursal, Nullable<int> mc_IdDoc, Nullable<int> mc_Cliente, Nullable<System.DateTime> mc_FechaMov, Nullable<decimal> mc_MontoMov, string mc_CreditoDebito, string mc_Descripcion, string mc_estMovCuentaXCobrar, string mc_usuario, ObjectParameter mc_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_MovimientoCuentaXCobrar(Nullable<short> mc_empresa, string mc_opcion, Nullable<int> mc_IdCuentaXCobrar, ObjectParameter mc_IdMovCuentaXCobrar, Nullable<int> mc_IdSucursal, Nullable<int> mc_IdDoc, Nullable<int> mc_Cliente, Nullable<System.DateTime> mc_FechaMov, Nullable<decimal> mc_MontoMov, string mc_CreditoDebito, string mc_Descripcion, string mc_estMovCuentaXCobrar, string mc_usuario, ObjectParameter mc_timestamp, ObjectParameter error)
         {
             var mc_empresaParameter = mc_empresa.HasValue ?
                 new ObjectParameter("mc_empresa", mc_empresa) :
@@ -664,7 +664,11 @@ namespace WebGrupo3S.Models
             var mc_opcionParameter = mc_opcion != null ?
                 new ObjectParameter("mc_opcion", mc_opcion) :
                 new ObjectParameter("mc_opcion", typeof(string));
-    
+
+            var mc_IdCuentaXCobrarParameter = mc_IdCuentaXCobrar.HasValue ?
+                new ObjectParameter("mc_IdCuentaXCobrar", mc_IdCuentaXCobrar) :
+                new ObjectParameter("mc_IdCuentaXCobrar", typeof(int));
+
             var mc_IdSucursalParameter = mc_IdSucursal.HasValue ?
                 new ObjectParameter("mc_IdSucursal", mc_IdSucursal) :
                 new ObjectParameter("mc_IdSucursal", typeof(int));
@@ -701,7 +705,7 @@ namespace WebGrupo3S.Models
                 new ObjectParameter("mc_usuario", mc_usuario) :
                 new ObjectParameter("mc_usuario", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_MovimientoCuentaXCobrar", mc_empresaParameter, mc_opcionParameter, mc_IdCuentaXCobrar, mc_IdMovCuentaXCobrar, mc_IdSucursalParameter, mc_IdDocParameter, mc_ClienteParameter, mc_FechaMovParameter, mc_MontoMovParameter, mc_CreditoDebitoParameter, mc_DescripcionParameter, mc_estMovCuentaXCobrarParameter, mc_usuarioParameter, mc_timestamp, error);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_MovimientoCuentaXCobrar", mc_empresaParameter, mc_opcionParameter, mc_IdCuentaXCobrarParameter, mc_IdMovCuentaXCobrar, mc_IdSucursalParameter, mc_IdDocParameter, mc_ClienteParameter, mc_FechaMovParameter, mc_MontoMovParameter, mc_CreditoDebitoParameter, mc_DescripcionParameter, mc_estMovCuentaXCobrarParameter, mc_usuarioParameter, mc_timestamp, error);
         }
     
         public virtual int sp_ABC_PrecioProductoServicio(Nullable<short> pp_empresa, string pp_opcion, string pp_TipoPrecio, ObjectParameter pp_IdPrecProdServ, Nullable<int> pp_IdProdServ, Nullable<decimal> pp_precio, Nullable<decimal> pp_precioMaximo, string pp_usuario, ObjectParameter pp_timestamp, ObjectParameter error)
