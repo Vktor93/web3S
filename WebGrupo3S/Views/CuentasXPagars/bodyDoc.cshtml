@@ -114,10 +114,11 @@
                 dataType: 'json',
             })
             .done(function (response) {
+                jsonObject = JSON.parse(response);
 
-                if (response.status == 200) {
+                if (jsonObject.status == 200) {
                     alertify.closeLogOnClick(true).success(msg);
-                    $("#form-guardar").trigger("reset");
+                    $(".form-guardar").trigger("reset");
 
                     if ($("#cuerpo-doc").length) {
                         $("#cuerpo-doc").remove();
@@ -125,13 +126,13 @@
                     return true;
                 }
 
-                if (response.status == 305) {
+                if (jsonObject.status == 305) {
                     alertify.closeLogOnClick(true).error(msg_305)
                     console.log(response);
                     return false
                 }
 
-                if (response.status == 500) {
+                if (jsonObject.status == 500) {
                     alertify.closeLogOnClick(true).error(msg_500)
                     console.log(response);
                     return false;
