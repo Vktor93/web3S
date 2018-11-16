@@ -140,10 +140,13 @@
                     return false;
                 }
 
-                let sald = parseFloat($("#cc_Saldo").val().toFixed(2));
+                let sald = parseFloat($("#cc_Saldo").val()).toFixed(2);
 
                 if (sald > 0) {
                     alertify.closeLogOnClick(true).error(msg_empty);
+                    if ($("#cuerpo-doc").length) {
+                        $("#cuerpo-doc").remove();
+                    }
                     return false;
                 }
 

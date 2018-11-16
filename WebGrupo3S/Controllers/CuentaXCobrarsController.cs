@@ -289,6 +289,7 @@ namespace WebGrupo3S.Views
             //ViewBag.Ssd = new SelectList(dbP.sp_Busqueda_Cliente(1, "", Convert.ToInt16(coP.cls_empresa), null, null, null, null, null, null, null, null, null, null, null, null, error).ToList(), "Cliente", "NombreLargo");            
         }
 
+        [HttpPost]
         public JsonResult getSaldo(int? id)
         {
             try

@@ -239,6 +239,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HorariosController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MovimientoCuentaXPagarsController.cs" />
     <Compile Include="Controllers\SecuencialsController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Extensions\ClaimsExtensions.cs" />
@@ -1905,6 +1906,12 @@
     <Content Include="Views\Usuarios\updateView.cshtml" />
     <Content Include="Views\Usuarios\deleteView.cshtml" />
     <Content Include="Views\CuentaXCobrars\bodyDoc.cshtml" />
+    <Content Include="Views\CuentasXPagars\bodyDoc.cshtml" />
+    <Content Include="Views\MovimientoCuentaXPagars\Create.cshtml" />
+    <Content Include="Views\MovimientoCuentaXPagars\Delete.cshtml" />
+    <Content Include="Views\MovimientoCuentaXPagars\Details.cshtml" />
+    <Content Include="Views\MovimientoCuentaXPagars\Edit.cshtml" />
+    <Content Include="Views\MovimientoCuentaXPagars\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

@@ -529,7 +529,6 @@ C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Facebook.
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\Viktor\isonet\web3S\WebGrupo3S\obj\Debug\WebGrupo3S.csprojResolveAssemblyReference.cache
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\obj\Debug\WebGrupo3S.dll
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\obj\Debug\WebGrupo3S.pdb
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\itextsharp.dll
@@ -541,3 +540,4 @@ C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\System.Web.Http.WebHost.dll
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\System.Net.Http.Formatting.xml
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\System.Web.Http.xml
 C:\Users\Viktor\isonet\web3S\WebGrupo3S\bin\System.Web.Http.WebHost.xml
+C:\Users\Viktor\isonet\web3S\WebGrupo3S\obj\Debug\WebGrupo3S.csprojResolveAssemblyReference.cache

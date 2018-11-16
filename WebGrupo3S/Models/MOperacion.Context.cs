@@ -2438,7 +2438,7 @@ namespace WebGrupo3S.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_CuentaXPagar", cp_empresaParameter, cp_opcionParameter, cp_IdCuentaXPagar, cp_ProveedorParameter, cp_SaldoParameter, cp_fechaUltMovParameter, cp_MontoUltMovParameter, cp_estCuentaXPagarParameter, cp_usuarioParameter, ts, error);
         }
     
-        public virtual int sp_ABC_MovimientoCuentaXPagar(Nullable<short> mp_empresa, string mp_opcion, ObjectParameter mp_IdCuentaXPagar, ObjectParameter mp_IdMovCuentaXPagar, Nullable<int> mp_IdSucursal, Nullable<int> mp_IdDoc, Nullable<int> mp_Proveedor, Nullable<System.DateTime> mp_FechaMov, Nullable<decimal> mp_MontoMov, string mp_CreditoDebito, string mp_Descripcion, string mp_estMovCuentaXPagar, string mp_usuario, ObjectParameter mp_timestamp, ObjectParameter error)
+        public virtual int sp_ABC_MovimientoCuentaXPagar(Nullable<short> mp_empresa, string mp_opcion, Nullable<int> mp_IdCuentaXPagar, ObjectParameter mp_IdMovCuentaXPagar, Nullable<int> mp_IdSucursal, Nullable<int> mp_IdDoc, Nullable<int> mp_Proveedor, Nullable<System.DateTime> mp_FechaMov, Nullable<decimal> mp_MontoMov, string mp_CreditoDebito, string mp_Descripcion, string mp_estMovCuentaXPagar, string mp_usuario, ObjectParameter mp_timestamp, ObjectParameter error)
         {
             var mp_empresaParameter = mp_empresa.HasValue ?
                 new ObjectParameter("mp_empresa", mp_empresa) :
@@ -2447,7 +2447,11 @@ namespace WebGrupo3S.Models
             var mp_opcionParameter = mp_opcion != null ?
                 new ObjectParameter("mp_opcion", mp_opcion) :
                 new ObjectParameter("mp_opcion", typeof(string));
-    
+
+            var mp_IdCuentaXPagarParameter = mp_IdCuentaXPagar.HasValue ?
+                new ObjectParameter("mp_IdCuentaXPagar", mp_IdCuentaXPagar) :
+                new ObjectParameter("mp_IdCuentaXPagar", typeof(int));
+
             var mp_IdSucursalParameter = mp_IdSucursal.HasValue ?
                 new ObjectParameter("mp_IdSucursal", mp_IdSucursal) :
                 new ObjectParameter("mp_IdSucursal", typeof(int));
@@ -2484,7 +2488,7 @@ namespace WebGrupo3S.Models
                 new ObjectParameter("mp_usuario", mp_usuario) :
                 new ObjectParameter("mp_usuario", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_MovimientoCuentaXPagar", mp_empresaParameter, mp_opcionParameter, mp_IdCuentaXPagar, mp_IdMovCuentaXPagar, mp_IdSucursalParameter, mp_IdDocParameter, mp_ProveedorParameter, mp_FechaMovParameter, mp_MontoMovParameter, mp_CreditoDebitoParameter, mp_DescripcionParameter, mp_estMovCuentaXPagarParameter, mp_usuarioParameter, mp_timestamp, error);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ABC_MovimientoCuentaXPagar", mp_empresaParameter, mp_opcionParameter, mp_IdCuentaXPagarParameter, mp_IdMovCuentaXPagar, mp_IdSucursalParameter, mp_IdDocParameter, mp_ProveedorParameter, mp_FechaMovParameter, mp_MontoMovParameter, mp_CreditoDebitoParameter, mp_DescripcionParameter, mp_estMovCuentaXPagarParameter, mp_usuarioParameter, mp_timestamp, error);
         }
     
         public virtual ObjectResult<sp_Busqueda_CuentaXPagar_Result> sp_Busqueda_CuentaXPagar(Nullable<int> tipoBusqueda, string busqueda, Nullable<int> cp_empresa, Nullable<int> cp_IdCuentaXPagar, Nullable<int> cp_Proveedor, Nullable<decimal> cp_Saldo, Nullable<System.DateTime> cp_FechaUltMov, Nullable<decimal> cp_MontoUltMov, string cp_estCuentaXPagar, ObjectParameter error)
