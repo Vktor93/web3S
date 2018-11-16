@@ -1,0 +1,156 @@
+﻿@model WebGrupo3S.Models.MovimientoCuentaXPagar
+
+<div class="box box-info" id="cuerpo-doc">
+    <div class="box-header with-border">
+        <h5 class="box-title">Detalle Documento</h5>
+    </div>
+
+    <div class="box-body">
+        @Html.AntiForgeryToken()
+        <form id="head-documento" class="form-guardar">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Sucursal</label>
+                            @Html.DropDownList("SUC", null, "Seleccionar", new { @class = "form-control seleccionar" })
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Documento</label>
+                            <select name="DOC" class="form-control seleccionar">
+                                <option value="">Seleccionar</option>
+                                <option value="1">FC</option>
+                            </select>
+                            @*@Html.DropDownList("DOC", null, "Seleccionar", new { @class = "form-control seleccionar" })*@
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Monto Movimiento</label>
+                            <input type="number" step="0.01" min="0.00" max="9999999999.99" name="MontoMov" class="form-control" id="MontoMov" value="" />
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Credito/Debito</label>
+                            <select name="Credito" id="Credito" class="form-control seleccionar">
+                                <option value="">Seleccionar</option>
+                                <option value="C">Credito</option>
+                                <option value="D">Debito</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Descripcion</label>
+                            <input type="text" name="Descrip" id="Descrip" class="form-control" value="" />
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>&nbsp;</label>
+                        <button type="button" id="btn_guardar_doc" class="btn btn-primary btn-as-block form-control"><i class="fa fa-check"></i> Guardar</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>&nbsp;</label>
+                        <button type="button" id="btn_cancelar" class="btn btn-danger btn-as-block form-control"><i class="fa fa-close"></i> Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var msg = "<h4>Exito!</h4>" +
+      "<p>* Cuenta Creada</p>";
+
+        var msg_empty = "<h4>Alerta!</h4>" +
+		      "<p>* Faltan datos por ingresar</p>";
+
+        var msg_305 = "<h4>Alerta!</h4>" +
+      "<p>* Operacion Invalida, contacte administrador</p>";
+
+        var msg_500 = "<h4>Alerta!</h4>" +
+      "<p>* Proble Interno, revisar consola</p>";
+
+
+        $(".seleccionar").select2({
+            language: {
+                noResults: function () {
+                    return "No hay resultado";
+                }
+            }
+        });
+
+        $("#btn_guardar_doc").click(function () {
+
+            if ($("#SUC").val() == "" || $("#DOC").val() =="" || $("#MontoMov").val()=="" || $("#Credito").val()=="" || $("#Descrip").val()=="" || $("#CC").val()== "") {
+                alertify.closeLogOnClick(true).error(msg_empty);
+                return false;
+            }
+
+
+            if ($("#cp_Saldo").val() == ""|| $("#cp_Saldo").val() !="0.00") {
+                alertify.closeLogOnClick(true).error(msg_empty);
+                return false;
+            }
+
+            var data = $(".form-guardar").serialize();
+
+            $.ajax({
+                url: '@Url.Action("saveCuenta","CuentasXPagars")',
+                type: 'POST',
+                data: data,
+                dataType: 'json',
+            })
+            .done(function (response) {
+
+                if (response.status == 200) {
+                    alertify.closeLogOnClick(true).success(msg);
+                    $("#form-guardar").trigger("reset");
+
+                    if ($("#cuerpo-doc").length) {
+                        $("#cuerpo-doc").remove();
+                    }
+                    return true;
+                }
+
+                if (response.status == 305) {
+                    alertify.closeLogOnClick(true).error(msg_305)
+                    console.log(response);
+                    return false
+                }
+
+                if (response.status == 500) {
+                    alertify.closeLogOnClick(true).error(msg_500)
+                    console.log(response);
+                    return false;
+                }
+
+                //console.log(response);
+            })
+            .fail(function (response) {
+                console.log(response);
+                //$(".panel-body").append(response);
+            });
+        });
+
+        $("#btn_cancelar").click(function () {
+            if ($("#cuerpo-doc").length) {
+                $("#cuerpo-doc").remove();
+            }
+        });
+
+    });
+</script>
+

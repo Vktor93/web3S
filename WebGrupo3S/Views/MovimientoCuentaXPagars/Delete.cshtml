@@ -1,0 +1,152 @@
+﻿@model WebGrupo3S.Models.MovimientoCuentaXPagar
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MovimientoCuentaXPagar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_IdSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_IdSucursal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_IdDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_IdDoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_Proveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_Proveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_FechaMov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_FechaMov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_MontoMov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_MontoMov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_CreditoDebito)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_CreditoDebito)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_estMovCuentaXPagar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_estMovCuentaXPagar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_fechaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_fechaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_fechamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_fechamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_usuarioing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_usuarioing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_usuariomod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_usuariomod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_maquinaing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_maquinaing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_maquinamod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_maquinamod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mp_timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mp_timestamp)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

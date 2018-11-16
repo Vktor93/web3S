@@ -1,0 +1,123 @@
+﻿@model IEnumerable<WebGrupo3S.Models.MovimientoCuentaXPagar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_IdSucursal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_IdDoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_Proveedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_FechaMov)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_MontoMov)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_CreditoDebito)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_estMovCuentaXPagar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_fechaing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_fechamod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_usuarioing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_usuariomod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_maquinaing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_maquinamod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mp_timestamp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_IdSucursal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_IdDoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_Proveedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_FechaMov)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_MontoMov)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_CreditoDebito)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_estMovCuentaXPagar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_fechaing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_fechamod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_usuarioing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_usuariomod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_maquinaing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_maquinamod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mp_timestamp)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
