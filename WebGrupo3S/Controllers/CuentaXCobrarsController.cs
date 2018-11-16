@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Collections.Specialized;
 
+
 namespace WebGrupo3S.Views
 {
     public class CuentaXCobrarsController : Controller
@@ -313,6 +314,7 @@ namespace WebGrupo3S.Views
         {
             //NameValueCollection coll;
             //coll = Request.Form;
+
             try
             {
                  
@@ -322,15 +324,16 @@ namespace WebGrupo3S.Views
                 cuentaxcobrar.cc_fechaUltMov = System.DateTime.Now;
                 var result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, Convert.ToInt16(Request.Form["CC"]), Convert.ToDecimal(Request.Form["cc_saldo"]), cuentaxcobrar.cc_fechaUltMov, 0, "1", cuentaxcobrar.cc_usuarioing, tsp, error);
                 WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
+
                 if (error.Value.ToString() == "")
                 {
                     db.SaveChanges();                    
-                    int idCta = cuentaxcobrar.cc_IdCuentaXCobrar;
+                    int idCta = Convert.ToInt32(codigo.Value);
                     myDat = "Crea Movmiento Cuenta x Cobrar / sp_ABC_MovimientoCuentaXCobrar";                    
                     movimientoCuentaXCobrar.mc_fechaing = System.DateTime.Now;
                     movimientoCuentaXCobrar.mc_usuarioing = Session["UserName"].ToString();
                     movimientoCuentaXCobrar.mc_FechaMov = System.DateTime.Now;
-                    int resultM = db.sp_ABC_MovimientoCuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), idCta, codigomv, Convert.ToInt16(Request.Form["SUC"]), 1, Convert.ToInt16(Request.Form["CC"]), movimientoCuentaXCobrar.mc_FechaMov, Convert.ToDecimal(Request.Form["MontoMov"]), Convert.ToString(Request.Form["Credito"]), Convert.ToString(Request.Form["Descip"]), "1", movimientoCuentaXCobrar.mc_usuarioing,tsp2, error);
+                    int resultM = db.sp_ABC_MovimientoCuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), idCta, codigomv, Convert.ToInt16(Request.Form["SUC"]), 1, Convert.ToInt16(Request.Form["CC"]), movimientoCuentaXCobrar.mc_FechaMov, Convert.ToDecimal(Request.Form["MontoMov"]), Convert.ToString(Request.Form["Credito"]), Convert.ToString(Request.Form["Descrip"]), "1", movimientoCuentaXCobrar.mc_usuarioing,tsp2, error);
                     WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_MovimientoCuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
 
                     if (error.Value.ToString() =="")

@@ -224,6 +224,7 @@ namespace WebGrupo3S.Models
     
         public virtual int sp_ABC_CuentaXCobrar(Nullable<short> cc_empresa, string cc_opcion, ObjectParameter cc_IdCuentaXCobrar, Nullable<int> cc_Cliente, Nullable<decimal> cc_Saldo, Nullable<System.DateTime> cc_fechaUltMov, Nullable<decimal> cc_MontoUltMov, string cc_estCuentaXCobrar, string cc_usuario, string cc_timestamp, ObjectParameter error)
         {
+                        
             var cc_empresaParameter = cc_empresa.HasValue ?
                 new ObjectParameter("cc_empresa", cc_empresa) :
                 new ObjectParameter("cc_empresa", typeof(short));

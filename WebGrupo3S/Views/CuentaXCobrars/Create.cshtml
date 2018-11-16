@@ -82,6 +82,9 @@
             var msg_fail = "<h4>Alerta!</h4>" +
 		      "<p>* Ha ocurrido un problema</p>";
 
+            var msg_empty = "<h4>Alerta!</h4>" +
+		      "<p>* La cuenta tiene un saldo pendiente</p>";
+
             $(".seleccionar").select2({
                 language: {
                     noResults: function () {
@@ -136,6 +139,14 @@
                     alertify.closeLogOnClick(true).error(msg2);
                     return false;
                 }
+
+                let sald = parseFloat($("#cc_Saldo").val().toFixed(2));
+
+                if (sald > 0) {
+                    alertify.closeLogOnClick(true).error(msg_empty);
+                    return false;
+                }
+
 
 
                 $.ajax({
