@@ -153,7 +153,7 @@
             }            
            
 
-            if ($("#SUC").val() == "" || $("#DOC").val() == "" || $("#MontoMov").val() == "" || $("#Credito").val() == "" || $("#Descrip").val() == "" || $("#CC").val() == "") {
+            if ($("#SUC").val() == "" || $("#DOC").val() == "" || $("#Credito").val() == "" || $("#CC").val() == "") {
                 alertify.closeLogOnClick(true).error(msg_empty);
                 return false;
             }
@@ -278,7 +278,7 @@
             var credito = $("#Credito").val();
             var descrip = $("#Descrip").val();
 
-            $("#creacion_documento > tbody").append("<tr class='filas'><td><input type='text' class='columnas' name='SUC[]' value='" + sucursal + "' hidden='true'>" + nom_suc + "</td><td><input type='text' class='columnas' name='doc[]' value='" + documento + "' hidden='true'>" + nom_doc + "</td><td><input type='text' class='columnas' name='Monto[]' value='" + monto + "' hidden='true'>" + monto + "</td><td><input type='text' class='columnas' name='Cred[]' value='" + credito + "' hidden='true'>" + nom_credito + "</td><td><input type='text' class='columnas' name='desc[]' value='" + descrip + "' hidden='true'>" + descrip + "</td><td><button type='button' class='btn btn-danger btn-as-block btn-sm btn_borrar_linea' onclick='borrar_linea(this)'><i class='fa fa-trash' style='margin-right: 5px;''></i>Borrar</button></td></tr>")
+            $("#creacion_documento > tbody").append("<tr class='filas'><td><input type='text' class='columnas' name='SUCS[]' value='" + sucursal + "' hidden='true'>" + nom_suc + "</td><td><input type='text' class='columnas' name='docs[]' value='" + documento + "' hidden='true'>" + nom_doc + "</td><td><input type='text' class='columnas' name='Monto[]' value='" + monto + "' hidden='true'>" + monto + "</td><td><input type='text' class='columnas' name='Cred[]' value='" + credito + "' hidden='true'>" + nom_credito + "</td><td><input type='text' class='columnas' name='desc[]' value='" + descrip + "' hidden='true'>" + descrip + "</td><td><button type='button' class='btn btn-danger btn-as-block btn-sm btn_borrar_linea' onclick='borrar_linea(this)'><i class='fa fa-trash' style='margin-right: 5px;''></i>Borrar</button></td></tr>")
             
             if ($("#total_monto").val() == "") {
 

@@ -318,12 +318,29 @@ namespace WebGrupo3S.Views
 
             try
             {
-                 
+                //int size = Request.Form["Cred"].Length - 1;
                 myDat = "Crea Cuenta x Cobrar / sp_ABC_CuentaXCobrar";
                 cuentaxcobrar.cc_fechaing = System.DateTime.Now;
+                //List<decimal> listValues = new List<decimal>();
+                //foreach (string key in Request.Form.AllKeys)
+                //{
+                //    if (key.StartsWith("Monto[]"))
+                //    {
+                //        listValues.Add(Convert.ToDecimal(Request.Form[key]));
+                //    }
+                //}
+                //int size = listValues.Count();
+
+                string[] montoArray = Request.Form.GetValues("Monto[]");
+                string[] sucurArray = Request.Form.GetValues("SUCS[]");
+                string[] creditArray = Request.Form.GetValues("Cred[]");
+                string[] descArray = Request.Form.GetValues("desc[]");
+                int size = montoArray.Length;
+
                 cuentaxcobrar.cc_usuarioing = Session["UserName"].ToString();
-                cuentaxcobrar.cc_fechaUltMov = System.DateTime.Now;               
-                var result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, Convert.ToInt16(Request.Form["CC"]), Convert.ToDecimal(Request.Form["total_monto"]), cuentaxcobrar.cc_fechaUltMov, Convert.ToDecimal(Request.Form["Monto"].Last()), "1", cuentaxcobrar.cc_usuarioing, tsp, error);
+                cuentaxcobrar.cc_fechaUltMov = System.DateTime.Now;
+                                
+                var result = db.sp_ABC_CuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo, Convert.ToInt16(Request.Form["CC"]), Convert.ToDecimal(Request.Form["total_monto"]), cuentaxcobrar.cc_fechaUltMov, Convert.ToDecimal(montoArray[montoArray.Length -1]), "1", cuentaxcobrar.cc_usuarioing, tsp, error);
                 WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_CuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
 
                 if (error.Value.ToString() == "")
@@ -331,14 +348,13 @@ namespace WebGrupo3S.Views
                     db.SaveChanges();                    
                     int idCta = Convert.ToInt32(codigo.Value);                    
                     myDat = "Crea Movmiento Cuenta x Cobrar / sp_ABC_MovimientoCuentaXCobrar";
-                    int size = Request.Form["Cred"].Count();
                     movimientoCuentaXCobrar.mc_fechaing = System.DateTime.Now;
                     movimientoCuentaXCobrar.mc_usuarioing = Session["UserName"].ToString();
                     movimientoCuentaXCobrar.mc_FechaMov = System.DateTime.Now;
 
                     for(int i = 0; i < size; i++)
                     {
-                        int resultM = db.sp_ABC_MovimientoCuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), idCta, codigomv, Convert.ToInt16(Request.Form["SUC"][i]), 1, Convert.ToInt16(Request.Form["CC"]), movimientoCuentaXCobrar.mc_FechaMov, Convert.ToDecimal(Request.Form["Monto"][i]), Convert.ToString(Request.Form["Cred"][i]), Convert.ToString(Request.Form["desc"][i]), "1", movimientoCuentaXCobrar.mc_usuarioing, tsp2, error);
+                        int resultM = db.sp_ABC_MovimientoCuentaXCobrar(Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), idCta, codigomv, Convert.ToInt16(sucurArray[i]), 1, Convert.ToInt16(Request.Form["CC"]), movimientoCuentaXCobrar.mc_FechaMov, Convert.ToDecimal(montoArray[i]), Convert.ToString(creditArray[i]), Convert.ToString(descArray[i]), "1", movimientoCuentaXCobrar.mc_usuarioing, tsp2, error);
                         WriteLogMessages.WriteFile(Session["LogonName"], myModulo + "-> ejecutando sp_ABC_MovimientoCuentaXCobrar: " + string.Join(",", Convert.ToInt16(coP.cls_empresa), Convert.ToString('A'), codigo.Value, cuentaxcobrar.cc_Cliente, cuentaxcobrar.cc_Saldo, null, null, null, cuentaxcobrar.cc_usuarioing, tsp, "-> R: " + validad.getResponse(error)));
 
                         if (error.Value.ToString() == "")
