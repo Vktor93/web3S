@@ -10,30 +10,30 @@
         <form id="head-documento" class="form-guardar">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                         <div class="form-group">
                             <label>Sucursal</label>
                             @Html.DropDownList("SUC", null, "Seleccionar", new { @class = "form-control seleccionar" })
-                        </div>                        
+                        </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="form-group">
                             <label>Documento</label>
-                            <select name="DOC" class="form-control seleccionar">
+                            <select name="DOC" id="DOC" class="form-control seleccionar">
                                 <option value="">Seleccionar</option>
                                 <option value="1">FC</option>
                             </select>
                             @*@Html.DropDownList("DOC", null, "Seleccionar", new { @class = "form-control seleccionar" })*@
                         </div>
-                       
+
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <div class="form-group">
                             <label>Monto Movimiento</label>
-                            <input type="number" step="0.01" min="0.00" max="9999999999.99" name="MontoMov" class="form-control" id="MontoMov" value="" />
+                            <input type="text" name="MontoMov" class="form-control" id="MontoMov" value="0.00" />
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <div class="form-group">
                             <label>Credito/Debito</label>
                             <select name="Credito" id="Credito" class="form-control seleccionar">
@@ -42,34 +42,84 @@
                                 <option value="D">Debito</option>
                             </select>
                         </div>
-                    </div>                    
-                </div>               
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12">
+                    </div>
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label>Descripcion</label>
                             <input type="text" name="Descrip" id="Descrip" class="form-control" value="" />
                         </div>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-1">
                         <label>&nbsp;</label>
-                        <button type="button" id="btn_guardar_doc" class="btn btn-primary btn-as-block form-control"><i class="fa fa-check"></i> Guardar</button>
-                    </div>
-                    <div class="col-sm-2">
-                        <label>&nbsp;</label>
-                        <button type="button" id="btn_cancelar" class="btn btn-danger btn-as-block form-control"><i class="fa fa-close"></i> Cancelar</button>
+                        <button type="button" id="btn_agregar" title="Agregar" data-toggle="tooltip" class="btn btn-primary btn-as-block form-control"><i class="fa fa-plus-circle"></i></button>
                     </div>
                 </div>
             </div>
-        </form>        
+        </form>
+
+        <form id="body-det" class="form-guardar">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="scrollable">
+                        <table id="creacion_documento" class="display table table-responsive table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Sucursal</th>
+                                    <th>Documento</th>
+                                    <th>Monto Movimiento</th>
+                                    <th>Credito/Debito</th>
+                                    <th>Descripcion</th>
+                                    <th>Opcion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">                    
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="total_monto">Total Monto Q.</label>
+                            <input type="text" class="form-control" name="total_monto" id="total_monto" value="0.00" readonly>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button type="button" id="btn_guardar_doc" class="btn btn-success btn-as-block form-control"><i class="fa fa-download" style="margin-right: 5px;"></i>Guardar</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 pull-right">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button type="button" id="btn_cancelar" class="btn btn-warning btn-as-block form-control"><i class="fa fa-trash" style="margin-right: 5px;"></i>Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
 <script type="text/javascript">
     $(document).ready(function () {
+
+        var idCliente = $("#CC").val();
+
+        /*configuración del touchspin*/
+        $("#MontoMov").TouchSpin({
+            min: 0,
+            max: 100000,
+            verticalbuttons: true,
+            step: 0.01,
+            decimals: 2,
+            boostat: 5,
+            maxboostedstep: 10
+        });
 
         var msg = "<h4>Exito!</h4>" +
       "<p>* Cuenta Creada</p>";
@@ -82,7 +132,7 @@
 
         var msg_500 = "<h4>Alerta!</h4>" +
       "<p>* Proble Interno, revisar consola</p>";
-        
+
 
         $(".seleccionar").select2({
             language: {
@@ -94,16 +144,38 @@
 
         $("#btn_guardar_doc").click(function () {
 
-            if ($("#SUC").val() == "" || $("#DOC").val() =="" || $("#MontoMov").val()=="" || $("#Credito").val()=="" || $("#Descrip").val()=="" || $("#CC").val()== "") {
+            var idClienteNuevo = $("#CC").val();
+            var monto;                        
+
+            if (idClienteNuevo != idCliente) {
+                alertify.closeLogOnClick(true).error("El Cliente no coincide!");
+                return false;
+            }            
+           
+
+            if ($("#SUC").val() == "" || $("#DOC").val() == "" || $("#MontoMov").val() == "" || $("#Credito").val() == "" || $("#Descrip").val() == "" || $("#CC").val() == "") {
                 alertify.closeLogOnClick(true).error(msg_empty);
                 return false;
             }
 
 
-            if ($("#cc_Saldo").val() == ""|| $("#cc_Saldo").val() !="0.00") {
+            if ($("#cc_Saldo").val() == "" || $("#cc_Saldo").val() != "0.00") {
                 alertify.closeLogOnClick(true).error(msg_empty);
                 return false;
             }
+
+            //validar que no se guarde con monto de 0
+            try {
+                monto = parseFloat($("#total_monto").val()).toFixed(2);
+                if (monto == 0.00) {
+                    alertify.closeLogOnClick(true).error("Monto debe ser mayor a 0!");
+                    return false;
+                }
+            } catch (e) {
+                alertify.closeLogOnClick(true).error("Ha ocurrido un problema!");
+                return false;
+            }
+            
 
             var data = $(".form-guardar").serialize();
 
@@ -116,7 +188,7 @@
             .done(function (response) {
                 jsonObject = JSON.parse(response);
                 console.log(jsonObject.status);
-                   
+
                 if (jsonObject.status == 200) {
                     alertify.closeLogOnClick(true).success(msg);
                     $(".form-guardar").trigger("reset");
@@ -124,6 +196,8 @@
                     if ($("#cuerpo-doc").length) {
                         $("#cuerpo-doc").remove();
                     }
+
+                    $("#cc_Saldo").val("");
                     return true;
                 }
 
@@ -139,7 +213,7 @@
                     return false;
                 }
 
-                //console.log(response);                                                       
+                //console.log(response);
             })
             .fail(function (response) {
                 console.log(response);
@@ -147,11 +221,124 @@
             });
         });
 
+        $("#btn_agregar").click(function () {
+
+            if ($("#SUC").val() == "" || $("#DOC").val() == "" || $("#Credito").val() == "" || $("#Descrip").val() == "") {
+                alertify.closeLogOnClick(true).error("Ingresar todos los datos!");
+                return false;
+            }
+            
+            var monto;
+
+            try {
+                monto = parseFloat($("#MontoMov").val()).toFixed(2);
+
+                if (monto <= 0) {
+                    alertify.closeLogOnClick(true).error("Cantidad Monto Incorrecta");
+                    return false;
+                }
+            } catch (err) {
+                alertify.closeLogOnClick(true).error("Ha Ocurrido un problema!");
+                return false;
+            }
+
+            //VALIDA QUE EL MONTO TOTAL A INSERTAR NO SEA NEGATIVO o 0
+            if ($("#Credito").val() == "D") {
+                var valor_total = $("#total_monto").val();
+                var montMov;
+                console.log(monto);
+
+                try {
+                    
+                    var resultado = parseFloat(valor_total).toFixed(2) - monto;
+                    
+                    console.log(valor_total);
+                    console.log(monto);
+                    console.log(resultado);
+                    
+                    if (resultado == 0) {
+
+                    } else if (parseFloat(resultado).toFixed(2) < valor_total) {
+                        alertify.closeLogOnClick(true).error("Cantidad no se puede agregar!");
+                        return false;
+                    }
+                    
+
+                } catch (e) {
+                    alertify.closeLogOnClick(true).error("Error de Conversion");
+                    return false;
+                }
+            }
+
+            var sucursal = $("#SUC").val();
+            var nom_suc = $("#SUC :selected").text();
+            var nom_credito = $("#Credito :selected").text();
+            var documento = $("#DOC").val();
+            var nom_doc = $("#DOC :selected").text();
+            var credito = $("#Credito").val();
+            var descrip = $("#Descrip").val();
+
+            $("#creacion_documento > tbody").append("<tr class='filas'><td><input type='text' class='columnas' name='SUC[]' value='" + sucursal + "' hidden='true'>" + nom_suc + "</td><td><input type='text' class='columnas' name='doc[]' value='" + documento + "' hidden='true'>" + nom_doc + "</td><td><input type='text' class='columnas' name='Monto[]' value='" + monto + "' hidden='true'>" + monto + "</td><td><input type='text' class='columnas' name='Cred[]' value='" + credito + "' hidden='true'>" + nom_credito + "</td><td><input type='text' class='columnas' name='desc[]' value='" + descrip + "' hidden='true'>" + descrip + "</td><td><button type='button' class='btn btn-danger btn-as-block btn-sm btn_borrar_linea' onclick='borrar_linea(this)'><i class='fa fa-trash' style='margin-right: 5px;''></i>Borrar</button></td></tr>")
+            
+            if ($("#total_monto").val() == "") {
+
+                $("#total_monto").val(monto);
+
+            } else {
+                var total_mont;
+
+                if (credito == "D") {
+                    total_mont = parseFloat($("#total_monto").val()) - parseFloat(monto);
+                    $("#total_monto").val(parseFloat(total_mont).toFixed(2));
+
+                } else {
+                    total_mont = parseFloat($("#total_monto").val()) + parseFloat(monto);
+                    $("#total_monto").val(parseFloat(total_mont).toFixed(2));
+                }
+                
+            }
+
+            $("#MontoMov").val("");
+            $("#Descrip").val("");
+
+        })
+
         $("#btn_cancelar").click(function () {
+
             if ($("#cuerpo-doc").length) {
                 $("#cuerpo-doc").remove();
             }
         });
-
     });
+
+    function borrar_linea(btn) {
+
+        var monto = $(btn).closest("tr").find("td")[2].firstChild.value;
+        var cred = $(btn).closest("tr").find("td")[3].firstChild.value;
+        var total;
+        var totalParcial = parseFloat($("#total_monto").val()).toFixed(2);
+
+
+        if (cred == "D") {
+            total = parseFloat($("#total_monto").val()) + parseFloat(monto).toFixed(2);
+
+        } else {
+            
+            if (totalParcial >0 ) {
+                total = parseFloat($("#total_monto").val()) - parseFloat(monto).toFixed(2);
+            } else {
+                total = totalParcial;
+            }            
+        }
+              
+        btn.closest("tr").remove();
+
+        $("#total_monto").val(parseFloat(total).toFixed(2));
+
+        if ($("#creacion_documento tbody").is(":empty")) {
+            console.log("test");
+            $("#total_monto").val("0.00");
+        }
+
+    }
 </script>
